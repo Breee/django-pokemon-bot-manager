@@ -14,7 +14,7 @@ bot = PollBot()
 @shared_task(bind=True)
 def cel_bot_up(capp):
     global bot
-    token = 'NDExNTM5NTY4Mjg2NzYwOTcw.DV9MNA.iKa3qlTDObDYo5EG_F0kDaLCVvU'
+    token = ''
     bot.myinit(prefix="!raid-", token=token, description="")
     bot.run()
 
