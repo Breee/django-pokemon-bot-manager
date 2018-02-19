@@ -1,2 +1,5 @@
-./mysite/db.sqlite
-./mysite/local_settings.py
+mysite/db.sqlite
+mysite/local_settings.py
+.idea
+venv/
+bots/
