@@ -1,4 +1,1 @@
-celery
-redis
-sqlalchemy
-flower
+django>=2.0,<=2.1
