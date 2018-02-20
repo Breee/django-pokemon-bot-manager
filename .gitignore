@@ -6,8 +6,8 @@ __pycache__/
 *.so
 
 
-mysite/db.sqlite
-mysite/local_settings.py
+mysite/db.sqlite3
+mysite/mysite/local_settings.py
 .idea
 venv/
 bots/
