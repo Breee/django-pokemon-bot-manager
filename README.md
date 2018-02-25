@@ -15,3 +15,9 @@ There you need to add a "Site" and under "Social-Applikations" you need to add y
 In Discord App set the redirect URL to 
 
 ``` http://localhost:8000/accounts/discord/login/callback/ ```
+
+
+# For the Map support - not yet implemented
+```sudo apt-get install binutils libproj-dev gdal-bin```
++ libgeoip1 ; for geoIP support
++ python-gdal ; for GDAL’s own Python bindings
