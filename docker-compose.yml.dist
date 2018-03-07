@@ -4,7 +4,12 @@ services:
   # PostgreSQL database
   db:
     image: postgres:10
+    volumes:
+      - ./db:/var/lib/postgresql/data
     environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=changeme
+      - POSTGRES_DB=postgres
 
   # Redis
   redis:
@@ -13,14 +18,18 @@ services:
   # RabbitMQ
   rabbit:
     image: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
 
   # Django web server
   web:
     build:
-      context: .
-    command: ./run_web.sh
+      context: ./build/
+    command: /run_web.sh
     volumes:
-      - .:/app  # mount current directory inside container
+      - ./volumes/app:/app
+      - ./build/requirements.txt:/app/requirements.txt
     ports:
       - "8000:8000"
     # set up links so that web knows about db, rabbit and redis
@@ -34,10 +43,10 @@ services:
   # Celery worker
   worker:
     build:
-      context: .
-    command: ./run_celery.sh
-    volumes:
-      - .:/app
+      context: ./build/
+    command: /run_celery.sh
+    volumes_from:
+      - web
     links:
       - db
       - rabbit

@@ -1,3 +1,4 @@
+# cache
 __pycache__/
 *.py[cod]
 *$py.class
@@ -5,9 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
-
-mysite/db.sqlite3
-mysite/mysite/local_settings.py
+# dev IDE folders
 .idea
 venv/
-bots/
+
+# production data
+*db.sqlite3
+volumes/app/mysite/mysite/local_settings.py
+volumes/bots/
+volumes/db/
+docker-compose.yml
