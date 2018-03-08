@@ -1,9 +1,5 @@
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.renderers import JSONRenderer
-from rest_framework.parsers import JSONParser
 from .models import Pokemon, PokePosition
 from .serializers import PokemonSerializer
 import csv
@@ -36,3 +32,11 @@ def test(request):
         poke = Pokemon.objects.all()
         serializer = PokemonSerializer(poke, many=True)
         return JsonResponse(serializer.data, safe=False)
+
+
+def up(request):
+    pass
+
+
+def down(request):
+    pass
