@@ -12,7 +12,7 @@ venv/
 
 # production data
 *db.sqlite3
-volumes/app/mysite/mysite/local_settings.py
+volumes/app/mysite/local_settings.py
 volumes/bots/
 volumes/db/
 docker-compose.yml
