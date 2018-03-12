@@ -5,7 +5,7 @@ sleep 10
 
 cd /app 
 # prepare init migration
-python manage.py makemigrations
+python manage.py makemigrations myapp
 # migrate db, so we have the latest db schema
 python manage.py migrate
 # collect static files
