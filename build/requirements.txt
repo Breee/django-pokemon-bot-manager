@@ -2,5 +2,6 @@ django>=2.0,<=2.1
 django-allauth
 celery 
 djangorestframework
+uwsgi
 psycopg2
 redis  

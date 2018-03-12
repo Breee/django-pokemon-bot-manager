@@ -15,4 +15,5 @@ venv/
 volumes/app/mysite/local_settings.py
 volumes/bots/
 volumes/db/
+volumes/staticfiles
 docker-compose.yml
