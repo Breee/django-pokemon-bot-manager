@@ -15,6 +15,7 @@ venv/
 volumes/app/myapp/migrations
 volumes/app/mysite/local_settings.py
 volumes/bots/
-volumes/db/
+volumes/postgres/
+volumes/app/static
 volumes/staticfiles
 docker-compose.yml
