@@ -1,4 +1,5 @@
 from django.db import models
+from rest_framework.authtoken.models import Token
 
 
 class Pokemon(models.Model):
@@ -20,5 +21,5 @@ class PokePosition(models.Model):
     poke_iv = models.IntegerField(default=0)
     poke_lat = models.FloatField()
     poke_lon = models.FloatField()
-    poke_visible = models.BooleanField(default=False)
     poke_nr = models.ForeignKey(Pokemon, on_delete=models.CASCADE)
+    poke_despawn_time = models.DateTimeField()

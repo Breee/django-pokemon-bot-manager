@@ -1,8 +1,9 @@
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Pokemon, PokePosition
-from .serializers import PokemonSerializer
 import csv
+
+from .models import Pokemon
+from .serializers import PokemonSerializer
 
 
 @csrf_exempt
