@@ -11,6 +11,16 @@
 
 * build and start it with `docker-compose up -d`
 
+## configure rest api with token auth
+
+Go `admin/authtoken/token/` panel and create tokens
+
+In your client add it like
+`Authorization: Token 53f5dea10a90204376a3786eaeb67f02c3c1d6cb`
+to your headers.
+
+POST requests are done by json in body.
+
 ## Login with Discord Howto
 
 Install required packages:
