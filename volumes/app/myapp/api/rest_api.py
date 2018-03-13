@@ -15,7 +15,7 @@ def get_pokemon(request):
 
     # parse query string stuff
     if 'nr' in request.GET:
-        queryset = Pokemon.objects.filter(poke_nr=request.GET['nr'])
+        queryset = queryset.filter(poke_nr=request.GET['nr'])
     if 'name_eng' in request.GET:
         queryset = queryset.filter(poke_name_ger=request.GET['name_eng'])
     if 'name_ger' in request.GET:
