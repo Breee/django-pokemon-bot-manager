@@ -1,13 +1,13 @@
-from datetime import datetime
 from django.contrib.auth.models import User
-from rest_framework import generics, serializers, viewsets
+from rest_framework import generics, serializers, status, viewsets, permissions
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework import permissions
-
+from rest_framework.views import APIView
+from datetime import datetime
 from myapp.models import PokePosition, Pokemon
 
 permission_classes = (permissions.IsAuthenticated,)
+
 
 @api_view(['GET'])
 def get_pokemon(request):
@@ -36,8 +36,25 @@ class PokemonPositionSet(viewsets.ModelViewSet):
     queryset = PokePosition.objects.all()
     serializer_class = PokemonPositionSerializer
 
-    # return only pokemon which are not despawned yet
-    queryset = queryset.filter(poke_despawn_time__gt=datetime.now())
+
+class PokmonPositionSet2(APIView):
+    """
+    List pokepositions which aren't despawned, or create a new pokeposition.
+    """
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get(self, request, format=None):
+        queryset = PokePosition.objects.all()
+        queryset = queryset.filter(poke_despawn_time__gt=datetime.utcnow())
+        serializer = PokemonPositionSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = PokemonPositionSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class PokemonSerializer(serializers.ModelSerializer):

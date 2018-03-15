@@ -21,6 +21,7 @@ from myapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('api/', include('myapp.api.rest_urls')),
     path('map', views.pokemap, name='pokemap'),
     path('up', views.up, name='up'),
     path('down', views.down, name='down'),
