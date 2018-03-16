@@ -19,10 +19,13 @@ from myapp import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('api/', include('myapp.api.rest_urls')),
+    path('admin', admin.site.urls),
+    path('accounts', include('allauth.urls')),
+    path('api', include('myapp.api.rest_urls')),
     path('map', views.pokemap, name='pokemap'),
-    path('up', views.up, name='up'),
-    path('down', views.down, name='down'),
+    path('bot', views.bot, name='bot'),
+    path('bot/up', views.up, name='up'),
+    path('bot/down', views.down, name='down'),
+    path('bot/status', views.status, name='status'),
+    path('bot/output', views.output, name='output'),
 ]
