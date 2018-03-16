@@ -4,7 +4,7 @@ var mymap = L.map('mapid').setView([48.0, 7.8], 13);
         maxZoom: 18,
         id: 'openstreetmap',
   }).addTo(mymap);
-  $.getJSON("http://localhost:8000/api/pokepositions2", function(data) {
+  $.getJSON("http://localhost:8000/api/pokepositions", function(data) {
     for (var i in data) {
         var pokemon = data[i];
         var popup = "" + pokemon.poke_despawn_time + "<br>" +
