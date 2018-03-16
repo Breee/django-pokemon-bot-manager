@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import os
-
 from kombu import Exchange, Queue
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -181,7 +179,7 @@ if not BROKER_URL.endswith(CELERY_BROKER_HEARTBEAT):
 
 CELERY_BROKER_URL = BROKER_URL
 
-CELERY_BROKER_POOL_LIMIT = 1
+CELERY_BROKER_POOL_LIMIT = 5
 CELERY_BROKER_CONNECTION_TIMEOUT = 10
 
 # Celery configuration
@@ -207,7 +205,7 @@ CELERY_TASK_RESULT_EXPIRES = 600
 
 # Set redis as celery result backend
 CELERY_RESULT_BACKEND = 'redis://%s:%d/%d' % (REDIS_HOST, REDIS_PORT, REDIS_DB)
-CELERY_REDIS_MAX_CONNECTIONS = 1
+CELERY_REDIS_MAX_CONNECTIONS = 5
 
 # Don't use pickle as serializer, json is much safer
 CELERY_TASK_SERIALIZER = "json"
@@ -217,8 +215,12 @@ CELERYD_HIJACK_ROOT_LOGGER = False
 CELERYD_PREFETCH_MULTIPLIER = 1
 CELERYD_MAX_TASKS_PER_CHILD = 1000
 
-
 try:
     from .local_settings import *
 except ImportError:
     print('local_settings.py not found or wrong defined')
+
+try:
+    from .bot_settings import *
+except ImportError:
+    print('bot_settings.py not found or wrong defined')

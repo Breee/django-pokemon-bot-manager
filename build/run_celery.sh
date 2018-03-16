@@ -5,4 +5,4 @@ sleep 10
 
 cd /app  
 # run Celery worker for our project myproject with Celery configuration stored in Celeryconf
-celery -A mysite worker -l info
+su - django -c "cd /app && celery -A mysite worker -l info"

@@ -1,5 +1,7 @@
 FROM python:3.6-alpine
 
+RUN adduser -D -u 1000 django
+
 # install dev packages for postgres
 RUN apk update \
   && apk add --virtual build-deps gcc python3-dev musl-dev linux-headers\
@@ -17,4 +19,3 @@ EXPOSE 8000
 
 # install python dependencies
 RUN pip install -r requirements.txt
-
