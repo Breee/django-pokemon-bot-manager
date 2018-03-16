@@ -1,8 +1,8 @@
-from mysite.settings import *
+try:
+    from mysite.bot_settings import *
+except ImportError:
+    from mysite.bot_basesettings import *
 import pexpect
-from collections import namedtuple
-
-BotStruct = namedtuple("BotStruct", "path main_file name")
 
 
 class BotManager:

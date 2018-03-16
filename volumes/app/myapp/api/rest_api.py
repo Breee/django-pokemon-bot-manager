@@ -31,13 +31,7 @@ class PokemonPositionSerializer(serializers.ModelSerializer):
         fields = ('poke_lvl', 'poke_iv', 'poke_lat', 'poke_lon', 'poke_nr', 'poke_despawn_time')
 
 
-class PokemonPositionSet(viewsets.ModelViewSet):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = PokePosition.objects.all()
-    serializer_class = PokemonPositionSerializer
-
-
-class PokmonPositionSet2(APIView):
+class PokemonPositionSet(APIView):
     """
     List pokepositions which aren't despawned, or create a new pokeposition.
     """
