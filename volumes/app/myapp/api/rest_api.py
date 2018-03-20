@@ -1,27 +1,50 @@
 from django.contrib.auth.models import User
+from django.http import HttpResponse
 from rest_framework import generics, serializers, status, viewsets, permissions
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from datetime import datetime
 from myapp.models import PokePosition, Pokemon
+import csv
 
-permission_classes = (permissions.IsAuthenticated,)
 
+class PokedexSet(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
 
-@api_view(['GET'])
-def get_pokemon(request):
-    queryset = Pokemon.objects.all()
+    @api_view(['GET'])
+    def get_pokemon(request):
+        queryset = Pokemon.objects.all()
+        
+        # parse query string stuff
+        if 'nr' in request.GET:
+            queryset = queryset.filter(poke_nr=request.GET['nr'])
+        if 'name_eng' in request.GET:
+            queryset = queryset.filter(poke_name_ger=request.GET['name_eng'])
+        if 'name_ger' in request.GET:
+            queryset = queryset.filter(poke_name_ger=request.GET['name_ger'])
+        serializer = PokemonSerializer(queryset, context={'request': request}, many=True)
+        return Response(serializer.data)
 
-    # parse query string stuff
-    if 'nr' in request.GET:
-        queryset = queryset.filter(poke_nr=request.GET['nr'])
-    if 'name_eng' in request.GET:
-        queryset = queryset.filter(poke_name_ger=request.GET['name_eng'])
-    if 'name_ger' in request.GET:
-        queryset = queryset.filter(poke_name_ger=request.GET['name_ger'])
-    serializer = PokemonSerializer(queryset, context={'request': request}, many=True)
-    return Response(serializer.data)
+    @api_view(['GET'])
+    def init_pokemon(request):
+        """
+        Load Pokedex if Database is empty
+        TODO: Find a better way to init!
+        """
+        Pokemon.objects.all().delete()
+        if Pokemon.objects.count() == 0:
+            with open('pokedex.csv') as pokedex_ger:
+                reader = csv.DictReader(pokedex_ger)
+                for poke in reader:
+                    pid = poke['Ndex']
+                    newpoke = Pokemon(poke_nr=int(pid),
+                                      poke_name_eng=poke['English'],
+                                      poke_name_ger=poke['German'])
+                    newpoke.save()
+                pokedex_ger.close()
+                print('pokedex_ger written')
+        return HttpResponse('[]')
 
 
 class PokemonPositionSerializer(serializers.ModelSerializer):
