@@ -72,6 +72,19 @@ def output(request):
 
 
 @user_passes_test(lambda u: u.is_superuser)
+def clear_output(request):
+    global bot_manager
+    if 'bot' not in request.GET:
+        return HttpResponse('Please send bot number')
+    index = int(request.GET['bot'])
+
+    if bot_manager.clear_bot_output(index):
+        return HttpResponse('Bot ' + str(index) + ' output cleared')
+    else:
+        return HttpResponse('could not be cleared, does bot exist?')
+
+
+@user_passes_test(lambda u: u.is_superuser)
 def bot(request):
     global bot_manager
     bot_list = bot_manager.get_bot_list()

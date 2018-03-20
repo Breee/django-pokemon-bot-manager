@@ -91,3 +91,10 @@ class BotManager:
             bot_list.append(bot)
         return bot_list
 
+    def clear_bot_output(self, index):
+        if not self._bot_exists(index):
+            return False
+
+        self.bot_outputs[index] = ''
+
+        return True

@@ -43,7 +43,16 @@
          <option value="{{ forloop.counter0 }}">{{ bot.name }}</option>
          {% endfor %}
      </select>
-     <input type="submit" value="get bot log">
+     <input type="submit" value="show bot log">
+</form>
+<form action="/bot/output/clear">
+     <select name="bot">
+         <option value="-1"></option>
+         {% for bot in bot_list %}
+         <option value="{{ forloop.counter0 }}">{{ bot.name }}</option>
+         {% endfor %}
+     </select>
+     <input type="submit" value="clear bot log">
 </form>
 </body>
 </html>
