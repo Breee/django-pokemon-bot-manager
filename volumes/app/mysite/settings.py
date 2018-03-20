@@ -214,3 +214,8 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERYD_HIJACK_ROOT_LOGGER = False
 CELERYD_PREFETCH_MULTIPLIER = 1
 CELERYD_MAX_TASKS_PER_CHILD = 1000
+
+try:
+    from .local_settings import *
+except ImportError:
+    print('local_settings.py could not be imported')
