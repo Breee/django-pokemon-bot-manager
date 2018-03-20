@@ -15,7 +15,7 @@ class PokedexSet(APIView):
     @api_view(['GET'])
     def get_pokemon(request):
         queryset = Pokemon.objects.all()
-        
+
         # parse query string stuff
         if 'nr' in request.GET:
             queryset = queryset.filter(poke_nr=request.GET['nr'])
