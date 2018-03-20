@@ -22,7 +22,7 @@ python manage.py migrate
 # collect static files
 python manage.py collectstatic --no-input
 # start development server on public ip interface, on port 8000
-su - django -c "cd /app && uwsgi --socket :8000 --module mysite.wsgi --env DJANGO_SETTINGS_MODULE=mysite.local_settings"
+su - django -c "cd /app && uwsgi --socket :8000 --module mysite.wsgi"
 
 ## insecure way to run the server
 # python manage.py runserver 0.0.0.0:8000
