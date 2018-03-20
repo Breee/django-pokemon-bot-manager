@@ -76,9 +76,18 @@ class BotManager:
         bot = self.bot_instances[index]
         return bot.isalive()
 
+    def get_all_status(self):
+        status = []
+        for bot in self.bot_instances:
+            if bot is None:
+                status.append(False)
+            else:
+                status.append(bot.isalive())
+        return status
+
     def get_bot_list(self):
         bot_list = []
         for bot in self.bots:
-            bot_list.append(bot.name)
+            bot_list.append(bot)
         return bot_list
 
