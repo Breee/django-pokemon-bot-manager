@@ -1,5 +1,4 @@
 from django.urls import path
-
 from rest_framework import routers
 from rest_framework.urlpatterns import format_suffix_patterns
 from myapp.api.rest_api import PokedexSet, UserList, UserDetail, PokemonPositionSet

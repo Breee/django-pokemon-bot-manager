@@ -37,7 +37,7 @@
      <input type="submit" value="check bot status">
 </form>
 <form action="/bot/output">
-     <select name="bot.name">
+     <select name="bot">
          <option value="-1"></option>
          {% for bot in bot_list %}
          <option value="{{ forloop.counter0 }}">{{ bot.name }}</option>
