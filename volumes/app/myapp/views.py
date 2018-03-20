@@ -63,7 +63,7 @@ def output(request):
     bot_output = bot_manager.get_bot_output(index)
     if isinstance(bot_output, str):
         context = {
-            'bot': bot_manager.get_bot_list()[index],
+            'bot': bot_manager.get_bot_list()[index].name,
             'lines': bot_output.splitlines()
         }
         return render(request, 'bot/output.html', context)
@@ -75,7 +75,9 @@ def output(request):
 def bot(request):
     global bot_manager
     bot_list = bot_manager.get_bot_list()
+    stat = bot_manager.get_all_status()
     context = {
-        'bot_list': bot_list
+        'bot_list': bot_list,
+        'bot_status': stat
     }
     return render(request, 'bot/index.html', context)
