@@ -3,7 +3,10 @@
 var mymap = L.map('mapid').setView([48.0, 7.8], 13);
 var layerGroup = undefined;
 
-L.tileLayer('https://tiles.venezilu.de/styles/osm-bright/{z}/{x}/{y}.png', {
+//var url = 'https://tiles.venezilu.de/styles/osm-bright/{z}/{x}/{y}.png'
+var url = 'https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}'
+L.tileLayer(url, {
+
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
     id: 'openstreetmap'
