@@ -155,7 +155,7 @@ STATIC_ROOT = 'static'
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/map'
+LOGIN_REDIRECT_URL = '/admin'
 
 # Redis
 
