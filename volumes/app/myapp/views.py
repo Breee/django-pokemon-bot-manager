@@ -10,7 +10,7 @@ bot_manager = BotManager()
 
 
 @csrf_protect
-@user_passes_test(lambda u: u.groups.count() > 0)
+@user_passes_test(lambda u: u.groups.count() > 0, login_url='/admin')
 def pokemap(request):
     context = {
     }
@@ -19,6 +19,10 @@ def pokemap(request):
 
 def redirect_to_map(request):
     return HttpResponseRedirect(reverse('map'))
+
+
+def denied(request):
+    return HttpResponse('Access denied!')
 
 
 @user_passes_test(lambda u: u.is_superuser)
