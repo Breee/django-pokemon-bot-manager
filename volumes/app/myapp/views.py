@@ -4,7 +4,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_protect
 from BotManager.BotManager import BotManager
-from allauth.account import views as allauthViews
 
 bot_manager = BotManager()
 
@@ -23,7 +22,12 @@ def redirect_to_map(request):
 
 
 def denied(request):
-    return HttpResponse('Access denied!')
+    username = None
+    if request.user.is_authenticated:
+        username = request.user.username
+        map_membership = request.user.groups.filter(name='map').exists()
+    return HttpResponse('Access denied! You are: ' + username + '<br>' +
+                        'map membership: ' + str(map_membership))
 
 
 @user_passes_test(lambda u: u.is_superuser, login_url='/admin')
