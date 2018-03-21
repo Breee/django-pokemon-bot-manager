@@ -10,7 +10,8 @@ bot_manager = BotManager()
 
 
 @csrf_protect
-@user_passes_test(lambda u: u.groups.count() > 0, login_url='/admin')
+@login_required()
+@user_passes_test(lambda u: u.groups.count() > 0, login_url='/denied')
 def pokemap(request):
     context = {
     }
