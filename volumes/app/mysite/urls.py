@@ -19,10 +19,11 @@ from myapp import views
 
 
 urlpatterns = [
+    path('', views.redirect_to_map),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('api/', include('myapp.api.rest_urls')),
-    path('map/', views.pokemap, name='pokemap'),
+    path('map/', views.pokemap, name='map'),
     path('bot/', views.bot, name='bot'),
     path('bot/up', views.up, name='up'),
     path('bot/down', views.down, name='down'),

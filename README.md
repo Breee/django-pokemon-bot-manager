@@ -21,7 +21,36 @@ to your headers.
 
 POST requests are done by json in body.
 
-## Login with Discord Howto
+## Discord Oauth2 Config
+
+For this you need:
+
+* all packages from `requirements.txt`
+* django superuser account
+* discord account
+* django sites configured to match your domain
+  * The `SITE_ID` from your `settings.py`/`local_settings.py` must match the
+   site id
+
+First go to the Discord developers documentation and add a new app.
+Set redirect to
+
+```http://HOST[:PORT]/accounts/discord/login/callback/```
+
+where `HOST` is the link to the `Django Pokemon Bot Manager` and `PORT` is
+optional, e.g. when working on localhost:
+
+``` http://localhost:8000/accounts/discord/login/callback/ ```
+
+Then go to `Django Pokemon Bot Manager` admin panel (`/admin/`) and add a
+`social application` with:
+
+* `provider` : `discord`
+* `name` : name of your coice
+* `client id` : from discord developer app
+* `client secret` : from discord developer app
+
+## OLD Login with Discord Howto
 
 Install required packages:
 

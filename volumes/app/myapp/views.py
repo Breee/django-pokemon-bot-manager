@@ -1,17 +1,23 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.contrib.auth.decorators import user_passes_test
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
+from django.views.decorators.csrf import csrf_protect
 from BotManager.BotManager import BotManager
+from allauth.account import views as allauthViews
 
 bot_manager = BotManager()
 
-
+@csrf_protect
 @login_required
 def pokemap(request):
     context = {
     }
     return render(request, 'map/index.html', context)
+
+
+def redirect_to_map(request):
+    return HttpResponseRedirect(reverse('map'))
 
 
 @user_passes_test(lambda u: u.is_superuser)
