@@ -8,8 +8,9 @@ from allauth.account import views as allauthViews
 
 bot_manager = BotManager()
 
+
 @csrf_protect
-@login_required
+@user_passes_test(lambda u: u.groups.count() > 0)
 def pokemap(request):
     context = {
     }
