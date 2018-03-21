@@ -26,7 +26,7 @@ def denied(request):
     return HttpResponse('Access denied!')
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser, login_url='/admin')
 def up(request):
     global bot_manager
     if 'bot' not in request.GET:
@@ -39,7 +39,7 @@ def up(request):
         return HttpResponse('Bot ' + str(index) + ' failed to start')
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser, login_url='/admin')
 def down(request):
     global bot_manager
     if 'bot' not in request.GET:
@@ -65,7 +65,7 @@ def status(request):
         return HttpResponse('Bot ' + str(index) + ' is down')
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser, login_url='/admin')
 def output(request):
     global bot_manager
     if 'bot' not in request.GET:
@@ -83,7 +83,7 @@ def output(request):
         return HttpResponse('something is wrong')
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser, login_url='/admin')
 def clear_output(request):
     global bot_manager
     if 'bot' not in request.GET:
@@ -96,7 +96,7 @@ def clear_output(request):
         return HttpResponse('could not be cleared, does bot exist?')
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser, login_url='/admin')
 def bot(request):
     global bot_manager
     bot_list = bot_manager.get_bot_list()
