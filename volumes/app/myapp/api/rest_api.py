@@ -32,6 +32,7 @@ class PokedexSet(APIView):
         Load Pokedex if Database is empty
         TODO: Find a better way to init!
         """
+        # Dont delete all, "on_delete.Cascade" in models will kill all PokePositions
         Pokemon.objects.all().delete()
         if Pokemon.objects.count() == 0:
             with open('pokedex.csv') as pokedex_ger:
