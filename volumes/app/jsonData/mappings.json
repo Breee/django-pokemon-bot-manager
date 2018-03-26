@@ -1,0 +1,30 @@
+{
+  "pokemon": {
+    "number": "dex",
+    "name_english": "name",
+    "name_german": "",
+    "name_french": "",
+    "flee_rate": "encounter.baseFleeRate",
+    "capture_rate": "encounter.baseCaptureRate",
+    "max_cp": "maxCP",
+    "rarity": "rarity.id",
+    "egg_distance": "kmBuddyDistance",
+    "types": "types.id",
+    "charge_move": "cinematicMoves.id",
+    "quick_moves": "quickMoves.id"
+  },
+  "move": {
+    "name": "id",
+    "type": "pokemonType.id",
+    "damage": "",
+    "energy": "",
+    "dps": "",
+    "legacy": ""
+  },
+  "type": {
+    "name": "name",
+    "name_german": "",
+    "damage": "damage",
+    "color": ""
+  }
+}

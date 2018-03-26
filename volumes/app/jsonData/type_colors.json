@@ -1,0 +1,94 @@
+{
+  "types": {
+    "normal": {
+      "name": "normal",
+      "name_german": "Normal",
+      "color": "a8a878"
+    },
+    "fire": {
+      "name": "fire",
+      "name_german": "Feuer",
+      "color": "f08030"
+    },
+    "fighting": {
+      "name": "fighting",
+      "name_german": "Kampf",
+      "color": "c03028"
+    },
+    "water": {
+      "name": "water",
+      "name_german": "Wasser",
+      "color": "6890f0"
+    },
+    "flying": {
+      "name": "flying",
+      "name_german": "Flug",
+      "color": "a890f0"
+    },
+    "grass": {
+      "name": "grass",
+      "name_german": "Pflanze",
+      "color": "78c850"
+    },
+    "poison":{
+      "name": "poison",
+      "name_german": "Gift",
+      "color": "a040a0"
+    },
+    "electric": {
+      "name": "electric",
+      "name_german": "Elektro",
+      "color": "f8d030"
+    },
+    "ground": {
+      "name": "ground",
+      "name_german": "Boden",
+      "color": "e0c068"
+    },
+    "psychic": {
+      "name": "psychic",
+      "name_german": "Psycho",
+      "color": "f85888"
+    },
+    "rock": {
+      "name": "rock",
+      "name_german": "Gestein",
+      "color": "b8a038"
+    },
+    "ice": {
+      "name": "ice",
+      "name_german": "Eis",
+      "color": "98d8d8"
+    },
+    "bug": {
+      "name": "bug",
+      "name_german": "Käfer",
+      "color": "a8b820"
+    },
+    "dragon": {
+      "name": "dragon",
+      "name_german": "Drache",
+      "color": "7038f8"
+    },
+    "ghost": {
+      "name": "ghost",
+      "name_german": "Geist",
+      "color": "705898"
+    },
+    "dark": {
+      "name": "dark",
+      "name_german": "Unlicht",
+      "color": "705848"
+    },
+    "steel": {
+      "name": "steel",
+      "name_german": "Stahl",
+      "color": "b8b8d0"
+    },
+    "fairy": {
+      "name": "fairy",
+      "name_german": "Fee",
+      "color": "ee99ac"
+    }
+    }
+}

@@ -1,0 +1,1498 @@
+[
+    {
+        "name": "WRAP",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "HYPER_BEAM",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DARK_PULSE",
+        "type": "POKEMON_TYPE_DARK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SLUDGE",
+        "type": "POKEMON_TYPE_POISON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "VICE_GRIP",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FLAME_WHEEL",
+        "type": "POKEMON_TYPE_FIRE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "MEGAHORN",
+        "type": "POKEMON_TYPE_BUG",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FLAMETHROWER",
+        "type": "POKEMON_TYPE_FIRE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DIG",
+        "type": "POKEMON_TYPE_GROUND",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "CROSS_CHOP",
+        "type": "POKEMON_TYPE_FIGHTING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PSYBEAM",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "EARTHQUAKE",
+        "type": "POKEMON_TYPE_GROUND",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "STONE_EDGE",
+        "type": "POKEMON_TYPE_ROCK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ICE_PUNCH",
+        "type": "POKEMON_TYPE_ICE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "HEART_STAMP",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DISCHARGE",
+        "type": "POKEMON_TYPE_ELECTRIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FLASH_CANNON",
+        "type": "POKEMON_TYPE_STEEL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DRILL_PECK",
+        "type": "POKEMON_TYPE_FLYING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ICE_BEAM",
+        "type": "POKEMON_TYPE_ICE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BLIZZARD",
+        "type": "POKEMON_TYPE_ICE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "HEAT_WAVE",
+        "type": "POKEMON_TYPE_FIRE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "AERIAL_ACE",
+        "type": "POKEMON_TYPE_FLYING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DRILL_RUN",
+        "type": "POKEMON_TYPE_GROUND",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PETAL_BLIZZARD",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "MEGA_DRAIN",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BUG_BUZZ",
+        "type": "POKEMON_TYPE_BUG",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "POISON_FANG",
+        "type": "POKEMON_TYPE_POISON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "NIGHT_SLASH",
+        "type": "POKEMON_TYPE_DARK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BUBBLE_BEAM",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SUBMISSION",
+        "type": "POKEMON_TYPE_FIGHTING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "LOW_SWEEP",
+        "type": "POKEMON_TYPE_FIGHTING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "AQUA_JET",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "AQUA_TAIL",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SEED_BOMB",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PSYSHOCK",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ANCIENT_POWER",
+        "type": "POKEMON_TYPE_ROCK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ROCK_TOMB",
+        "type": "POKEMON_TYPE_ROCK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ROCK_SLIDE",
+        "type": "POKEMON_TYPE_ROCK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "POWER_GEM",
+        "type": "POKEMON_TYPE_ROCK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SHADOW_SNEAK",
+        "type": "POKEMON_TYPE_GHOST",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SHADOW_PUNCH",
+        "type": "POKEMON_TYPE_GHOST",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "OMINOUS_WIND",
+        "type": "POKEMON_TYPE_GHOST",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SHADOW_BALL",
+        "type": "POKEMON_TYPE_GHOST",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "MAGNET_BOMB",
+        "type": "POKEMON_TYPE_STEEL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "IRON_HEAD",
+        "type": "POKEMON_TYPE_STEEL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PARABOLIC_CHARGE",
+        "type": "POKEMON_TYPE_ELECTRIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "THUNDER_PUNCH",
+        "type": "POKEMON_TYPE_ELECTRIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "THUNDER",
+        "type": "POKEMON_TYPE_ELECTRIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "THUNDERBOLT",
+        "type": "POKEMON_TYPE_ELECTRIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "TWISTER",
+        "type": "POKEMON_TYPE_DRAGON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DRAGON_PULSE",
+        "type": "POKEMON_TYPE_DRAGON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DRAGON_CLAW",
+        "type": "POKEMON_TYPE_DRAGON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DISARMING_VOICE",
+        "type": "POKEMON_TYPE_FAIRY",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DRAINING_KISS",
+        "type": "POKEMON_TYPE_FAIRY",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DAZZLING_GLEAM",
+        "type": "POKEMON_TYPE_FAIRY",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "MOONBLAST",
+        "type": "POKEMON_TYPE_FAIRY",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PLAY_ROUGH",
+        "type": "POKEMON_TYPE_FAIRY",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "CROSS_POISON",
+        "type": "POKEMON_TYPE_POISON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SLUDGE_BOMB",
+        "type": "POKEMON_TYPE_POISON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SLUDGE_WAVE",
+        "type": "POKEMON_TYPE_POISON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "GUNK_SHOT",
+        "type": "POKEMON_TYPE_POISON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BONE_CLUB",
+        "type": "POKEMON_TYPE_GROUND",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BULLDOZE",
+        "type": "POKEMON_TYPE_GROUND",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "MUD_BOMB",
+        "type": "POKEMON_TYPE_GROUND",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SIGNAL_BEAM",
+        "type": "POKEMON_TYPE_BUG",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "X_SCISSOR",
+        "type": "POKEMON_TYPE_BUG",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FLAME_CHARGE",
+        "type": "POKEMON_TYPE_FIRE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FLAME_BURST",
+        "type": "POKEMON_TYPE_FIRE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FIRE_BLAST",
+        "type": "POKEMON_TYPE_FIRE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BRINE",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "WATER_PULSE",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SCALD",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "HYDRO_PUMP",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PSYCHIC",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PSYSTRIKE",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ICY_WIND",
+        "type": "POKEMON_TYPE_ICE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "GIGA_DRAIN",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FIRE_PUNCH",
+        "type": "POKEMON_TYPE_FIRE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SOLAR_BEAM",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "LEAF_BLADE",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "POWER_WHIP",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "AIR_CUTTER",
+        "type": "POKEMON_TYPE_FLYING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "HURRICANE",
+        "type": "POKEMON_TYPE_FLYING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BRICK_BREAK",
+        "type": "POKEMON_TYPE_FIGHTING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SWIFT",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "HORN_ATTACK",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "STOMP",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "HYPER_FANG",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BODY_SLAM",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "REST",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "STRUGGLE",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SCALD_BLASTOISE",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "HYDRO_PUMP_BLASTOISE",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "WRAP_GREEN",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "WRAP_PINK",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FURY_CUTTER_FAST",
+        "type": "POKEMON_TYPE_BUG",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BUG_BITE_FAST",
+        "type": "POKEMON_TYPE_BUG",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BITE_FAST",
+        "type": "POKEMON_TYPE_DARK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SUCKER_PUNCH_FAST",
+        "type": "POKEMON_TYPE_DARK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DRAGON_BREATH_FAST",
+        "type": "POKEMON_TYPE_DRAGON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "THUNDER_SHOCK_FAST",
+        "type": "POKEMON_TYPE_ELECTRIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SPARK_FAST",
+        "type": "POKEMON_TYPE_ELECTRIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "LOW_KICK_FAST",
+        "type": "POKEMON_TYPE_FIGHTING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "KARATE_CHOP_FAST",
+        "type": "POKEMON_TYPE_FIGHTING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "EMBER_FAST",
+        "type": "POKEMON_TYPE_FIRE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "WING_ATTACK_FAST",
+        "type": "POKEMON_TYPE_FLYING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PECK_FAST",
+        "type": "POKEMON_TYPE_FLYING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "LICK_FAST",
+        "type": "POKEMON_TYPE_GHOST",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SHADOW_CLAW_FAST",
+        "type": "POKEMON_TYPE_GHOST",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "VINE_WHIP_FAST",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "RAZOR_LEAF_FAST",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "MUD_SHOT_FAST",
+        "type": "POKEMON_TYPE_GROUND",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ICE_SHARD_FAST",
+        "type": "POKEMON_TYPE_ICE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FROST_BREATH_FAST",
+        "type": "POKEMON_TYPE_ICE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "QUICK_ATTACK_FAST",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SCRATCH_FAST",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "TACKLE_FAST",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "POUND_FAST",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "CUT_FAST",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "POISON_JAB_FAST",
+        "type": "POKEMON_TYPE_POISON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ACID_FAST",
+        "type": "POKEMON_TYPE_POISON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PSYCHO_CUT_FAST",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ROCK_THROW_FAST",
+        "type": "POKEMON_TYPE_ROCK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "METAL_CLAW_FAST",
+        "type": "POKEMON_TYPE_STEEL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BULLET_PUNCH_FAST",
+        "type": "POKEMON_TYPE_STEEL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "WATER_GUN_FAST",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SPLASH_FAST",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "WATER_GUN_FAST_BLASTOISE",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "MUD_SLAP_FAST",
+        "type": "POKEMON_TYPE_GROUND",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ZEN_HEADBUTT_FAST",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "CONFUSION_FAST",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "POISON_STING_FAST",
+        "type": "POKEMON_TYPE_POISON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BUBBLE_FAST",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FEINT_ATTACK_FAST",
+        "type": "POKEMON_TYPE_DARK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "STEEL_WING_FAST",
+        "type": "POKEMON_TYPE_STEEL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FIRE_FANG_FAST",
+        "type": "POKEMON_TYPE_FIRE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ROCK_SMASH_FAST",
+        "type": "POKEMON_TYPE_FIGHTING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "TRANSFORM_FAST",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "COUNTER_FAST",
+        "type": "POKEMON_TYPE_FIGHTING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "POWDER_SNOW_FAST",
+        "type": "POKEMON_TYPE_ICE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "CLOSE_COMBAT",
+        "type": "POKEMON_TYPE_FIGHTING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DYNAMIC_PUNCH",
+        "type": "POKEMON_TYPE_FIGHTING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FOCUS_BLAST",
+        "type": "POKEMON_TYPE_FIGHTING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "AURORA_BEAM",
+        "type": "POKEMON_TYPE_ICE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "CHARGE_BEAM_FAST",
+        "type": "POKEMON_TYPE_ELECTRIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "VOLT_SWITCH_FAST",
+        "type": "POKEMON_TYPE_ELECTRIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "WILD_CHARGE",
+        "type": "POKEMON_TYPE_ELECTRIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ZAP_CANNON",
+        "type": "POKEMON_TYPE_ELECTRIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DRAGON_TAIL_FAST",
+        "type": "POKEMON_TYPE_DRAGON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "AVALANCHE",
+        "type": "POKEMON_TYPE_ICE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "AIR_SLASH_FAST",
+        "type": "POKEMON_TYPE_FLYING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BRAVE_BIRD",
+        "type": "POKEMON_TYPE_FLYING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SKY_ATTACK",
+        "type": "POKEMON_TYPE_FLYING",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SAND_TOMB",
+        "type": "POKEMON_TYPE_GROUND",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ROCK_BLAST",
+        "type": "POKEMON_TYPE_ROCK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "INFESTATION_FAST",
+        "type": "POKEMON_TYPE_BUG",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "STRUGGLE_BUG_FAST",
+        "type": "POKEMON_TYPE_BUG",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SILVER_WIND",
+        "type": "POKEMON_TYPE_BUG",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ASTONISH_FAST",
+        "type": "POKEMON_TYPE_GHOST",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "HEX_FAST",
+        "type": "POKEMON_TYPE_GHOST",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "NIGHT_SHADE",
+        "type": "POKEMON_TYPE_GHOST",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "IRON_TAIL_FAST",
+        "type": "POKEMON_TYPE_STEEL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "GYRO_BALL",
+        "type": "POKEMON_TYPE_STEEL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "HEAVY_SLAM",
+        "type": "POKEMON_TYPE_STEEL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FIRE_SPIN_FAST",
+        "type": "POKEMON_TYPE_FIRE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "OVERHEAT",
+        "type": "POKEMON_TYPE_FIRE",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "BULLET_SEED_FAST",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "GRASS_KNOT",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ENERGY_BALL",
+        "type": "POKEMON_TYPE_GRASS",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "EXTRASENSORY_FAST",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FUTURESIGHT",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "MIRROR_COAT",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "OUTRAGE",
+        "type": "POKEMON_TYPE_DRAGON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SNARL_FAST",
+        "type": "POKEMON_TYPE_DARK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "CRUNCH",
+        "type": "POKEMON_TYPE_DARK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "FOUL_PLAY",
+        "type": "POKEMON_TYPE_DARK",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "HIDDEN_POWER_FAST",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "TAKE_DOWN_FAST",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "WATERFALL_FAST",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "SURF",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DRACO_METEOR",
+        "type": "POKEMON_TYPE_DRAGON",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "DOOM_DESIRE",
+        "type": "POKEMON_TYPE_STEEL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "YAWN_FAST",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PSYCHO_BOOST",
+        "type": "POKEMON_TYPE_PSYCHIC",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "ORIGIN_PULSE",
+        "type": "POKEMON_TYPE_WATER",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PRECIPICE_BLADES",
+        "type": "POKEMON_TYPE_GROUND",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    },
+    {
+        "name": "PRESENT_FAST",
+        "type": "POKEMON_TYPE_NORMAL",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null
+    }
+]
