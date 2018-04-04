@@ -1,6 +1,6 @@
 [
     {
-        "name": "Bug",
+        "name": "bug",
         "name_german": null,
         "damage": [
             {
@@ -76,10 +76,10 @@
                 "attackScalar": 0.714
             }
         ],
-        "color": "Bug"
+        "color": "bug"
     },
     {
-        "name": "Dark",
+        "name": "dark",
         "name_german": null,
         "damage": [
             {
@@ -155,10 +155,10 @@
                 "attackScalar": 0.714
             }
         ],
-        "color": "Dark"
+        "color": "dark"
     },
     {
-        "name": "Dragon",
+        "name": "dragon",
         "name_german": null,
         "damage": [
             {
@@ -234,10 +234,10 @@
                 "attackScalar": 0.51
             }
         ],
-        "color": "Dragon"
+        "color": "dragon"
     },
     {
-        "name": "Electric",
+        "name": "electric",
         "name_german": null,
         "damage": [
             {
@@ -313,10 +313,10 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Electric"
+        "color": "electric"
     },
     {
-        "name": "Fairy",
+        "name": "fairy",
         "name_german": null,
         "damage": [
             {
@@ -392,10 +392,10 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Fairy"
+        "color": "fairy"
     },
     {
-        "name": "Fighting",
+        "name": "fighting",
         "name_german": null,
         "damage": [
             {
@@ -471,10 +471,10 @@
                 "attackScalar": 0.714
             }
         ],
-        "color": "Fighting"
+        "color": "fighting"
     },
     {
-        "name": "Fire",
+        "name": "fire",
         "name_german": null,
         "damage": [
             {
@@ -550,10 +550,10 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Fire"
+        "color": "fire"
     },
     {
-        "name": "Flying",
+        "name": "flying",
         "name_german": null,
         "damage": [
             {
@@ -629,10 +629,10 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Flying"
+        "color": "flying"
     },
     {
-        "name": "Ghost",
+        "name": "ghost",
         "name_german": null,
         "damage": [
             {
@@ -708,10 +708,10 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Ghost"
+        "color": "ghost"
     },
     {
-        "name": "Grass",
+        "name": "grass",
         "name_german": null,
         "damage": [
             {
@@ -787,10 +787,10 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Grass"
+        "color": "grass"
     },
     {
-        "name": "Ground",
+        "name": "ground",
         "name_german": null,
         "damage": [
             {
@@ -866,10 +866,10 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Ground"
+        "color": "ground"
     },
     {
-        "name": "Ice",
+        "name": "ice",
         "name_german": null,
         "damage": [
             {
@@ -945,10 +945,10 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Ice"
+        "color": "ice"
     },
     {
-        "name": "Normal",
+        "name": "normal",
         "name_german": null,
         "damage": [
             {
@@ -1024,10 +1024,10 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Normal"
+        "color": "normal"
     },
     {
-        "name": "Poison",
+        "name": "poison",
         "name_german": null,
         "damage": [
             {
@@ -1103,10 +1103,10 @@
                 "attackScalar": 1.4
             }
         ],
-        "color": "Poison"
+        "color": "poison"
     },
     {
-        "name": "Psychic",
+        "name": "psychic",
         "name_german": null,
         "damage": [
             {
@@ -1182,10 +1182,10 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Psychic"
+        "color": "psychic"
     },
     {
-        "name": "Rock",
+        "name": "rock",
         "name_german": null,
         "damage": [
             {
@@ -1261,10 +1261,10 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Rock"
+        "color": "rock"
     },
     {
-        "name": "Steel",
+        "name": "steel",
         "name_german": null,
         "damage": [
             {
@@ -1340,10 +1340,10 @@
                 "attackScalar": 1.4
             }
         ],
-        "color": "Steel"
+        "color": "steel"
     },
     {
-        "name": "Water",
+        "name": "water",
         "name_german": null,
         "damage": [
             {
@@ -1419,6 +1419,6 @@
                 "attackScalar": 1
             }
         ],
-        "color": "Water"
+        "color": "water"
     }
 ]

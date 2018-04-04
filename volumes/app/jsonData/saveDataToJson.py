@@ -48,7 +48,10 @@ class PokemonDataToJson:
             number = pokemon['dex']
             if index > 0:
                 if number == pokemon_rest_data[index - 1]['number']:
-                    # TODO: Find a solution for pokemon with multiple entries like castform and deoxys
+                    """
+                    TODO: Find a solution for pokemon with multiple entries like castform and
+                    deoxys
+                    """
                     continue
 
             rest_pokemon = self.extract_object_from_data(pokemon, 'pokemon')
@@ -87,20 +90,23 @@ class PokemonDataToJson:
             if value is None:
                 rest_data[key] = None
                 continue
-            split_value = value.split('.')
+            split_value: list = value.split('.')
             rest_data[key] = self.safe_get_dict_value(data, split_value[0])
             # if value is in sublist, extract it
             if len(split_value) > 0:
                 for i in range(1, len(split_value), 1):
                     # if value consists of multiple values, store them as list of values
                     if isinstance(rest_data[key], list):
-                        print('list')
-                        rest_data[key] = [sub_value[split_value[len(split_value) - 1]] for
-                                             sub_value in rest_data[key]]
+                        rest_data[key] = [self.extract_sub_value(sub_value, split_value) for
+                                          sub_value in rest_data[key]]
                     else:
-                        rest_data[key] = self.safe_get_dict_value(rest_data[key],
-                                                                     split_value[i])
-        return rest_data
+                        rest_data[key] = self.safe_get_dict_value(rest_data[key], split_value[i])
+        return self.clean_data(rest_data)
+
+    @staticmethod
+    def extract_sub_value(sub_value, split_value):
+        value = sub_value[split_value.copy().pop()]
+        return value
 
     @staticmethod
     def get_type_colors():
@@ -114,4 +120,28 @@ class PokemonDataToJson:
             if key in dictionary:
                 return dictionary[key]
         return None
+
+    def clean_data(self, dictionary):
+        for key in dictionary:
+            value = dictionary[key]
+            if isinstance(value, str):
+                value = self.clean_data_str(value)
+            elif isinstance(value, list):
+                for index, data in enumerate(value):
+                    if isinstance(data, str):
+                        value[index] = self.clean_data_str(data)
+            dictionary[key] = value
+
+        return dictionary
+
+    def clean_data_str(self, value):
+        # clean prefixes from value string
+        for data_type in self.data_types:
+            value = value.replace(data_type.upper(), '')
+        value = value.lstrip('_')       # clean left over underscores of prefixes
+        value = value.lower()           # make it lowercase to prevent errors
+        value = value.replace('_', ' ')  # replace underscores for better readability
+        return value
+
+
 PokemonDataToJson()

@@ -10,7 +10,7 @@
     "rarity": "rarity.id",
     "egg_distance": "kmBuddyDistance",
     "types": "types.id",
-    "charge_move": "cinematicMoves.id",
+    "charge_moves": "cinematicMoves.id",
     "quick_moves": "quickMoves.id"
   },
   "move": {
@@ -19,7 +19,8 @@
     "damage": "",
     "energy": "",
     "dps": "",
-    "legacy": ""
+    "legacy": "",
+    "class": ""
   },
   "type": {
     "name": "name",
