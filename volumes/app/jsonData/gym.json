@@ -1,0 +1,3327 @@
+[
+    {
+        "poi_id": 96351,
+        "name": "wasserharfe",
+        "latitude": 47.9025,
+        "longitude": 8.108131,
+        "type": "gym"
+    },
+    {
+        "poi_id": 96209,
+        "name": "wasser haus im nirgendwo",
+        "latitude": 47.817928,
+        "longitude": 7.656245,
+        "type": "gym"
+    },
+    {
+        "poi_id": 96152,
+        "name": "traubens\u00e4ule",
+        "latitude": 47.811638,
+        "longitude": 7.611771,
+        "type": "gym"
+    },
+    {
+        "poi_id": 96054,
+        "name": "denkmal f\u00fcr alfred d\u00f6blin.",
+        "latitude": 48.11565,
+        "longitude": 7.86554,
+        "type": "gym"
+    },
+    {
+        "poi_id": 95684,
+        "name": "terti\u00e4res k\u00fcstenkonglomerat",
+        "latitude": 47.818153,
+        "longitude": 7.675481,
+        "type": "gym"
+    },
+    {
+        "poi_id": 94933,
+        "name": "zehntscheuer teningen",
+        "latitude": 48.126083,
+        "longitude": 7.80575,
+        "type": "gym"
+    },
+    {
+        "poi_id": 94862,
+        "name": "auf zur burg...",
+        "latitude": 47.814785,
+        "longitude": 7.680622,
+        "type": "gym"
+    },
+    {
+        "poi_id": 94831,
+        "name": "st\u00fchle f\u00fcr riesen",
+        "latitude": 48.110935,
+        "longitude": 7.84827,
+        "type": "gym"
+    },
+    {
+        "poi_id": 94769,
+        "name": "1.station des kreuzweges nach st.ottilien",
+        "latitude": 47.993523,
+        "longitude": 7.890137,
+        "type": "gym"
+    },
+    {
+        "poi_id": 94665,
+        "name": "weiherschloss emmendingen",
+        "latitude": 48.117268,
+        "longitude": 7.864989,
+        "type": "gym"
+    },
+    {
+        "poi_id": 94649,
+        "name": "uralter felsen-moos-brunnen",
+        "latitude": 48.114799,
+        "longitude": 7.867533,
+        "type": "gym"
+    },
+    {
+        "poi_id": 94231,
+        "name": "quarzriff",
+        "latitude": 47.817535,
+        "longitude": 7.684504,
+        "type": "gym"
+    },
+    {
+        "poi_id": 94208,
+        "name": "dorfbrunnen 2 zunzingen",
+        "latitude": 47.821129,
+        "longitude": 7.650763,
+        "type": "gym"
+    },
+    {
+        "poi_id": 94205,
+        "name": "elzhalle",
+        "latitude": 48.098198,
+        "longitude": 7.859177,
+        "type": "gym"
+    },
+    {
+        "poi_id": 94093,
+        "name": "rathaus von eichstetten",
+        "latitude": 48.094059,
+        "longitude": 7.745533,
+        "type": "gym"
+    },
+    {
+        "poi_id": 94075,
+        "name": "the library",
+        "latitude": 48.071812,
+        "longitude": 7.721971,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93982,
+        "name": "boetzingen rebstock brunnen",
+        "latitude": 48.073959,
+        "longitude": 7.710344,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93962,
+        "name": "boetzingen wasserkreislauf",
+        "latitude": 48.058502,
+        "longitude": 7.710338,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93949,
+        "name": "der zeitgeist",
+        "latitude": 48.071316,
+        "longitude": 7.718517,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93948,
+        "name": "meeting point",
+        "latitude": 48.075928,
+        "longitude": 7.726772,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93947,
+        "name": "the iron sculpture near zimmerlin",
+        "latitude": 48.062153,
+        "longitude": 7.721203,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93946,
+        "name": "jesuskreuz",
+        "latitude": 48.073929,
+        "longitude": 7.71369,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93945,
+        "name": "burgruine landeck",
+        "latitude": 48.149876,
+        "longitude": 7.840482,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93938,
+        "name": "eichstetter grillplatz",
+        "latitude": 48.107197,
+        "longitude": 7.709212,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93929,
+        "name": "grenzstein bahlingen",
+        "latitude": 48.111622,
+        "longitude": 7.699564,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93928,
+        "name": "aussichts plattform",
+        "latitude": 48.107899,
+        "longitude": 7.700183,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93923,
+        "name": "grenzstein",
+        "latitude": 48.11161,
+        "longitude": 7.696796,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93920,
+        "name": "der stockbrunnen",
+        "latitude": 48.077068,
+        "longitude": 7.725557,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93858,
+        "name": "unterer buntsandsteinbruch",
+        "latitude": 48.169373,
+        "longitude": 7.838596,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93846,
+        "name": "bahnhof eichstetten",
+        "latitude": 48.093018,
+        "longitude": 7.748081,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93809,
+        "name": "ruine auf der eichelspitze",
+        "latitude": 48.091732,
+        "longitude": 7.695765,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93808,
+        "name": "schutzh\u00fctte haselschacher buck",
+        "latitude": 48.09853,
+        "longitude": 7.685277,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93666,
+        "name": "weingut brodbeck",
+        "latitude": 48.06974,
+        "longitude": 7.716682,
+        "type": "gym"
+    },
+    {
+        "poi_id": 93665,
+        "name": "walderlebnispfad baumchronologikum",
+        "latitude": 48.061874,
+        "longitude": 7.710706,
+        "type": "gym"
+    },
+    {
+        "poi_id": 91000,
+        "name": "red tubes",
+        "latitude": 47.978371,
+        "longitude": 7.814565,
+        "type": "gym"
+    },
+    {
+        "poi_id": 90518,
+        "name": "dinosaur jr.",
+        "latitude": 47.996269,
+        "longitude": 7.820276,
+        "type": "gym"
+    },
+    {
+        "poi_id": 90290,
+        "name": "beat man haslach",
+        "latitude": 47.991146,
+        "longitude": 7.826742,
+        "type": "gym"
+    },
+    {
+        "poi_id": 88206,
+        "name": "big ice cream",
+        "latitude": 48.022236,
+        "longitude": 7.857996,
+        "type": "gym"
+    },
+    {
+        "poi_id": 88171,
+        "name": "wei\u00dfer storch",
+        "latitude": 48.008129,
+        "longitude": 7.834734,
+        "type": "gym"
+    },
+    {
+        "poi_id": 87930,
+        "name": "m\u00fcnster brunnen",
+        "latitude": 47.995937,
+        "longitude": 7.852346,
+        "type": "gym"
+    },
+    {
+        "poi_id": 87447,
+        "name": "skulptur am hbf",
+        "latitude": 47.996109,
+        "longitude": 7.841564,
+        "type": "gym"
+    },
+    {
+        "poi_id": 87090,
+        "name": "landratsamt freiburg im breisgau",
+        "latitude": 47.99942,
+        "longitude": 7.857202,
+        "type": "gym"
+    },
+    {
+        "poi_id": 86845,
+        "name": "brunnen am landratsamt",
+        "latitude": 47.999084,
+        "longitude": 7.857218,
+        "type": "gym"
+    },
+    {
+        "poi_id": 86804,
+        "name": "noch ein brunnen",
+        "latitude": 47.990711,
+        "longitude": 7.852076,
+        "type": "gym"
+    },
+    {
+        "poi_id": 86723,
+        "name": "froschwand",
+        "latitude": 48.071171,
+        "longitude": 7.890258,
+        "type": "gym"
+    },
+    {
+        "poi_id": 86582,
+        "name": "europabrunnen",
+        "latitude": 48.070721,
+        "longitude": 7.890377,
+        "type": "gym"
+    },
+    {
+        "poi_id": 86325,
+        "name": "schlossberg-brunnen",
+        "latitude": 47.95887,
+        "longitude": 7.831894,
+        "type": "gym"
+    },
+    {
+        "poi_id": 85843,
+        "name": "haltestelle heinrich-von-stephan str.",
+        "latitude": 47.986217,
+        "longitude": 7.836598,
+        "type": "gym"
+    },
+    {
+        "poi_id": 85407,
+        "name": "martinstor",
+        "latitude": 47.993782,
+        "longitude": 7.84902,
+        "type": "gym"
+    },
+    {
+        "poi_id": 85378,
+        "name": "paduaallee station",
+        "latitude": 48.013603,
+        "longitude": 7.807417,
+        "type": "gym"
+    },
+    {
+        "poi_id": 85342,
+        "name": "wooden powercube",
+        "latitude": 48.002228,
+        "longitude": 7.832437,
+        "type": "gym"
+    },
+    {
+        "poi_id": 85341,
+        "name": "denkmal badisches infanterie regiment",
+        "latitude": 47.998821,
+        "longitude": 7.857589,
+        "type": "gym"
+    },
+    {
+        "poi_id": 84977,
+        "name": "goldener anker",
+        "latitude": 47.988644,
+        "longitude": 7.851441,
+        "type": "gym"
+    },
+    {
+        "poi_id": 84854,
+        "name": "l\u00f6wenbrauerei-turm",
+        "latitude": 47.995544,
+        "longitude": 7.835816,
+        "type": "gym"
+    },
+    {
+        "poi_id": 84803,
+        "name": "frogs can't fly painting",
+        "latitude": 47.980431,
+        "longitude": 7.822087,
+        "type": "gym"
+    },
+    {
+        "poi_id": 84141,
+        "name": "weinlehrpfad vertiko-erziehung",
+        "latitude": 48.087692,
+        "longitude": 7.914463,
+        "type": "gym"
+    },
+    {
+        "poi_id": 84106,
+        "name": "fl\u00f6tist relief",
+        "latitude": 47.994308,
+        "longitude": 7.828408,
+        "type": "gym"
+    },
+    {
+        "poi_id": 84062,
+        "name": "north hykeham",
+        "latitude": 48.069904,
+        "longitude": 7.883312,
+        "type": "gym"
+    },
+    {
+        "poi_id": 83975,
+        "name": "gaskugel",
+        "latitude": 48.007484,
+        "longitude": 7.806024,
+        "type": "gym"
+    },
+    {
+        "poi_id": 83530,
+        "name": "bahnhof denzlingen",
+        "latitude": 48.068596,
+        "longitude": 7.881589,
+        "type": "gym"
+    },
+    {
+        "poi_id": 83394,
+        "name": "j\u00fcdischer friedhof",
+        "latitude": 48.01244,
+        "longitude": 7.828646,
+        "type": "gym"
+    },
+    {
+        "poi_id": 81780,
+        "name": "gutleutkreis 1",
+        "latitude": 47.988518,
+        "longitude": 7.820795,
+        "type": "gym"
+    },
+    {
+        "poi_id": 81616,
+        "name": "turm des alten kepler gymnasium",
+        "latitude": 48.002701,
+        "longitude": 7.854842,
+        "type": "gym"
+    },
+    {
+        "poi_id": 81587,
+        "name": "weinlehrpfad m\u00fcller thurgau",
+        "latitude": 48.08857,
+        "longitude": 7.919301,
+        "type": "gym"
+    },
+    {
+        "poi_id": 81052,
+        "name": "wind helix",
+        "latitude": 48.001305,
+        "longitude": 7.858999,
+        "type": "gym"
+    },
+    {
+        "poi_id": 80999,
+        "name": "life",
+        "latitude": 48.109695,
+        "longitude": 7.85404,
+        "type": "gym"
+    },
+    {
+        "poi_id": 80981,
+        "name": "vogelhaus stadtpark",
+        "latitude": 47.997719,
+        "longitude": 7.858309,
+        "type": "gym"
+    },
+    {
+        "poi_id": 80878,
+        "name": "historisches kaufhaus",
+        "latitude": 47.9953,
+        "longitude": 7.852241,
+        "type": "gym"
+    },
+    {
+        "poi_id": 80688,
+        "name": "wegkreuz breitmatten",
+        "latitude": 47.968842,
+        "longitude": 7.849303,
+        "type": "gym"
+    },
+    {
+        "poi_id": 80386,
+        "name": "marios traum (r\u00f6hren und brunnen)",
+        "latitude": 48.02813,
+        "longitude": 7.845803,
+        "type": "gym"
+    },
+    {
+        "poi_id": 80093,
+        "name": "sonnenuhr gasthaus zum stahl",
+        "latitude": 47.992119,
+        "longitude": 7.873236,
+        "type": "gym"
+    },
+    {
+        "poi_id": 80021,
+        "name": "messe freiburg",
+        "latitude": 48.01659,
+        "longitude": 7.839293,
+        "type": "gym"
+    },
+    {
+        "poi_id": 79302,
+        "name": "schwabentor",
+        "latitude": 47.992874,
+        "longitude": 7.854334,
+        "type": "gym"
+    },
+    {
+        "poi_id": 79184,
+        "name": "emilie",
+        "latitude": 47.989468,
+        "longitude": 7.86018,
+        "type": "gym"
+    },
+    {
+        "poi_id": 79066,
+        "name": "affe",
+        "latitude": 47.958729,
+        "longitude": 7.835896,
+        "type": "gym"
+    },
+    {
+        "poi_id": 78823,
+        "name": "dreisamstadion",
+        "latitude": 47.989845,
+        "longitude": 7.893793,
+        "type": "gym"
+    },
+    {
+        "poi_id": 78326,
+        "name": "spielplatz am dichterweg",
+        "latitude": 48.073299,
+        "longitude": 7.892443,
+        "type": "gym"
+    },
+    {
+        "poi_id": 78271,
+        "name": "wandkatalysator",
+        "latitude": 47.997795,
+        "longitude": 7.793984,
+        "type": "gym"
+    },
+    {
+        "poi_id": 78119,
+        "name": "sonne planetenweg",
+        "latitude": 47.987637,
+        "longitude": 7.898437,
+        "type": "gym"
+    },
+    {
+        "poi_id": 77068,
+        "name": "weinlehrpfad grauer burgunder",
+        "latitude": 48.090576,
+        "longitude": 7.920824,
+        "type": "gym"
+    },
+    {
+        "poi_id": 76875,
+        "name": "skulptur vor dem bauamt",
+        "latitude": 48.001591,
+        "longitude": 7.861255,
+        "type": "gym"
+    },
+    {
+        "poi_id": 76869,
+        "name": "jugendstil",
+        "latitude": 47.999062,
+        "longitude": 7.83688,
+        "type": "gym"
+    },
+    {
+        "poi_id": 76649,
+        "name": "uni bibliothek",
+        "latitude": 47.9939,
+        "longitude": 7.845251,
+        "type": "gym"
+    },
+    {
+        "poi_id": 76564,
+        "name": "hbf freiburg",
+        "latitude": 47.996826,
+        "longitude": 7.841088,
+        "type": "gym"
+    },
+    {
+        "poi_id": 75686,
+        "name": "katholische kirche v\u00f6rstetten",
+        "latitude": 48.062714,
+        "longitude": 7.84329,
+        "type": "gym"
+    },
+    {
+        "poi_id": 75653,
+        "name": "waldorfschule",
+        "latitude": 47.975754,
+        "longitude": 7.815395,
+        "type": "gym"
+    },
+    {
+        "poi_id": 75474,
+        "name": "zentrum oberwiehre",
+        "latitude": 47.98827,
+        "longitude": 7.869321,
+        "type": "gym"
+    },
+    {
+        "poi_id": 73975,
+        "name": "cow statue",
+        "latitude": 47.985134,
+        "longitude": 7.851844,
+        "type": "gym"
+    },
+    {
+        "poi_id": 73911,
+        "name": "albertus magnus an der wand",
+        "latitude": 47.997566,
+        "longitude": 7.848679,
+        "type": "gym"
+    },
+    {
+        "poi_id": 73856,
+        "name": "br\u00fccke des todes",
+        "latitude": 48.008957,
+        "longitude": 7.80391,
+        "type": "gym"
+    },
+    {
+        "poi_id": 73764,
+        "name": "soccer sculpture",
+        "latitude": 47.986145,
+        "longitude": 7.815351,
+        "type": "gym"
+    },
+    {
+        "poi_id": 73685,
+        "name": "georgskirche",
+        "latitude": 48.066715,
+        "longitude": 7.882522,
+        "type": "gym"
+    },
+    {
+        "poi_id": 73507,
+        "name": "polizei",
+        "latitude": 48.001099,
+        "longitude": 7.838177,
+        "type": "gym"
+    },
+    {
+        "poi_id": 73112,
+        "name": "bahnhof teningen-mundingen",
+        "latitude": 48.129303,
+        "longitude": 7.823565,
+        "type": "gym"
+    },
+    {
+        "poi_id": 72541,
+        "name": "seeb\u00fchne",
+        "latitude": 48.012234,
+        "longitude": 7.814854,
+        "type": "gym"
+    },
+    {
+        "poi_id": 72475,
+        "name": "joseph brandel brunnen",
+        "latitude": 47.985115,
+        "longitude": 7.814738,
+        "type": "gym"
+    },
+    {
+        "poi_id": 72451,
+        "name": "weed smokers tower gufi",
+        "latitude": 48.045486,
+        "longitude": 7.874331,
+        "type": "gym"
+    },
+    {
+        "poi_id": 72371,
+        "name": "turtles in ground",
+        "latitude": 48.010761,
+        "longitude": 7.829971,
+        "type": "gym"
+    },
+    {
+        "poi_id": 71752,
+        "name": "schlossberg cross",
+        "latitude": 47.994854,
+        "longitude": 7.858673,
+        "type": "gym"
+    },
+    {
+        "poi_id": 71720,
+        "name": "650 jahr brunnen",
+        "latitude": 48.102047,
+        "longitude": 7.878712,
+        "type": "gym"
+    },
+    {
+        "poi_id": 71644,
+        "name": "brunnen am scherrer platz",
+        "latitude": 47.990356,
+        "longitude": 7.8198,
+        "type": "gym"
+    },
+    {
+        "poi_id": 71482,
+        "name": "lions",
+        "latitude": 48.015583,
+        "longitude": 7.855049,
+        "type": "gym"
+    },
+    {
+        "poi_id": 71330,
+        "name": "storchenskulptur",
+        "latitude": 48.067345,
+        "longitude": 7.882411,
+        "type": "gym"
+    },
+    {
+        "poi_id": 71154,
+        "name": "bundschuh eiche",
+        "latitude": 48.017391,
+        "longitude": 7.804646,
+        "type": "gym"
+    },
+    {
+        "poi_id": 71104,
+        "name": "alte g\u00fcterbahnhof halle 9",
+        "latitude": 48.014065,
+        "longitude": 7.844457,
+        "type": "gym"
+    },
+    {
+        "poi_id": 69288,
+        "name": "bahnhof buchholz (baden)",
+        "latitude": 48.083458,
+        "longitude": 7.915987,
+        "type": "gym"
+    },
+    {
+        "poi_id": 69110,
+        "name": "casino k\u00f6nig",
+        "latitude": 47.988758,
+        "longitude": 7.866884,
+        "type": "gym"
+    },
+    {
+        "poi_id": 68885,
+        "name": "wilhelm-eschle-platz",
+        "latitude": 47.987522,
+        "longitude": 7.865518,
+        "type": "gym"
+    },
+    {
+        "poi_id": 68135,
+        "name": "johanneskirche",
+        "latitude": 47.988869,
+        "longitude": 7.847594,
+        "type": "gym"
+    },
+    {
+        "poi_id": 68099,
+        "name": "schulhaus",
+        "latitude": 47.979729,
+        "longitude": 7.895465,
+        "type": "gym"
+    },
+    {
+        "poi_id": 68074,
+        "name": "flight 13",
+        "latitude": 48.009808,
+        "longitude": 7.854075,
+        "type": "gym"
+    },
+    {
+        "poi_id": 68058,
+        "name": "dreisambr\u00fccke",
+        "latitude": 47.993683,
+        "longitude": 7.83246,
+        "type": "gym"
+    },
+    {
+        "poi_id": 67939,
+        "name": "krone",
+        "latitude": 48.070354,
+        "longitude": 7.871104,
+        "type": "gym"
+    },
+    {
+        "poi_id": 67774,
+        "name": "h\u00f6llentor",
+        "latitude": 48.012814,
+        "longitude": 7.819897,
+        "type": "gym"
+    },
+    {
+        "poi_id": 67671,
+        "name": "wasserspucker am waldsee",
+        "latitude": 47.982437,
+        "longitude": 7.875828,
+        "type": "gym"
+    },
+    {
+        "poi_id": 67581,
+        "name": "der weisse turm",
+        "latitude": 48.01281,
+        "longitude": 7.821086,
+        "type": "gym"
+    },
+    {
+        "poi_id": 66633,
+        "name": "jugendtreff",
+        "latitude": 48.014614,
+        "longitude": 7.823373,
+        "type": "gym"
+    },
+    {
+        "poi_id": 66420,
+        "name": "wasserrad wenzinger schulen",
+        "latitude": 48.013458,
+        "longitude": 7.824549,
+        "type": "gym"
+    },
+    {
+        "poi_id": 66070,
+        "name": "holbeinpferd",
+        "latitude": 47.979664,
+        "longitude": 7.847677,
+        "type": "gym"
+    },
+    {
+        "poi_id": 65781,
+        "name": "spielplatz kandelsstra\u00dfe",
+        "latitude": 48.067009,
+        "longitude": 7.890706,
+        "type": "gym"
+    },
+    {
+        "poi_id": 65755,
+        "name": "sternenkugel",
+        "latitude": 48.005589,
+        "longitude": 7.835541,
+        "type": "gym"
+    },
+    {
+        "poi_id": 65270,
+        "name": "kunst im treppenhaus",
+        "latitude": 48.004597,
+        "longitude": 7.83432,
+        "type": "gym"
+    },
+    {
+        "poi_id": 65218,
+        "name": "modern art bauhaus style",
+        "latitude": 47.983139,
+        "longitude": 7.820202,
+        "type": "gym"
+    },
+    {
+        "poi_id": 65044,
+        "name": "wei\u00dfer ritter",
+        "latitude": 48.120071,
+        "longitude": 7.851142,
+        "type": "gym"
+    },
+    {
+        "poi_id": 64442,
+        "name": "\u00f6kologische anlaufstelle",
+        "latitude": 47.995911,
+        "longitude": 7.813467,
+        "type": "gym"
+    },
+    {
+        "poi_id": 64173,
+        "name": "stadttor emmendingen",
+        "latitude": 48.121799,
+        "longitude": 7.847992,
+        "type": "gym"
+    },
+    {
+        "poi_id": 64138,
+        "name": "dragon's egg",
+        "latitude": 48.023148,
+        "longitude": 7.858426,
+        "type": "gym"
+    },
+    {
+        "poi_id": 63997,
+        "name": "auerhahn",
+        "latitude": 47.981495,
+        "longitude": 7.849761,
+        "type": "gym"
+    },
+    {
+        "poi_id": 63876,
+        "name": "niederemmendingen",
+        "latitude": 48.123108,
+        "longitude": 7.841615,
+        "type": "gym"
+    },
+    {
+        "poi_id": 63722,
+        "name": "pizzeria pinocchio",
+        "latitude": 47.99445,
+        "longitude": 7.819344,
+        "type": "gym"
+    },
+    {
+        "poi_id": 63711,
+        "name": "schallstadt bahnhof",
+        "latitude": 47.95615,
+        "longitude": 7.754115,
+        "type": "gym"
+    },
+    {
+        "poi_id": 63335,
+        "name": "stahlskulptur am j\u00e4gerh\u00e4usle",
+        "latitude": 48.007336,
+        "longitude": 7.870382,
+        "type": "gym"
+    },
+    {
+        "poi_id": 62728,
+        "name": "eiserner w\u00e4chter",
+        "latitude": 47.831219,
+        "longitude": 7.617173,
+        "type": "gym"
+    },
+    {
+        "poi_id": 62243,
+        "name": "kirche rieselfeld",
+        "latitude": 47.999729,
+        "longitude": 7.791086,
+        "type": "gym"
+    },
+    {
+        "poi_id": 62038,
+        "name": "tennenbacher platz",
+        "latitude": 48.005947,
+        "longitude": 7.847041,
+        "type": "gym"
+    },
+    {
+        "poi_id": 61967,
+        "name": "eichhalde weinbauer",
+        "latitude": 48.006603,
+        "longitude": 7.864816,
+        "type": "gym"
+    },
+    {
+        "poi_id": 61773,
+        "name": "bahnhof hugstetten",
+        "latitude": 48.048092,
+        "longitude": 7.784437,
+        "type": "gym"
+    },
+    {
+        "poi_id": 61250,
+        "name": "oktagon",
+        "latitude": 47.998459,
+        "longitude": 7.823246,
+        "type": "gym"
+    },
+    {
+        "poi_id": 61246,
+        "name": "schnewlindrache",
+        "latitude": 47.991714,
+        "longitude": 7.838354,
+        "type": "gym"
+    },
+    {
+        "poi_id": 61234,
+        "name": "alien graffiti",
+        "latitude": 48.016628,
+        "longitude": 7.8594,
+        "type": "gym"
+    },
+    {
+        "poi_id": 61165,
+        "name": "r\u00f6hrenturm seepark",
+        "latitude": 48.014103,
+        "longitude": 7.816008,
+        "type": "gym"
+    },
+    {
+        "poi_id": 61082,
+        "name": "wiwilli br\u00fccke",
+        "latitude": 47.995716,
+        "longitude": 7.840902,
+        "type": "gym"
+    },
+    {
+        "poi_id": 60929,
+        "name": "riesensteckdose",
+        "latitude": 48.001026,
+        "longitude": 7.84973,
+        "type": "gym"
+    },
+    {
+        "poi_id": 60670,
+        "name": "schnegge",
+        "latitude": 48.043644,
+        "longitude": 7.87097,
+        "type": "gym"
+    },
+    {
+        "poi_id": 59806,
+        "name": "melanchthonkirche",
+        "latitude": 47.992088,
+        "longitude": 7.817412,
+        "type": "gym"
+    },
+    {
+        "poi_id": 59620,
+        "name": "alt haslach 1910",
+        "latitude": 47.993603,
+        "longitude": 7.819792,
+        "type": "gym"
+    },
+    {
+        "poi_id": 59223,
+        "name": "betty boob",
+        "latitude": 48.073425,
+        "longitude": 7.899819,
+        "type": "gym"
+    },
+    {
+        "poi_id": 59175,
+        "name": "dietenbeach volleyballfeld",
+        "latitude": 48.000629,
+        "longitude": 7.80362,
+        "type": "gym"
+    },
+    {
+        "poi_id": 59160,
+        "name": "metal apple",
+        "latitude": 48.105221,
+        "longitude": 7.866187,
+        "type": "gym"
+    },
+    {
+        "poi_id": 59146,
+        "name": "kreuz alemannenstra\u00dfe",
+        "latitude": 47.977425,
+        "longitude": 7.908126,
+        "type": "gym"
+    },
+    {
+        "poi_id": 59134,
+        "name": "spielplatz",
+        "latitude": 48.103233,
+        "longitude": 7.867361,
+        "type": "gym"
+    },
+    {
+        "poi_id": 59011,
+        "name": "pagode",
+        "latitude": 48.01305,
+        "longitude": 7.813096,
+        "type": "gym"
+    },
+    {
+        "poi_id": 58969,
+        "name": "kirche gundelfingen",
+        "latitude": 48.045036,
+        "longitude": 7.866596,
+        "type": "gym"
+    },
+    {
+        "poi_id": 58846,
+        "name": "baumkreuz",
+        "latitude": 48.05365,
+        "longitude": 7.793012,
+        "type": "gym"
+    },
+    {
+        "poi_id": 58761,
+        "name": "zum fuchs",
+        "latitude": 48.121742,
+        "longitude": 7.848257,
+        "type": "gym"
+    },
+    {
+        "poi_id": 58631,
+        "name": "figur am rosengarten",
+        "latitude": 48.006977,
+        "longitude": 7.824757,
+        "type": "gym"
+    },
+    {
+        "poi_id": 58544,
+        "name": "stein weltkugel",
+        "latitude": 48.006882,
+        "longitude": 7.821156,
+        "type": "gym"
+    },
+    {
+        "poi_id": 58404,
+        "name": "graffiti halfpipe",
+        "latitude": 48.074177,
+        "longitude": 7.902989,
+        "type": "gym"
+    },
+    {
+        "poi_id": 58382,
+        "name": "feldkreuz - quell des lebens",
+        "latitude": 48.055782,
+        "longitude": 7.788572,
+        "type": "gym"
+    },
+    {
+        "poi_id": 58215,
+        "name": "schloss, emmendingen",
+        "latitude": 48.121555,
+        "longitude": 7.849717,
+        "type": "gym"
+    },
+    {
+        "poi_id": 57870,
+        "name": "inri an endhaltestelle l27",
+        "latitude": 48.011158,
+        "longitude": 7.863188,
+        "type": "gym"
+    },
+    {
+        "poi_id": 57680,
+        "name": "holzenten am see",
+        "latitude": 48.013565,
+        "longitude": 7.813727,
+        "type": "gym"
+    },
+    {
+        "poi_id": 57606,
+        "name": "maria hilf kirche",
+        "latitude": 47.987904,
+        "longitude": 7.864498,
+        "type": "gym"
+    },
+    {
+        "poi_id": 57554,
+        "name": "bestattungskapelle hugstetten",
+        "latitude": 48.054825,
+        "longitude": 7.786973,
+        "type": "gym"
+    },
+    {
+        "poi_id": 57224,
+        "name": "am heidach see",
+        "latitude": 48.068195,
+        "longitude": 7.912023,
+        "type": "gym"
+    },
+    {
+        "poi_id": 57192,
+        "name": "spuckende schnecke",
+        "latitude": 48.120754,
+        "longitude": 7.847784,
+        "type": "gym"
+    },
+    {
+        "poi_id": 57001,
+        "name": "hauptfriedhof freiburg",
+        "latitude": 48.007328,
+        "longitude": 7.84523,
+        "type": "gym"
+    },
+    {
+        "poi_id": 56928,
+        "name": "kreuz des evangelischen gemeindezentrums",
+        "latitude": 48.069141,
+        "longitude": 7.90711,
+        "type": "gym"
+    },
+    {
+        "poi_id": 56313,
+        "name": "4 headed fountain",
+        "latitude": 48.006317,
+        "longitude": 7.818108,
+        "type": "gym"
+    },
+    {
+        "poi_id": 56274,
+        "name": "spielplatz am rondell st. cyr",
+        "latitude": 48.067219,
+        "longitude": 7.903768,
+        "type": "gym"
+    },
+    {
+        "poi_id": 56167,
+        "name": "wind skulpturen",
+        "latitude": 47.961586,
+        "longitude": 7.758311,
+        "type": "gym"
+    },
+    {
+        "poi_id": 56108,
+        "name": "kirche st. josef",
+        "latitude": 48.065605,
+        "longitude": 7.887275,
+        "type": "gym"
+    },
+    {
+        "poi_id": 54748,
+        "name": "heart of the city",
+        "latitude": 47.99511,
+        "longitude": 7.84536,
+        "type": "gym"
+    },
+    {
+        "poi_id": 54598,
+        "name": "steinerne schleife",
+        "latitude": 47.979366,
+        "longitude": 7.896299,
+        "type": "gym"
+    },
+    {
+        "poi_id": 54483,
+        "name": "h\u00fcgelsporthalle",
+        "latitude": 48.000423,
+        "longitude": 7.792142,
+        "type": "gym"
+    },
+    {
+        "poi_id": 54296,
+        "name": "pink murale",
+        "latitude": 48.007774,
+        "longitude": 7.854125,
+        "type": "gym"
+    },
+    {
+        "poi_id": 54220,
+        "name": "brunnen gundelfingen",
+        "latitude": 48.04232,
+        "longitude": 7.866645,
+        "type": "gym"
+    },
+    {
+        "poi_id": 53343,
+        "name": "atomkopf affen",
+        "latitude": 48.022488,
+        "longitude": 7.850047,
+        "type": "gym"
+    },
+    {
+        "poi_id": 53302,
+        "name": "haltestelle pressehaus",
+        "latitude": 47.986195,
+        "longitude": 7.829222,
+        "type": "gym"
+    },
+    {
+        "poi_id": 53195,
+        "name": "wetterfahne alte post",
+        "latitude": 47.81255,
+        "longitude": 7.610236,
+        "type": "gym"
+    },
+    {
+        "poi_id": 52726,
+        "name": "kreuz hauptstra\u00dfe",
+        "latitude": 48.007504,
+        "longitude": 7.855374,
+        "type": "gym"
+    },
+    {
+        "poi_id": 52716,
+        "name": "professor dr. schreiber",
+        "latitude": 47.99044,
+        "longitude": 7.848094,
+        "type": "gym"
+    },
+    {
+        "poi_id": 52544,
+        "name": "segelschiff",
+        "latitude": 48.109478,
+        "longitude": 7.860328,
+        "type": "gym"
+    },
+    {
+        "poi_id": 52504,
+        "name": "alter kessel",
+        "latitude": 48.023155,
+        "longitude": 7.85346,
+        "type": "gym"
+    },
+    {
+        "poi_id": 52496,
+        "name": "rehbrunnen",
+        "latitude": 47.967194,
+        "longitude": 7.836647,
+        "type": "gym"
+    },
+    {
+        "poi_id": 51425,
+        "name": "affenbrunnen",
+        "latitude": 47.996712,
+        "longitude": 7.850113,
+        "type": "gym"
+    },
+    {
+        "poi_id": 51247,
+        "name": "h\u00fcterin des wassers",
+        "latitude": 48.039589,
+        "longitude": 7.814233,
+        "type": "gym"
+    },
+    {
+        "poi_id": 51183,
+        "name": "die sch\u00f6nste nebensache der welt",
+        "latitude": 47.988331,
+        "longitude": 7.892052,
+        "type": "gym"
+    },
+    {
+        "poi_id": 51022,
+        "name": "spielplatz herrenw\u00e4ldle",
+        "latitude": 48.033943,
+        "longitude": 7.766233,
+        "type": "gym"
+    },
+    {
+        "poi_id": 50838,
+        "name": "physikalisches institut",
+        "latitude": 48.002316,
+        "longitude": 7.851216,
+        "type": "gym"
+    },
+    {
+        "poi_id": 50548,
+        "name": "st hilarius",
+        "latitude": 47.988483,
+        "longitude": 7.90531,
+        "type": "gym"
+    },
+    {
+        "poi_id": 50293,
+        "name": "brunnen am marktplatz",
+        "latitude": 48.120579,
+        "longitude": 7.849766,
+        "type": "gym"
+    },
+    {
+        "poi_id": 50237,
+        "name": "evangelische stadtkirche",
+        "latitude": 48.121292,
+        "longitude": 7.849221,
+        "type": "gym"
+    },
+    {
+        "poi_id": 49964,
+        "name": "jump & twist",
+        "latitude": 48.012409,
+        "longitude": 7.83454,
+        "type": "gym"
+    },
+    {
+        "poi_id": 49944,
+        "name": "48\u00b0 grad n\u00f6rdliche breite",
+        "latitude": 48.000008,
+        "longitude": 7.853416,
+        "type": "gym"
+    },
+    {
+        "poi_id": 49683,
+        "name": "adler apotheke hugstetten",
+        "latitude": 48.050774,
+        "longitude": 7.782496,
+        "type": "gym"
+    },
+    {
+        "poi_id": 49550,
+        "name": "the machine",
+        "latitude": 47.999641,
+        "longitude": 7.844921,
+        "type": "gym"
+    },
+    {
+        "poi_id": 49500,
+        "name": "big hand sign",
+        "latitude": 47.988205,
+        "longitude": 7.799917,
+        "type": "gym"
+    },
+    {
+        "poi_id": 49431,
+        "name": "gedenkstein",
+        "latitude": 47.988449,
+        "longitude": 7.796019,
+        "type": "gym"
+    },
+    {
+        "poi_id": 49362,
+        "name": "grafitti 2.0",
+        "latitude": 47.98814,
+        "longitude": 7.87425,
+        "type": "gym"
+    },
+    {
+        "poi_id": 49264,
+        "name": "georg elser building",
+        "latitude": 47.975773,
+        "longitude": 7.8216,
+        "type": "gym"
+    },
+    {
+        "poi_id": 48957,
+        "name": "partnerschaft saeule polen/bierun",
+        "latitude": 48.039906,
+        "longitude": 7.865028,
+        "type": "gym"
+    },
+    {
+        "poi_id": 48842,
+        "name": "wegekreuz",
+        "latitude": 47.983147,
+        "longitude": 7.89398,
+        "type": "gym"
+    },
+    {
+        "poi_id": 48734,
+        "name": "s\u00fcden",
+        "latitude": 47.975079,
+        "longitude": 7.825427,
+        "type": "gym"
+    },
+    {
+        "poi_id": 48188,
+        "name": "stone hats",
+        "latitude": 47.993225,
+        "longitude": 7.840468,
+        "type": "gym"
+    },
+    {
+        "poi_id": 48146,
+        "name": "memorial weltkrieg",
+        "latitude": 47.9617,
+        "longitude": 7.765043,
+        "type": "gym"
+    },
+    {
+        "poi_id": 47894,
+        "name": "beautiful fountain",
+        "latitude": 48.005573,
+        "longitude": 7.823108,
+        "type": "gym"
+    },
+    {
+        "poi_id": 47725,
+        "name": "medical a",
+        "latitude": 47.978115,
+        "longitude": 7.815342,
+        "type": "gym"
+    },
+    {
+        "poi_id": 47614,
+        "name": "gesprungene schale",
+        "latitude": 47.974136,
+        "longitude": 7.827934,
+        "type": "gym"
+    },
+    {
+        "poi_id": 47567,
+        "name": "st georgen clock tower",
+        "latitude": 47.979382,
+        "longitude": 7.814093,
+        "type": "gym"
+    },
+    {
+        "poi_id": 47203,
+        "name": "zipper and grapes fountain",
+        "latitude": 47.978889,
+        "longitude": 7.804593,
+        "type": "gym"
+    },
+    {
+        "poi_id": 46928,
+        "name": "gedenkkreuz st. georgen",
+        "latitude": 47.977055,
+        "longitude": 7.797099,
+        "type": "gym"
+    },
+    {
+        "poi_id": 46406,
+        "name": "brunnen vor der kirche st. georgen",
+        "latitude": 47.981026,
+        "longitude": 7.793872,
+        "type": "gym"
+    },
+    {
+        "poi_id": 46296,
+        "name": "fritz",
+        "latitude": 48.019917,
+        "longitude": 7.855486,
+        "type": "gym"
+    },
+    {
+        "poi_id": 46269,
+        "name": "belvedere",
+        "latitude": 48.051003,
+        "longitude": 7.787224,
+        "type": "gym"
+    },
+    {
+        "poi_id": 45636,
+        "name": "graffiti weingarten",
+        "latitude": 47.993382,
+        "longitude": 7.811656,
+        "type": "gym"
+    },
+    {
+        "poi_id": 45632,
+        "name": "entrance to hinterzarten",
+        "latitude": 47.905823,
+        "longitude": 8.105644,
+        "type": "gym"
+    },
+    {
+        "poi_id": 45456,
+        "name": "wasserschl\u00f6ssle",
+        "latitude": 47.983559,
+        "longitude": 7.860134,
+        "type": "gym"
+    },
+    {
+        "poi_id": 45317,
+        "name": "bahnhofsbrunnen hinterzarten",
+        "latitude": 47.905903,
+        "longitude": 8.106174,
+        "type": "gym"
+    },
+    {
+        "poi_id": 44977,
+        "name": "windkuh",
+        "latitude": 47.990746,
+        "longitude": 7.871528,
+        "type": "gym"
+    },
+    {
+        "poi_id": 44851,
+        "name": "glockenturm",
+        "latitude": 47.904564,
+        "longitude": 8.107028,
+        "type": "gym"
+    },
+    {
+        "poi_id": 44687,
+        "name": "riesenkreuz with cage",
+        "latitude": 47.995644,
+        "longitude": 7.874508,
+        "type": "gym"
+    },
+    {
+        "poi_id": 44576,
+        "name": "die liegende",
+        "latitude": 48.001778,
+        "longitude": 7.84554,
+        "type": "gym"
+    },
+    {
+        "poi_id": 44369,
+        "name": "dampfportal",
+        "latitude": 48.000725,
+        "longitude": 7.832458,
+        "type": "gym"
+    },
+    {
+        "poi_id": 44072,
+        "name": "der adler",
+        "latitude": 47.992458,
+        "longitude": 7.79196,
+        "type": "gym"
+    },
+    {
+        "poi_id": 43997,
+        "name": "erzbisch\u00f6fliches seelsorgeamt",
+        "latitude": 48.010967,
+        "longitude": 7.857361,
+        "type": "gym"
+    },
+    {
+        "poi_id": 43935,
+        "name": "gockel",
+        "latitude": 48.016655,
+        "longitude": 7.803815,
+        "type": "gym"
+    },
+    {
+        "poi_id": 43861,
+        "name": "kirche merzhausen",
+        "latitude": 47.965252,
+        "longitude": 7.825098,
+        "type": "gym"
+    },
+    {
+        "poi_id": 43705,
+        "name": "kleine buckelrutsche",
+        "latitude": 48.004982,
+        "longitude": 7.815026,
+        "type": "gym"
+    },
+    {
+        "poi_id": 43549,
+        "name": "dead under the bridge",
+        "latitude": 48.001316,
+        "longitude": 7.813788,
+        "type": "gym"
+    },
+    {
+        "poi_id": 42531,
+        "name": "mundingen skulptur",
+        "latitude": 48.129356,
+        "longitude": 7.827101,
+        "type": "gym"
+    },
+    {
+        "poi_id": 42475,
+        "name": "zum hirschen",
+        "latitude": 48.116753,
+        "longitude": 7.853558,
+        "type": "gym"
+    },
+    {
+        "poi_id": 42235,
+        "name": "lidischberger dorfbrunnen",
+        "latitude": 47.966175,
+        "longitude": 7.782102,
+        "type": "gym"
+    },
+    {
+        "poi_id": 42074,
+        "name": "noch ein spielplatz",
+        "latitude": 48.015209,
+        "longitude": 7.856066,
+        "type": "gym"
+    },
+    {
+        "poi_id": 41776,
+        "name": "betende h\u00e4nde",
+        "latitude": 48.000656,
+        "longitude": 7.844602,
+        "type": "gym"
+    },
+    {
+        "poi_id": 41525,
+        "name": "hinterzarten kath. kirche",
+        "latitude": 47.902596,
+        "longitude": 8.106944,
+        "type": "gym"
+    },
+    {
+        "poi_id": 41482,
+        "name": "steinfrosch",
+        "latitude": 48.105824,
+        "longitude": 7.862451,
+        "type": "gym"
+    },
+    {
+        "poi_id": 41097,
+        "name": "bergf\u00fchrer",
+        "latitude": 47.971176,
+        "longitude": 7.79013,
+        "type": "gym"
+    },
+    {
+        "poi_id": 40994,
+        "name": "ft sportpark",
+        "latitude": 47.990322,
+        "longitude": 7.884735,
+        "type": "gym"
+    },
+    {
+        "poi_id": 40977,
+        "name": "der saturn",
+        "latitude": 47.991177,
+        "longitude": 7.887459,
+        "type": "gym"
+    },
+    {
+        "poi_id": 40904,
+        "name": "bandstand",
+        "latitude": 47.996246,
+        "longitude": 7.798136,
+        "type": "gym"
+    },
+    {
+        "poi_id": 40557,
+        "name": "schitterer kreuz",
+        "latitude": 47.972839,
+        "longitude": 7.786329,
+        "type": "gym"
+    },
+    {
+        "poi_id": 40430,
+        "name": "alte hobelmaschine",
+        "latitude": 48.091434,
+        "longitude": 7.893809,
+        "type": "gym"
+    },
+    {
+        "poi_id": 40016,
+        "name": "mehrfarbige laser s\u00e4ule",
+        "latitude": 47.977936,
+        "longitude": 7.829641,
+        "type": "gym"
+    },
+    {
+        "poi_id": 39697,
+        "name": "red chair",
+        "latitude": 48.021137,
+        "longitude": 7.839846,
+        "type": "gym"
+    },
+    {
+        "poi_id": 39674,
+        "name": "dobermann",
+        "latitude": 47.974648,
+        "longitude": 7.797357,
+        "type": "gym"
+    },
+    {
+        "poi_id": 39648,
+        "name": "hildaturm",
+        "latitude": 47.979515,
+        "longitude": 7.838044,
+        "type": "gym"
+    },
+    {
+        "poi_id": 39561,
+        "name": "waldspielplatz",
+        "latitude": 48.02124,
+        "longitude": 7.812658,
+        "type": "gym"
+    },
+    {
+        "poi_id": 39387,
+        "name": "rusty artwork",
+        "latitude": 48.016285,
+        "longitude": 7.830887,
+        "type": "gym"
+    },
+    {
+        "poi_id": 39225,
+        "name": "traubenpresse gundelfingen",
+        "latitude": 48.048782,
+        "longitude": 7.859665,
+        "type": "gym"
+    },
+    {
+        "poi_id": 39094,
+        "name": "broken stone tree",
+        "latitude": 48.029388,
+        "longitude": 7.806418,
+        "type": "gym"
+    },
+    {
+        "poi_id": 38769,
+        "name": "gedenkkreuz hauptstra\u00dfe",
+        "latitude": 48.031292,
+        "longitude": 7.764291,
+        "type": "gym"
+    },
+    {
+        "poi_id": 38705,
+        "name": "st. blasius-kirche",
+        "latitude": 48.023575,
+        "longitude": 7.865206,
+        "type": "gym"
+    },
+    {
+        "poi_id": 38466,
+        "name": "st. josef",
+        "latitude": 48.00573,
+        "longitude": 7.833247,
+        "type": "gym"
+    },
+    {
+        "poi_id": 38378,
+        "name": "dampfbrunnen",
+        "latitude": 48.118172,
+        "longitude": 7.846934,
+        "type": "gym"
+    },
+    {
+        "poi_id": 38320,
+        "name": "einbollenst\u00fcble",
+        "latitude": 48.06361,
+        "longitude": 7.90643,
+        "type": "gym"
+    },
+    {
+        "poi_id": 38251,
+        "name": "trinity balance",
+        "latitude": 47.985092,
+        "longitude": 7.833418,
+        "type": "gym"
+    },
+    {
+        "poi_id": 38241,
+        "name": "schwarzer schwan",
+        "latitude": 48.11182,
+        "longitude": 7.861936,
+        "type": "gym"
+    },
+    {
+        "poi_id": 38077,
+        "name": "bahnhof littenweiler",
+        "latitude": 47.981686,
+        "longitude": 7.895116,
+        "type": "gym"
+    },
+    {
+        "poi_id": 38029,
+        "name": "salamander",
+        "latitude": 47.958454,
+        "longitude": 7.80479,
+        "type": "gym"
+    },
+    {
+        "poi_id": 38017,
+        "name": "festung freiburger schloss",
+        "latitude": 47.99585,
+        "longitude": 7.865916,
+        "type": "gym"
+    },
+    {
+        "poi_id": 37955,
+        "name": "brunnen hauptfriedhof",
+        "latitude": 48.007278,
+        "longitude": 7.842203,
+        "type": "gym"
+    },
+    {
+        "poi_id": 37900,
+        "name": "z\u00e4hringer burg",
+        "latitude": 48.025276,
+        "longitude": 7.883982,
+        "type": "gym"
+    },
+    {
+        "poi_id": 37662,
+        "name": "freiburg planetenweg, der nept",
+        "latitude": 47.990677,
+        "longitude": 7.862466,
+        "type": "gym"
+    },
+    {
+        "poi_id": 37653,
+        "name": "hear no evil see no evil",
+        "latitude": 48.007507,
+        "longitude": 7.872001,
+        "type": "gym"
+    },
+    {
+        "poi_id": 37449,
+        "name": "schlossbergturm",
+        "latitude": 47.994991,
+        "longitude": 7.861996,
+        "type": "gym"
+    },
+    {
+        "poi_id": 37337,
+        "name": "der gelbe stuhl",
+        "latitude": 47.907967,
+        "longitude": 8.099944,
+        "type": "gym"
+    },
+    {
+        "poi_id": 37101,
+        "name": "st. johannes kirche",
+        "latitude": 48.107254,
+        "longitude": 7.864616,
+        "type": "gym"
+    },
+    {
+        "poi_id": 36686,
+        "name": "mooswaldwiibli",
+        "latitude": 48.023731,
+        "longitude": 7.808748,
+        "type": "gym"
+    },
+    {
+        "poi_id": 36190,
+        "name": "englische telefonzelle",
+        "latitude": 48.040054,
+        "longitude": 7.764271,
+        "type": "gym"
+    },
+    {
+        "poi_id": 36122,
+        "name": "glas manufaktur rudolf",
+        "latitude": 47.956081,
+        "longitude": 7.753792,
+        "type": "gym"
+    },
+    {
+        "poi_id": 36006,
+        "name": "spirale",
+        "latitude": 48.005527,
+        "longitude": 7.840571,
+        "type": "gym"
+    },
+    {
+        "poi_id": 35419,
+        "name": "stahlformen",
+        "latitude": 48.112465,
+        "longitude": 7.8557,
+        "type": "gym"
+    },
+    {
+        "poi_id": 35066,
+        "name": "siegfried's baum",
+        "latitude": 47.95919,
+        "longitude": 7.799998,
+        "type": "gym"
+    },
+    {
+        "poi_id": 34930,
+        "name": "stencil remains",
+        "latitude": 47.977718,
+        "longitude": 7.915673,
+        "type": "gym"
+    },
+    {
+        "poi_id": 34844,
+        "name": "m\u00fcnstersteinbruch denkmal",
+        "latitude": 47.982441,
+        "longitude": 7.839219,
+        "type": "gym"
+    },
+    {
+        "poi_id": 34737,
+        "name": "baral kugelbrunnen",
+        "latitude": 48.074764,
+        "longitude": 7.878125,
+        "type": "gym"
+    },
+    {
+        "poi_id": 34193,
+        "name": "krokodil ii",
+        "latitude": 47.996765,
+        "longitude": 7.786986,
+        "type": "gym"
+    },
+    {
+        "poi_id": 34126,
+        "name": "grubenhaus",
+        "latitude": 48.065502,
+        "longitude": 7.852734,
+        "type": "gym"
+    },
+    {
+        "poi_id": 34024,
+        "name": "nachbarin am balkon",
+        "latitude": 47.984154,
+        "longitude": 7.857684,
+        "type": "gym"
+    },
+    {
+        "poi_id": 33640,
+        "name": "trotte von 1868 (waldkirch-buchholz)",
+        "latitude": 48.080502,
+        "longitude": 7.912694,
+        "type": "gym"
+    },
+    {
+        "poi_id": 33486,
+        "name": "marienbrunnen",
+        "latitude": 48.032402,
+        "longitude": 7.762154,
+        "type": "gym"
+    },
+    {
+        "poi_id": 33236,
+        "name": "kriegerdenkmal",
+        "latitude": 48.030579,
+        "longitude": 7.761373,
+        "type": "gym"
+    },
+    {
+        "poi_id": 33108,
+        "name": "st. georgener dorfbrunnen",
+        "latitude": 47.981197,
+        "longitude": 7.806923,
+        "type": "gym"
+    },
+    {
+        "poi_id": 33065,
+        "name": "ruine schneeburg",
+        "latitude": 47.960632,
+        "longitude": 7.797954,
+        "type": "gym"
+    },
+    {
+        "poi_id": 32879,
+        "name": "symbiose fettk\u00f6tter",
+        "latitude": 47.992062,
+        "longitude": 7.834759,
+        "type": "gym"
+    },
+    {
+        "poi_id": 32764,
+        "name": "venusbrunnen",
+        "latitude": 48.04023,
+        "longitude": 7.811249,
+        "type": "gym"
+    },
+    {
+        "poi_id": 32593,
+        "name": "drachenschlund",
+        "latitude": 48.000515,
+        "longitude": 7.815683,
+        "type": "gym"
+    },
+    {
+        "poi_id": 32294,
+        "name": "busbahnhof emmendingen",
+        "latitude": 48.119637,
+        "longitude": 7.848163,
+        "type": "gym"
+    },
+    {
+        "poi_id": 31700,
+        "name": "hexenschuss",
+        "latitude": 47.972031,
+        "longitude": 7.842682,
+        "type": "gym"
+    },
+    {
+        "poi_id": 31690,
+        "name": "hirschen hochdorf",
+        "latitude": 48.049721,
+        "longitude": 7.801884,
+        "type": "gym"
+    },
+    {
+        "poi_id": 31588,
+        "name": "rechenzentrum",
+        "latitude": 48.003586,
+        "longitude": 7.84809,
+        "type": "gym"
+    },
+    {
+        "poi_id": 31251,
+        "name": "weise eule",
+        "latitude": 47.980988,
+        "longitude": 7.854068,
+        "type": "gym"
+    },
+    {
+        "poi_id": 30979,
+        "name": "stone lion at the lake",
+        "latitude": 48.028465,
+        "longitude": 7.804643,
+        "type": "gym"
+    },
+    {
+        "poi_id": 30868,
+        "name": "biosk stadthalle",
+        "latitude": 47.987667,
+        "longitude": 7.873806,
+        "type": "gym"
+    },
+    {
+        "poi_id": 30829,
+        "name": "s\u00e4ge",
+        "latitude": 47.917133,
+        "longitude": 8.073591,
+        "type": "gym"
+    },
+    {
+        "poi_id": 30783,
+        "name": "waldkreuz littenweiler",
+        "latitude": 47.974281,
+        "longitude": 7.90008,
+        "type": "gym"
+    },
+    {
+        "poi_id": 30734,
+        "name": "church bruehl",
+        "latitude": 48.008739,
+        "longitude": 7.849513,
+        "type": "gym"
+    },
+    {
+        "poi_id": 30611,
+        "name": "4 s\u00e4ulen",
+        "latitude": 48.001133,
+        "longitude": 7.822665,
+        "type": "gym"
+    },
+    {
+        "poi_id": 30219,
+        "name": "schachbrett",
+        "latitude": 48.048969,
+        "longitude": 7.801912,
+        "type": "gym"
+    },
+    {
+        "poi_id": 30193,
+        "name": "wei\u00dfer engel",
+        "latitude": 48.009014,
+        "longitude": 7.840476,
+        "type": "gym"
+    },
+    {
+        "poi_id": 30172,
+        "name": "wendlinger brunnen",
+        "latitude": 47.975246,
+        "longitude": 7.793061,
+        "type": "gym"
+    },
+    {
+        "poi_id": 30154,
+        "name": "friedhof kollmarsreute",
+        "latitude": 48.103539,
+        "longitude": 7.88377,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29894,
+        "name": "littenweiler eisb\u00e4r",
+        "latitude": 47.98119,
+        "longitude": 7.890447,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29855,
+        "name": "dimension cube",
+        "latitude": 48.009445,
+        "longitude": 7.810859,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29803,
+        "name": "waldmensch weggabler",
+        "latitude": 47.970234,
+        "longitude": 7.844469,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29716,
+        "name": "sonnenuhr staudinger",
+        "latitude": 47.991222,
+        "longitude": 7.825398,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29692,
+        "name": "trainwreckmemorial",
+        "latitude": 48.032204,
+        "longitude": 7.805155,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29658,
+        "name": "rindvieh",
+        "latitude": 48.125084,
+        "longitude": 7.836029,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29650,
+        "name": "friede auf deinem weg",
+        "latitude": 48.046158,
+        "longitude": 7.88016,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29578,
+        "name": "ofenmuseum hugstetten",
+        "latitude": 48.047085,
+        "longitude": 7.784421,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29532,
+        "name": "trinkwasserbrunnen herdern",
+        "latitude": 48.006363,
+        "longitude": 7.879199,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29390,
+        "name": "ein engel aus stein",
+        "latitude": 48.007336,
+        "longitude": 7.841409,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29273,
+        "name": "reaktortrommel",
+        "latitude": 48.024071,
+        "longitude": 7.842018,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29124,
+        "name": "naturschutzgebiet",
+        "latitude": 47.951523,
+        "longitude": 7.787393,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29099,
+        "name": "adler statue",
+        "latitude": 48.066433,
+        "longitude": 7.852506,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29080,
+        "name": "badische weinf\u00e4sser",
+        "latitude": 47.825855,
+        "longitude": 7.668874,
+        "type": "gym"
+    },
+    {
+        "poi_id": 29059,
+        "name": "baum der erkenntnis",
+        "latitude": 47.971134,
+        "longitude": 7.916853,
+        "type": "gym"
+    },
+    {
+        "poi_id": 28906,
+        "name": "st. anna",
+        "latitude": 47.985157,
+        "longitude": 7.845917,
+        "type": "gym"
+    },
+    {
+        "poi_id": 28870,
+        "name": "otto-rieth-br\u00fccke, teningen",
+        "latitude": 48.127117,
+        "longitude": 7.825226,
+        "type": "gym"
+    },
+    {
+        "poi_id": 28837,
+        "name": "brunnen vorm hirsch",
+        "latitude": 48.080963,
+        "longitude": 7.917604,
+        "type": "gym"
+    },
+    {
+        "poi_id": 28815,
+        "name": "stadtmauer ebnet 1612",
+        "latitude": 47.987534,
+        "longitude": 7.905346,
+        "type": "gym"
+    },
+    {
+        "poi_id": 28811,
+        "name": "rathaus ebnet",
+        "latitude": 47.987091,
+        "longitude": 7.905204,
+        "type": "gym"
+    },
+    {
+        "poi_id": 28774,
+        "name": "kreuz am wichtelstein",
+        "latitude": 47.989155,
+        "longitude": 7.901983,
+        "type": "gym"
+    },
+    {
+        "poi_id": 28491,
+        "name": "herder-turm",
+        "latitude": 48.022079,
+        "longitude": 7.80086,
+        "type": "gym"
+    },
+    {
+        "poi_id": 28402,
+        "name": "tischtennis im park",
+        "latitude": 47.99577,
+        "longitude": 7.812567,
+        "type": "gym"
+    },
+    {
+        "poi_id": 28369,
+        "name": "doppelrolle",
+        "latitude": 48.013397,
+        "longitude": 7.836443,
+        "type": "gym"
+    },
+    {
+        "poi_id": 28339,
+        "name": "stephanienbrunnen",
+        "latitude": 47.979694,
+        "longitude": 7.853405,
+        "type": "gym"
+    },
+    {
+        "poi_id": 28191,
+        "name": "xm fountain",
+        "latitude": 48.065853,
+        "longitude": 7.845723,
+        "type": "gym"
+    },
+    {
+        "poi_id": 27725,
+        "name": "spielplatz heimatweg",
+        "latitude": 48.070602,
+        "longitude": 7.906258,
+        "type": "gym"
+    },
+    {
+        "poi_id": 27627,
+        "name": "wasserkreislauf 2",
+        "latitude": 47.981499,
+        "longitude": 7.906959,
+        "type": "gym"
+    },
+    {
+        "poi_id": 27467,
+        "name": "kringelstatue 3fach",
+        "latitude": 48.007065,
+        "longitude": 7.871825,
+        "type": "gym"
+    },
+    {
+        "poi_id": 26964,
+        "name": "chessboard",
+        "latitude": 47.975101,
+        "longitude": 7.889267,
+        "type": "gym"
+    },
+    {
+        "poi_id": 26668,
+        "name": "auf wiedersehen",
+        "latitude": 48.010769,
+        "longitude": 7.84108,
+        "type": "gym"
+    },
+    {
+        "poi_id": 26575,
+        "name": "der uranus",
+        "latitude": 47.990574,
+        "longitude": 7.875723,
+        "type": "gym"
+    },
+    {
+        "poi_id": 26481,
+        "name": "katzens\u00e4ule",
+        "latitude": 47.981377,
+        "longitude": 7.888598,
+        "type": "gym"
+    },
+    {
+        "poi_id": 26472,
+        "name": "st vincent church",
+        "latitude": 48.001049,
+        "longitude": 7.853537,
+        "type": "gym"
+    },
+    {
+        "poi_id": 26459,
+        "name": "wegweiser auf dem weg in die todesschlucht",
+        "latitude": 47.96674,
+        "longitude": 7.802863,
+        "type": "gym"
+    },
+    {
+        "poi_id": 26389,
+        "name": "wald und luft",
+        "latitude": 47.896587,
+        "longitude": 8.1067,
+        "type": "gym"
+    },
+    {
+        "poi_id": 26357,
+        "name": "weinlehrpfad kerner",
+        "latitude": 48.090771,
+        "longitude": 7.908904,
+        "type": "gym"
+    },
+    {
+        "poi_id": 26342,
+        "name": "contemporary art elz",
+        "latitude": 48.112923,
+        "longitude": 7.846869,
+        "type": "gym"
+    },
+    {
+        "poi_id": 25960,
+        "name": "rundwanderweg",
+        "latitude": 47.998718,
+        "longitude": 7.780329,
+        "type": "gym"
+    },
+    {
+        "poi_id": 25937,
+        "name": "drache",
+        "latitude": 47.971306,
+        "longitude": 7.842989,
+        "type": "gym"
+    },
+    {
+        "poi_id": 25891,
+        "name": "landschaftsschutzgebiet konrad-guenther-park",
+        "latitude": 47.986336,
+        "longitude": 7.878578,
+        "type": "gym"
+    },
+    {
+        "poi_id": 25775,
+        "name": "kunst an der schule",
+        "latitude": 47.984669,
+        "longitude": 7.90413,
+        "type": "gym"
+    },
+    {
+        "poi_id": 25523,
+        "name": "steinstatue schlangen",
+        "latitude": 48.07058,
+        "longitude": 7.899701,
+        "type": "gym"
+    },
+    {
+        "poi_id": 25500,
+        "name": "1994er brunnen",
+        "latitude": 47.959293,
+        "longitude": 7.769551,
+        "type": "gym"
+    },
+    {
+        "poi_id": 25192,
+        "name": "weinlehrpfad weiterentwicklung des weinbaus",
+        "latitude": 48.088314,
+        "longitude": 7.910442,
+        "type": "gym"
+    },
+    {
+        "poi_id": 25103,
+        "name": "fritz ginter parkstein",
+        "latitude": 48.019501,
+        "longitude": 7.865244,
+        "type": "gym"
+    },
+    {
+        "poi_id": 25097,
+        "name": "holzkreuz ebringen",
+        "latitude": 47.958508,
+        "longitude": 7.782103,
+        "type": "gym"
+    },
+    {
+        "poi_id": 24934,
+        "name": "sportpark sonnland",
+        "latitude": 48.003815,
+        "longitude": 7.809202,
+        "type": "gym"
+    },
+    {
+        "poi_id": 24834,
+        "name": "grillplatz",
+        "latitude": 48.061241,
+        "longitude": 7.839968,
+        "type": "gym"
+    },
+    {
+        "poi_id": 24325,
+        "name": "sibling slides",
+        "latitude": 48.071293,
+        "longitude": 7.900479,
+        "type": "gym"
+    },
+    {
+        "poi_id": 23892,
+        "name": "weinlehrpfad blauer sp\u00e4tburgunder",
+        "latitude": 48.089191,
+        "longitude": 7.916167,
+        "type": "gym"
+    },
+    {
+        "poi_id": 17663,
+        "name": "kreuz",
+        "latitude": 48.162308,
+        "longitude": 7.698845,
+        "type": "gym"
+    },
+    {
+        "poi_id": 17423,
+        "name": "oophaga sylvatica",
+        "latitude": 48.123158,
+        "longitude": 7.74031,
+        "type": "gym"
+    },
+    {
+        "poi_id": 17417,
+        "name": "weintrotte",
+        "latitude": 48.122841,
+        "longitude": 7.73924,
+        "type": "gym"
+    },
+    {
+        "poi_id": 17371,
+        "name": "vulkanbrunnen",
+        "latitude": 48.121655,
+        "longitude": 7.735038,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16846,
+        "name": "feuerwehrbrunnen",
+        "latitude": 48.123772,
+        "longitude": 7.816124,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16686,
+        "name": "kronenplatz",
+        "latitude": 48.127041,
+        "longitude": 7.810693,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16685,
+        "name": "blechkunst",
+        "latitude": 48.120472,
+        "longitude": 7.751389,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16684,
+        "name": "ww1 memorial",
+        "latitude": 48.138409,
+        "longitude": 7.805209,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16677,
+        "name": "brunnen",
+        "latitude": 48.150291,
+        "longitude": 7.752268,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16576,
+        "name": "bahnhof endingen",
+        "latitude": 48.144047,
+        "longitude": 7.702443,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16554,
+        "name": "feldarbeit",
+        "latitude": 48.123665,
+        "longitude": 7.737033,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16474,
+        "name": "evangelische kirche",
+        "latitude": 48.143322,
+        "longitude": 7.706642,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16472,
+        "name": "snoopy",
+        "latitude": 48.134888,
+        "longitude": 7.701041,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16471,
+        "name": "brunnen",
+        "latitude": 48.139542,
+        "longitude": 7.70389,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16454,
+        "name": "kirche riegel",
+        "latitude": 48.151787,
+        "longitude": 7.749684,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16450,
+        "name": "wk mahnmal",
+        "latitude": 48.140659,
+        "longitude": 7.702974,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16421,
+        "name": "kriegerdenkmal",
+        "latitude": 48.16214,
+        "longitude": 7.79676,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16417,
+        "name": "endinger stadttor",
+        "latitude": 48.142109,
+        "longitude": 7.701318,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16415,
+        "name": "mutter erde",
+        "latitude": 48.147144,
+        "longitude": 7.744655,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16405,
+        "name": "st. marien",
+        "latitude": 48.145916,
+        "longitude": 7.738407,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16390,
+        "name": "bahlinger wasserreservoir",
+        "latitude": 48.116985,
+        "longitude": 7.735615,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16379,
+        "name": "bahlinger kirche",
+        "latitude": 48.124435,
+        "longitude": 7.736659,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16378,
+        "name": "nicolas cages skaters place",
+        "latitude": 48.122402,
+        "longitude": 7.754487,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16364,
+        "name": "hgj",
+        "latitude": 48.127022,
+        "longitude": 7.747238,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16354,
+        "name": "enger g\u00fcrtel",
+        "latitude": 48.123005,
+        "longitude": 7.737005,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16344,
+        "name": "mariengrotte",
+        "latitude": 48.150433,
+        "longitude": 7.748356,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16283,
+        "name": "nepomukstatue",
+        "latitude": 48.152386,
+        "longitude": 7.753406,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16280,
+        "name": "sparkassenbrunnen",
+        "latitude": 48.138988,
+        "longitude": 7.805596,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16273,
+        "name": "mosaik",
+        "latitude": 48.150093,
+        "longitude": 7.742821,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16270,
+        "name": "ev. kirche teningen",
+        "latitude": 48.129707,
+        "longitude": 7.805726,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16207,
+        "name": "zwei s\u00e4ulen",
+        "latitude": 48.122257,
+        "longitude": 7.748229,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16153,
+        "name": "bahnhof bahlingen",
+        "latitude": 48.124413,
+        "longitude": 7.741689,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16127,
+        "name": "historischer seiteneingang friedhof",
+        "latitude": 48.153336,
+        "longitude": 7.747172,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16126,
+        "name": "jokilibrunnen",
+        "latitude": 48.142181,
+        "longitude": 7.707241,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16074,
+        "name": "zur erinnerung an 1615",
+        "latitude": 48.138489,
+        "longitude": 7.706334,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16071,
+        "name": "grossherzog leopold memorial",
+        "latitude": 48.153835,
+        "longitude": 7.754202,
+        "type": "gym"
+    },
+    {
+        "poi_id": 16049,
+        "name": "das sonnige tor zum kaiserstuhl",
+        "latitude": 48.14389,
+        "longitude": 7.745142,
+        "type": "gym"
+    },
+    {
+        "poi_id": 15998,
+        "name": "bahnhof bahlingen-riedeln",
+        "latitude": 48.11805,
+        "longitude": 7.747708,
+        "type": "gym"
+    },
+    {
+        "poi_id": 15979,
+        "name": "zur traube",
+        "latitude": 48.142624,
+        "longitude": 7.699649,
+        "type": "gym"
+    },
+    {
+        "poi_id": 15780,
+        "name": "brunnen 2 niederstadt",
+        "latitude": 47.810127,
+        "longitude": 7.614882,
+        "type": "gym"
+    },
+    {
+        "poi_id": 15758,
+        "name": "zunzinger pilzh\u00fctte",
+        "latitude": 47.819042,
+        "longitude": 7.656098,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9675,
+        "name": "brunnen der britzingen weingenossenschaft",
+        "latitude": 47.827141,
+        "longitude": 7.670508,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9642,
+        "name": "kronenbrunnen",
+        "latitude": 47.827305,
+        "longitude": 7.672549,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9126,
+        "name": "gasthaus oma luises k\u00fcche",
+        "latitude": 48.093128,
+        "longitude": 7.893795,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9125,
+        "name": "das hohe werk (bollwerk)",
+        "latitude": 48.116451,
+        "longitude": 7.899774,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9124,
+        "name": "hochburg oberburg ruine",
+        "latitude": 48.117054,
+        "longitude": 7.90049,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9123,
+        "name": "hochburg lageplan",
+        "latitude": 48.118172,
+        "longitude": 7.900584,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9122,
+        "name": "opfinger see terrasse",
+        "latitude": 48.009678,
+        "longitude": 7.763736,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9120,
+        "name": "riesenrutsche",
+        "latitude": 48.097584,
+        "longitude": 7.899054,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9119,
+        "name": "kriegsdenkmal",
+        "latitude": 48.10228,
+        "longitude": 7.906718,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9118,
+        "name": "kirchberghalle",
+        "latitude": 48.051559,
+        "longitude": 7.904589,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9117,
+        "name": "kirche peter und paul",
+        "latitude": 47.966221,
+        "longitude": 7.90808,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9116,
+        "name": "wegkreuz, ich bin der weg...",
+        "latitude": 48.055401,
+        "longitude": 7.80669,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9115,
+        "name": "grosse kapelle",
+        "latitude": 47.965408,
+        "longitude": 7.85636,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9114,
+        "name": "g o - g g",
+        "latitude": 47.996208,
+        "longitude": 7.761092,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9113,
+        "name": "bambi",
+        "latitude": 47.998508,
+        "longitude": 7.760224,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9112,
+        "name": "kreuz m\u00fchlestrasse march",
+        "latitude": 48.071697,
+        "longitude": 7.802632,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9111,
+        "name": "gedenkkreuz holzhausen",
+        "latitude": 48.071175,
+        "longitude": 7.797085,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9110,
+        "name": "camping tunisee rezeption",
+        "latitude": 48.064484,
+        "longitude": 7.814303,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9109,
+        "name": "holzhausen friedhof",
+        "latitude": 48.070873,
+        "longitude": 7.791303,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9108,
+        "name": "kreuz am berg",
+        "latitude": 48.068729,
+        "longitude": 7.79755,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9107,
+        "name": "eule",
+        "latitude": 48.069733,
+        "longitude": 7.772449,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9106,
+        "name": "bachpatron",
+        "latitude": 48.061356,
+        "longitude": 7.779104,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9105,
+        "name": "b\u00e4ren portal",
+        "latitude": 48.06345,
+        "longitude": 7.779574,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9104,
+        "name": "rosskopf wheel",
+        "latitude": 48.010597,
+        "longitude": 7.902257,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9103,
+        "name": "kurt sauer",
+        "latitude": 47.983566,
+        "longitude": 7.766928,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9097,
+        "name": "jesus kreuz",
+        "latitude": 48.128071,
+        "longitude": 7.684869,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9096,
+        "name": "flurdenkmal grenzstein nr 9",
+        "latitude": 48.116665,
+        "longitude": 7.706329,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9095,
+        "name": "heimbach b\u00e4r",
+        "latitude": 48.159439,
+        "longitude": 7.823609,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9094,
+        "name": "katharinen kreuz",
+        "latitude": 48.11684,
+        "longitude": 7.688733,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9093,
+        "name": "erholungsort amoltern",
+        "latitude": 48.129223,
+        "longitude": 7.675785,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9092,
+        "name": "katharinenkapelle",
+        "latitude": 48.116764,
+        "longitude": 7.689061,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9090,
+        "name": "bienenhotel",
+        "latitude": 48.010273,
+        "longitude": 7.78236,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9088,
+        "name": "gelbes kletterger\u00fcst",
+        "latitude": 47.90765,
+        "longitude": 7.703312,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9087,
+        "name": "gl\u00f6cklehofkapelle",
+        "latitude": 47.910423,
+        "longitude": 7.710272,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9086,
+        "name": "fountain at train station bad krozingen",
+        "latitude": 47.919704,
+        "longitude": 7.69735,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9085,
+        "name": "l\u00f6schfahrzeug, manuell",
+        "latitude": 47.923706,
+        "longitude": 7.702182,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9084,
+        "name": "staufener kreuz des s\u00fcdens",
+        "latitude": 47.877151,
+        "longitude": 7.723522,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9083,
+        "name": "summstein",
+        "latitude": 47.885262,
+        "longitude": 7.727339,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9082,
+        "name": "blue townhall",
+        "latitude": 47.916321,
+        "longitude": 7.700652,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9080,
+        "name": "st. anna",
+        "latitude": 47.878819,
+        "longitude": 7.730789,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9079,
+        "name": "mutter mit kind",
+        "latitude": 47.883194,
+        "longitude": 7.730075,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9078,
+        "name": "weinberg",
+        "latitude": 47.884586,
+        "longitude": 7.727476,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9077,
+        "name": "martinsheim",
+        "latitude": 47.881416,
+        "longitude": 7.734132,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9076,
+        "name": "el toro",
+        "latitude": 47.920891,
+        "longitude": 7.688791,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9075,
+        "name": "kreuz in wittnau",
+        "latitude": 47.9431,
+        "longitude": 7.815578,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9074,
+        "name": "alter brunnen",
+        "latitude": 47.88031,
+        "longitude": 7.731272,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9073,
+        "name": "lammplatz brunnen",
+        "latitude": 47.916828,
+        "longitude": 7.699002,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9072,
+        "name": "ave crux spes unica. gedenkkreuz s\u00f6lden",
+        "latitude": 47.933472,
+        "longitude": 7.810891,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9071,
+        "name": "sculpture at kurpark bad krozingen",
+        "latitude": 47.918983,
+        "longitude": 7.693849,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9070,
+        "name": "wasser portal",
+        "latitude": 47.922428,
+        "longitude": 7.747463,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9069,
+        "name": "brunnen am b\u00fcrgerhaus",
+        "latitude": 47.871689,
+        "longitude": 7.721556,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9068,
+        "name": "halb mensch halb tier",
+        "latitude": 48.012886,
+        "longitude": 7.782443,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9067,
+        "name": "felsenquelle",
+        "latitude": 47.92067,
+        "longitude": 7.705239,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9066,
+        "name": "st. alban under the rainbow",
+        "latitude": 47.915977,
+        "longitude": 7.700287,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9065,
+        "name": "martin luther kirche",
+        "latitude": 47.879128,
+        "longitude": 7.730379,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9064,
+        "name": "heilige-barbara",
+        "latitude": 47.874119,
+        "longitude": 7.736601,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9063,
+        "name": "alte m\u00fchle",
+        "latitude": 47.91626,
+        "longitude": 7.703575,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9062,
+        "name": "brunnen kurpark",
+        "latitude": 47.920284,
+        "longitude": 7.694256,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9061,
+        "name": "mit freundlichen gr\u00fc\u00dfen, die h\u00f6hlenmenschen",
+        "latitude": 47.912525,
+        "longitude": 7.695113,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9060,
+        "name": "r\u00f6mischer keller",
+        "latitude": 47.925381,
+        "longitude": 7.688133,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9059,
+        "name": "brunnen m\u00f6hnestra\u00dfe ehrenstetten",
+        "latitude": 47.914314,
+        "longitude": 7.75156,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9058,
+        "name": "tulpen brunnen",
+        "latitude": 47.917133,
+        "longitude": 7.693017,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9057,
+        "name": "gipfelstein kapuzinerbuck",
+        "latitude": 47.948048,
+        "longitude": 7.812905,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9056,
+        "name": "bienenhaus",
+        "latitude": 47.924644,
+        "longitude": 7.692951,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9055,
+        "name": "kreuz",
+        "latitude": 47.925732,
+        "longitude": 7.740242,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9054,
+        "name": "winzerkeller portal",
+        "latitude": 47.918163,
+        "longitude": 7.749846,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9053,
+        "name": "mundens\u00e4ulen",
+        "latitude": 48.01009,
+        "longitude": 7.780432,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9052,
+        "name": "freiburger mundenhof - bisonskulptur",
+        "latitude": 48.011951,
+        "longitude": 7.778494,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9051,
+        "name": "steinpendel ohne stein",
+        "latitude": 48.01181,
+        "longitude": 7.780714,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9050,
+        "name": "grunern ostportal",
+        "latitude": 47.871044,
+        "longitude": 7.727141,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9049,
+        "name": "betontod",
+        "latitude": 47.88673,
+        "longitude": 7.734579,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9048,
+        "name": "kirchbrunnen",
+        "latitude": 47.922806,
+        "longitude": 7.742821,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9047,
+        "name": "staufener burg",
+        "latitude": 47.886459,
+        "longitude": 7.731671,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9045,
+        "name": "stieleiche 1837",
+        "latitude": 47.998741,
+        "longitude": 7.774449,
+        "type": "gym"
+    },
+    {
+        "poi_id": 9043,
+        "name": "blaue zitrone",
+        "latitude": 47.881531,
+        "longitude": 7.73248,
+        "type": "gym"
+    },
+    {
+        "poi_id": 225,
+        "name": "jesus kreuz der wanderer",
+        "latitude": 48.164692,
+        "longitude": 7.829642,
+        "type": "gym"
+    },
+    {
+        "poi_id": 224,
+        "name": "historischer brunnen no. 7 of 7",
+        "latitude": 48.161644,
+        "longitude": 7.829396,
+        "type": "gym"
+    },
+    {
+        "poi_id": 45632,
+        "name": "entrance to hinterzarten",
+        "latitude": 47.905823,
+        "longitude": 8.105644,
+        "type": "gym"
+    },
+    {
+        "poi_id": 44851,
+        "name": "glockenturm",
+        "latitude": 47.904564,
+        "longitude": 8.107028,
+        "type": "gym"
+    },
+    {
+        "poi_id": 41525,
+        "name": "hinterzarten kath. kirche",
+        "latitude": 47.902596,
+        "longitude": 8.106944,
+        "type": "gym"
+    }
+]

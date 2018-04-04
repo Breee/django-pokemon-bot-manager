@@ -27,5 +27,17 @@
     "name_german": "",
     "damage": "damage",
     "color": ""
+  },
+  "pokestop": {
+    "poi_id": "id",
+    "latitude": "latitude",
+    "longitude": "longitude"
+  },
+  "gym": {
+    "poi_id": "gym_id",
+    "name": "name",
+    "latitude": "latitude",
+    "longitude": "longitude"
   }
+
 }

@@ -3,11 +3,13 @@ import json
 
 
 class PokemonDataToJson:
-    data_types = ['pokemon', 'type', 'move']
+    data_types = ['pokemon', 'type', 'move', 'pokestop', 'gym']
+    raw_data_types = ['pokestop', 'gym']
     mappings_file = 'mappings.json'
 
     pokemon_go_pokedex_url = 'https://raw.githubusercontent.com/BrunnerLivio/' \
                              + 'pokemongo-json-pokedex/master/output/'
+    pokemon_go_pokedex_type = ['pokemon', 'type', 'move']
 
     pokemon_translations_url = 'https://raw.githubusercontent.com/sindresorhus/pokemon/master/' +\
                                'data/'
@@ -19,9 +21,15 @@ class PokemonDataToJson:
         self.type_colors = self.get_type_colors()
 
         for data_type in self.data_types:
-            pokemon_go_pokedex_json = requests.get(
-                self.pokemon_go_pokedex_url + data_type + '.json').text
-            pokemon_go_pokedex = json.loads(pokemon_go_pokedex_json)
+            if data_type in self.pokemon_go_pokedex_type:
+                pokemon_go_pokedex_json = requests.get(
+                    self.pokemon_go_pokedex_url + data_type + '.json').text
+                pokemon_go_pokedex = json.loads(pokemon_go_pokedex_json)
+            elif data_type in self.raw_data_types:
+                with open(data_type + '_raw.json') as raw_data_json:
+                    pokemon_go_pokedex = json.load(raw_data_json)
+            else:
+                raise NotImplementedError
 
             with open(self.mappings_file, 'r') as mappings_file:
                 self.mappings = json.load(mappings_file)
@@ -36,6 +44,10 @@ class PokemonDataToJson:
                 self.json_data[data_type] = self.get_moves_from_data(pokemon_go_pokedex)
             elif data_type == 'type':
                 self.json_data[data_type] = self.get_types_from_data(pokemon_go_pokedex)
+            elif data_type == 'pokestop':
+                self.json_data[data_type] = self.get_pokestop_from_data(pokemon_go_pokedex)
+            elif data_type == 'gym':
+                self.json_data[data_type] = self.get_gym_from_data(pokemon_go_pokedex)
 
             with open(data_type + '.json', 'w') as output_file:
                 if data_type in self.json_data:
@@ -82,6 +94,22 @@ class PokemonDataToJson:
             types_rest_data.append(rest_type)
         return types_rest_data
 
+    def get_pokestop_from_data(self, pokestop_list):
+        pokestop_rest_data = []
+        for pokestop in pokestop_list['pstops']:
+            rest_pokestop = self.extract_object_from_data(pokestop, 'pokestop')
+            rest_pokestop['type'] = "pokestop"
+            pokestop_rest_data.append(rest_pokestop)
+        return pokestop_rest_data
+
+    def get_gym_from_data(self, gym_list):
+        gym_rest_data = []
+        for gym in gym_list['gyms']:
+            rest_gym = self.extract_object_from_data(gym, 'gym')
+            rest_gym['type'] = "gym"
+            gym_rest_data.append(rest_gym)
+        return gym_rest_data
+
     def extract_object_from_data(self, data, data_type):
         rest_data = {}
         # generate data from pokemon_go_pokedex with mappings
@@ -102,6 +130,7 @@ class PokemonDataToJson:
                     else:
                         rest_data[key] = self.safe_get_dict_value(rest_data[key], split_value[i])
         return self.clean_data(rest_data)
+
 
     @staticmethod
     def extract_sub_value(sub_value, split_value):
