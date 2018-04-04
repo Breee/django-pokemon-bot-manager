@@ -1,34 +1,48 @@
 from django.db.models import *
+from django.core.exceptions import ValidationError
 from django.utils import timezone
 from rest_framework.authtoken.models import Token
 
 
 class PokemonType(Model):
     name = TextField()
-    color = CharField(max_length=3)
+    name_german = TextField(null=True)
+    color = CharField(max_length=6)
+    damage = ManyToManyField('self')
+
+    def clean(self):
+        if len(self.color) < 6:
+            raise ValidationError('color is no valid rgb hex')
+
+
+class PokemonMove(Model):
+    name = TextField()
+    type = ForeignKey(PokemonType, on_delete=CASCADE)
     damage = SmallIntegerField()
     energy = SmallIntegerField()
     dps = SmallIntegerField()
     legacy = BooleanField(default=False)
 
 
-class PokemonMove(Model):
-    name = TextField()
-    type = ForeignKey(PokemonType, on_delete=CASCADE)
-
-
 class Pokemon(Model):
-    poke_nr = IntegerField(primary_key=True)
-    poke_name_ger = CharField(max_length=30, db_index=True)
-    poke_name_eng = CharField(max_length=30)
+    number = IntegerField(primary_key=True)
+    name_german = TextField(db_index=True)
+    name_english = TextField(null=True)
+    name_french = TextField(null=True)
+    flee_rate = FloatField(null=True)
+    capture_rate = FloatField(null=True)
+    max_cp = IntegerField(null=True)
+    rarity = TextField(default="normal", null=True)
+    egg_distance = IntegerField(null=True)
     types = ManyToManyField(PokemonType)
+    moves = ManyToManyField(PokemonMove)
 
     class Meta:
         # Sort the Data by this:
-        ordering = ('poke_nr',)
+        ordering = ('number',)
 
     def __str__(self):
-        return str(self.poke_nr) + ' - ' + self.poke_name_ger
+        return str(self.number) + ' - ' + self.name_german
 
 
 class PokemonSpawn(Model):
@@ -40,8 +54,7 @@ class PokemonSpawn(Model):
     individual_attack = SmallIntegerField(default=None, null=True)
     individual_defense = SmallIntegerField(default=None, null=True)
     individual_stamina = SmallIntegerField(default=None, null=True)
-    move_1 = ForeignKey(PokemonMove, default=None, null=True, on_delete=CASCADE)
-    move_2 = ForeignKey(PokemonMove, default=None, null=True, on_delete=CASCADE)
+    moves = ManyToManyField(PokemonMove, default=None)
     cp = SmallIntegerField(default=None, null=True)
     cp_multiplier = FloatField(default=None, null=True)
     weight = FloatField(default=None, null=True)
@@ -75,8 +88,8 @@ class PokemonSpawn(Model):
 class PointOfInterest(Model):
     """Model for storing pokestops, gyms and stuff in the future"""
     report_time = DateTimeField(default=timezone.now)
-    id = TextField(default=None, null=True)
-    enabled = BooleanField(default=None, null=True)
+    poi_id = TextField(default=None, null=True)
+    enabled = BooleanField(default=True)
     longitude = FloatField()
     latitude = FloatField()
     last_modified = DateTimeField(default=None, null=True)
@@ -103,14 +116,8 @@ class Raid(Model):
     end = DateTimeField(db_index=True)
     pokemon = ForeignKey(Pokemon, default=None, null=True, on_delete=CASCADE)
     cp = IntegerField(default=None, null=True)
-    move_1 = ForeignKey(PokemonMove, default=None, null=True, on_delete=CASCADE)
-    move_2 = ForeignKey(PokemonMove, default=None, null=True, on_delete=CASCADE)
+    moves = ManyToManyField(PokemonMove, default=None)
     last_scanned = DateTimeField(default=timezone.now, db_index=True)
-
-
-class GymMemberRelation(Model):
-    current_cp = IntegerField(default=None, null=True)
-    current_stamina = IntegerField(default=None, null=True)
 
 
 class GymPokemon(Model):
@@ -119,8 +126,7 @@ class GymPokemon(Model):
     pokemon_uid = BigIntegerField(default=None, null=True)
     base_cp = SmallIntegerField(default=None, null=True)
     num_upgrades = SmallIntegerField(default=None, null=True)
-    move_1 = ForeignKey(PokemonMove, default=None, null=True, on_delete=CASCADE)
-    move_2 = ForeignKey(PokemonMove, default=None, null=True, on_delete=CASCADE)
+    moves = ManyToManyField(PokemonMove, default=None)
     height = FloatField(default=None, null=True)
     weight = FloatField(default=None, null=True)
     stamina = SmallIntegerField(default=None, null=True)
@@ -148,4 +154,11 @@ class GymStatus(Model):
     slots_available.null = True
     lowest_pokemon_motivation = FloatField(default=None)
     lowest_pokemon_motivation.null = True
-    gym_pokemon = ManyToManyField(GymPokemon, through=GymMemberRelation)
+    gym_pokemon = ManyToManyField(GymPokemon, through='GymMemberRelation')
+
+
+class GymMemberRelation(Model):
+    gym_status = ForeignKey(GymStatus, on_delete=CASCADE)
+    gym_pokemon = ForeignKey(GymPokemon, on_delete=CASCADE)
+    current_cp = IntegerField(default=None, null=True)
+    current_stamina = IntegerField(default=None, null=True)
