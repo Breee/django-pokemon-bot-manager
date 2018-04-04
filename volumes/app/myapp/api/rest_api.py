@@ -1,19 +1,13 @@
-from django.contrib.auth.models import User
-from django.http import HttpResponse
-from rest_framework import generics, serializers, status, viewsets, permissions
-from rest_framework.decorators import api_view
+from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from datetime import datetime
-from myapp.models import PokePosition, Pokemon
-import csv
+from myapp.api.serializers import *
 
 
 class PokedexSet(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
-    @api_view(['GET'])
-    def get_pokemon(request):
+    def get(self, request, format=None):
         queryset = Pokemon.objects.all()
 
         # parse query string stuff
@@ -26,76 +20,70 @@ class PokedexSet(APIView):
         serializer = PokemonSerializer(queryset, context={'request': request}, many=True)
         return Response(serializer.data)
 
-    @api_view(['GET'])
-    def init_pokemon(request):
-        """
-        Load Pokedex if Database is empty
-        TODO: Find a better way to init!
-        """
-        Pokemon.objects.all().delete()
-        if Pokemon.objects.count() == 0:
-            with open('pokedex.csv') as pokedex_ger:
-                reader = csv.DictReader(pokedex_ger)
-                for poke in reader:
-                    pid = poke['Ndex']
-                    newpoke = Pokemon(poke_nr=int(pid),
-                                      poke_name_eng=poke['English'],
-                                      poke_name_ger=poke['German'])
-                    newpoke.save()
-                pokedex_ger.close()
-                print('pokedex_ger written')
-        return HttpResponse('[]')
+    def post(self, request, format=None):
+        for key in request.data:
+            data = request.data[key]
+            if key == 'pokemon_move':
+                return self.push_pokemon_move(data)
+            if key == 'pokemon':
+                return self.push_pokemon(data)
+            if key == 'pokemon_type':
+                queryset = PokemonType.objects.filter(name=data['name'])
+                if queryset.count() <= 0:
+                    return self.push_pokemon_type(data)
+                else:
+                    return self.update_pokemon_type(data, queryset)
+
+    def push_pokemon(self, data):
+        serializer = PokemonSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def push_pokemon_move(self, data):
+        serializer = PokemonMoveSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def push_pokemon_type(self, data):
+        serializer = PokemonTypeSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def update_pokemon_type(self, data, queryset):
+        if queryset.count() > 1:
+            raise serializers.ValidationError('too many possible matches for update')
+        else:
+            instance = queryset.first()
+            for key in data:
+                if hasattr(PokemonType, key):
+                    setattr(instance, key, data[key])
+            instance.full_clean()
+            instance.save()
+            serializer = PokemonTypeSerializer(instance=instance)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
-class PokemonPositionSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = PokePosition
-        fields = ('poke_lvl', 'poke_iv', 'poke_lat', 'poke_lon', 'poke_nr', 'poke_despawn_time')
-
-
-class PokemonPositionSet(APIView):
+class PokemonSpawnSet(APIView):
     """
     List pokepositions which aren't despawned, or create a new pokeposition.
     """
     permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request, format=None):
-        queryset = PokePosition.objects.all()
-        queryset = queryset.filter(poke_despawn_time__gt=datetime.utcnow())
-        serializer = PokemonPositionSerializer(queryset, many=True)
+        queryset = PokemonSpawn.objects.all()
+        queryset = queryset.filter(poke_despawn_time__gt=timezone.now())
+        serializer = PokemonSpawnSerializer(queryset, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = PokemonPositionSerializer(data=request.data)
+        serializer = PokemonSpawnSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-class PokemonSerializer(serializers.ModelSerializer):
-    model = Pokemon
-
-    class Meta:
-        model = Pokemon
-        fields = '__all__'
-
-
-class UserSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = User
-        fields = ('id', 'username')
-
-
-class UserList(generics.ListAPIView):
-    permission_classes = (permissions.IsAuthenticated,)
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-
-class UserDetail(generics.RetrieveAPIView):
-    permission_classes = (permissions.IsAuthenticated,)
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
