@@ -105,12 +105,12 @@ class PokemonDataToJson:
     def get_gym_from_data(self, gym_list):
         gym_rest_data = []
         for gym in gym_list['gyms']:
-            rest_gym = self.extract_object_from_data(gym, 'gym')
+            rest_gym = self.extract_object_from_data(gym, 'gym', no_clean=True)
             rest_gym['type'] = "gym"
             gym_rest_data.append(rest_gym)
         return gym_rest_data
 
-    def extract_object_from_data(self, data, data_type):
+    def extract_object_from_data(self, data, data_type, no_clean=False):
         rest_data = {}
         # generate data from pokemon_go_pokedex with mappings
         for key in self.mappings[data_type]:
@@ -129,7 +129,8 @@ class PokemonDataToJson:
                                           sub_value in rest_data[key]]
                     else:
                         rest_data[key] = self.safe_get_dict_value(rest_data[key], split_value[i])
-        return self.clean_data(rest_data)
+        clean_data = rest_data if no_clean else self.clean_data(rest_data)
+        return clean_data
 
 
     @staticmethod
