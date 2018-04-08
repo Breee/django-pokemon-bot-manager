@@ -1,0 +1,6 @@
+from mysite.bot_basesettings import *
+
+BOTS = [
+        BotStruct(path="/bots/pokemon-raid-bot/", main_file='start_bot.py', name='raidquaza'),
+        BotStruct(path="/bots/selfbot/", main_file='client.py', name='pokemon push bot')
+       ]
