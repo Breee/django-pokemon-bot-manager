@@ -1,0 +1,13 @@
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.slite3',
+    }
+}
+
+SECRET_KEY = 'changeme'
+DEBUG = True
+
+SITE_ID = 2
+
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
