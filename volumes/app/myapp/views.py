@@ -26,6 +26,8 @@ def denied(request):
     if request.user.is_authenticated:
         username = request.user.username
         map_membership = request.user.groups.filter(name='map').exists()
+    else:
+        map_membership = "not logged in"
     return HttpResponse('Access denied! You are: ' + username + '<br>' +
                         'map membership: ' + str(map_membership))
 
