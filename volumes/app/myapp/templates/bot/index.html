@@ -54,5 +54,14 @@
      </select>
      <input type="submit" value="clear bot log">
 </form>
+<form action="/bot/git_pull">
+     <select name="bot">
+         <option value="-1"></option>
+         {% for bot in bot_list %}
+         <option value="{{ forloop.counter0 }}">{{ bot.name }}</option>
+         {% endfor %}
+     </select>
+     <input type="submit" value="git pull">
+</form>
 </body>
 </html>

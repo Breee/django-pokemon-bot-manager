@@ -89,6 +89,7 @@ def loader_output(request):
     bot_output = bot_manager.get_log_loader_output()
     if isinstance(bot_output, str):
         context = {
+            'command': 'Output',
             'bot': 'log loader',
             'lines': bot_output.splitlines()
         }
@@ -107,6 +108,7 @@ def output(request):
     bot_output = bot_manager.get_bot_output(index)
     if isinstance(bot_output, str):
         context = {
+            'command': 'Output',
             'bot': bot_manager.get_bot_list()[index].name,
             'lines': bot_output.splitlines()
         }
@@ -122,15 +124,13 @@ def git_pull_bot(request):
         return HttpResponse('Please send bot number')
     index = int(request.GET['bot'])
 
-    bot_output = bot_manager.git_pull_bot(index)
-    if isinstance(bot_output, str):
-        context = {
-            'bot': bot_manager.get_bot_list()[index].name,
-            'lines': bot_output.splitlines()
-        }
-        return render(request, 'bot/output.html', context)
-    else:
-        return HttpResponse('something is wrong')
+    bot_output = bot_manager.git_pull_bot(index).decode('utf_8')
+    context = {
+        'command': 'GitPull',
+        'bot': bot_manager.get_bot_list()[index].name,
+        'lines': bot_output.splitlines()
+    }
+    return render(request, 'bot/output.html', context)
 
 
 @user_passes_test(lambda u: u.is_superuser, login_url='/admin')
