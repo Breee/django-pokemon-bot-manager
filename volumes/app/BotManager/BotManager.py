@@ -126,9 +126,10 @@ class BotManager:
             return False
 
         try:
-            return(subprocess.check_output(['git', 'pull', self.bots[index].path],
-                                           stderr=subprocess.STDOUT))
+            return(subprocess.check_output(['git', 'pull'],
+                                           stderr=subprocess.STDOUT,
+                                           cwd=self.bots[index].path))
         except subprocess.CalledProcessError as non_zero_return:
-            return (b'Pull not successfull:\n' + non_zero_return.output).decode('utf-8')
+            return (b'Pull not successfull:\n' + non_zero_return.output)
 
 
