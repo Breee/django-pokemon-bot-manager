@@ -26,8 +26,8 @@ class PokemonMove(Model):
 
 class Pokemon(Model):
     number = IntegerField(primary_key=True)
-    name_german = TextField(db_index=True)
-    name_english = TextField(null=True)
+    name_german = TextField(db_index=True, null=True)
+    name_english = TextField(db_index=True, null=True)
     name_french = TextField(null=True)
     flee_rate = FloatField(null=True)
     capture_rate = FloatField(null=True)
