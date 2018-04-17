@@ -116,6 +116,24 @@ def output(request):
 
 
 @user_passes_test(lambda u: u.is_superuser, login_url='/admin')
+def git_pull_bot(request):
+    global bot_manager
+    if 'bot' not in request.GET:
+        return HttpResponse('Please send bot number')
+    index = int(request.GET['bot'])
+
+    bot_output = bot_manager.git_pull_bot(index)
+    if isinstance(bot_output, str):
+        context = {
+            'bot': bot_manager.get_bot_list()[index].name,
+            'lines': bot_output.splitlines()
+        }
+        return render(request, 'bot/output.html', context)
+    else:
+        return HttpResponse('something is wrong')
+
+
+@user_passes_test(lambda u: u.is_superuser, login_url='/admin')
 def clear_output(request):
     global bot_manager
     if 'bot' not in request.GET:
