@@ -3,7 +3,7 @@ try:
 except ImportError:
     from mysite.bot_basesettings import *
 import pexpect
-
+import subprocess
 
 class BotManager:
     """
@@ -29,11 +29,15 @@ class BotManager:
                                         cwd="./BotManager/",
                                         encoding='utf-8')
 
-    def _bot_exists(self, index):
-        if index not in range(0, len(BotManager.bots), 1) or self.bot_instances[index] is None:
+    def _bot_exists(self, index, check_for_instance=True, check_down=False):
+        if index not in range(0, len(BotManager.bots), 1):
             return False
-        else:
-            return True
+        if check_for_instance and self.bot_instances[index] is None:
+            return False
+        if check_down and self.bot_instances[index] is not None:
+            if not self.bot_instances[index].is_alive:
+                return False
+        return True
 
     def run_bot(self, index):
         if index not in range(0, len(BotManager.bots), 1):
@@ -116,3 +120,15 @@ class BotManager:
         self.bot_outputs[index] = ''
 
         return True
+
+    def git_pull_bot(self, index):
+        if not self._bot_exists(index, check_for_instance=False):
+            return False
+
+        try:
+            return(subprocess.check_output(['git', 'pull', self.bots[index].path],
+                                           stderr=subprocess.STDOUT))
+        except subprocess.CalledProcessError as non_zero_return:
+            return (b'Pull not successfull:\n' + non_zero_return.output).decode('utf-8')
+
+
