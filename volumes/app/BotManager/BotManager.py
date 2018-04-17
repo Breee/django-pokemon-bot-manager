@@ -23,6 +23,12 @@ class BotManager:
             self.bot_instances.append(None)
             self.bot_outputs.append('')
 
+        # pexpect buffer is limited. start loader to avoid overflow. see pexpect spwan maxreadings
+        # TODO: Find a clean way to avoid this buffer overflow
+        self.log_loader = pexpect.spawn('python3', ["LogLoader.py", str(len(self.bot_outputs))],
+                                        cwd="./BotManager/",
+                                        encoding='utf-8')
+
     def _bot_exists(self, index):
         if index not in range(0, len(BotManager.bots), 1) or self.bot_instances[index] is None:
             return False
@@ -68,6 +74,18 @@ class BotManager:
                 break
 
         return self.bot_outputs[index]
+
+    def get_log_loader_output(self):
+        bot = self.log_loader
+        # read as long as there is new input
+        output = ""
+        while True:
+            try:
+                output += bot.read_nonblocking(100, timeout=0)
+            except pexpect.TIMEOUT:
+                break
+
+        return output
 
     def get_bot_status(self, index):
         if not self._bot_exists(index):

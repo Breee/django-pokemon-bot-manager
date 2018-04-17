@@ -64,9 +64,35 @@ def status(request):
     index = int(request.GET['bot'])
 
     if bot_manager.get_bot_status(index):
-        return HttpResponse('Bot ' + str(index) + ' is running')
+        return HttpResponse('Bot ' + str(index) + ' is running', status=200)
     else:
-        return HttpResponse('Bot ' + str(index) + ' is down')
+        return HttpResponse('Bot ' + str(index) + ' is down', status=204)
+
+
+# we allow this without login to pull the output from everywhere
+def pull_output(request):
+    global bot_manager
+    if 'bot' not in request.GET:
+        return HttpResponse('Please send bot number')
+    index = int(request.GET['bot'])
+
+    bot_manager.get_bot_output(index)
+    return HttpResponse('Bot ' + str(index) + 's output is pulled', status=200)
+
+
+@user_passes_test(lambda u: u.is_superuser, login_url='/admin')
+def loader_output(request):
+    global bot_manager
+
+    bot_output = bot_manager.get_log_loader_output()
+    if isinstance(bot_output, str):
+        context = {
+            'bot': 'log loader',
+            'lines': bot_output.splitlines()
+        }
+        return render(request, 'bot/output.html', context)
+    else:
+        return HttpResponse('something is wrong')
 
 
 @user_passes_test(lambda u: u.is_superuser, login_url='/admin')

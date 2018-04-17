@@ -30,5 +30,7 @@ urlpatterns = [
     path('bot/down', views.down, name='down'),
     path('bot/status', views.status, name='status'),
     path('bot/output', views.output, name='output'),
+    path('bot/output/pull', views.pull_output, name='output'),
     path('bot/output/clear', views.clear_output, name='output'),
+    path('bot/output/loader', views.loader_output, name='output'),
 ]
