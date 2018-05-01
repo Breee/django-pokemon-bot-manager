@@ -13,8 +13,7 @@ bot_manager = BotManager()
 @login_required()
 @user_passes_test(lambda u: u.groups.count() > 0, login_url='/denied')
 def pokemap(request):
-    context = {
-    }
+    context = _get_bot_context()
     return render(request, 'map/index.html', context)
 
 def redirect_to_map(request):

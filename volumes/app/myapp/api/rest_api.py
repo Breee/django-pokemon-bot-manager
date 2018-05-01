@@ -77,7 +77,7 @@ class PokemonSpawnSet(APIView):
 
     def get(self, request, format=None):
         queryset = PokemonSpawn.objects.all()
-        queryset = queryset.filter(poke_despawn_time__gt=timezone.now())
+        queryset = queryset.filter(disappear_time__gt=timezone.now())
         serializer = PokemonSpawnSerializer(queryset, many=True)
         return Response(serializer.data)
 

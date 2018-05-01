@@ -1,6 +1,5 @@
 "use strict"
 
-
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -24,7 +23,7 @@ $.ajaxSetup({
     }
 });
 
-var mymap = L.map('mapid').setView([48.0, 7.8], 13);
+var mymap = L.map('map').setView([47.9960526,7.8464833], 13);
 var layerGroup = undefined;
 
 //var url = 'https://tiles.venezilu.de/styles/osm-bright/{z}/{x}/{y}.png'
@@ -37,8 +36,10 @@ L.tileLayer(url, {
     id: 'openstreetmap'
 }).addTo(mymap);
 
+var sidebar = L.control.sidebar('sidebar').addTo(mymap);
+
 var getData = function () {
-    $.getJSON("/api/pokepositions/", function(data) {
+    $.getJSON("/api/pokemon/spawns", function(data) {
         if (layerGroup !== undefined) {
             layerGroup.clearLayers();
         }
@@ -73,4 +74,8 @@ var getDataPerodically = function() {
             , 1000);
 };
 
-getDataPerodically();
+$( function() {
+    $( "#datepicker" ).datepicker();
+} );
+
+//getDataPerodically();
