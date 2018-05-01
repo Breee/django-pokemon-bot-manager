@@ -14,6 +14,9 @@ do
     cd ..
 done
 
+
+cd /app/static_dirs/js/
+npm install
 cd /app 
 # check if this is the first start
 python manage.py updatePokemonData
