@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_protect
 from BotManager.BotManager import BotManager
+import json
 
 bot_manager = BotManager()
 
@@ -15,7 +16,6 @@ def pokemap(request):
     context = {
     }
     return render(request, 'map/index.html', context)
-
 
 def redirect_to_map(request):
     return HttpResponseRedirect(reverse('map'))
@@ -62,7 +62,8 @@ def down(request):
 def status(request):
     global bot_manager
     if 'bot' not in request.GET:
-        return HttpResponse('Please send bot number')
+        bot_manager.get_all_status()
+        return HttpResponse(json.dumps(bot_manager.get_all_status()))
     index = int(request.GET['bot'])
 
     if bot_manager.get_bot_status(index):
@@ -148,11 +149,22 @@ def clear_output(request):
 
 @user_passes_test(lambda u: u.is_superuser, login_url='/admin')
 def bot(request):
+    context = _get_bot_context()
+    return render(request, 'bot/index.html', context)
+
+
+def _get_bot_context():
     global bot_manager
     bot_list = bot_manager.get_bot_list()
-    stat = bot_manager.get_all_status()
+    status_list = bot_manager.get_all_status()
+    context_list = []
+    for key in range(len(bot_list)):
+        context_bot = {
+            'bot': bot_list[key],
+            'status': status_list[key]
+        }
+        context_list.append(context_bot)
     context = {
-        'bot_list': bot_list,
-        'bot_status': stat
+        'bot_list': context_list,
     }
-    return render(request, 'bot/index.html', context)
+    return context

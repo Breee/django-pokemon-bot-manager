@@ -130,6 +130,6 @@ class BotManager:
                                            stderr=subprocess.STDOUT,
                                            cwd=self.bots[index].path))
         except subprocess.CalledProcessError as non_zero_return:
-            return (b'Pull not successfull:\n' + non_zero_return.output)
+            return b'Pull not successfull:\n' + non_zero_return.output
 
 

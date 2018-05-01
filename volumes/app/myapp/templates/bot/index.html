@@ -1,67 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bot Manager</title>
-</head>
-<body>
-{% for status in bot_status %}
-    <p>Bot {{ forloop.counter0 }}: {% if status %} up {% else %} down {% endif %}</p>
-{% endfor %}
+{% load static %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+      integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+      crossorigin="anonymous">
 
-<form action="/bot/up">
-     <select name="bot">
-         <option value="-1"></option>
-         {% for bot in bot_list %}
-         <option value="{{ forloop.counter0 }}">{{ bot.name }}</option>
-         {% endfor %}
-     </select>
-     <input type="submit" value="Start Bot">
-</form>
-<form action="/bot/down">
-     <select name="bot">
-         <option value="-1"></option>
-         {% for bot in bot_list %}
-         <option value="{{ forloop.counter0 }}">{{ bot.name }}</option>
-         {% endfor %}
-     </select>
-     <input type="submit" value="Stop Bot">
-</form>
-<form action="/bot/status">
-     <select name="bot">
-         <option value="-1"></option>
-         {% for bot in bot_list %}
-         <option value="{{ forloop.counter0 }}">{{ bot.name }}</option>
-         {% endfor %}
-     </select>
-     <input type="submit" value="check bot status">
-</form>
-<form action="/bot/output">
-     <select name="bot">
-         <option value="-1"></option>
-         {% for bot in bot_list %}
-         <option value="{{ forloop.counter0 }}">{{ bot.name }}</option>
-         {% endfor %}
-     </select>
-     <input type="submit" value="show bot log">
-</form>
-<form action="/bot/output/clear">
-     <select name="bot">
-         <option value="-1"></option>
-         {% for bot in bot_list %}
-         <option value="{{ forloop.counter0 }}">{{ bot.name }}</option>
-         {% endfor %}
-     </select>
-     <input type="submit" value="clear bot log">
-</form>
-<form action="/bot/git_pull">
-     <select name="bot">
-         <option value="-1"></option>
-         {% for bot in bot_list %}
-         <option value="{{ forloop.counter0 }}">{{ bot.name }}</option>
-         {% endfor %}
-     </select>
-     <input type="submit" value="git pull">
-</form>
-</body>
-</html>
+<link rel="stylesheet" href="{% static 'css/bot.css' %}">
+
+<ol id="bot_status">
+{% for bot in bot_list %}
+    <li> <span>{{ bot.bot.name }}</span>: {% if bot.status %} <i title="up" class="fas fa-check-circle" ></i>{% else %} <i title="down" class="fas fa-times-circle"></i>{% endif %}</li>
+{% endfor %}
+</ol>
+
+{% if request.user.is_superuser %}
+<div id="bot_settings">
+    <select id="bot_input" name="bot">
+        <option value="-1"></option>
+        {% for bot in bot_list %}
+        <option id="bot_start_button" value="{{ forloop.counter0 }}">{{ bot.bot.name }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <button type="button" onclick="start_bot()">Start Bot</button>
+    <button type="button" onclick="stop_bot()">Stop Bot</button>
+    <button type="button" onclick="show_bot_log()">show bot log</button>
+    <button type="button" onclick="clear_bot_log()">clear bot log</button>
+    <button type="button" onclick="git_pull()">git pull</button>
+    <br>
+    <button type="button" onclick="get_status()">check bot status</button>
+</div>
+{% endif %}
+
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="{% static 'js/bot.js' %}"></script>
