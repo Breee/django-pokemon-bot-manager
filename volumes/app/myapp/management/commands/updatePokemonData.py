@@ -66,10 +66,21 @@ class Command(BaseCommand):
         with open(pokestop_file) as poi_json:
             pokestops = json.load(poi_json)
             for json_data in pokestops:
+                print(json_data)
                 try:
                     PointOfInterest.objects.get(poi_id=json_data['poi_id'])
+                except KeyError:
+                    try:
+                        PointOfInterest.objects.get(longitude=json_data['longitude'],
+                                                    latitude=json_data['latitude'])
+                    except ObjectDoesNotExist:
+                        self.helperFunctions.create_point_of_interest(json_data)
                 except ObjectDoesNotExist:
-                    self.helperFunctions.create_point_of_interest(json_data)
+                    try:
+                        PointOfInterest.objects.get(longitude=json_data['longitude'],
+                                                    latitude=json_data['latitude'])
+                    except ObjectDoesNotExist:
+                        self.helperFunctions.create_point_of_interest(json_data)
 
         gym_file = 'jsonData/gym.json'
         with open(gym_file) as poi_json:

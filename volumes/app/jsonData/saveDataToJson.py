@@ -1,18 +1,26 @@
+import io
+
 import requests
 import json
+import csv
 
 
 class PokemonDataToJson:
     data_types = ['pokemon', 'type', 'move', 'pokestop', 'gym']
-    raw_data_types = ['pokestop', 'gym']
+    raw_data_types = ['gym']
+    csv_data_types = ['pokestop']
     mappings_file = 'mappings.json'
 
-    pokemon_go_pokedex_url = 'https://raw.githubusercontent.com/BrunnerLivio/' \
-                             + 'pokemongo-json-pokedex/master/output/'
+    pokemon_go_pokedex_url = 'https://raw.githubusercontent.com/BrunnerLivio' \
+                             + '/pokemongo-json-pokedex/master/output/'
     pokemon_go_pokedex_type = ['pokemon', 'type', 'move']
 
-    pokemon_translations_url = 'https://raw.githubusercontent.com/sindresorhus/pokemon/master/' +\
-                               'data/'
+    pokemon_go_pokestop_url = 'https://raw.githubusercontent.com/Breee' \
+                              + '/pokemon-discord-report-bot/master/gyms_stops.csv'
+
+    pokemon_translations_url = 'https://raw.githubusercontent.com/sindresorhus' \
+                               + '/pokemon/master/data/'
+
     pokemon_languages = ['de', 'fr', 'en']
     pokemon_translations = {}
     json_data = {}
@@ -28,6 +36,10 @@ class PokemonDataToJson:
             elif data_type in self.raw_data_types:
                 with open(data_type + '_raw.json') as raw_data_json:
                     pokemon_go_pokedex = json.load(raw_data_json)
+            elif data_type in self.csv_data_types:
+                pokemon_go_pokedex_csv = requests.get(self.pokemon_go_pokestop_url).text
+                fieldnames = ['name', 'url', 'type']
+                pokemon_go_pokedex = csv.DictReader(io.StringIO(pokemon_go_pokedex_csv), delimiter='\t',fieldnames=fieldnames)
             else:
                 raise NotImplementedError
 
@@ -94,12 +106,19 @@ class PokemonDataToJson:
             types_rest_data.append(rest_type)
         return types_rest_data
 
-    def get_pokestop_from_data(self, pokestop_list):
+    def get_pokestop_from_data(self, pokestop_list: csv.DictReader):
         pokestop_rest_data = []
-        for pokestop in pokestop_list['pstops']:
-            rest_pokestop = self.extract_object_from_data(pokestop, 'pokestop')
-            rest_pokestop['type'] = "pokestop"
-            pokestop_rest_data.append(rest_pokestop)
+        for pokestop in pokestop_list:
+            if pokestop['type'] == 'Pokestop':
+                url_end = pokestop['url'].split('/')[-1]
+                lat, long = url_end.split(',')
+                rest_pokestop = {
+                    'name': pokestop['name'],
+                    'longitude': long,
+                    'latitude': lat,
+                    'type': "pokestop"
+                }
+                pokestop_rest_data.append(rest_pokestop)
         return pokestop_rest_data
 
     def get_gym_from_data(self, gym_list):
