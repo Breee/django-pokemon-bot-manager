@@ -32,6 +32,10 @@ class PokemonSpawnSerializer(serializers.ModelSerializer):
 
 class PointOfInterestSerializer(serializers.ModelSerializer):
 
+    def __init__(self, *args, **kwargs):
+        many = kwargs.pop('many', True)
+        super(PointOfInterestSerializer, self).__init__(many=many, *args, **kwargs)
+
     class Meta:
         model = PointOfInterest
         fields = '__all__'

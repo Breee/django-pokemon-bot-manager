@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework import routers
-from myapp.api.rest_api import PokedexSet, PokemonSpawnSet
+from myapp.api.rest_api import PokedexSet, PokemonSpawnSet, PointOfInterestSet
 
 router = routers.DefaultRouter()
 
@@ -10,6 +10,7 @@ urlpatterns = [
     path(r' ', include(router.urls)),
     path('pokedex/', PokedexSet.as_view(), name='rest_get_pokemon'),
     path('pokemon/spawns', PokemonSpawnSet.as_view()),
+    path('poi/all', PointOfInterestSet.as_view()),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 

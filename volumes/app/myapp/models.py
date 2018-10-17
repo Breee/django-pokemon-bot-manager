@@ -101,6 +101,9 @@ class PointOfInterest(Model):
     active_fort_modifier = SmallIntegerField(default=None, null=True)  # Don't know what dis does
     park = BooleanField(default=False)
 
+    def __repr__(self):
+        return self.name
+
 
 class PokeStopLure(Model):
     report_time = DateTimeField(default=timezone.now)

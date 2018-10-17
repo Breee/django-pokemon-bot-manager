@@ -50,6 +50,16 @@ Then go to `Django Pokemon Bot Manager` admin panel (`/admin/`) and add a
 * `client id` : from discord developer app
 * `client secret` : from discord developer app
 
+
+## build static files
+If you deploy without docker,  you have to do the following.
+1. `apt get install npm`
+2. `cd app/static/js/`
+3. `npm install`
+4. `cd app/static_dirs/js/`
+5. `npm install`
+6. run `manage.py` task and then execute `collectstatic`.
+
 ## OLD Login with Discord Howto
 
 Install required packages:

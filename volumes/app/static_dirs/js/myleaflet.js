@@ -79,3 +79,51 @@ $( function() {
 } );
 
 //getDataPerodically();
+
+$.getJSON("/api/poi/all", function(data) {
+        if (layerGroup !== undefined) {
+            layerGroup.clearLayers();
+        }
+        else {
+            layerGroup = L.layerGroup()
+        }
+        for (var i in data) {
+            var poi = data[i];
+            var popup = "" + poi.name + "<br>";
+            if (poi.type === "Pokestop") {
+                var marker = L.marker([poi.latitude, poi.longitude],
+                    {
+                        title: poi.name,
+                        icon: L.icon({
+                            iconUrl: "https://png.icons8.com/color/1600/pokestop-blue.png",
+                            iconSize: [32, 32],
+                            popupAnchor: [-3, -76]
+                        })
+                    });
+            }else if(poi.type === "Arena"){
+                var marker = L.marker([poi.latitude, poi.longitude],
+                    {
+                        title: poi.name,
+                        icon: L.icon({
+                            iconUrl: "https://vignette.wikia.nocookie.net/pokemon/images/2/29/Gym_Leader_file.png",
+                            iconSize: [32, 32],
+                            popupAnchor: [-3, -76]
+                        })
+                    });
+            }else{
+                var marker = L.marker([poi.latitude, poi.longitude],
+                    {
+                        title: poi.name,
+                        icon: L.icon({
+                            iconUrl: "https://png.icons8.com/color/1600/pokestop-blue.png",
+                            iconSize: [32, 32],
+                            popupAnchor: [-3, -76]
+                        })
+                    });
+            }
+            marker.bindPopup(popup);
+            layerGroup.addLayer(marker);
+        }
+        layerGroup.addTo(mymap);
+
+    });

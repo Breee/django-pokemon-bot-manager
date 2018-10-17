@@ -87,3 +87,30 @@ class PokemonSpawnSet(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class PointOfInterestSet(APIView):
+    """
+    Point of interests
+    """
+    permission_classes = (permissions.IsAuthenticated,)
+    serializer_class = PointOfInterestSerializer
+
+
+    def get(self, request, format=None):
+        queryset = PointOfInterest.objects.all()
+        serializer = PointOfInterestSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        context = []
+        for item in request.data:
+            serializer = PointOfInterestSerializer(data=item)
+            if serializer.is_valid():
+                serializer.save()
+                context.append(serializer.data)
+            else:
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response(context, status=status.HTTP_201_CREATED)
+
