@@ -7,3 +7,5 @@ uwsgi
 pexpect
 psycopg2-binary
 redis
+django-channels
+daphne

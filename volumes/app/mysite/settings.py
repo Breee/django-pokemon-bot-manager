@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -156,6 +157,8 @@ STATIC_ROOT = 'static'
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/admin'
+
+ASGI_APPLICATION = 'mysite.routing.application'
 
 # Redis
 
