@@ -1,20 +1,35 @@
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.shortcuts import render
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_protect
+from django.views.generic import TemplateView
+
 from BotManager.BotManager import BotManager
 import json
 
 bot_manager = BotManager()
 
 
-@csrf_protect
-@login_required()
-@user_passes_test(lambda u: u.groups.count() > 0, login_url='/denied')
-def pokemap(request):
-    context = _get_bot_context()
-    return render(request, 'map/index.html', context)
+class Pokemap(TemplateView):
+    template_name = 'map/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        for key, value in _get_bot_context().items():
+            context[key] = value
+        return context
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            user = User.objects.get(pk=request.user.id)
+            if not user.is_superuser:
+                if not user.groups.count() > 0:
+                    return redirect('/denied')
+            return super().dispatch(request, *args, **kwargs)
+        return redirect('/accounts/login')
+
 
 def redirect_to_map(request):
     return HttpResponseRedirect(reverse('map'))

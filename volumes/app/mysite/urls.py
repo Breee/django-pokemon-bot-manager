@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('api/', include('myapp.api.rest_urls')),
-    path('map/', views.pokemap, name='map'),
+    path('map/', views.Pokemap.as_view(), name='map'),
     path('bot/', views.bot, name='bot'),
     path('bot/up', views.up, name='up'),
     path('bot/down', views.down, name='down'),
