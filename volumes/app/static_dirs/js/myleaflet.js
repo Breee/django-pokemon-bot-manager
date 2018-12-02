@@ -65,15 +65,6 @@ var getData = function () {
     });
 };
 
-var getDataPerodically = function() {
-    setTimeout(function () {
-
-            getData();
-            getDataPerodically()
-        }
-            , 1000);
-};
-
 $( function() {
     $( "#datepicker" ).datepicker();
 } );
@@ -132,7 +123,7 @@ var getPOI = function() {
 
 getPOI();
 
-var poiHidden = false;
+var poiHidden = true;
 
 var togglePOI = function() {
      if (poiHidden) {
