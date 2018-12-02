@@ -69,7 +69,10 @@ var getDataPerodically = function() {
     setTimeout(function () {
 
             getData();
-            getDataPerodically()
+            getDataPerodically({
+                maxClusterRadius: 120,
+                disableClusteringAtZoom: 15
+            })
         }
             , 1000);
 };
