@@ -25,7 +25,7 @@ $.ajaxSetup({
 
 var mymap = L.map('map').setView([47.9960526,7.8464833], 13);
 var layerGroup = undefined;
-
+var poiLayer = undefined;
 //var url = 'https://tiles.venezilu.de/styles/osm-bright/{z}/{x}/{y}.png'
 //var url = 'https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}'
 var url = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png'
@@ -44,7 +44,7 @@ var getData = function () {
             layerGroup.clearLayers();
         }
         else {
-            layerGroup = L.layerGroup()
+            layerGroup = L.markerClusterGroup();
         }
         for (var i in data) {
             var pokemon = data[i];
@@ -81,11 +81,11 @@ $( function() {
 //getDataPerodically();
 
 $.getJSON("/api/poi/all", function(data) {
-        if (layerGroup !== undefined) {
-            layerGroup.clearLayers();
+        if (poiLayer !== undefined) {
+            poiLayer.clearLayers();
         }
         else {
-            layerGroup = L.layerGroup()
+            poiLayer = L.markerClusterGroup();
         }
         for (var i in data) {
             var poi = data[i];
@@ -122,8 +122,8 @@ $.getJSON("/api/poi/all", function(data) {
                     });
             }
             marker.bindPopup(popup);
-            layerGroup.addLayer(marker);
+            poiLayer.addLayer(marker);
         }
-        layerGroup.addTo(mymap);
+        poiLayer.addTo(mymap);
 
     });
