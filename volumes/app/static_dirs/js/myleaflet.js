@@ -100,7 +100,7 @@ $.getJSON("/api/poi/all", function(data) {
                             popupAnchor: [-3, -76]
                         })
                     });
-            }else if(poi.type === "arena"){
+            }else if(poi.type === "gym"){
                 var marker = L.marker([poi.latitude, poi.longitude],
                     {
                         title: poi.name,
