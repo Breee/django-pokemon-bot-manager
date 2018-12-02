@@ -104,6 +104,9 @@ class PointOfInterest(Model):
     def __repr__(self):
         return self.name
 
+    def __str__(self):
+        return ' '.join([self.type, self.name])
+
 
 class PokeStopLure(Model):
     report_time = DateTimeField(default=timezone.now)
