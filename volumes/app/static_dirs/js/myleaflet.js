@@ -69,10 +69,7 @@ var getDataPerodically = function() {
     setTimeout(function () {
 
             getData();
-            getDataPerodically({
-                maxClusterRadius: 120,
-                disableClusteringAtZoom: 15
-            })
+            getDataPerodically()
         }
             , 1000);
 };
@@ -88,7 +85,10 @@ $.getJSON("/api/poi/all", function(data) {
             poiLayer.clearLayers();
         }
         else {
-            poiLayer = L.markerClusterGroup();
+            poiLayer = L.markerClusterGroup({
+                maxClusterRadius: 120,
+                disableClusteringAtZoom: 15
+            });
         }
         for (var i in data) {
             var poi = data[i];
