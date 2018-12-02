@@ -143,4 +143,5 @@ var togglePOI = function() {
              poiLayer.clearLayers()
          }
      }
+     poiHidden = !poiHidden;
 };
