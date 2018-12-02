@@ -90,7 +90,7 @@ $.getJSON("/api/poi/all", function(data) {
         for (var i in data) {
             var poi = data[i];
             var popup = "" + poi.name + "<br>";
-            if (poi.type === "Pokestop") {
+            if (poi.type === "pokestop") {
                 var marker = L.marker([poi.latitude, poi.longitude],
                     {
                         title: poi.name,
@@ -100,7 +100,7 @@ $.getJSON("/api/poi/all", function(data) {
                             popupAnchor: [-3, -76]
                         })
                     });
-            }else if(poi.type === "Arena"){
+            }else if(poi.type === "arena"){
                 var marker = L.marker([poi.latitude, poi.longitude],
                     {
                         title: poi.name,
