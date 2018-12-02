@@ -78,13 +78,11 @@ $( function() {
     $( "#datepicker" ).datepicker();
 } );
 
-//getDataPerodically();
-
-$.getJSON("/api/poi/all", function(data) {
+var getPOI = function() {
+    $.getJSON("/api/poi/all", function (data) {
         if (poiLayer !== undefined) {
             poiLayer.clearLayers();
-        }
-        else {
+        } else {
             poiLayer = L.markerClusterGroup({
                 maxClusterRadius: 120,
                 disableClusteringAtZoom: 17
@@ -103,7 +101,7 @@ $.getJSON("/api/poi/all", function(data) {
                             popupAnchor: [-3, -76]
                         })
                     });
-            }else if(poi.type === "gym"){
+            } else if (poi.type === "gym") {
                 var marker = L.marker([poi.latitude, poi.longitude],
                     {
                         title: poi.name,
@@ -113,7 +111,7 @@ $.getJSON("/api/poi/all", function(data) {
                             popupAnchor: [-3, -76]
                         })
                     });
-            }else{
+            } else {
                 var marker = L.marker([poi.latitude, poi.longitude],
                     {
                         title: poi.name,
@@ -130,3 +128,19 @@ $.getJSON("/api/poi/all", function(data) {
         poiLayer.addTo(mymap);
 
     });
+};
+
+getPOI();
+
+var poiHidden = false;
+
+var togglePOI = function() {
+     if (poiHidden) {
+         getPOI();
+     }
+     else {
+         if (poiLayer !== undefined) {
+             poiLayer.clearLayers()
+         }
+     }
+};
