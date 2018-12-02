@@ -86,7 +86,7 @@ $.getJSON("/api/poi/all", function(data) {
         }
         else {
             poiLayer = L.markerClusterGroup({
-                maxClusterRadius: 10,
+                maxClusterRadius: 120,
                 disableClusteringAtZoom: 17
             });
         }
