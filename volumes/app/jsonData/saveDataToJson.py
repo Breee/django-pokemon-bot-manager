@@ -11,12 +11,12 @@ class PokemonDataToJson:
     csv_data_types = ['pokestop']
     mappings_file = 'mappings.json'
 
-    pokemon_go_pokedex_url = 'https://raw.githubusercontent.com/BrunnerLivio' \
+    pokemon_go_pokedex_url = 'https://raw.githubusercontent.com/pokemongo-dev-contrib' \
                              + '/pokemongo-json-pokedex/master/output/'
     pokemon_go_pokedex_type = ['pokemon', 'type', 'move']
 
     pokemon_go_pokestop_url = 'https://raw.githubusercontent.com/Breee' \
-                              + '/pokemon-discord-report-bot/master/gyms_stops.csv'
+                              + '/pokemon-discord-report-bot/master/data/gyms_stops.csv'
 
     pokemon_translations_url = 'https://raw.githubusercontent.com/sindresorhus' \
                                + '/pokemon/master/data/'
@@ -38,7 +38,7 @@ class PokemonDataToJson:
                     pokemon_go_pokedex = json.load(raw_data_json)
             elif data_type in self.csv_data_types:
                 pokemon_go_pokedex_csv = requests.get(self.pokemon_go_pokestop_url).text
-                fieldnames = ['name', 'url', 'type']
+                fieldnames = ['name', 'longitude', 'latitude', 'type']
                 pokemon_go_pokedex = csv.DictReader(io.StringIO(pokemon_go_pokedex_csv), delimiter='\t',fieldnames=fieldnames)
             else:
                 raise NotImplementedError
@@ -110,13 +110,11 @@ class PokemonDataToJson:
         pokestop_rest_data = []
         for pokestop in pokestop_list:
             if pokestop['type'] == 'Pokestop':
-                url_end = pokestop['url'].split('/')[-1]
-                lat, long = url_end.split(',')
                 rest_pokestop = {
                     'name': pokestop['name'],
-                    'longitude': long,
-                    'latitude': lat,
-                    'type': "pokestop"
+                    'longitude': pokestop['longitude'],
+                    'latitude': pokestop['latitude'],
+                    'type': pokestop['type']
                 }
                 pokestop_rest_data.append(rest_pokestop)
         return pokestop_rest_data

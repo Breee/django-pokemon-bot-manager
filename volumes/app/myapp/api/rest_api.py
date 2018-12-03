@@ -2,6 +2,9 @@ from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from myapp.api.serializers import *
+from myapp.pogoprotos import ModelBridge
+from myapp.pogoprotos.Pogoprotos import Pogoprotos
+from pogoprotos.networking.responses.get_map_objects_response_pb2 import GetMapObjectsResponse
 
 
 class PokedexSet(APIView):
@@ -111,6 +114,79 @@ class PointOfInterestSet(APIView):
                 context.append(serializer.data)
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response(context, status=status.HTTP_201_CREATED)
+
+
+class RealDeviceMapBlackHole(APIView):
+    """
+    Push everything from RealDeviceMap here
+    """
+    serializer_class = RealDeviceMapBlackHoleSerializer
+
+    def get(self, request, format=None):
+        serializer = self.serializer_class()
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        data = request.data
+        context = {}
+
+        if isinstance(data, dict):
+            if 'protos' in data:
+                protos = Pogoprotos()
+                protos.parse(data['protos'][0])
+                for key, message in protos.messages.items():
+                    if isinstance(message, GetMapObjectsResponse):
+                        for map_cell in message.map_cells:
+                            ModelBridge.iterate_map_cell(map_cell)
+
+            for key, value in data.items():
+                if key == 'quests':
+                    pass
+                elif key == 'pokestops':
+                    if len(value) > 0:
+                        for pokestop in value:
+                            print(pokestop)
+                            queryset = PointOfInterest.objects.filter(longitude=pokestop['longitude'],
+                                                                      latitude=pokestop['latitude'])
+                            if queryset.exists():
+                                if queryset.count() > 1:
+                                    print('pokestop is not unique!')
+                                else:
+                                    pokestop_object: PointOfInterest = queryset.first()
+                                    pokestop_object.poi_id = pokestop['id']
+                                    pokestop_object.enabled = pokestop['enabled']
+                                    pokestop_object.save()
+                                    print('pokestop updated')
+                            else:
+                                PointOfInterest.objects.create(poi_id=pokestop['id'],
+                                                               longitude=pokestop['longitude'],
+                                                               latitude=pokestop['latitude'],
+                                                               type='pokestop')
+                                print('pokestop created')
+                elif key == 'spawnpoints':
+                    pass
+                elif key == 'pokemon':
+                    if len(value) > 0:
+                        for pokemon in value:
+                            despawn_time = timezone.now() + timezone.timedelta(microseconds=pokemon['despawn_time'])  # one nanosecond is 1000 microseconds
+                            poke_nr = Pokemon.objects.get(number=pokemon['pokemon_id'])
+                            pokemon_spawn = PokemonSpawn.objects.create(poke_nr=poke_nr,
+                                                                        latitude=pokemon['lat'],
+                                                                        longitude=pokemon['lon'],
+                                                                        disappear_time=despawn_time)
+                            pokemon_spawn.save()
+                elif key == 'nearby_pokemon':
+                    pass
+                elif key == 'validation1':
+                    pass
+                elif key == 'gyms':
+                    pass
+                else:
+                    print('not in parse list')
+            if 'pokemon' in data:
+                print(data['pokemon'])
 
         return Response(context, status=status.HTTP_201_CREATED)
 

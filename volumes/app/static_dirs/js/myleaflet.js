@@ -44,16 +44,16 @@ var getData = function () {
             layerGroup.clearLayers();
         }
         else {
-            layerGroup = L.markerClusterGroup();
+            layerGroup = L.layerGroup();
         }
         for (var i in data) {
             var pokemon = data[i];
-            var popup = "" + pokemon.poke_despawn_time + "<br>" +
-                "" + pokemon.poke_nr;
-            var marker = L.marker([pokemon.poke_lat, pokemon.poke_lon],
+            var popup = "" + pokemon.disappear_time + "<br>" +
+                "" + pokemon.pokemon_object;
+            var marker = L.marker([pokemon.latitude, pokemon.longitude],
                 {title: "test",
                     icon: L.icon({
-                        iconUrl: "/static/img/pokemons/" + pokemon.poke_nr + '.png',
+                        iconUrl: "/static/img/pokemons/" + pokemon.pokemon_object + '.png',
                         iconSize: [32, 32],
                         popupAnchor: [-3, -76]
                     }) });
@@ -121,8 +121,6 @@ var getPOI = function() {
     });
 };
 
-getPOI();
-
 var poiHidden = true;
 
 var togglePOI = function() {
@@ -136,3 +134,29 @@ var togglePOI = function() {
      }
      poiHidden = !poiHidden;
 };
+
+function reloadData() {
+    if (!poiHidden) {
+        getPOI();
+    }
+    getData();
+}
+
+var websocket_protocol = 'ws://';
+if (location.protocol === 'https:') {
+    websocket_protocol = 'wss://'
+}
+
+var updateSocket = new WebSocket(
+websocket_protocol + window.location.host +
+'/ws/update/');
+
+updateSocket.onmessage = function(e) {
+    var data = JSON.parse(e.data);
+    console.log(data);
+    if (data.type === 'change') {
+        reloadData()
+    }
+};
+
+reloadData();

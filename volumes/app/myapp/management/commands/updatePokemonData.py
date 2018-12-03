@@ -32,7 +32,6 @@ class UpdatePokemonDataHelpers:
             self.stdout.write(str(poi))
             poi.save()
 
-
         @staticmethod
         def _safe_get_dict_value(dictionary, key):
             if key in dictionary:

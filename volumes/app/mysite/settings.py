@@ -159,6 +159,11 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/admin'
 
 ASGI_APPLICATION = 'mysite.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    },
+}
 
 # Redis
 

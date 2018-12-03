@@ -6,7 +6,7 @@
         "name_french": "Bulbizarre",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 981,
+        "max_cp": 1115,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -30,7 +30,7 @@
         "name_french": "Herbizarre",
         "flee_rate": 0.07,
         "capture_rate": 0.1,
-        "max_cp": 1552,
+        "max_cp": 1699,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -54,7 +54,7 @@
         "name_french": "Florizarre",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2568,
+        "max_cp": 2720,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -78,7 +78,7 @@
         "name_french": "Salam\u00e8che",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 831,
+        "max_cp": 980,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -101,7 +101,7 @@
         "name_french": "Reptincel",
         "flee_rate": 0.07,
         "capture_rate": 0.1,
-        "max_cp": 1484,
+        "max_cp": 1653,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -124,7 +124,7 @@
         "name_french": "Dracaufeu",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2686,
+        "max_cp": 2889,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -148,7 +148,7 @@
         "name_french": "Carapuce",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 808,
+        "max_cp": 946,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -171,7 +171,7 @@
         "name_french": "Carabaffe",
         "flee_rate": 0.07,
         "capture_rate": 0.1,
-        "max_cp": 1324,
+        "max_cp": 1488,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -194,7 +194,7 @@
         "name_french": "Tortank",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2291,
+        "max_cp": 2466,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -217,7 +217,7 @@
         "name_french": "Chenipan",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 393,
+        "max_cp": 437,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -238,7 +238,7 @@
         "name_french": "Chrysacier",
         "flee_rate": 0.09,
         "capture_rate": 0.25,
-        "max_cp": 419,
+        "max_cp": 450,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -259,7 +259,7 @@
         "name_french": "Papilusion",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 1701,
+        "max_cp": 1827,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -283,7 +283,7 @@
         "name_french": "Aspicot",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 397,
+        "max_cp": 456,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -305,7 +305,7 @@
         "name_french": "Coconfort",
         "flee_rate": 0.09,
         "capture_rate": 0.25,
-        "max_cp": 392,
+        "max_cp": 432,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -327,7 +327,7 @@
         "name_french": "Dardargnan",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 1777,
+        "max_cp": 1846,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -351,7 +351,7 @@
         "name_french": "Roucool",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 580,
+        "max_cp": 680,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -375,7 +375,7 @@
         "name_french": "Roucoups",
         "flee_rate": 0.09,
         "capture_rate": 0.25,
-        "max_cp": 1085,
+        "max_cp": 1194,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -399,7 +399,7 @@
         "name_french": "Roucarnage",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 1994,
+        "max_cp": 2129,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -423,7 +423,7 @@
         "name_french": "Rattata",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 588,
+        "max_cp": 734,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -446,7 +446,7 @@
         "name_french": "Rattatac",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1549,
+        "max_cp": 1730,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -469,7 +469,7 @@
         "name_french": "Piafabec",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 673,
+        "max_cp": 798,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -493,7 +493,7 @@
         "name_french": "Rapasdepic",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1814,
+        "max_cp": 1997,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -517,7 +517,7 @@
         "name_french": "Abo",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 778,
+        "max_cp": 927,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -540,7 +540,7 @@
         "name_french": "Arbok",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1737,
+        "max_cp": 1921,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -563,7 +563,7 @@
         "name_french": "Pikachu",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 787,
+        "max_cp": 938,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -586,7 +586,7 @@
         "name_french": "Raichu",
         "flee_rate": 0.06,
         "capture_rate": 0.1,
-        "max_cp": 2025,
+        "max_cp": 2182,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -609,7 +609,7 @@
         "name_french": "Sabelette",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1194,
+        "max_cp": 1261,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -632,7 +632,7 @@
         "name_french": "Sablaireau",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2328,
+        "max_cp": 2374,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -655,7 +655,7 @@
         "name_french": "Nidoran\u2640",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 736,
+        "max_cp": 816,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -678,7 +678,7 @@
         "name_french": "Nidorina",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 1218,
+        "max_cp": 1309,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -701,7 +701,7 @@
         "name_french": "Nidoqueen",
         "flee_rate": 0.05,
         "capture_rate": 0.125,
-        "max_cp": 2338,
+        "max_cp": 2488,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -725,7 +725,7 @@
         "name_french": "Nidoran\u2642",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 739,
+        "max_cp": 860,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -748,7 +748,7 @@
         "name_french": "Nidorino",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 1252,
+        "max_cp": 1393,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -771,7 +771,7 @@
         "name_french": "Nidoking",
         "flee_rate": 0.05,
         "capture_rate": 0.125,
-        "max_cp": 2386,
+        "max_cp": 2567,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -795,7 +795,7 @@
         "name_french": "M\u00e9lof\u00e9e",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 1085,
+        "max_cp": 1155,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -818,7 +818,7 @@
         "name_french": "M\u00e9lodelfe",
         "flee_rate": 0.06,
         "capture_rate": 0.1,
-        "max_cp": 2353,
+        "max_cp": 2437,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -841,7 +841,7 @@
         "name_french": "Goupix",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 774,
+        "max_cp": 883,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -864,7 +864,7 @@
         "name_french": "Feunard",
         "flee_rate": 0.06,
         "capture_rate": 0.1,
-        "max_cp": 2157,
+        "max_cp": 2279,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -887,7 +887,7 @@
         "name_french": "Rondoudou",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 713,
+        "max_cp": 724,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -911,7 +911,7 @@
         "name_french": "Grodoudou",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1906,
+        "max_cp": 1926,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -935,7 +935,7 @@
         "name_french": "Nosferapti",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 569,
+        "max_cp": 667,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -959,7 +959,7 @@
         "name_french": "Nosferalto",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1830,
+        "max_cp": 1976,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -983,7 +983,7 @@
         "name_french": "Mystherbe",
         "flee_rate": 0.15,
         "capture_rate": 0.6,
-        "max_cp": 1069,
+        "max_cp": 1228,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1007,7 +1007,7 @@
         "name_french": "Ortide",
         "flee_rate": 0.07,
         "capture_rate": 0.3,
-        "max_cp": 1512,
+        "max_cp": 1681,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1031,7 +1031,7 @@
         "name_french": "Rafflesia",
         "flee_rate": 0.05,
         "capture_rate": 0.15,
-        "max_cp": 2367,
+        "max_cp": 2559,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1055,7 +1055,7 @@
         "name_french": "Paras",
         "flee_rate": 0.15,
         "capture_rate": 0.4,
-        "max_cp": 836,
+        "max_cp": 1018,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1079,7 +1079,7 @@
         "name_french": "Parasect",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1657,
+        "max_cp": 1859,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1103,7 +1103,7 @@
         "name_french": "Mimitoss",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 902,
+        "max_cp": 1004,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1127,7 +1127,7 @@
         "name_french": "A\u00e9romite",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1937,
+        "max_cp": 2082,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1151,7 +1151,7 @@
         "name_french": "Taupiqueur",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 465,
+        "max_cp": 676,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1174,7 +1174,7 @@
         "name_french": "Triopikeur",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1333,
+        "max_cp": 1557,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1197,7 +1197,7 @@
         "name_french": "Miaouss",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 638,
+        "max_cp": 748,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1220,7 +1220,7 @@
         "name_french": "Persian",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1539,
+        "max_cp": 1689,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1243,7 +1243,7 @@
         "name_french": "Psykokwak",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 966,
+        "max_cp": 1106,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1266,7 +1266,7 @@
         "name_french": "Akwakwak",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2270,
+        "max_cp": 2450,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1289,7 +1289,7 @@
         "name_french": "F\u00e9rosinge",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1002,
+        "max_cp": 1164,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1312,7 +1312,7 @@
         "name_french": "Colossinge",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2105,
+        "max_cp": 2288,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1335,7 +1335,7 @@
         "name_french": "Caninos",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 1110,
+        "max_cp": 1243,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1358,7 +1358,7 @@
         "name_french": "Arcanin",
         "flee_rate": 0.06,
         "capture_rate": 0.1,
-        "max_cp": 2839,
+        "max_cp": 3029,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1381,7 +1381,7 @@
         "name_french": "Ptitard",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 695,
+        "max_cp": 829,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1404,7 +1404,7 @@
         "name_french": "T\u00eatarte",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 1313,
+        "max_cp": 1419,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1427,7 +1427,7 @@
         "name_french": "Tartard",
         "flee_rate": 0.05,
         "capture_rate": 0.125,
-        "max_cp": 2441,
+        "max_cp": 2586,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1451,7 +1451,7 @@
         "name_french": "Abra",
         "flee_rate": 0.99,
         "capture_rate": 0.5,
-        "max_cp": 1148,
+        "max_cp": 1342,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1474,7 +1474,7 @@
         "name_french": "Kadabra",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 1859,
+        "max_cp": 2059,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1497,7 +1497,7 @@
         "name_french": "Alakazam",
         "flee_rate": 0.05,
         "capture_rate": 0.1,
-        "max_cp": 2887,
+        "max_cp": 3057,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1520,7 +1520,7 @@
         "name_french": "Machoc",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1199,
+        "max_cp": 1278,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1543,7 +1543,7 @@
         "name_french": "Machopeur",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 1910,
+        "max_cp": 2031,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1566,7 +1566,7 @@
         "name_french": "Mackogneur",
         "flee_rate": 0.05,
         "capture_rate": 0.1,
-        "max_cp": 2889,
+        "max_cp": 3056,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1589,7 +1589,7 @@
         "name_french": "Ch\u00e9tiflor",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 916,
+        "max_cp": 1033,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1613,7 +1613,7 @@
         "name_french": "Boustiflor",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 1475,
+        "max_cp": 1611,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1637,7 +1637,7 @@
         "name_french": "Empiflor",
         "flee_rate": 0.05,
         "capture_rate": 0.125,
-        "max_cp": 2268,
+        "max_cp": 2431,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1661,7 +1661,7 @@
         "name_french": "Tentacool",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 956,
+        "max_cp": 1040,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1685,7 +1685,7 @@
         "name_french": "Tentacruel",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 2374,
+        "max_cp": 2422,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1709,7 +1709,7 @@
         "name_french": "Racaillou",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1193,
+        "max_cp": 1293,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -1733,7 +1733,7 @@
         "name_french": "Gravalanch",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 1815,
+        "max_cp": 1897,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -1757,7 +1757,7 @@
         "name_french": "Grolem",
         "flee_rate": 0.05,
         "capture_rate": 0.125,
-        "max_cp": 2916,
+        "max_cp": 2949,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -1781,7 +1781,7 @@
         "name_french": "Ponyta",
         "flee_rate": 0.1,
         "capture_rate": 0.4,
-        "max_cp": 1502,
+        "max_cp": 1697,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1804,7 +1804,7 @@
         "name_french": "Galopa",
         "flee_rate": 0.06,
         "capture_rate": 0.15,
-        "max_cp": 2252,
+        "max_cp": 2461,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1827,7 +1827,7 @@
         "name_french": "Ramoloss",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1204,
+        "max_cp": 1226,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1851,7 +1851,7 @@
         "name_french": "Flagadoss",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2482,
+        "max_cp": 2545,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1875,7 +1875,7 @@
         "name_french": "Magn\u00e9ti",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1083,
+        "max_cp": 1362,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1899,7 +1899,7 @@
         "name_french": "Magn\u00e9ton",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2237,
+        "max_cp": 2485,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1923,7 +1923,7 @@
         "name_french": "Canarticho",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 1092,
+        "max_cp": 1236,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1947,7 +1947,7 @@
         "name_french": "Doduo",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1011,
+        "max_cp": 1200,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1971,7 +1971,7 @@
         "name_french": "Dodrio",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2138,
+        "max_cp": 2362,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -1995,7 +1995,7 @@
         "name_french": "Otaria",
         "flee_rate": 0.09,
         "capture_rate": 0.5,
-        "max_cp": 899,
+        "max_cp": 971,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2018,7 +2018,7 @@
         "name_french": "Lamantine",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1894,
+        "max_cp": 1985,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2042,7 +2042,7 @@
         "name_french": "Tadmorv",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1269,
+        "max_cp": 1374,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2065,7 +2065,7 @@
         "name_french": "Grotadmorv",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2709,
+        "max_cp": 2757,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2088,7 +2088,7 @@
         "name_french": "Kokiyas",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 958,
+        "max_cp": 1080,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2111,7 +2111,7 @@
         "name_french": "Crustabri",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2475,
+        "max_cp": 2547,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2135,7 +2135,7 @@
         "name_french": "Fantominus",
         "flee_rate": 0.1,
         "capture_rate": 0.4,
-        "max_cp": 1002,
+        "max_cp": 1229,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2159,7 +2159,7 @@
         "name_french": "Spectrum",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1716,
+        "max_cp": 1963,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2183,7 +2183,7 @@
         "name_french": "Ectoplasma",
         "flee_rate": 0.05,
         "capture_rate": 0.1,
-        "max_cp": 2619,
+        "max_cp": 2878,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2207,7 +2207,7 @@
         "name_french": "Onix",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 1002,
+        "max_cp": 1101,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -2231,7 +2231,7 @@
         "name_french": "Soporifik",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 992,
+        "max_cp": 1040,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2254,7 +2254,7 @@
         "name_french": "Hypnomade",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2048,
+        "max_cp": 2090,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2277,7 +2277,7 @@
         "name_french": "Krabby",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 1386,
+        "max_cp": 1561,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2300,7 +2300,7 @@
         "name_french": "Krabboss",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 2694,
+        "max_cp": 2829,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2323,7 +2323,7 @@
         "name_french": "Voltorbe",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 857,
+        "max_cp": 1010,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2346,7 +2346,7 @@
         "name_french": "\u00c9lectrode",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1900,
+        "max_cp": 2099,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2369,7 +2369,7 @@
         "name_french": "N\u0153un\u0153uf",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1102,
+        "max_cp": 1175,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2393,7 +2393,7 @@
         "name_french": "Noadkoko",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2916,
+        "max_cp": 3014,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2417,7 +2417,7 @@
         "name_french": "Osselait",
         "flee_rate": 0.1,
         "capture_rate": 0.4,
-        "max_cp": 943,
+        "max_cp": 1019,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2440,7 +2440,7 @@
         "name_french": "Ossatueur",
         "flee_rate": 0.06,
         "capture_rate": 0.15,
-        "max_cp": 1691,
+        "max_cp": 1835,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2463,7 +2463,7 @@
         "name_french": "Kicklee",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 2406,
+        "max_cp": 2576,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -2486,7 +2486,7 @@
         "name_french": "Tygnon",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 2098,
+        "max_cp": 2332,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -2510,7 +2510,7 @@
         "name_french": "Excelangue",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 1322,
+        "max_cp": 1411,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2533,7 +2533,7 @@
         "name_french": "Smogo",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1091,
+        "max_cp": 1214,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2556,7 +2556,7 @@
         "name_french": "Smogogo",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2183,
+        "max_cp": 2293,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2579,7 +2579,7 @@
         "name_french": "Rhinocorne",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1679,
+        "max_cp": 1651,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2603,7 +2603,7 @@
         "name_french": "Rhinof\u00e9ros",
         "flee_rate": 0.06,
         "capture_rate": 0.05,
-        "max_cp": 3300,
+        "max_cp": 3179,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2627,7 +2627,7 @@
         "name_french": "Leveinard",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 1469,
+        "max_cp": 1255,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -2650,7 +2650,7 @@
         "name_french": "Saquedeneu",
         "flee_rate": 0.09,
         "capture_rate": 0.4,
-        "max_cp": 2208,
+        "max_cp": 2238,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2673,7 +2673,7 @@
         "name_french": "Kangourex",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 2463,
+        "max_cp": 2586,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2696,7 +2696,7 @@
         "name_french": "Hypotrempe",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 921,
+        "max_cp": 1056,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2719,7 +2719,7 @@
         "name_french": "Hypoc\u00e9an",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1979,
+        "max_cp": 2093,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2742,7 +2742,7 @@
         "name_french": "Poissir\u00e8ne",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 1006,
+        "max_cp": 1152,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2765,7 +2765,7 @@
         "name_french": "Poissoroy",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 2040,
+        "max_cp": 2162,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2788,7 +2788,7 @@
         "name_french": "Stari",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 926,
+        "max_cp": 1157,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2811,7 +2811,7 @@
         "name_french": "Staross",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2303,
+        "max_cp": 2584,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2835,7 +2835,7 @@
         "name_french": "Mime",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 1984,
+        "max_cp": 2228,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -2859,7 +2859,7 @@
         "name_french": "Ins\u00e9cateur",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 2464,
+        "max_cp": 2706,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -2883,7 +2883,7 @@
         "name_french": "Lippoutou",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 2512,
+        "max_cp": 2555,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -2907,7 +2907,7 @@
         "name_french": "\u00c9lektek",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 2196,
+        "max_cp": 2334,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -2930,7 +2930,7 @@
         "name_french": "Magmar",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 2254,
+        "max_cp": 2394,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -2953,7 +2953,7 @@
         "name_french": "Scarabrute",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 2770,
+        "max_cp": 2959,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -2976,7 +2976,7 @@
         "name_french": "Tauros",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 2488,
+        "max_cp": 2620,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -2999,7 +2999,7 @@
         "name_french": "Magicarpe",
         "flee_rate": 0.15,
         "capture_rate": 0.7,
-        "max_cp": 220,
+        "max_cp": 274,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -3019,7 +3019,7 @@
         "name_french": "L\u00e9viator",
         "flee_rate": 0.07,
         "capture_rate": 0.1,
-        "max_cp": 3281,
+        "max_cp": 3391,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -3043,7 +3043,7 @@
         "name_french": "Lokhlass",
         "flee_rate": 0.09,
         "capture_rate": 0.05,
-        "max_cp": 2603,
+        "max_cp": 2641,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3067,7 +3067,7 @@
         "name_french": "M\u00e9tamorph",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 718,
+        "max_cp": 832,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3087,7 +3087,7 @@
         "name_french": "\u00c9voli",
         "flee_rate": 0.1,
         "capture_rate": 0.4,
-        "max_cp": 969,
+        "max_cp": 1071,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3109,7 +3109,7 @@
         "name_french": "Aquali",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 3157,
+        "max_cp": 3114,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3131,7 +3131,7 @@
         "name_french": "Voltali",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 2730,
+        "max_cp": 2888,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3154,7 +3154,7 @@
         "name_french": "Pyroli",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 2904,
+        "max_cp": 3029,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3177,7 +3177,7 @@
         "name_french": "Porygon",
         "flee_rate": 0.09,
         "capture_rate": 0.4,
-        "max_cp": 1567,
+        "max_cp": 1720,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3200,7 +3200,7 @@
         "name_french": "Amonita",
         "flee_rate": 0.09,
         "capture_rate": 0.4,
-        "max_cp": 1345,
+        "max_cp": 1544,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3224,7 +3224,7 @@
         "name_french": "Amonistar",
         "flee_rate": 0.05,
         "capture_rate": 0.15,
-        "max_cp": 2685,
+        "max_cp": 2786,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3248,7 +3248,7 @@
         "name_french": "Kabuto",
         "flee_rate": 0.09,
         "capture_rate": 0.4,
-        "max_cp": 1172,
+        "max_cp": 1370,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3272,7 +3272,7 @@
         "name_french": "Kabutops",
         "flee_rate": 0.05,
         "capture_rate": 0.15,
-        "max_cp": 2517,
+        "max_cp": 2713,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3296,7 +3296,7 @@
         "name_french": "Pt\u00e9ra",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 2608,
+        "max_cp": 2783,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3320,7 +3320,7 @@
         "name_french": "Ronflex",
         "flee_rate": 0.09,
         "capture_rate": 0.05,
-        "max_cp": 3355,
+        "max_cp": 3225,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3343,7 +3343,7 @@
         "name_french": "Artikodin",
         "flee_rate": 0.1,
         "capture_rate": 0.03,
-        "max_cp": 2933,
+        "max_cp": 3051,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -3366,7 +3366,7 @@
         "name_french": "\u00c9lecthor",
         "flee_rate": 0.1,
         "capture_rate": 0.03,
-        "max_cp": 3330,
+        "max_cp": 3527,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -3389,7 +3389,7 @@
         "name_french": "Sulfura",
         "flee_rate": 0.1,
         "capture_rate": 0.03,
-        "max_cp": 3272,
+        "max_cp": 3465,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -3412,7 +3412,7 @@
         "name_french": "Minidraco",
         "flee_rate": 0.09,
         "capture_rate": 0.4,
-        "max_cp": 860,
+        "max_cp": 1004,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3435,7 +3435,7 @@
         "name_french": "Draco",
         "flee_rate": 0.06,
         "capture_rate": 0.1,
-        "max_cp": 1609,
+        "max_cp": 1780,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3458,7 +3458,7 @@
         "name_french": "Dracolosse",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 3581,
+        "max_cp": 3792,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -3482,7 +3482,7 @@
         "name_french": "Mewtwo",
         "flee_rate": 0.1,
         "capture_rate": 0.06,
-        "max_cp": 3982,
+        "max_cp": 4178,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -3490,9 +3490,10 @@
         ],
         "charge_moves": [
             "psychic",
-            "shadow ball",
-            "hyper beam",
-            "focus blast"
+            "thunderbolt",
+            "ice beam",
+            "focus blast",
+            "flamethrower"
         ],
         "quick_moves": [
             "psycho cut fast",
@@ -3504,26 +3505,56 @@
         "name_english": "Mew",
         "name_german": "Mew",
         "name_french": "Mew",
-        "flee_rate": 0.1,
-        "capture_rate": null,
-        "max_cp": 3090,
+        "flee_rate": null,
+        "capture_rate": 100,
+        "max_cp": 3265,
         "rarity": "rarity mythic",
         "egg_distance": 20,
         "types": [
             "psychic"
         ],
         "charge_moves": [
-            "blizzard",
-            "earthquake",
             "psychic",
-            "focus blast",
-            "thunder",
-            "fire blast",
+            "ancient power",
+            "dragon claw",
+            "psyshock",
+            "ice beam",
+            "blizzard",
+            "hyper beam",
             "solar beam",
-            "hyper beam"
+            "thunderbolt",
+            "thunder",
+            "flame charge",
+            "low sweep",
+            "overheat",
+            "focus blast",
+            "energy ball",
+            "stone edge",
+            "gyro ball",
+            "bulldoze",
+            "rock slide",
+            "grass knot",
+            "flash cannon",
+            "wild charge",
+            "dark pulse",
+            "dazzling gleam",
+            "surf"
         ],
         "quick_moves": [
-            "pound fast"
+            "pound fast",
+            "steel wing fast",
+            "charge beam fast",
+            "shadow claw fast",
+            "volt switch fast",
+            "struggle bug fast",
+            "frost breath fast",
+            "dragon tail fast",
+            "infestation fast",
+            "poison jab fast",
+            "rock smash fast",
+            "snarl fast",
+            "cut fast",
+            "waterfall fast"
         ]
     },
     {
@@ -3533,7 +3564,7 @@
         "name_french": "Germignon",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 801,
+        "max_cp": 935,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3556,7 +3587,7 @@
         "name_french": "Macronium",
         "flee_rate": 0.07,
         "capture_rate": 0.125,
-        "max_cp": 1296,
+        "max_cp": 1454,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3579,7 +3610,7 @@
         "name_french": "M\u00e9ganium",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2227,
+        "max_cp": 2410,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3602,7 +3633,7 @@
         "name_french": "H\u00e9ricendre",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 831,
+        "max_cp": 980,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3625,7 +3656,7 @@
         "name_french": "Feurisson",
         "flee_rate": 0.07,
         "capture_rate": 0.125,
-        "max_cp": 1484,
+        "max_cp": 1653,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3648,7 +3679,7 @@
         "name_french": "Typhlosion",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2686,
+        "max_cp": 2889,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3671,7 +3702,7 @@
         "name_french": "Kaiminus",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 1011,
+        "max_cp": 1131,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3694,7 +3725,7 @@
         "name_french": "Crocrodil",
         "flee_rate": 0.07,
         "capture_rate": 0.125,
-        "max_cp": 1598,
+        "max_cp": 1722,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3717,7 +3748,7 @@
         "name_french": "Aligatueur",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2721,
+        "max_cp": 2857,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3740,7 +3771,7 @@
         "name_french": "Fouinette",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 519,
+        "max_cp": 618,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -3763,7 +3794,7 @@
         "name_french": "Fouinar",
         "flee_rate": 0.07,
         "capture_rate": 0.15,
-        "max_cp": 1667,
+        "max_cp": 1758,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -3786,7 +3817,7 @@
         "name_french": "Hoothoot",
         "flee_rate": 0.15,
         "capture_rate": 0.5,
-        "max_cp": 640,
+        "max_cp": 677,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -3810,7 +3841,7 @@
         "name_french": "Noarfang",
         "flee_rate": 0.07,
         "capture_rate": 0.15,
-        "max_cp": 2040,
+        "max_cp": 2024,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -3834,7 +3865,7 @@
         "name_french": "Coxy",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 663,
+        "max_cp": 728,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -3858,7 +3889,7 @@
         "name_french": "Coxyclaque",
         "flee_rate": 0.07,
         "capture_rate": 0.15,
-        "max_cp": 1275,
+        "max_cp": 1346,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -3882,7 +3913,7 @@
         "name_french": "Mimigal",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 685,
+        "max_cp": 816,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -3906,7 +3937,7 @@
         "name_french": "Migalos",
         "flee_rate": 0.07,
         "capture_rate": 0.15,
-        "max_cp": 1636,
+        "max_cp": 1772,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -3930,7 +3961,7 @@
         "name_french": "Nostenfer",
         "flee_rate": 0.05,
         "capture_rate": 0.1,
-        "max_cp": 2466,
+        "max_cp": 2646,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -3954,7 +3985,7 @@
         "name_french": "Loupio",
         "flee_rate": 0.1,
         "capture_rate": 0.4,
-        "max_cp": 1067,
+        "max_cp": 1119,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -3978,7 +4009,7 @@
         "name_french": "Lanturn",
         "flee_rate": 0.07,
         "capture_rate": 0.15,
-        "max_cp": 2077,
+        "max_cp": 2085,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4002,7 +4033,7 @@
         "name_french": "Pichu",
         "flee_rate": 0.05,
         "capture_rate": null,
-        "max_cp": 376,
+        "max_cp": 473,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -4024,7 +4055,7 @@
         "name_french": "M\u00e9lo",
         "flee_rate": 0.05,
         "capture_rate": null,
-        "max_cp": 620,
+        "max_cp": 671,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -4047,7 +4078,7 @@
         "name_french": "Toudoudou",
         "flee_rate": 0.05,
         "capture_rate": null,
-        "max_cp": 512,
+        "max_cp": 535,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -4071,7 +4102,7 @@
         "name_french": "Togepi",
         "flee_rate": 0.05,
         "capture_rate": null,
-        "max_cp": 540,
+        "max_cp": 657,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4094,7 +4125,7 @@
         "name_french": "Togetic",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 1543,
+        "max_cp": 1708,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4118,7 +4149,7 @@
         "name_french": "Natu",
         "flee_rate": 0.15,
         "capture_rate": 0.4,
-        "max_cp": 925,
+        "max_cp": 1102,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4142,7 +4173,7 @@
         "name_french": "Xatu",
         "flee_rate": 0.07,
         "capture_rate": 0.15,
-        "max_cp": 1975,
+        "max_cp": 2188,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4166,7 +4197,7 @@
         "name_french": "Wattouat",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 887,
+        "max_cp": 991,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4189,7 +4220,7 @@
         "name_french": "Lainergie",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 1402,
+        "max_cp": 1521,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4212,7 +4243,7 @@
         "name_french": "Pharamp",
         "flee_rate": 0.05,
         "capture_rate": 0.125,
-        "max_cp": 2695,
+        "max_cp": 2852,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4235,7 +4266,7 @@
         "name_french": "Joliflor",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2108,
+        "max_cp": 2281,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4258,7 +4289,7 @@
         "name_french": "Marill",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 420,
+        "max_cp": 461,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4282,7 +4313,7 @@
         "name_french": "Azumarill",
         "flee_rate": 0.07,
         "capture_rate": 0.15,
-        "max_cp": 1503,
+        "max_cp": 1588,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4306,7 +4337,7 @@
         "name_french": "Simularbre",
         "flee_rate": 0.05,
         "capture_rate": 0.125,
-        "max_cp": 2065,
+        "max_cp": 2148,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4329,7 +4360,7 @@
         "name_french": "Tarpaud",
         "flee_rate": 0.05,
         "capture_rate": 0.1,
-        "max_cp": 2371,
+        "max_cp": 2449,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4352,7 +4383,7 @@
         "name_french": "Granivol",
         "flee_rate": 0.12,
         "capture_rate": 0.5,
-        "max_cp": 508,
+        "max_cp": 600,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4376,7 +4407,7 @@
         "name_french": "Floravol",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 882,
+        "max_cp": 976,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4400,7 +4431,7 @@
         "name_french": "Cotovol",
         "flee_rate": 0.05,
         "capture_rate": 0.125,
-        "max_cp": 1553,
+        "max_cp": 1636,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4424,7 +4455,7 @@
         "name_french": "Capumain",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 1188,
+        "max_cp": 1348,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4447,7 +4478,7 @@
         "name_french": "Tournegrin",
         "flee_rate": 0.09,
         "capture_rate": 0.5,
-        "max_cp": 316,
+        "max_cp": 395,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4470,7 +4501,7 @@
         "name_french": "H\u00e9liatronc",
         "flee_rate": 0.07,
         "capture_rate": 0.1,
-        "max_cp": 2048,
+        "max_cp": 2141,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4493,7 +4524,7 @@
         "name_french": "Yanma",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 1326,
+        "max_cp": 1470,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4517,7 +4548,7 @@
         "name_french": "Axoloto",
         "flee_rate": 0.1,
         "capture_rate": 0.4,
-        "max_cp": 596,
+        "max_cp": 641,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4541,7 +4572,7 @@
         "name_french": "Maraiste",
         "flee_rate": 0.07,
         "capture_rate": 0.15,
-        "max_cp": 1929,
+        "max_cp": 1992,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4565,7 +4596,7 @@
         "name_french": "Mentali",
         "flee_rate": 0.05,
         "capture_rate": null,
-        "max_cp": 3000,
+        "max_cp": 3170,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4588,7 +4619,7 @@
         "name_french": "Noctali",
         "flee_rate": 0.05,
         "capture_rate": null,
-        "max_cp": 2052,
+        "max_cp": 2137,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4610,7 +4641,7 @@
         "name_french": "Corn\u00e8bre",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 1392,
+        "max_cp": 1562,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4634,7 +4665,7 @@
         "name_french": "Roigada",
         "flee_rate": 0.05,
         "capture_rate": 0.1,
-        "max_cp": 2482,
+        "max_cp": 2545,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4658,7 +4689,7 @@
         "name_french": "Feufor\u00eave",
         "flee_rate": 0.07,
         "capture_rate": 0.3,
-        "max_cp": 1781,
+        "max_cp": 1926,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4681,7 +4712,7 @@
         "name_french": "Zarbi",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 1022,
+        "max_cp": 1185,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4701,7 +4732,7 @@
         "name_french": "Qulbutok\u00e9",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 1024,
+        "max_cp": 1026,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4722,7 +4753,7 @@
         "name_french": "Girafarig",
         "flee_rate": 0.07,
         "capture_rate": 0.3,
-        "max_cp": 1863,
+        "max_cp": 2046,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4746,7 +4777,7 @@
         "name_french": "Pomdepic",
         "flee_rate": 0.12,
         "capture_rate": 0.4,
-        "max_cp": 1045,
+        "max_cp": 1108,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4769,7 +4800,7 @@
         "name_french": "Foretress",
         "flee_rate": 0.07,
         "capture_rate": 0.15,
-        "max_cp": 2263,
+        "max_cp": 2282,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4793,7 +4824,7 @@
         "name_french": "Insolourdo",
         "flee_rate": 0.2,
         "capture_rate": 0.3,
-        "max_cp": 1615,
+        "max_cp": 1689,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4816,7 +4847,7 @@
         "name_french": "Scorplane",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1758,
+        "max_cp": 1857,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4840,7 +4871,7 @@
         "name_french": "Steelix",
         "flee_rate": 0.05,
         "capture_rate": 0.1,
-        "max_cp": 2439,
+        "max_cp": 2414,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4864,7 +4895,7 @@
         "name_french": "Snubbull",
         "flee_rate": 0.1,
         "capture_rate": 0.4,
-        "max_cp": 1124,
+        "max_cp": 1237,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4887,7 +4918,7 @@
         "name_french": "Granbull",
         "flee_rate": 0.08,
         "capture_rate": 0.15,
-        "max_cp": 2440,
+        "max_cp": 2552,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4910,7 +4941,7 @@
         "name_french": "Qwilfish",
         "flee_rate": 0.08,
         "capture_rate": 0.3,
-        "max_cp": 1910,
+        "max_cp": 2051,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4934,7 +4965,7 @@
         "name_french": "Cizayox",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2801,
+        "max_cp": 3001,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -4958,7 +4989,7 @@
         "name_french": "Caratroc",
         "flee_rate": 0.07,
         "capture_rate": 0.3,
-        "max_cp": 300,
+        "max_cp": 405,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -4982,7 +5013,7 @@
         "name_french": "Scarhino",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 2938,
+        "max_cp": 3101,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5006,7 +5037,7 @@
         "name_french": "Farfuret",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1868,
+        "max_cp": 2051,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5030,7 +5061,7 @@
         "name_french": "Teddiursa",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 1184,
+        "max_cp": 1328,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5053,7 +5084,7 @@
         "name_french": "Ursaring",
         "flee_rate": 0.07,
         "capture_rate": 0.15,
-        "max_cp": 2760,
+        "max_cp": 2945,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5076,7 +5107,7 @@
         "name_french": "Limagma",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 750,
+        "max_cp": 895,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -5099,7 +5130,7 @@
         "name_french": "Volcaropod",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 1543,
+        "max_cp": 1702,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -5123,7 +5154,7 @@
         "name_french": "Marcacrin",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 663,
+        "max_cp": 741,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5147,7 +5178,7 @@
         "name_french": "Cochignon",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 2284,
+        "max_cp": 2345,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5171,7 +5202,7 @@
         "name_french": "Corayon",
         "flee_rate": 0.12,
         "capture_rate": 0.3,
-        "max_cp": 1214,
+        "max_cp": 1378,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5195,7 +5226,7 @@
         "name_french": "R\u00e9moraid",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 749,
+        "max_cp": 912,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -5218,7 +5249,7 @@
         "name_french": "Octillery",
         "flee_rate": 0.07,
         "capture_rate": 0.15,
-        "max_cp": 2124,
+        "max_cp": 2315,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -5241,7 +5272,7 @@
         "name_french": "Cadoizo",
         "flee_rate": 0.2,
         "capture_rate": 0.2,
-        "max_cp": 937,
+        "max_cp": 1094,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5264,7 +5295,7 @@
         "name_french": "D\u00e9manta",
         "flee_rate": 0.07,
         "capture_rate": 0.3,
-        "max_cp": 2032,
+        "max_cp": 2108,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5288,7 +5319,7 @@
         "name_french": "Airmure",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 2032,
+        "max_cp": 2108,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5312,7 +5343,7 @@
         "name_french": "Malosse",
         "flee_rate": 0.1,
         "capture_rate": 0.4,
-        "max_cp": 1110,
+        "max_cp": 1234,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5336,7 +5367,7 @@
         "name_french": "D\u00e9molosse",
         "flee_rate": 0.06,
         "capture_rate": 0.15,
-        "max_cp": 2529,
+        "max_cp": 2635,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5360,7 +5391,7 @@
         "name_french": "Hyporoi",
         "flee_rate": 0.05,
         "capture_rate": 0.1,
-        "max_cp": 2424,
+        "max_cp": 2641,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5384,7 +5415,7 @@
         "name_french": "Phanpy",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 1175,
+        "max_cp": 1206,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5407,7 +5438,7 @@
         "name_french": "Donphan",
         "flee_rate": 0.07,
         "capture_rate": 0.125,
-        "max_cp": 3022,
+        "max_cp": 3013,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5430,7 +5461,7 @@
         "name_french": "Porygon2",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2546,
+        "max_cp": 2711,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5453,7 +5484,7 @@
         "name_french": "Cerfrousse",
         "flee_rate": 0.08,
         "capture_rate": 0.3,
-        "max_cp": 1988,
+        "max_cp": 2164,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5476,7 +5507,7 @@
         "name_french": "Queulorior",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 389,
+        "max_cp": 431,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5496,7 +5527,7 @@
         "name_french": "Debugant",
         "flee_rate": 0.2,
         "capture_rate": null,
-        "max_cp": 404,
+        "max_cp": 492,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5519,7 +5550,7 @@
         "name_french": "Kapoera",
         "flee_rate": 0.05,
         "capture_rate": 0.1,
-        "max_cp": 1905,
+        "max_cp": 2156,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5542,7 +5573,7 @@
         "name_french": "Lippouti",
         "flee_rate": 0.2,
         "capture_rate": null,
-        "max_cp": 1230,
+        "max_cp": 1291,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5566,7 +5597,7 @@
         "name_french": "\u00c9lekid",
         "flee_rate": 0.2,
         "capture_rate": null,
-        "max_cp": 1073,
+        "max_cp": 1206,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5589,7 +5620,7 @@
         "name_french": "Magby",
         "flee_rate": 0.2,
         "capture_rate": null,
-        "max_cp": 1178,
+        "max_cp": 1323,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5612,7 +5643,7 @@
         "name_french": "\u00c9cr\u00e9meuh",
         "flee_rate": 0.08,
         "capture_rate": 0.2,
-        "max_cp": 2312,
+        "max_cp": 2354,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5635,7 +5666,7 @@
         "name_french": "Leuphorie",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 3219,
+        "max_cp": 2757,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5658,7 +5689,7 @@
         "name_french": "Raikou",
         "flee_rate": 0.04,
         "capture_rate": 0.02,
-        "max_cp": 3349,
+        "max_cp": 3452,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -5681,7 +5712,7 @@
         "name_french": "Entei",
         "flee_rate": 0.04,
         "capture_rate": 0.02,
-        "max_cp": 3377,
+        "max_cp": 3473,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -5704,7 +5735,7 @@
         "name_french": "Suicune",
         "flee_rate": 0.04,
         "capture_rate": 0.02,
-        "max_cp": 2823,
+        "max_cp": 2983,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -5727,7 +5758,7 @@
         "name_french": "Embrylex",
         "flee_rate": 0.1,
         "capture_rate": 0.4,
-        "max_cp": 904,
+        "max_cp": 1040,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5751,7 +5782,7 @@
         "name_french": "Ymphect",
         "flee_rate": 0.07,
         "capture_rate": 0.1,
-        "max_cp": 1608,
+        "max_cp": 1766,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5775,7 +5806,7 @@
         "name_french": "Tyranocif",
         "flee_rate": 0.04,
         "capture_rate": 0.05,
-        "max_cp": 3670,
+        "max_cp": 3834,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -5799,7 +5830,7 @@
         "name_french": "Lugia",
         "flee_rate": 0.04,
         "capture_rate": 0.02,
-        "max_cp": 3598,
+        "max_cp": 3703,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -5823,7 +5854,7 @@
         "name_french": "Ho-Oh",
         "flee_rate": 0.04,
         "capture_rate": 0.02,
-        "max_cp": 3889,
+        "max_cp": 3863,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -5845,11 +5876,11 @@
         "name_english": "Celebi",
         "name_german": "Celebi",
         "name_french": "Celebi",
-        "flee_rate": 0.04,
-        "capture_rate": null,
-        "max_cp": 3090,
+        "flee_rate": null,
+        "capture_rate": 100,
+        "max_cp": 3265,
         "rarity": "rarity mythic",
-        "egg_distance": 5,
+        "egg_distance": 20,
         "types": [
             "psychic",
             "grass"
@@ -5871,7 +5902,7 @@
         "name_french": "Arcko",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 923,
+        "max_cp": 1053,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5894,7 +5925,7 @@
         "name_french": "Massko",
         "flee_rate": 0.07,
         "capture_rate": 0.1,
-        "max_cp": 1508,
+        "max_cp": 1673,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5917,7 +5948,7 @@
         "name_french": "Jungko",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2584,
+        "max_cp": 2757,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5940,7 +5971,7 @@
         "name_french": "Poussifeu",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 959,
+        "max_cp": 1093,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5963,7 +5994,7 @@
         "name_french": "Galifeu",
         "flee_rate": 0.07,
         "capture_rate": 0.1,
-        "max_cp": 1472,
+        "max_cp": 1652,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -5987,7 +6018,7 @@
         "name_french": "Bras\u00e9gali",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2631,
+        "max_cp": 2848,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6011,7 +6042,7 @@
         "name_french": "Gobou",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 981,
+        "max_cp": 1128,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6034,7 +6065,7 @@
         "name_french": "Flobio",
         "flee_rate": 0.07,
         "capture_rate": 0.1,
-        "max_cp": 1617,
+        "max_cp": 1776,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6058,7 +6089,7 @@
         "name_french": "Laggron",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2815,
+        "max_cp": 2974,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6082,7 +6113,7 @@
         "name_french": "Medhy\u00e8na",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 564,
+        "max_cp": 678,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6105,7 +6136,7 @@
         "name_french": "Grahy\u00e8na",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1783,
+        "max_cp": 1926,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6128,7 +6159,7 @@
         "name_french": "Zigzaton",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 423,
+        "max_cp": 508,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6151,7 +6182,7 @@
         "name_french": "Lin\u00e9on",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1533,
+        "max_cp": 1662,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6174,7 +6205,7 @@
         "name_french": "Chenipotte",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 502,
+        "max_cp": 578,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6195,7 +6226,7 @@
         "name_french": "Armulys",
         "flee_rate": 0.09,
         "capture_rate": 0.25,
-        "max_cp": 517,
+        "max_cp": 553,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6216,7 +6247,7 @@
         "name_french": "Charmillon",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 1573,
+        "max_cp": 1765,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6240,7 +6271,7 @@
         "name_french": "Blindalys",
         "flee_rate": 0.09,
         "capture_rate": 0.25,
-        "max_cp": 517,
+        "max_cp": 553,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6261,7 +6292,7 @@
         "name_french": "Papinox",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 1121,
+        "max_cp": 1224,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6285,7 +6316,7 @@
         "name_french": "N\u00e9nupiot",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 526,
+        "max_cp": 598,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6308,7 +6339,7 @@
         "name_french": "Lombre",
         "flee_rate": 0.09,
         "capture_rate": 0.25,
-        "max_cp": 1102,
+        "max_cp": 1197,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6332,7 +6363,7 @@
         "name_french": "Ludicolo",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 2229,
+        "max_cp": 2323,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6356,7 +6387,7 @@
         "name_french": "Grainipiot",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 526,
+        "max_cp": 598,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6379,7 +6410,7 @@
         "name_french": "Pifeuil",
         "flee_rate": 0.09,
         "capture_rate": 0.25,
-        "max_cp": 1117,
+        "max_cp": 1227,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6403,7 +6434,7 @@
         "name_french": "Tengalice",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 2186,
+        "max_cp": 2333,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6427,7 +6458,7 @@
         "name_french": "Nirondelle",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 642,
+        "max_cp": 765,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6449,7 +6480,7 @@
         "name_french": "H\u00e9l\u00e9delle",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1747,
+        "max_cp": 1920,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6473,7 +6504,7 @@
         "name_french": "Go\u00e9lise",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 642,
+        "max_cp": 765,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6497,7 +6528,7 @@
         "name_french": "Bekipan",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1969,
+        "max_cp": 2127,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6521,7 +6552,7 @@
         "name_french": "Tarsal",
         "flee_rate": 0.09,
         "capture_rate": 0.4,
-        "max_cp": 436,
+        "max_cp": 539,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -6545,7 +6576,7 @@
         "name_french": "Kirlia",
         "flee_rate": 0.06,
         "capture_rate": 0.1,
-        "max_cp": 843,
+        "max_cp": 966,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -6569,7 +6600,7 @@
         "name_french": "Gardevoir",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2964,
+        "max_cp": 3093,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -6593,7 +6624,7 @@
         "name_french": "Arakdo",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 695,
+        "max_cp": 791,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6617,7 +6648,7 @@
         "name_french": "Maskadra",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 2135,
+        "max_cp": 2270,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6641,7 +6672,7 @@
         "name_french": "Balignon",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 722,
+        "max_cp": 810,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6664,7 +6695,7 @@
         "name_french": "Chapignon",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 2407,
+        "max_cp": 2628,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6688,7 +6719,7 @@
         "name_french": "Parecool",
         "flee_rate": 0.09,
         "capture_rate": 0.4,
-        "max_cp": 942,
+        "max_cp": 1002,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -6710,7 +6741,7 @@
         "name_french": "Vigoroth",
         "flee_rate": 0.06,
         "capture_rate": 0.1,
-        "max_cp": 1896,
+        "max_cp": 1968,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -6733,7 +6764,7 @@
         "name_french": "Monafl\u00e8mit",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 4548,
+        "max_cp": 4431,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -6755,7 +6786,7 @@
         "name_french": "Ningale",
         "flee_rate": 0.1,
         "capture_rate": 0.2,
-        "max_cp": 674,
+        "max_cp": 768,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -6779,7 +6810,7 @@
         "name_french": "Ninjask",
         "flee_rate": 0.07,
         "capture_rate": 0.1,
-        "max_cp": 1751,
+        "max_cp": 1942,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -6803,7 +6834,7 @@
         "name_french": "Munja",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 421,
+        "max_cp": 393,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -6816,8 +6847,8 @@
             "dig"
         ],
         "quick_moves": [
-            "bite fast",
-            "struggle bug fast"
+            "bug bite fast",
+            "shadow claw fast"
         ]
     },
     {
@@ -6827,7 +6858,7 @@
         "name_french": "Chuchmur",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 603,
+        "max_cp": 671,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6850,7 +6881,7 @@
         "name_french": "Ramboum",
         "flee_rate": 0.09,
         "capture_rate": 0.25,
-        "max_cp": 1233,
+        "max_cp": 1327,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6873,7 +6904,7 @@
         "name_french": "Brouhabam",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 2267,
+        "max_cp": 2347,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -6896,7 +6927,7 @@
         "name_french": "Makuhita",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 745,
+        "max_cp": 817,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6919,7 +6950,7 @@
         "name_french": "Hariyama",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2765,
+        "max_cp": 2829,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6942,7 +6973,7 @@
         "name_french": "Azurill",
         "flee_rate": 0.04,
         "capture_rate": 0.1,
-        "max_cp": 316,
+        "max_cp": 364,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6966,7 +6997,7 @@
         "name_french": "Tarinor",
         "flee_rate": 0.09,
         "capture_rate": 0.2,
-        "max_cp": 831,
+        "max_cp": 993,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -6989,7 +7020,7 @@
         "name_french": "Skitty",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 659,
+        "max_cp": 739,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7012,7 +7043,7 @@
         "name_french": "Delcatty",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1385,
+        "max_cp": 1496,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7035,7 +7066,7 @@
         "name_french": "T\u00e9n\u00e9fix",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1305,
+        "max_cp": 1476,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -7059,7 +7090,7 @@
         "name_french": "Mysdibule",
         "flee_rate": 0.09,
         "capture_rate": 0.5,
-        "max_cp": 1484,
+        "max_cp": 1634,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -7083,7 +7114,7 @@
         "name_french": "Galekid",
         "flee_rate": 0.2,
         "capture_rate": 0.5,
-        "max_cp": 1232,
+        "max_cp": 1307,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7107,7 +7138,7 @@
         "name_french": "Galegon",
         "flee_rate": 0.09,
         "capture_rate": 0.25,
-        "max_cp": 2004,
+        "max_cp": 2056,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7131,7 +7162,7 @@
         "name_french": "Galeking",
         "flee_rate": 0.06,
         "capture_rate": 0.125,
-        "max_cp": 3004,
+        "max_cp": 3000,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7155,7 +7186,7 @@
         "name_french": "M\u00e9ditikka",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 555,
+        "max_cp": 693,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7179,7 +7210,7 @@
         "name_french": "Charmina",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1275,
+        "max_cp": 1431,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7203,7 +7234,7 @@
         "name_french": "Dynavolt",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 810,
+        "max_cp": 965,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7226,7 +7257,7 @@
         "name_french": "\u00c9lecsprint",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2131,
+        "max_cp": 2340,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7249,7 +7280,7 @@
         "name_french": "Posipi",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 1681,
+        "max_cp": 1778,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7272,7 +7303,7 @@
         "name_french": "N\u00e9gapi",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 1585,
+        "max_cp": 1694,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7295,7 +7326,7 @@
         "name_french": "Muciole",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 1620,
+        "max_cp": 1771,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7318,7 +7349,7 @@
         "name_french": "Lumivole",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 1620,
+        "max_cp": 1771,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7341,7 +7372,7 @@
         "name_french": "Ros\u00e9lia",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 1718,
+        "max_cp": 1870,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7365,7 +7396,7 @@
         "name_french": "Gloupti",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 788,
+        "max_cp": 866,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7388,7 +7419,7 @@
         "name_french": "Avaltout",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1872,
+        "max_cp": 1978,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7411,7 +7442,7 @@
         "name_french": "Carvanha",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 874,
+        "max_cp": 1020,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7435,7 +7466,7 @@
         "name_french": "Sharpedo",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1986,
+        "max_cp": 2181,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7459,7 +7490,7 @@
         "name_french": "Wailmer",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1424,
+        "max_cp": 1468,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7482,7 +7513,7 @@
         "name_french": "Wailord",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2258,
+        "max_cp": 2280,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7505,7 +7536,7 @@
         "name_french": "Chamallot",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 957,
+        "max_cp": 1057,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7529,7 +7560,7 @@
         "name_french": "Cam\u00e9rupt",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2016,
+        "max_cp": 2193,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7553,7 +7584,7 @@
         "name_french": "Chartor",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 2036,
+        "max_cp": 2093,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7576,7 +7607,7 @@
         "name_french": "Spoink",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1285,
+        "max_cp": 1334,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7599,7 +7630,7 @@
         "name_french": "Groret",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2310,
+        "max_cp": 2369,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7622,7 +7653,7 @@
         "name_french": "Spinda",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 1088,
+        "max_cp": 1220,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7645,7 +7676,7 @@
         "name_french": "Kraknoix",
         "flee_rate": 0.09,
         "capture_rate": 0.4,
-        "max_cp": 1092,
+        "max_cp": 1274,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -7668,7 +7699,7 @@
         "name_french": "Vibraninf",
         "flee_rate": 0.06,
         "capture_rate": 0.1,
-        "max_cp": 1065,
+        "max_cp": 1225,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -7692,7 +7723,7 @@
         "name_french": "Lib\u00e9gon",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 2458,
+        "max_cp": 2661,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -7716,7 +7747,7 @@
         "name_french": "Cacnea",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1080,
+        "max_cp": 1242,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7739,7 +7770,7 @@
         "name_french": "Cacturne",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2092,
+        "max_cp": 2298,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7763,7 +7794,7 @@
         "name_french": "Tylton",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 722,
+        "max_cp": 824,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7787,7 +7818,7 @@
         "name_french": "Altaria",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1868,
+        "max_cp": 2004,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7811,7 +7842,7 @@
         "name_french": "Mangriff",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 2214,
+        "max_cp": 2418,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7834,7 +7865,7 @@
         "name_french": "S\u00e9viper",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 1928,
+        "max_cp": 2105,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7857,7 +7888,7 @@
         "name_french": "S\u00e9l\u00e9roc",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 2245,
+        "max_cp": 2327,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7881,7 +7912,7 @@
         "name_french": "Solaroc",
         "flee_rate": 0.09,
         "capture_rate": 0.3,
-        "max_cp": 2245,
+        "max_cp": 2327,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7905,7 +7936,7 @@
         "name_french": "Barloche",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 716,
+        "max_cp": 819,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7929,7 +7960,7 @@
         "name_french": "Barbicha",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1991,
+        "max_cp": 2075,
         "rarity": null,
         "egg_distance": 1,
         "types": [
@@ -7953,7 +7984,7 @@
         "name_french": "\u00c9crapince",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1107,
+        "max_cp": 1230,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -7976,7 +8007,7 @@
         "name_french": "Colhomard",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2317,
+        "max_cp": 2474,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8000,7 +8031,7 @@
         "name_french": "Balbuto",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 676,
+        "max_cp": 787,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8024,7 +8055,7 @@
         "name_french": "Kaorine",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1782,
+        "max_cp": 1971,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8048,7 +8079,7 @@
         "name_french": "Lilia",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1181,
+        "max_cp": 1291,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8072,7 +8103,7 @@
         "name_french": "Vacilys",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2081,
+        "max_cp": 2211,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8096,7 +8127,7 @@
         "name_french": "Anorith",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1310,
+        "max_cp": 1529,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8120,7 +8151,7 @@
         "name_french": "Armaldo",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2675,
+        "max_cp": 2848,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8144,7 +8175,7 @@
         "name_french": "Barpau",
         "flee_rate": 0.15,
         "capture_rate": 0.7,
-        "max_cp": 220,
+        "max_cp": 274,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8165,7 +8196,7 @@
         "name_french": "Milobellus",
         "flee_rate": 0.07,
         "capture_rate": 0.1,
-        "max_cp": 2967,
+        "max_cp": 3005,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8188,7 +8219,7 @@
         "name_french": "Morph\u00e9o",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 1486,
+        "max_cp": 1632,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8210,7 +8241,7 @@
         "name_french": "Kecleon",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 1924,
+        "max_cp": 2047,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8236,7 +8267,7 @@
         "name_french": "Polichombr",
         "flee_rate": 0.1,
         "capture_rate": 0.4,
-        "max_cp": 872,
+        "max_cp": 1018,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8259,7 +8290,7 @@
         "name_french": "Branette",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 2073,
+        "max_cp": 2298,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8282,7 +8313,7 @@
         "name_french": "Skel\u00e9nox",
         "flee_rate": 0.1,
         "capture_rate": 0.4,
-        "max_cp": 523,
+        "max_cp": 706,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8305,7 +8336,7 @@
         "name_french": "T\u00e9raclope",
         "flee_rate": 0.07,
         "capture_rate": 0.2,
-        "max_cp": 1335,
+        "max_cp": 1591,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8328,7 +8359,7 @@
         "name_french": "Tropius",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 1846,
+        "max_cp": 1941,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8352,7 +8383,7 @@
         "name_french": "\u00c9oko",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 2095,
+        "max_cp": 2259,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8375,7 +8406,7 @@
         "name_french": "Absol",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 2280,
+        "max_cp": 2526,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8398,7 +8429,7 @@
         "name_french": "Ok\u00e9ok\u00e9",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 503,
+        "max_cp": 534,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8419,7 +8450,7 @@
         "name_french": "Stalgamin",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 772,
+        "max_cp": 888,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8442,7 +8473,7 @@
         "name_french": "Oniglali",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 1945,
+        "max_cp": 2105,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8465,7 +8496,7 @@
         "name_french": "Obalie",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 876,
+        "max_cp": 962,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8489,7 +8520,7 @@
         "name_french": "Phogleur",
         "flee_rate": 0.07,
         "capture_rate": 0.25,
-        "max_cp": 1607,
+        "max_cp": 1714,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8513,7 +8544,7 @@
         "name_french": "Kaimorse",
         "flee_rate": 0.05,
         "capture_rate": 0.125,
-        "max_cp": 2606,
+        "max_cp": 2726,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8537,7 +8568,7 @@
         "name_french": "Coquiperl",
         "flee_rate": 0.1,
         "capture_rate": 0.5,
-        "max_cp": 1091,
+        "max_cp": 1270,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8559,7 +8590,7 @@
         "name_french": "Serpang",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2140,
+        "max_cp": 2340,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8582,7 +8613,7 @@
         "name_french": "Rosabyss",
         "flee_rate": 0.06,
         "capture_rate": 0.2,
-        "max_cp": 2281,
+        "max_cp": 2494,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8605,7 +8636,7 @@
         "name_french": "Relicanth",
         "flee_rate": 0.01,
         "capture_rate": 0.9,
-        "max_cp": 2557,
+        "max_cp": 2528,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8629,7 +8660,7 @@
         "name_french": "Lovdisc",
         "flee_rate": 0.1,
         "capture_rate": 0.3,
-        "max_cp": 735,
+        "max_cp": 848,
         "rarity": null,
         "egg_distance": 3,
         "types": [
@@ -8652,7 +8683,7 @@
         "name_french": "Draby",
         "flee_rate": 0.09,
         "capture_rate": 0.4,
-        "max_cp": 1053,
+        "max_cp": 1156,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8675,7 +8706,7 @@
         "name_french": "Drackhaus",
         "flee_rate": 0.06,
         "capture_rate": 0.1,
-        "max_cp": 1958,
+        "max_cp": 2031,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8698,7 +8729,7 @@
         "name_french": "Drattak",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 3532,
+        "max_cp": 3749,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8722,7 +8753,7 @@
         "name_french": "Terhal",
         "flee_rate": 0.09,
         "capture_rate": 0.4,
-        "max_cp": 843,
+        "max_cp": 976,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8743,7 +8774,7 @@
         "name_french": "M\u00e9tang",
         "flee_rate": 0.06,
         "capture_rate": 0.1,
-        "max_cp": 1570,
+        "max_cp": 1721,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8767,7 +8798,7 @@
         "name_french": "M\u00e9talosse",
         "flee_rate": 0.05,
         "capture_rate": 0.05,
-        "max_cp": 3637,
+        "max_cp": 3791,
         "rarity": null,
         "egg_distance": 5,
         "types": [
@@ -8791,7 +8822,7 @@
         "name_french": "Regirock",
         "flee_rate": 0.01,
         "capture_rate": 0.02,
-        "max_cp": 3087,
+        "max_cp": 3122,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -8814,7 +8845,7 @@
         "name_french": "Regice",
         "flee_rate": 0.01,
         "capture_rate": 0.02,
-        "max_cp": 3087,
+        "max_cp": 3122,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -8837,7 +8868,7 @@
         "name_french": "Registeel",
         "flee_rate": 0.01,
         "capture_rate": 0.02,
-        "max_cp": 2261,
+        "max_cp": 2447,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -8860,7 +8891,7 @@
         "name_french": "Latias",
         "flee_rate": 0.01,
         "capture_rate": 0.02,
-        "max_cp": 3377,
+        "max_cp": 3510,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -8869,7 +8900,7 @@
         ],
         "charge_moves": [
             "psychic",
-            "dragon claw",
+            "outrage",
             "thunder"
         ],
         "quick_moves": [
@@ -8884,7 +8915,7 @@
         "name_french": "Latios",
         "flee_rate": 0.01,
         "capture_rate": 0.02,
-        "max_cp": 3644,
+        "max_cp": 3812,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -8908,7 +8939,7 @@
         "name_french": "Kyogre",
         "flee_rate": 0.01,
         "capture_rate": 0.02,
-        "max_cp": 4074,
+        "max_cp": 4115,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -8930,7 +8961,7 @@
         "name_french": "Groudon",
         "flee_rate": 0.01,
         "capture_rate": 0.02,
-        "max_cp": 4074,
+        "max_cp": 4115,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -8953,7 +8984,7 @@
         "name_french": "Rayquaza",
         "flee_rate": 0.01,
         "capture_rate": 0.02,
-        "max_cp": 3645,
+        "max_cp": 3835,
         "rarity": "rarity legendary",
         "egg_distance": 20,
         "types": [
@@ -8977,7 +9008,7 @@
         "name_french": "Jirachi",
         "flee_rate": 0.01,
         "capture_rate": 0.02,
-        "max_cp": 3090,
+        "max_cp": 3265,
         "rarity": "rarity mythic",
         "egg_distance": 20,
         "types": [
@@ -9000,8 +9031,8 @@
         "name_german": "Deoxys",
         "name_french": "Deoxys",
         "flee_rate": 0.01,
-        "capture_rate": 0.02,
-        "max_cp": 15,
+        "capture_rate": 0.06,
+        "max_cp": 3160,
         "rarity": "rarity mythic",
         "egg_distance": 20,
         "types": [
@@ -9010,11 +9041,2557 @@
         "charge_moves": [
             "psycho boost",
             "zap cannon",
-            "swift"
+            "hyper beam"
         ],
         "quick_moves": [
             "zen headbutt fast",
+            "charge beam fast"
+        ]
+    },
+    {
+        "number": 387,
+        "name_english": "Turtwig",
+        "name_german": "Chelast",
+        "name_french": "Tortipouss",
+        "flee_rate": 0.1,
+        "capture_rate": 0.2,
+        "max_cp": 1187,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "grass"
+        ],
+        "charge_moves": [
+            "energy ball",
+            "seed bomb",
+            "body slam"
+        ],
+        "quick_moves": [
+            "tackle fast",
+            "razor leaf fast"
+        ]
+    },
+    {
+        "number": 388,
+        "name_english": "Grotle",
+        "name_german": "Chelcarain",
+        "name_french": "Boskara",
+        "flee_rate": 0.07,
+        "capture_rate": 0.1,
+        "max_cp": 1890,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "grass"
+        ],
+        "charge_moves": [
+            "energy ball",
+            "solar beam",
+            "body slam"
+        ],
+        "quick_moves": [
+            "bite fast",
+            "razor leaf fast"
+        ]
+    },
+    {
+        "number": 389,
+        "name_english": "Torterra",
+        "name_german": "Chelterrar",
+        "name_french": "Torterra",
+        "flee_rate": 0.05,
+        "capture_rate": 0.05,
+        "max_cp": 2934,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "grass",
+            "ground"
+        ],
+        "charge_moves": [
+            "stone edge",
+            "solar beam",
+            "earthquake"
+        ],
+        "quick_moves": [
+            "bite fast",
+            "razor leaf fast"
+        ]
+    },
+    {
+        "number": 390,
+        "name_english": "Chimchar",
+        "name_german": "Panflam",
+        "name_french": "Ouisticram",
+        "flee_rate": 0.1,
+        "capture_rate": 0.2,
+        "max_cp": 957,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "fire"
+        ],
+        "charge_moves": [
+            "flame wheel",
+            "flamethrower",
+            "flame charge"
+        ],
+        "quick_moves": [
+            "ember fast",
+            "scratch fast"
+        ]
+    },
+    {
+        "number": 391,
+        "name_english": "Monferno",
+        "name_german": "Panpyro",
+        "name_french": "Chimpenfeu",
+        "flee_rate": 0.07,
+        "capture_rate": 0.1,
+        "max_cp": 1574,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "fire",
+            "fighting"
+        ],
+        "charge_moves": [
+            "flame wheel",
+            "flamethrower",
+            "low sweep"
+        ],
+        "quick_moves": [
+            "ember fast",
+            "rock smash fast"
+        ]
+    },
+    {
+        "number": 392,
+        "name_english": "Infernape",
+        "name_german": "Panferno",
+        "name_french": "Simiabraz",
+        "flee_rate": 0.05,
+        "capture_rate": 0.05,
+        "max_cp": 2683,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "fire",
+            "fighting"
+        ],
+        "charge_moves": [
+            "solar beam",
+            "flamethrower",
+            "close combat"
+        ],
+        "quick_moves": [
+            "fire spin fast",
+            "rock smash fast"
+        ]
+    },
+    {
+        "number": 393,
+        "name_english": "Piplup",
+        "name_german": "Plinfa",
+        "name_french": "Tiplouf",
+        "flee_rate": 0.1,
+        "capture_rate": 0.2,
+        "max_cp": 1075,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "water"
+        ],
+        "charge_moves": [
+            "bubble beam",
+            "drill peck",
+            "icy wind"
+        ],
+        "quick_moves": [
+            "bubble fast",
+            "pound fast"
+        ]
+    },
+    {
+        "number": 394,
+        "name_english": "Prinplup",
+        "name_german": "Pliprin",
+        "name_french": "Prinplouf",
+        "flee_rate": 0.07,
+        "capture_rate": 0.1,
+        "max_cp": 1701,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "water"
+        ],
+        "charge_moves": [
+            "bubble beam",
+            "hydro pump",
+            "icy wind"
+        ],
+        "quick_moves": [
+            "bubble fast",
+            "metal claw fast"
+        ]
+    },
+    {
+        "number": 395,
+        "name_english": "Empoleon",
+        "name_german": "Impoleon",
+        "name_french": "Pingol\u00e9on",
+        "flee_rate": 0.05,
+        "capture_rate": 0.05,
+        "max_cp": 2900,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "water",
+            "steel"
+        ],
+        "charge_moves": [
+            "hydro pump",
+            "blizzard",
+            "flash cannon"
+        ],
+        "quick_moves": [
+            "waterfall fast",
+            "metal claw fast"
+        ]
+    },
+    {
+        "number": 396,
+        "name_english": "Starly",
+        "name_german": "Staralili",
+        "name_french": "\u00c9tourmi",
+        "flee_rate": 0.2,
+        "capture_rate": 0.5,
+        "max_cp": 719,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "normal",
+            "flying"
+        ],
+        "charge_moves": [
+            "aerial ace",
+            "brave bird"
+        ],
+        "quick_moves": [
+            "tackle fast",
+            "quick attack fast"
+        ]
+    },
+    {
+        "number": 397,
+        "name_english": "Staravia",
+        "name_german": "Staravia",
+        "name_french": "\u00c9tourvol",
+        "flee_rate": 0.09,
+        "capture_rate": 0.25,
+        "max_cp": 1299,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "normal",
+            "flying"
+        ],
+        "charge_moves": [
+            "aerial ace",
+            "brave bird",
+            "heat wave"
+        ],
+        "quick_moves": [
+            "wing attack fast",
+            "quick attack fast"
+        ]
+    },
+    {
+        "number": 398,
+        "name_english": "Staraptor",
+        "name_german": "Staraptor",
+        "name_french": "\u00c9touraptor",
+        "flee_rate": 0.06,
+        "capture_rate": 0.125,
+        "max_cp": 2825,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "normal",
+            "flying"
+        ],
+        "charge_moves": [
+            "brave bird",
+            "heat wave",
+            "close combat"
+        ],
+        "quick_moves": [
+            "wing attack fast",
+            "quick attack fast"
+        ]
+    },
+    {
+        "number": 399,
+        "name_english": "Bidoof",
+        "name_german": "Bidiza",
+        "name_french": "Keunotor",
+        "flee_rate": 0.2,
+        "capture_rate": 0.5,
+        "max_cp": 721,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "hyper fang",
+            "crunch",
+            "grass knot"
+        ],
+        "quick_moves": [
+            "tackle fast",
+            "take down fast"
+        ]
+    },
+    {
+        "number": 400,
+        "name_english": "Bibarel",
+        "name_german": "Bidifas",
+        "name_french": "Castorno",
+        "flee_rate": 0.07,
+        "capture_rate": 0.2,
+        "max_cp": 1823,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "normal",
+            "water"
+        ],
+        "charge_moves": [
+            "hyper fang",
+            "hyper beam",
+            "surf"
+        ],
+        "quick_moves": [
+            "water gun fast",
+            "take down fast"
+        ]
+    },
+    {
+        "number": 401,
+        "name_english": "Kricketot",
+        "name_german": "Zirpurze",
+        "name_french": "Crikzik",
+        "flee_rate": 0.2,
+        "capture_rate": 0.5,
+        "max_cp": 401,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "bug"
+        ],
+        "charge_moves": [
+            "struggle"
+        ],
+        "quick_moves": [
+            "struggle bug fast",
+            "bug bite fast"
+        ]
+    },
+    {
+        "number": 402,
+        "name_english": "Kricketune",
+        "name_german": "Zirpeise",
+        "name_french": "M\u00e9lokrik",
+        "flee_rate": 0.07,
+        "capture_rate": 0.2,
+        "max_cp": 1653,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "bug"
+        ],
+        "charge_moves": [
+            "bug buzz",
+            "x scissor",
+            "aerial ace"
+        ],
+        "quick_moves": [
+            "struggle bug fast",
+            "fury cutter fast"
+        ]
+    },
+    {
+        "number": 403,
+        "name_english": "Shinx",
+        "name_german": "Sheinux",
+        "name_french": "Lixy",
+        "flee_rate": 0.1,
+        "capture_rate": 0.5,
+        "max_cp": 876,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "electric"
+        ],
+        "charge_moves": [
+            "discharge",
+            "thunderbolt",
+            "swift"
+        ],
+        "quick_moves": [
+            "tackle fast",
+            "spark fast"
+        ]
+    },
+    {
+        "number": 404,
+        "name_english": "Luxio",
+        "name_german": "Luxio",
+        "name_french": "Luxio",
+        "flee_rate": 0.07,
+        "capture_rate": 0.25,
+        "max_cp": 1486,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "electric"
+        ],
+        "charge_moves": [
+            "thunderbolt",
+            "wild charge",
+            "crunch"
+        ],
+        "quick_moves": [
+            "spark fast",
+            "bite fast"
+        ]
+    },
+    {
+        "number": 405,
+        "name_english": "Luxray",
+        "name_german": "Luxtra",
+        "name_french": "Luxray",
+        "flee_rate": 0.05,
+        "capture_rate": 0.125,
+        "max_cp": 2888,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "electric"
+        ],
+        "charge_moves": [
+            "hyper beam",
+            "wild charge",
+            "crunch"
+        ],
+        "quick_moves": [
+            "spark fast",
+            "snarl fast"
+        ]
+    },
+    {
+        "number": 406,
+        "name_english": "Budew",
+        "name_german": "Knospi",
+        "name_french": "Rozbouton",
+        "flee_rate": 0.04,
+        "capture_rate": 0.1,
+        "max_cp": 856,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "grass",
+            "poison"
+        ],
+        "charge_moves": [
+            "energy ball",
+            "grass knot"
+        ],
+        "quick_moves": [
+            "hidden power fast",
+            "razor leaf fast"
+        ]
+    },
+    {
+        "number": 407,
+        "name_english": "Roserade",
+        "name_german": "Roserade",
+        "name_french": "Roserade",
+        "flee_rate": 0.07,
+        "capture_rate": 0.15,
+        "max_cp": 2971,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "grass",
+            "poison"
+        ],
+        "charge_moves": [
+            "solar beam",
+            "sludge bomb",
+            "dazzling gleam"
+        ],
+        "quick_moves": [
+            "poison jab fast",
+            "razor leaf fast"
+        ]
+    },
+    {
+        "number": 408,
+        "name_english": "Cranidos",
+        "name_german": "Koknodon",
+        "name_french": "Kranidos",
+        "flee_rate": 0.1,
+        "capture_rate": 0.5,
+        "max_cp": 1820,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "rock",
+            "rock"
+        ],
+        "charge_moves": [
+            "rock tomb",
+            "ancient power",
+            "bulldoze"
+        ],
+        "quick_moves": [
+            "zen headbutt fast",
+            "take down fast"
+        ]
+    },
+    {
+        "number": 409,
+        "name_english": "Rampardos",
+        "name_german": "Rameidon",
+        "name_french": "Charkos",
+        "flee_rate": 0.06,
+        "capture_rate": 0.2,
+        "max_cp": 3298,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "rock",
+            "rock"
+        ],
+        "charge_moves": [
+            "rock slide",
+            "outrage",
+            "flamethrower"
+        ],
+        "quick_moves": [
+            "zen headbutt fast",
+            "smack down fast"
+        ]
+    },
+    {
+        "number": 410,
+        "name_english": "Shieldon",
+        "name_german": "Schilterus",
+        "name_french": "Dinoclier",
+        "flee_rate": 0.1,
+        "capture_rate": 0.5,
+        "max_cp": 890,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "rock",
+            "steel"
+        ],
+        "charge_moves": [
+            "rock tomb",
+            "ancient power",
+            "heavy slam"
+        ],
+        "quick_moves": [
+            "tackle fast",
+            "iron tail fast"
+        ]
+    },
+    {
+        "number": 411,
+        "name_english": "Bastiodon",
+        "name_german": "Bollterus",
+        "name_french": "Bastiodon",
+        "flee_rate": 0.06,
+        "capture_rate": 0.2,
+        "max_cp": 1539,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "rock",
+            "steel"
+        ],
+        "charge_moves": [
+            "stone edge",
+            "flamethrower",
+            "flash cannon"
+        ],
+        "quick_moves": [
+            "smack down fast",
+            "iron tail fast"
+        ]
+    },
+    {
+        "number": 412,
+        "name_english": "Burmy",
+        "name_german": "Burmy",
+        "name_french": "Cheniti",
+        "flee_rate": 0.2,
+        "capture_rate": 0.5,
+        "max_cp": 488,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "bug"
+        ],
+        "charge_moves": [
+            "struggle"
+        ],
+        "quick_moves": [
+            "tackle fast",
+            "bug bite fast"
+        ]
+    },
+    {
+        "number": 413,
+        "name_english": "Wormadam",
+        "name_german": "Burmadame",
+        "name_french": "Cheniselle",
+        "flee_rate": 0.07,
+        "capture_rate": 0.15,
+        "max_cp": 1773,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "bug",
+            "grass"
+        ],
+        "charge_moves": [
+            "struggle"
+        ],
+        "quick_moves": [
+            "tackle fast",
+            "bug bite fast"
+        ]
+    },
+    {
+        "number": 414,
+        "name_english": "Mothim",
+        "name_german": "Moterpel",
+        "name_french": "Papilord",
+        "flee_rate": 0.07,
+        "capture_rate": 0.15,
+        "max_cp": 1815,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "bug",
+            "flying"
+        ],
+        "charge_moves": [
+            "psybeam",
+            "aerial ace",
+            "bug buzz"
+        ],
+        "quick_moves": [
+            "air slash fast",
+            "bug bite fast"
+        ]
+    },
+    {
+        "number": 415,
+        "name_english": "Combee",
+        "name_german": "Wadribie",
+        "name_french": "Apitrini",
+        "flee_rate": 0.07,
+        "capture_rate": 0.15,
+        "max_cp": 494,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "bug",
+            "flying"
+        ],
+        "charge_moves": [
+            "bug buzz"
+        ],
+        "quick_moves": [
+            "bug bite fast"
+        ]
+    },
+    {
+        "number": 416,
+        "name_english": "Vespiquen",
+        "name_german": "Honweisel",
+        "name_french": "Apireine",
+        "flee_rate": 0.07,
+        "capture_rate": 0.15,
+        "max_cp": 2005,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "bug",
+            "flying"
+        ],
+        "charge_moves": [
+            "bug buzz",
+            "power gem",
+            "x scissor"
+        ],
+        "quick_moves": [
+            "bug bite fast",
+            "poison sting fast"
+        ]
+    },
+    {
+        "number": 417,
+        "name_english": "Pachirisu",
+        "name_german": "Pachirisu",
+        "name_french": "Pachirisu",
+        "flee_rate": 0.09,
+        "capture_rate": 0.3,
+        "max_cp": 1213,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "electric"
+        ],
+        "charge_moves": [
+            "thunder",
+            "thunderbolt",
+            "thunder punch"
+        ],
+        "quick_moves": [
+            "spark fast",
+            "volt switch fast"
+        ]
+    },
+    {
+        "number": 418,
+        "name_english": "Buizel",
+        "name_german": "Bamelin",
+        "name_french": "Must\u00e9bou\u00e9e",
+        "flee_rate": 0.1,
+        "capture_rate": 0.5,
+        "max_cp": 1054,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "water"
+        ],
+        "charge_moves": [
+            "aqua jet",
+            "water pulse",
+            "swift"
+        ],
+        "quick_moves": [
+            "water gun fast",
+            "quick attack fast"
+        ]
+    },
+    {
+        "number": 419,
+        "name_english": "Floatzel",
+        "name_german": "Bojelin",
+        "name_french": "Must\u00e9flott",
+        "flee_rate": 0.06,
+        "capture_rate": 0.2,
+        "max_cp": 2443,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "water"
+        ],
+        "charge_moves": [
+            "aqua jet",
+            "hydro pump",
+            "swift"
+        ],
+        "quick_moves": [
+            "water gun fast",
+            "waterfall fast"
+        ]
+    },
+    {
+        "number": 420,
+        "name_english": "Cherubi",
+        "name_german": "Kikugi",
+        "name_french": "Ceribou",
+        "flee_rate": 0.09,
+        "capture_rate": 0.5,
+        "max_cp": 950,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "grass"
+        ],
+        "charge_moves": [
+            "dazzling gleam",
+            "petal blizzard",
+            "seed bomb"
+        ],
+        "quick_moves": [
+            "tackle fast",
+            "bullet seed fast"
+        ]
+    },
+    {
+        "number": 421,
+        "name_english": "Cherrim",
+        "name_german": "Kinoso",
+        "name_french": "Ceriflor",
+        "flee_rate": 0.07,
+        "capture_rate": 0.1,
+        "max_cp": 2048,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "grass"
+        ],
+        "charge_moves": [
+            "dazzling gleam",
+            "hyper beam",
+            "solar beam"
+        ],
+        "quick_moves": [
+            "razor leaf fast",
+            "bullet seed fast"
+        ]
+    },
+    {
+        "number": 422,
+        "name_english": "Shellos",
+        "name_german": "Schalellos",
+        "name_french": "Sancoki",
+        "flee_rate": 0.1,
+        "capture_rate": 0.5,
+        "max_cp": 1136,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "water"
+        ],
+        "charge_moves": [
+            "water pulse",
+            "mud bomb",
+            "body slam"
+        ],
+        "quick_moves": [
+            "mud slap fast",
+            "hidden power fast"
+        ]
+    },
+    {
+        "number": 423,
+        "name_english": "Gastrodon",
+        "name_german": "Gastrodon",
+        "name_french": "Tritosor",
+        "flee_rate": 0.06,
+        "capture_rate": 0.2,
+        "max_cp": 2324,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "water",
+            "ground"
+        ],
+        "charge_moves": [
+            "water pulse",
+            "earthquake",
+            "body slam"
+        ],
+        "quick_moves": [
+            "mud slap fast",
+            "hidden power fast"
+        ]
+    },
+    {
+        "number": 424,
+        "name_english": "Ambipom",
+        "name_german": "Ambidiffel",
+        "name_french": "Capidextre",
+        "flee_rate": 0.06,
+        "capture_rate": 0.2,
+        "max_cp": 2418,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "low sweep",
+            "hyper beam",
+            "aerial ace"
+        ],
+        "quick_moves": [
+            "scratch fast",
+            "astonish fast"
+        ]
+    },
+    {
+        "number": 425,
+        "name_english": "Drifloon",
+        "name_german": "Driftlon",
+        "name_french": "Baudrive",
+        "flee_rate": 0.1,
+        "capture_rate": 0.4,
+        "max_cp": 1197,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "ghost",
+            "flying"
+        ],
+        "charge_moves": [
+            "ominous wind",
+            "icy wind",
+            "shadow ball"
+        ],
+        "quick_moves": [
+            "hex fast",
+            "astonish fast"
+        ]
+    },
+    {
+        "number": 426,
+        "name_english": "Drifblim",
+        "name_german": "Drifzepeli",
+        "name_french": "Grodrive",
+        "flee_rate": 0.07,
+        "capture_rate": 0.2,
+        "max_cp": 2382,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "ghost",
+            "flying"
+        ],
+        "charge_moves": [
+            "ominous wind",
+            "icy wind",
+            "shadow ball"
+        ],
+        "quick_moves": [
+            "hex fast",
+            "astonish fast"
+        ]
+    },
+    {
+        "number": 427,
+        "name_english": "Buneary",
+        "name_german": "Haspiror",
+        "name_french": "Laporeille",
+        "flee_rate": 0.1,
+        "capture_rate": 0.5,
+        "max_cp": 1258,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "fire punch",
+            "swift"
+        ],
+        "quick_moves": [
+            "pound fast",
+            "quick attack fast"
+        ]
+    },
+    {
+        "number": 428,
+        "name_english": "Lopunny",
+        "name_german": "Schlapor",
+        "name_french": "Lockpin",
+        "flee_rate": 0.06,
+        "capture_rate": 0.2,
+        "max_cp": 2059,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "fire punch",
+            "hyper beam",
+            "focus blast"
+        ],
+        "quick_moves": [
+            "pound fast",
+            "low kick fast"
+        ]
+    },
+    {
+        "number": 429,
+        "name_english": "Mismagius",
+        "name_german": "Traunmagil",
+        "name_french": "Magir\u00eave",
+        "flee_rate": 0.07,
+        "capture_rate": 0.1,
+        "max_cp": 2615,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "ghost"
+        ],
+        "charge_moves": [
+            "shadow ball",
+            "dark pulse",
+            "dazzling gleam"
+        ],
+        "quick_moves": [
+            "sucker punch fast",
+            "hex fast"
+        ]
+    },
+    {
+        "number": 430,
+        "name_english": "Honchkrow",
+        "name_german": "Kramshef",
+        "name_french": "Corboss",
+        "flee_rate": 0.07,
+        "capture_rate": 0.1,
+        "max_cp": 2711,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "dark",
+            "flying"
+        ],
+        "charge_moves": [
+            "brave bird",
+            "psychic",
+            "dark pulse"
+        ],
+        "quick_moves": [
+            "peck fast",
+            "snarl fast"
+        ]
+    },
+    {
+        "number": 431,
+        "name_english": "Glameow",
+        "name_german": "Charmian",
+        "name_french": "Chaglam",
+        "flee_rate": 0.1,
+        "capture_rate": 0.4,
+        "max_cp": 934,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "play rough",
+            "thunderbolt",
+            "aerial ace"
+        ],
+        "quick_moves": [
+            "scratch fast",
+            "quick attack fast"
+        ]
+    },
+    {
+        "number": 432,
+        "name_english": "Purugly",
+        "name_german": "Shnurgarst",
+        "name_french": "Chaffreux",
+        "flee_rate": 0.08,
+        "capture_rate": 0.15,
+        "max_cp": 1953,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "play rough",
+            "thunder",
+            "aerial ace"
+        ],
+        "quick_moves": [
+            "scratch fast",
+            "shadow claw fast"
+        ]
+    },
+    {
+        "number": 433,
+        "name_english": "Chingling",
+        "name_german": "Klingplim",
+        "name_french": "Korillon",
+        "flee_rate": 0.04,
+        "capture_rate": 0.1,
+        "max_cp": 1005,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "psychic"
+        ],
+        "charge_moves": [
+            "wrap",
+            "shadow ball",
+            "psyshock"
+        ],
+        "quick_moves": [
+            "zen headbutt fast",
+            "astonish fast"
+        ]
+    },
+    {
+        "number": 434,
+        "name_english": "Stunky",
+        "name_german": "Skunkapuh",
+        "name_french": "Moufouette",
+        "flee_rate": 0.1,
+        "capture_rate": 0.5,
+        "max_cp": 1151,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "poison",
+            "dark"
+        ],
+        "charge_moves": [
+            "crunch",
+            "flamethrower",
+            "sludge bomb"
+        ],
+        "quick_moves": [
+            "scratch fast",
+            "bite fast"
+        ]
+    },
+    {
+        "number": 435,
+        "name_english": "Skuntank",
+        "name_german": "Skunktank",
+        "name_french": "Moufflair",
+        "flee_rate": 0.06,
+        "capture_rate": 0.2,
+        "max_cp": 2358,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "poison",
+            "dark"
+        ],
+        "charge_moves": [
+            "crunch",
+            "flamethrower",
+            "sludge bomb"
+        ],
+        "quick_moves": [
+            "poison jab fast",
+            "bite fast"
+        ]
+    },
+    {
+        "number": 436,
+        "name_english": "Bronzor",
+        "name_german": "Bronzel",
+        "name_french": "Arch\u00e9omire",
+        "flee_rate": 0.1,
+        "capture_rate": 0.5,
+        "max_cp": 603,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "steel",
+            "psychic"
+        ],
+        "charge_moves": [
+            "gyro ball",
+            "psyshock",
+            "heavy slam"
+        ],
+        "quick_moves": [
+            "tackle fast",
+            "confusion fast"
+        ]
+    },
+    {
+        "number": 437,
+        "name_english": "Bronzong",
+        "name_german": "Bronzong",
+        "name_french": "Arch\u00e9odong",
+        "flee_rate": 0.06,
+        "capture_rate": 0.2,
+        "max_cp": 2239,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "steel",
+            "psychic"
+        ],
+        "charge_moves": [
+            "flash cannon",
+            "psychic",
+            "heavy slam"
+        ],
+        "quick_moves": [
+            "feint attack fast",
+            "confusion fast"
+        ]
+    },
+    {
+        "number": 438,
+        "name_english": "Bonsly",
+        "name_german": "Mobai",
+        "name_french": "Manza\u00ef",
+        "flee_rate": 0.04,
+        "capture_rate": 0.1,
+        "max_cp": 1302,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "rock"
+        ],
+        "charge_moves": [
+            "rock tomb",
+            "earthquake",
+            "rock slide"
+        ],
+        "quick_moves": [
+            "rock throw fast",
             "counter fast"
+        ]
+    },
+    {
+        "number": 439,
+        "name_english": "Mime Jr.",
+        "name_german": "Pantimimi",
+        "name_french": "Jr",
+        "flee_rate": 0.04,
+        "capture_rate": 0.1,
+        "max_cp": 1095,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "psychic",
+            "fairy"
+        ],
+        "charge_moves": [
+            "psybeam",
+            "psychic",
+            "psyshock"
+        ],
+        "quick_moves": [
+            "confusion fast",
+            "pound fast"
+        ]
+    },
+    {
+        "number": 440,
+        "name_english": "Happiny",
+        "name_german": "Wonneira",
+        "name_french": "Ptiravi",
+        "flee_rate": 0.04,
+        "capture_rate": 0.1,
+        "max_cp": 371,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "psychic"
+        ],
+        "quick_moves": [
+            "pound fast",
+            "zen headbutt fast"
+        ]
+    },
+    {
+        "number": 441,
+        "name_english": "Chatot",
+        "name_german": "Plaudagei",
+        "name_french": "Pijako",
+        "flee_rate": 0.09,
+        "capture_rate": 0.3,
+        "max_cp": 1791,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "normal",
+            "flying"
+        ],
+        "charge_moves": [
+            "night shade",
+            "sky attack",
+            "heat wave"
+        ],
+        "quick_moves": [
+            "peck fast",
+            "steel wing fast"
+        ]
+    },
+    {
+        "number": 442,
+        "name_english": "Spiritomb",
+        "name_german": "Kryppuk",
+        "name_french": "Spiritomb",
+        "flee_rate": 0.04,
+        "capture_rate": 0.1,
+        "max_cp": 2072,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "ghost",
+            "dark"
+        ],
+        "charge_moves": [
+            "shadow sneak",
+            "ominous wind",
+            "shadow ball"
+        ],
+        "quick_moves": [
+            "feint attack fast",
+            "sucker punch fast"
+        ]
+    },
+    {
+        "number": 443,
+        "name_english": "Gible",
+        "name_german": "Kaumalat",
+        "name_french": "Griknot",
+        "flee_rate": 0.09,
+        "capture_rate": 0.4,
+        "max_cp": 1112,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "dragon",
+            "ground"
+        ],
+        "charge_moves": [
+            "dig",
+            "twister",
+            "body slam"
+        ],
+        "quick_moves": [
+            "take down fast",
+            "mud shot fast"
+        ]
+    },
+    {
+        "number": 444,
+        "name_english": "Gabite",
+        "name_german": "Knarksel",
+        "name_french": "Carmache",
+        "flee_rate": 0.06,
+        "capture_rate": 0.1,
+        "max_cp": 1874,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "dragon",
+            "ground"
+        ],
+        "charge_moves": [
+            "dig",
+            "twister",
+            "flamethrower"
+        ],
+        "quick_moves": [
+            "take down fast",
+            "mud shot fast"
+        ]
+    },
+    {
+        "number": 445,
+        "name_english": "Garchomp",
+        "name_german": "Knakrack",
+        "name_french": "Carchacrok",
+        "flee_rate": 0.05,
+        "capture_rate": 0.05,
+        "max_cp": 3962,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "dragon",
+            "ground"
+        ],
+        "charge_moves": [
+            "outrage",
+            "earthquake",
+            "fire blast"
+        ],
+        "quick_moves": [
+            "dragon tail fast",
+            "mud shot fast"
+        ]
+    },
+    {
+        "number": 446,
+        "name_english": "Munchlax",
+        "name_german": "Mampfaxo",
+        "name_french": "Goinfrex",
+        "flee_rate": 0.04,
+        "capture_rate": 0.1,
+        "max_cp": 1892,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "gunk shot",
+            "body slam",
+            "bulldoze"
+        ],
+        "quick_moves": [
+            "tackle fast",
+            "lick fast"
+        ]
+    },
+    {
+        "number": 447,
+        "name_english": "Riolu",
+        "name_german": "Riolu",
+        "name_french": "Riolu",
+        "flee_rate": 0.2,
+        "capture_rate": null,
+        "max_cp": 993,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "fighting"
+        ],
+        "charge_moves": [
+            "brick break",
+            "low sweep",
+            "cross chop"
+        ],
+        "quick_moves": [
+            "counter fast",
+            "quick attack fast"
+        ]
+    },
+    {
+        "number": 448,
+        "name_english": "Lucario",
+        "name_german": "Lucario",
+        "name_french": "Lucario",
+        "flee_rate": 0.05,
+        "capture_rate": 0.1,
+        "max_cp": 2703,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "fighting",
+            "steel"
+        ],
+        "charge_moves": [
+            "flash cannon",
+            "shadow ball",
+            "close combat"
+        ],
+        "quick_moves": [
+            "counter fast",
+            "bullet punch fast"
+        ]
+    },
+    {
+        "number": 449,
+        "name_english": "Hippopotas",
+        "name_german": "Hippopotas",
+        "name_french": "Hippopotas",
+        "flee_rate": 0.1,
+        "capture_rate": 0.4,
+        "max_cp": 1358,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "ground"
+        ],
+        "charge_moves": [
+            "dig",
+            "rock tomb",
+            "body slam"
+        ],
+        "quick_moves": [
+            "tackle fast",
+            "bite fast"
+        ]
+    },
+    {
+        "number": 450,
+        "name_english": "Hippowdon",
+        "name_german": "Hippoterus",
+        "name_french": "Hippodocus",
+        "flee_rate": 0.08,
+        "capture_rate": 0.15,
+        "max_cp": 3085,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "ground"
+        ],
+        "charge_moves": [
+            "earthquake",
+            "stone edge",
+            "body slam"
+        ],
+        "quick_moves": [
+            "fire fang fast",
+            "bite fast"
+        ]
+    },
+    {
+        "number": 451,
+        "name_english": "Skorupi",
+        "name_german": "Pionskora",
+        "name_french": "Rapion",
+        "flee_rate": 0.1,
+        "capture_rate": 0.4,
+        "max_cp": 1009,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "poison",
+            "bug"
+        ],
+        "charge_moves": [
+            "cross poison",
+            "aqua tail",
+            "sludge bomb"
+        ],
+        "quick_moves": [
+            "poison sting fast",
+            "infestation fast"
+        ]
+    },
+    {
+        "number": 452,
+        "name_english": "Drapion",
+        "name_german": "Piondragi",
+        "name_french": "Drascore",
+        "flee_rate": 0.08,
+        "capture_rate": 0.15,
+        "max_cp": 2453,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "poison",
+            "dark"
+        ],
+        "charge_moves": [
+            "crunch",
+            "aqua tail",
+            "sludge bomb"
+        ],
+        "quick_moves": [
+            "poison sting fast",
+            "infestation fast"
+        ]
+    },
+    {
+        "number": 453,
+        "name_english": "Croagunk",
+        "name_german": "Glibunkel",
+        "name_french": "Cradopaud",
+        "flee_rate": 0.12,
+        "capture_rate": 0.4,
+        "max_cp": 952,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "poison",
+            "fighting"
+        ],
+        "charge_moves": [
+            "brick break",
+            "low sweep",
+            "sludge bomb"
+        ],
+        "quick_moves": [
+            "poison sting fast",
+            "poison jab fast"
+        ]
+    },
+    {
+        "number": 454,
+        "name_english": "Toxicroak",
+        "name_german": "Toxiquak",
+        "name_french": "Coatox",
+        "flee_rate": 0.07,
+        "capture_rate": 0.15,
+        "max_cp": 2488,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "poison",
+            "fighting"
+        ],
+        "charge_moves": [
+            "dynamic punch",
+            "mud bomb",
+            "sludge bomb"
+        ],
+        "quick_moves": [
+            "poison jab fast",
+            "counter fast"
+        ]
+    },
+    {
+        "number": 455,
+        "name_english": "Carnivine",
+        "name_german": "Venuflibis",
+        "name_french": "Vortente",
+        "flee_rate": 0.01,
+        "capture_rate": 0.9,
+        "max_cp": 2159,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "grass"
+        ],
+        "charge_moves": [
+            "power whip",
+            "energy ball",
+            "crunch"
+        ],
+        "quick_moves": [
+            "bite fast",
+            "vine whip fast"
+        ]
+    },
+    {
+        "number": 456,
+        "name_english": "Finneon",
+        "name_german": "Finneon",
+        "name_french": "\u00c9cayon",
+        "flee_rate": 0.1,
+        "capture_rate": 0.5,
+        "max_cp": 971,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "water"
+        ],
+        "charge_moves": [
+            "water pulse",
+            "ice beam",
+            "silver wind"
+        ],
+        "quick_moves": [
+            "pound fast",
+            "water gun fast"
+        ]
+    },
+    {
+        "number": 457,
+        "name_english": "Lumineon",
+        "name_german": "Lumineon",
+        "name_french": "Lumin\u00e9on",
+        "flee_rate": 0.06,
+        "capture_rate": 0.2,
+        "max_cp": 1814,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "water"
+        ],
+        "charge_moves": [
+            "water pulse",
+            "blizzard",
+            "silver wind"
+        ],
+        "quick_moves": [
+            "waterfall fast",
+            "water gun fast"
+        ]
+    },
+    {
+        "number": 458,
+        "name_english": "Mantyke",
+        "name_german": "Mantirps",
+        "name_french": "Babimanta",
+        "flee_rate": 0.04,
+        "capture_rate": 0.1,
+        "max_cp": 1248,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "water",
+            "flying"
+        ],
+        "charge_moves": [
+            "water pulse",
+            "ice beam",
+            "aerial ace"
+        ],
+        "quick_moves": [
+            "bubble fast",
+            "tackle fast"
+        ]
+    },
+    {
+        "number": 459,
+        "name_english": "Snover",
+        "name_german": "Shnebedeck",
+        "name_french": "Blizzi",
+        "flee_rate": 0.1,
+        "capture_rate": 0.3,
+        "max_cp": 1159,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "grass",
+            "ice"
+        ],
+        "charge_moves": [
+            "ice beam",
+            "energy ball",
+            "stomp"
+        ],
+        "quick_moves": [
+            "powder snow fast",
+            "ice shard fast"
+        ]
+    },
+    {
+        "number": 460,
+        "name_english": "Abomasnow",
+        "name_german": "Rexblisar",
+        "name_french": "Blizzaroi",
+        "flee_rate": 0.06,
+        "capture_rate": 0.125,
+        "max_cp": 2362,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "grass",
+            "ice"
+        ],
+        "charge_moves": [
+            "blizzard",
+            "energy ball",
+            "outrage"
+        ],
+        "quick_moves": [
+            "powder snow fast",
+            "razor leaf fast"
+        ]
+    },
+    {
+        "number": 461,
+        "name_english": "Weavile",
+        "name_german": "Snibunna",
+        "name_french": "Dimoret",
+        "flee_rate": 0.09,
+        "capture_rate": 0.15,
+        "max_cp": 3005,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "dark",
+            "ice"
+        ],
+        "charge_moves": [
+            "avalanche",
+            "focus blast",
+            "foul play"
+        ],
+        "quick_moves": [
+            "ice shard fast",
+            "feint attack fast"
+        ]
+    },
+    {
+        "number": 462,
+        "name_english": "Magnezone",
+        "name_german": "Magnezone",
+        "name_french": "Magn\u00e9zone",
+        "flee_rate": 0.05,
+        "capture_rate": 0.125,
+        "max_cp": 3205,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "electric",
+            "steel"
+        ],
+        "charge_moves": [
+            "zap cannon",
+            "wild charge",
+            "flash cannon"
+        ],
+        "quick_moves": [
+            "spark fast",
+            "charge beam fast"
+        ]
+    },
+    {
+        "number": 463,
+        "name_english": "Lickilicky",
+        "name_german": "Schlurplek",
+        "name_french": "Coudlangue",
+        "flee_rate": 0.09,
+        "capture_rate": 0.15,
+        "max_cp": 2467,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "hyper beam",
+            "earthquake",
+            "solar beam"
+        ],
+        "quick_moves": [
+            "lick fast",
+            "zen headbutt fast"
+        ]
+    },
+    {
+        "number": 464,
+        "name_english": "Rhyperior",
+        "name_german": "Rihornior",
+        "name_french": "Rhinastoc",
+        "flee_rate": 0.05,
+        "capture_rate": 0.05,
+        "max_cp": 3733,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "ground",
+            "rock"
+        ],
+        "charge_moves": [
+            "surf",
+            "earthquake",
+            "stone edge"
+        ],
+        "quick_moves": [
+            "mud slap fast",
+            "smack down fast"
+        ]
+    },
+    {
+        "number": 465,
+        "name_english": "Tangrowth",
+        "name_german": "Tangoloss",
+        "name_french": "Bouldeneu",
+        "flee_rate": 0.1,
+        "capture_rate": 0.15,
+        "max_cp": 3030,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "grass"
+        ],
+        "charge_moves": [
+            "ancient power",
+            "sludge bomb",
+            "solar beam"
+        ],
+        "quick_moves": [
+            "vine whip fast",
+            "infestation fast"
+        ]
+    },
+    {
+        "number": 466,
+        "name_english": "Electivire",
+        "name_german": "Elevoltek",
+        "name_french": "\u00c9lekable",
+        "flee_rate": 0.1,
+        "capture_rate": 0.15,
+        "max_cp": 3079,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "electric"
+        ],
+        "charge_moves": [
+            "thunder punch",
+            "wild charge",
+            "thunder"
+        ],
+        "quick_moves": [
+            "thunder shock fast",
+            "low kick fast"
+        ]
+    },
+    {
+        "number": 467,
+        "name_english": "Magmortar",
+        "name_german": "Magbrant",
+        "name_french": "Maganon",
+        "flee_rate": 0.1,
+        "capture_rate": 0.15,
+        "max_cp": 3132,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "fire"
+        ],
+        "charge_moves": [
+            "brick break",
+            "fire punch",
+            "fire blast"
+        ],
+        "quick_moves": [
+            "fire spin fast",
+            "karate chop fast"
+        ]
+    },
+    {
+        "number": 468,
+        "name_english": "Togekiss",
+        "name_german": "Togekiss",
+        "name_french": "Togekiss",
+        "flee_rate": 0.05,
+        "capture_rate": 0.01,
+        "max_cp": 3332,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "fairy",
+            "flying"
+        ],
+        "charge_moves": [
+            "ancient power",
+            "dazzling gleam",
+            "aerial ace"
+        ],
+        "quick_moves": [
+            "air slash fast",
+            "hidden power fast"
+        ]
+    },
+    {
+        "number": 469,
+        "name_english": "Yanmega",
+        "name_german": "Yanmega",
+        "name_french": "Yanm\u00e9ga",
+        "flee_rate": 0.05,
+        "capture_rate": 0.175,
+        "max_cp": 2946,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "bug",
+            "flying"
+        ],
+        "charge_moves": [
+            "ancient power",
+            "aerial ace",
+            "bug buzz"
+        ],
+        "quick_moves": [
+            "bug bite fast",
+            "wing attack fast"
+        ]
+    },
+    {
+        "number": 470,
+        "name_english": "Leafeon",
+        "name_german": "Folipurba",
+        "name_french": "Phyllali",
+        "flee_rate": 0.06,
+        "capture_rate": 0.125,
+        "max_cp": 2944,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "grass"
+        ],
+        "charge_moves": [
+            "solar beam",
+            "leaf blade",
+            "energy ball"
+        ],
+        "quick_moves": [
+            "razor leaf fast",
+            "quick attack fast"
+        ]
+    },
+    {
+        "number": 471,
+        "name_english": "Glaceon",
+        "name_german": "Glaziola",
+        "name_french": "Givrali",
+        "flee_rate": 0.06,
+        "capture_rate": 0.125,
+        "max_cp": 3126,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "ice"
+        ],
+        "charge_moves": [
+            "avalanche",
+            "icy wind",
+            "ice beam"
+        ],
+        "quick_moves": [
+            "ice shard fast",
+            "frost breath fast"
+        ]
+    },
+    {
+        "number": 472,
+        "name_english": "Gliscor",
+        "name_german": "Skorgro",
+        "name_french": "Scorvol",
+        "flee_rate": 0.09,
+        "capture_rate": 0.125,
+        "max_cp": 2692,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "ground",
+            "flying"
+        ],
+        "charge_moves": [
+            "earthquake",
+            "aerial ace",
+            "night slash"
+        ],
+        "quick_moves": [
+            "fury cutter fast",
+            "wing attack fast"
+        ]
+    },
+    {
+        "number": 473,
+        "name_english": "Mamoswine",
+        "name_german": "Mamutel",
+        "name_french": "Mammochon",
+        "flee_rate": 0.05,
+        "capture_rate": 0.05,
+        "max_cp": 3328,
+        "rarity": null,
+        "egg_distance": 1,
+        "types": [
+            "ice",
+            "ground"
+        ],
+        "charge_moves": [
+            "avalanche",
+            "bulldoze",
+            "stone edge"
+        ],
+        "quick_moves": [
+            "mud slap fast",
+            "powder snow fast"
+        ]
+    },
+    {
+        "number": 474,
+        "name_english": "Porygon-Z",
+        "name_german": "Porygon-Z",
+        "name_french": "Z",
+        "flee_rate": 0.05,
+        "capture_rate": 0.05,
+        "max_cp": 3266,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "solar beam",
+            "hyper beam",
+            "zap cannon"
+        ],
+        "quick_moves": [
+            "hidden power fast",
+            "charge beam fast"
+        ]
+    },
+    {
+        "number": 475,
+        "name_english": "Gallade",
+        "name_german": "Galagladi",
+        "name_french": "Gallame",
+        "flee_rate": 0.05,
+        "capture_rate": 0.5,
+        "max_cp": 3093,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "psychic",
+            "fighting"
+        ],
+        "charge_moves": [
+            "close combat",
+            "psychic",
+            "leaf blade"
+        ],
+        "quick_moves": [
+            "confusion fast",
+            "low kick fast"
+        ]
+    },
+    {
+        "number": 476,
+        "name_english": "Probopass",
+        "name_german": "Voluminas",
+        "name_french": "Tarinorme",
+        "flee_rate": 0.07,
+        "capture_rate": 0.1,
+        "max_cp": 2080,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "rock",
+            "steel"
+        ],
+        "charge_moves": [
+            "magnet bomb",
+            "rock slide",
+            "thunderbolt"
+        ],
+        "quick_moves": [
+            "rock throw fast",
+            "spark fast"
+        ]
+    },
+    {
+        "number": 477,
+        "name_english": "Dusknoir",
+        "name_german": "Zwirrfinst",
+        "name_french": "Noctunoir",
+        "flee_rate": 0.05,
+        "capture_rate": 0.1,
+        "max_cp": 2388,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "ghost"
+        ],
+        "charge_moves": [
+            "ominous wind",
+            "psychic",
+            "dark pulse"
+        ],
+        "quick_moves": [
+            "hex fast",
+            "astonish fast"
+        ]
+    },
+    {
+        "number": 478,
+        "name_english": "Froslass",
+        "name_german": "Frosdedje",
+        "name_french": "Momartik",
+        "flee_rate": 0.07,
+        "capture_rate": 0.2,
+        "max_cp": 2040,
+        "rarity": null,
+        "egg_distance": 3,
+        "types": [
+            "ice",
+            "ghost"
+        ],
+        "charge_moves": [
+            "avalanche",
+            "crunch",
+            "shadow ball"
+        ],
+        "quick_moves": [
+            "powder snow fast",
+            "hex fast"
+        ]
+    },
+    {
+        "number": 479,
+        "name_english": "Rotom",
+        "name_german": "Rotom",
+        "name_french": "Motisma",
+        "flee_rate": 0.1,
+        "capture_rate": 0.3,
+        "max_cp": 2031,
+        "rarity": null,
+        "egg_distance": 5,
+        "types": [
+            "electric",
+            "ghost"
+        ],
+        "charge_moves": [
+            "ominous wind",
+            "thunderbolt",
+            "thunder"
+        ],
+        "quick_moves": [
+            "astonish fast",
+            "thunder shock fast"
+        ]
+    },
+    {
+        "number": 480,
+        "name_english": "Uxie",
+        "name_german": "Selfe",
+        "name_french": "Cr\u00e9helf",
+        "flee_rate": 0.04,
+        "capture_rate": 0.02,
+        "max_cp": 2524,
+        "rarity": "rarity legendary",
+        "egg_distance": 20,
+        "types": [
+            "psychic"
+        ],
+        "charge_moves": [
+            "futuresight",
+            "swift",
+            "thunder"
+        ],
+        "quick_moves": [
+            "confusion fast",
+            "extrasensory fast"
+        ]
+    },
+    {
+        "number": 481,
+        "name_english": "Mesprit",
+        "name_german": "Vesprit",
+        "name_french": "Cr\u00e9follet",
+        "flee_rate": 0.04,
+        "capture_rate": 0.02,
+        "max_cp": 3058,
+        "rarity": "rarity legendary",
+        "egg_distance": 20,
+        "types": [
+            "psychic"
+        ],
+        "charge_moves": [
+            "futuresight",
+            "swift",
+            "blizzard"
+        ],
+        "quick_moves": [
+            "confusion fast",
+            "extrasensory fast"
+        ]
+    },
+    {
+        "number": 482,
+        "name_english": "Azelf",
+        "name_german": "Tobutz",
+        "name_french": "Cr\u00e9fadet",
+        "flee_rate": 0.04,
+        "capture_rate": 0.02,
+        "max_cp": 3210,
+        "rarity": "rarity legendary",
+        "egg_distance": 20,
+        "types": [
+            "psychic"
+        ],
+        "charge_moves": [
+            "futuresight",
+            "swift",
+            "fire blast"
+        ],
+        "quick_moves": [
+            "confusion fast",
+            "extrasensory fast"
+        ]
+    },
+    {
+        "number": 483,
+        "name_english": "Dialga",
+        "name_german": "Dialga",
+        "name_french": "Dialga",
+        "flee_rate": 0.04,
+        "capture_rate": 0.02,
+        "max_cp": 4038,
+        "rarity": "rarity legendary",
+        "egg_distance": 20,
+        "types": [
+            "steel",
+            "dragon"
+        ],
+        "charge_moves": [
+            "draco meteor",
+            "iron head",
+            "thunder"
+        ],
+        "quick_moves": [
+            "dragon breath fast",
+            "metal claw fast"
+        ]
+    },
+    {
+        "number": 484,
+        "name_english": "Palkia",
+        "name_german": "Palkia",
+        "name_french": "Palkia",
+        "flee_rate": 0.04,
+        "capture_rate": 0.02,
+        "max_cp": 3991,
+        "rarity": "rarity legendary",
+        "egg_distance": 20,
+        "types": [
+            "water",
+            "dragon"
+        ],
+        "charge_moves": [
+            "draco meteor",
+            "fire blast",
+            "hydro pump"
+        ],
+        "quick_moves": [
+            "dragon breath fast",
+            "dragon tail fast"
+        ]
+    },
+    {
+        "number": 485,
+        "name_english": "Heatran",
+        "name_german": "Heatran",
+        "name_french": "Heatran",
+        "flee_rate": 0.04,
+        "capture_rate": 0.02,
+        "max_cp": 3754,
+        "rarity": "rarity legendary",
+        "egg_distance": 20,
+        "types": [
+            "fire",
+            "steel"
+        ],
+        "charge_moves": [
+            "fire blast",
+            "iron head",
+            "stone edge"
+        ],
+        "quick_moves": [
+            "fire spin fast",
+            "bug bite fast"
+        ]
+    },
+    {
+        "number": 486,
+        "name_english": "Regigigas",
+        "name_german": "Regigigas",
+        "name_french": "Regigigas",
+        "flee_rate": 0.04,
+        "capture_rate": 0.02,
+        "max_cp": 4346,
+        "rarity": "rarity legendary",
+        "egg_distance": 20,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "stone edge",
+            "avalanche",
+            "heavy slam"
+        ],
+        "quick_moves": [
+            "zen headbutt fast",
+            "rock smash fast"
+        ]
+    },
+    {
+        "number": 487,
+        "name_english": "Giratina",
+        "name_german": "Giratina",
+        "name_french": "Giratina",
+        "flee_rate": 0.04,
+        "capture_rate": 0.02,
+        "max_cp": 3379,
+        "rarity": "rarity legendary",
+        "egg_distance": 20,
+        "types": [
+            "ghost",
+            "dragon"
+        ],
+        "charge_moves": [
+            "dragon claw",
+            "ancient power",
+            "shadow sneak"
+        ],
+        "quick_moves": [
+            "dragon breath fast",
+            "shadow claw fast"
+        ]
+    },
+    {
+        "number": 488,
+        "name_english": "Cresselia",
+        "name_german": "Cresselia",
+        "name_french": "Cresselia",
+        "flee_rate": 0.04,
+        "capture_rate": 0.02,
+        "max_cp": 2857,
+        "rarity": "rarity legendary",
+        "egg_distance": 20,
+        "types": [
+            "psychic"
+        ],
+        "charge_moves": [
+            "aurora beam",
+            "moonblast",
+            "futuresight"
+        ],
+        "quick_moves": [
+            "psycho cut fast",
+            "confusion fast"
+        ]
+    },
+    {
+        "number": 489,
+        "name_english": "Phione",
+        "name_german": "Phione",
+        "name_french": "Phione",
+        "flee_rate": null,
+        "capture_rate": 0.02,
+        "max_cp": 2105,
+        "rarity": "rarity mythic",
+        "egg_distance": 20,
+        "types": [
+            "water"
+        ],
+        "charge_moves": [
+            "bubble beam",
+            "water pulse",
+            "surf"
+        ],
+        "quick_moves": [
+            "waterfall fast",
+            "bubble fast"
+        ]
+    },
+    {
+        "number": 490,
+        "name_english": "Manaphy",
+        "name_german": "Manaphy",
+        "name_french": "Manaphy",
+        "flee_rate": null,
+        "capture_rate": 0.02,
+        "max_cp": 3265,
+        "rarity": "rarity mythic",
+        "egg_distance": 20,
+        "types": [
+            "water"
+        ],
+        "charge_moves": [
+            "bubble beam",
+            "psychic",
+            "surf"
+        ],
+        "quick_moves": [
+            "waterfall fast",
+            "bubble fast"
+        ]
+    },
+    {
+        "number": 491,
+        "name_english": "Darkrai",
+        "name_german": "Darkrai",
+        "name_french": "Darkrai",
+        "flee_rate": null,
+        "capture_rate": 0.02,
+        "max_cp": 3739,
+        "rarity": "rarity mythic",
+        "egg_distance": 20,
+        "types": [
+            "dark"
+        ],
+        "charge_moves": [
+            "focus blast",
+            "shadow ball",
+            "dark pulse"
+        ],
+        "quick_moves": [
+            "snarl fast",
+            "feint attack fast"
+        ]
+    },
+    {
+        "number": 492,
+        "name_english": "Shaymin",
+        "name_german": "Shaymin",
+        "name_french": "Shaymin",
+        "flee_rate": null,
+        "capture_rate": 0.02,
+        "max_cp": 3265,
+        "rarity": "rarity mythic",
+        "egg_distance": 20,
+        "types": [
+            "grass"
+        ],
+        "charge_moves": [
+            "energy ball",
+            "grass knot",
+            "solar beam"
+        ],
+        "quick_moves": [
+            "hidden power fast",
+            "zen headbutt fast"
+        ]
+    },
+    {
+        "number": 493,
+        "name_english": "Arceus",
+        "name_german": "Arceus",
+        "name_french": "Arceus",
+        "flee_rate": null,
+        "capture_rate": 0.02,
+        "max_cp": 3989,
+        "rarity": "rarity mythic",
+        "egg_distance": 20,
+        "types": [
+            "normal"
+        ],
+        "charge_moves": [
+            "futuresight",
+            "hyper beam",
+            "outrage"
+        ],
+        "quick_moves": [
+            "iron tail fast",
+            "shadow claw fast"
+        ]
+    },
+    {
+        "number": 808,
+        "name_english": "Victini",
+        "name_german": "Victini",
+        "name_french": "Victini",
+        "flee_rate": null,
+        "capture_rate": 0.3,
+        "max_cp": 1080,
+        "rarity": "rarity mythic",
+        "egg_distance": 20,
+        "types": [
+            "steel"
+        ],
+        "charge_moves": [
+            "flash cannon",
+            "thunderbolt"
+        ],
+        "quick_moves": [
+            "thunder shock fast"
+        ]
+    },
+    {
+        "number": 809,
+        "name_english": "Snivy",
+        "name_german": "Serpifeu",
+        "name_french": "Vip\u00e9lierre",
+        "flee_rate": null,
+        "capture_rate": 0.3,
+        "max_cp": 3875,
+        "rarity": "rarity mythic",
+        "egg_distance": 20,
+        "types": [
+            "steel"
+        ],
+        "charge_moves": [
+            "flash cannon",
+            "thunderbolt",
+            "hyper beam",
+            "rock slide"
+        ],
+        "quick_moves": [
+            "thunder shock fast"
         ]
     }
 ]

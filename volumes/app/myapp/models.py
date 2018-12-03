@@ -46,8 +46,9 @@ class Pokemon(Model):
 
 
 class PokemonSpawn(Model):
+    encounter_id = CharField(max_length=200, default=None, null=True, blank=True)
     report_time = DateTimeField(default=timezone.now)
-    poke_nr = ForeignKey(Pokemon, on_delete=CASCADE)
+    pokemon_object = ForeignKey(Pokemon, on_delete=CASCADE)
     latitude = FloatField()
     longitude = FloatField()
     disappear_time = DateTimeField(db_index=True)
@@ -105,7 +106,11 @@ class PointOfInterest(Model):
         return self.name
 
     def __str__(self):
-        return ' '.join([self.type, self.name])
+        if self.name is not None:
+            name = self.name
+        else:
+            name = str(self.id)
+        return ' '.join([self.type, name])
 
 
 class PokeStopLure(Model):

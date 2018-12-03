@@ -16,6 +16,7 @@ volumes/app/myapp/migrations
 volumes/app/mysite/bot_settings.py
 volumes/app/mysite/local_settings.py
 volumes/app/static_dirs/js/node_modules
+volumes/app/pogoprotos
 volumes/bots/
 volumes/postgres/
 volumes/app/static

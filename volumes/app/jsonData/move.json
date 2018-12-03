@@ -1681,5 +1681,95 @@
         "dps": null,
         "legacy": null,
         "class": null
+    },
+    {
+        "name": "weather ball fire",
+        "type": "fire",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null,
+        "class": null
+    },
+    {
+        "name": "weather ball ice",
+        "type": "ice",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null,
+        "class": null
+    },
+    {
+        "name": "weather ball rock",
+        "type": "rock",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null,
+        "class": null
+    },
+    {
+        "name": "weather ball water",
+        "type": "water",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null,
+        "class": null
+    },
+    {
+        "name": "frenzy plant",
+        "type": "grass",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null,
+        "class": null
+    },
+    {
+        "name": "smack down fast",
+        "type": "rock",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null,
+        "class": null
+    },
+    {
+        "name": "blast burn",
+        "type": "fire",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null,
+        "class": null
+    },
+    {
+        "name": "hydro cannon",
+        "type": "water",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null,
+        "class": null
+    },
+    {
+        "name": "last resort",
+        "type": "normal",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null,
+        "class": null
+    },
+    {
+        "name": "meteor mash",
+        "type": "steel",
+        "damage": null,
+        "energy": null,
+        "dps": null,
+        "legacy": null,
+        "class": null
     }
 ]

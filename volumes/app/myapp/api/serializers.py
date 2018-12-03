@@ -67,3 +67,10 @@ class GymStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = GymStatus
         fields = '__all__'
+
+
+class RealDeviceMapBlackHoleSerializer(serializers.Serializer):
+    status = serializers.CharField
+
+    def save(self, **kwargs):
+        status = 'ok'
