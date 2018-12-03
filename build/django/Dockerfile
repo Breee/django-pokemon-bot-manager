@@ -19,8 +19,10 @@ RUN adduser -D -u 1000 django
 RUN apk update \
   && apk add --virtual build-deps gcc python3-dev musl-dev linux-headers\
   && apk add postgresql-dev\
-  && apk add git\
+#  && apk add git\
   && apk add nodejs
+  && apk add --no-cache npm
+
 
 # add required files to the image
 ADD run_web.sh /run_web.sh
