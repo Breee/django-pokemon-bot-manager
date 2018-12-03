@@ -32,7 +32,7 @@ ADD run_web.sh /run_web.sh
 ADD run_celery.sh /run_celery.sh
 ADD requirements.txt /app/requirements.txt
 
-COPY --from=builder /code/out/pogoprotos /app/pogoprotos
+COPY --from=builder /code/out/pogoprotos /usr/local/lib/python3.6/pogoprotos
 
 # set working directory to /app/
 WORKDIR /app/
