@@ -42,7 +42,11 @@ class Pokemon(Model):
         ordering = ('number',)
 
     def __str__(self):
-        return str(self.number) + ' - ' + self.name_german
+        if self.name_german is not None:
+            name = self.name_german
+        else:
+            name = str(self.number)
+        return str(self.number) + ' - ' + name
 
 
 class PokemonSpawn(Model):
