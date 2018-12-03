@@ -23,6 +23,7 @@ RUN apk update \
   && apk add nodejs
   && apk add --no-cache npm
 
+RUN adduser -D -u 1000 django
 
 # add required files to the image
 ADD run_web.sh /run_web.sh
