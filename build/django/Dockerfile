@@ -1,6 +1,7 @@
 FROM python:3.7-alpine as builder
 
-RUN apk add --no-cache --virtual protoc protobuf protobuf-dev protobuf-c protobuf-c-dev git
+RUN apk add --no-cache --virtual protoc protobuf protobuf-dev protobuf-c protobuf-c-dev
+RUN apk add --no-cache --virtual protoc git; exit 0
 
 RUN git clone https://github.com/Furtif/POGOProtos.git /code
 
@@ -19,9 +20,10 @@ RUN adduser -D -u 1000 django
 RUN apk update \
   && apk add --virtual build-deps gcc python3-dev musl-dev linux-headers\
   && apk add postgresql-dev\
-#  && apk add git\
   && apk add nodejs \
   && apk add --no-cache npm
+
+RUN apk add git; exit 0
 
 RUN adduser -D -u 1000 django
 
