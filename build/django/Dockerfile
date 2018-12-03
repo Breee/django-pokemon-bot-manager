@@ -20,7 +20,7 @@ RUN apk update \
   && apk add --virtual build-deps gcc python3-dev musl-dev linux-headers\
   && apk add postgresql-dev\
 #  && apk add git\
-  && apk add nodejs
+  && apk add nodejs \
   && apk add --no-cache npm
 
 RUN adduser -D -u 1000 django
