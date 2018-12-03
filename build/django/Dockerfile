@@ -10,7 +10,7 @@ WORKDIR /code
 RUN python compile.py python
 RUN touch /code/out/pogoprotos/__init__.py
 
-RUN apk del --virtual protoc
+RUN apk del protoc
 
 FROM python:3.6-alpine as production
 
