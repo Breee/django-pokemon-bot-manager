@@ -1,6 +1,9 @@
 "use strict"
 
 var pokedex = undefined;
+var poiHidden = true;
+var regularPokemonHidden = false;
+var ivPokemonHidden = false;
 
 $.getJSON('/api/pokedex/', function (data) {
     pokedex = data;
@@ -30,7 +33,8 @@ $.ajaxSetup({
 });
 
 var mymap = L.map('map').setView([47.9960526,7.8464833], 13);
-var layerGroup = undefined;
+var ivpokemonGroup = undefined;
+var pokemonGroup = undefined;
 var poiLayer = undefined;
 //var url = 'https://tiles.venezilu.de/styles/osm-bright/{z}/{x}/{y}.png'
 //var url = 'https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}'
@@ -71,11 +75,13 @@ var getData = function () {
     $.getJSON("/api/pokemon/spawns", function(data) {
 
 
-        if (layerGroup !== undefined) {
-            layerGroup.clearLayers();
+        if (pokemonGroup !== undefined && ivpokemonGroup !== undefined) {
+            pokemonGroup.clearLayers();
+            ivpokemonGroup.clearLayers();
         }
         else {
-            layerGroup = L.layerGroup();
+            pokemonGroup = L.layerGroup();
+            ivpokemonGroup = L.layerGroup();
         }
         for (var i in data) {
             var pokemon = data[i];
@@ -89,10 +95,19 @@ var getData = function () {
                         popupAnchor: [-3, -76]
                     }) });
             marker.bindPopup(popup);
-            layerGroup.addLayer(marker);
+            if (pokemon.individual_stamina !== null || pokemon.individual_attack !== null || pokemon.individual_defense !== null) {
+                ivpokemonGroup.addLayer(marker);
+            }
+            else {
+                    pokemonGroup.addLayer(marker);
+            }
         }
-        layerGroup.addTo(mymap);
-
+        if (!ivPokemonHidden) {
+            ivpokemonGroup.addTo(mymap);
+        }
+        if (!regularPokemonHidden) {
+            pokemonGroup.addTo(mymap);
+        }
     });
 };
 
@@ -152,18 +167,26 @@ var getPOI = function() {
     });
 };
 
-var poiHidden = true;
-
 var togglePOI = function() {
-     if (poiHidden) {
-         getPOI();
-     }
-     else {
-         if (poiLayer !== undefined) {
-             poiLayer.clearLayers()
-         }
-     }
-     poiHidden = !poiHidden;
+    poiHidden = toggleMapLayer(poiLayer, poiHidden);
+};
+
+var toggleIVPokemon = function() {
+    ivPokemonHidden = toggleMapLayer(ivpokemonGroup, ivPokemonHidden);
+};
+
+var toggleRegularPokemon = function() {
+    regularPokemonHidden = toggleMapLayer(pokemonGroup, regularPokemonHidden);
+};
+
+var toggleMapLayer = function(layer, bool) {
+     if (bool) {
+        layer.addTo(mymap);
+    }
+    else {
+        layer.remove(mymap);
+    }
+    return !bool;
 };
 
 var update_time = function() {
