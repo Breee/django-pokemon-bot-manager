@@ -129,8 +129,7 @@ def update_pokemon_spawn(pokemon: Union[MapPokemon, WildPokemon]):
 
 
 def add_spawn_point(map_cell: MapCell, spawn_point: SpawnPoint_pb2):
-    SpawnPoint.objects.create(id=map_cell.s2_cell_id,
-                              longitude=spawn_point.longitude,
+    SpawnPoint.objects.create(longitude=spawn_point.longitude,
                               latitude=spawn_point.latitude)
     print('spawn point created')
 
