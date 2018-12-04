@@ -139,7 +139,7 @@ class RealDeviceMapBlackHole(APIView):
                 for key, message in protos.messages.items():
                     if isinstance(message, GetMapObjectsResponse):
                         for map_cell in message.map_cells:
-                            ModelBridge.iterate_map_cell(map_cell)
+                            ModelBridge.parse_map_cell(map_cell)
 
             for key, value in data.items():
                 if key == 'quests':
