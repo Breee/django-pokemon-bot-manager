@@ -131,7 +131,7 @@ def update_pokemon_spawn(pokemon: Union[MapPokemon, WildPokemon]):
 def add_spawn_point(map_cell: MapCell, spawn_point: SpawnPoint_pb2):
     queryset = SpawnPoint.objects.filter(longitude=spawn_point.longitude,
                                          latitude=spawn_point.latitude)
-    if not queryset.exists:
+    if not queryset.exists():
         SpawnPoint.objects.create(longitude=spawn_point.longitude,
                                   latitude=spawn_point.latitude)
         print('spawn point created')
