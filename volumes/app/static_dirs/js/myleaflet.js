@@ -120,8 +120,10 @@ $( function() {
 var getPOI = function() {
     $.getJSON("/api/poi/all", function (data) {
         if (pokestopLayer !== undefined) {
+            gymLayer.clearLayers();
             pokestopLayer.clearLayers();
         } else {
+            gymLayer = L.layerGroup();
             pokestopLayer = L.markerClusterGroup({
                 maxClusterRadius: 120,
                 disableClusteringAtZoom: 17
