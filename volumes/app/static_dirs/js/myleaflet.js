@@ -35,8 +35,7 @@ $.ajaxSetup({
 var mymap = L.map('map').setView([47.9960526,7.8464833], 13);
 var ivpokemonGroup = undefined;
 var pokemonGroup = undefined;
-var pokestopLayer = undefined;
-var gymLayer = undefined;
+var poiLayer = undefined;
 //var url = 'https://tiles.venezilu.de/styles/osm-bright/{z}/{x}/{y}.png'
 //var url = 'https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}'
 var url = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png'
@@ -118,10 +117,10 @@ $( function() {
 
 var getPOI = function() {
     $.getJSON("/api/poi/all", function (data) {
-        if (pokestopLayer !== undefined) {
-            pokestopLayer.clearLayers();
+        if (poiLayer !== undefined) {
+            poiLayer.clearLayers();
         } else {
-            pokestopLayer = L.markerClusterGroup({
+            poiLayer = L.markerClusterGroup({
                 maxClusterRadius: 120,
                 disableClusteringAtZoom: 17
             });
@@ -139,8 +138,6 @@ var getPOI = function() {
                             popupAnchor: [-3, -76]
                         })
                     });
-                marker.bindPopup(popup);
-                pokestopLayer.addLayer(marker);
             } else if (poi.type === "gym") {
                 var marker = L.marker([poi.latitude, poi.longitude],
                     {
@@ -151,8 +148,6 @@ var getPOI = function() {
                             popupAnchor: [-3, -76]
                         })
                     });
-                marker.bindPopup(popup);
-                gymLayer.addLayer(marker);
             } else {
                 var marker = L.marker([poi.latitude, poi.longitude],
                     {
@@ -163,20 +158,17 @@ var getPOI = function() {
                             popupAnchor: [-3, -76]
                         })
                     });
-                marker.bindPopup(popup);
-                pokestopLayer.addLayer(marker);
             }
+            marker.bindPopup(popup);
+            poiLayer.addLayer(marker);
+        }
+        poiLayer.addTo(mymap);
 
-        }
-        if (!poiHidden) {
-            pokestopLayer.addTo(mymap);
-            gymLayer.addLayer(marker);
-        }
     });
 };
 
 var togglePOI = function() {
-    poiHidden = toggleMapLayer(pokestopLayer, poiHidden);
+    poiHidden = toggleMapLayer(poiLayer, poiHidden);
 };
 
 var toggleIVPokemon = function() {
@@ -219,7 +211,9 @@ function reloadData() {
     else {
         last_update = update_time();
     }
-    getPOI();
+    if (!poiHidden) {
+        getPOI();
+    }
     getData();
 }
 
