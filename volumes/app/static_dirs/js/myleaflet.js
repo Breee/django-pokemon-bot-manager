@@ -172,7 +172,7 @@ var getPOI = function() {
 
         }
         if (!gymsHidden) {
-            gymLayer.addLayer(marker);
+            gymLayer.addTo(mymap);
         }
         if (!pokestopsHidden) {
             pokestopLayer.addTo(mymap);
@@ -185,7 +185,7 @@ var togglePokestops = function() {
 };
 
 var toggleGyms = function() {
-    pokestopsHidden = toggleMapLayer(gymLayer, gymsHidden);
+    gymsHidden = toggleMapLayer(gymLayer, gymsHidden);
 };
 
 var toggleIVPokemon = function() {
