@@ -3,7 +3,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from myapp.api.serializers import *
 from myapp.pogoprotos import ModelBridge
+from myapp.pogoprotos.ModelBridge import parse_encounter_response
 from myapp.pogoprotos.Pogoprotos import Pogoprotos
+from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResponse
 from pogoprotos.networking.responses.get_map_objects_response_pb2 import GetMapObjectsResponse
 
 
@@ -15,7 +17,7 @@ class PokedexSet(APIView):
 
         # parse query string stuff
         if 'nr' in request.GET:
-            queryset = queryset.filter(poke_nr=request.GET['nr'])
+            queryset = queryset.filter(number=request.GET['nr'])
         if 'name_eng' in request.GET:
             queryset = queryset.filter(poke_name_ger=request.GET['name_eng'])
         if 'name_ger' in request.GET:
@@ -140,6 +142,8 @@ class RealDeviceMapBlackHole(APIView):
                     if isinstance(message, GetMapObjectsResponse):
                         for map_cell in message.map_cells:
                             ModelBridge.parse_map_cell(map_cell)
+                    elif isinstance(message, EncounterResponse):
+                        parse_encounter_response(message)
 
             for key, value in data.items():
                 if key == 'quests':

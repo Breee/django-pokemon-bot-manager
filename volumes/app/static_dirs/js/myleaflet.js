@@ -1,5 +1,11 @@
 "use strict"
 
+var pokedex = undefined;
+
+$.getJSON('/api/pokedex/', function (data) {
+    pokedex = data;
+});
+
 function getCookie(name) {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -38,8 +44,33 @@ L.tileLayer(url, {
 
 var sidebar = L.control.sidebar('sidebar').addTo(mymap);
 
+var get_popup_data = function(pokemon) {
+    var date = new Date(pokemon.disappear_time);
+    if (pokemon.individual_stamina != null) {
+        var iv_sta = pokemon.individual_stamina;
+        var iv_att = pokemon.individual_attack;
+        var iv_def = pokemon.individual_defense;
+        var iv_proc = Math.round(((iv_sta + iv_att + iv_def)/45)*10000)/100;
+        var iv_str = '<b>IV:</b>' + iv_proc + '% ' + '(A' + iv_att + '|D' + iv_def + '|S' + iv_sta + ')<br>';
+        var cp_str = '<b>CP:</b>' + pokemon.cp + '<br>';
+    }
+    else {
+        iv_str = '';
+        cp_str = '';
+    }
+
+    var maps_str = '<a href="https://www.google.com/maps/place/' + pokemon.latitude + ',' +
+        pokemon.longitude + '" target="_blank" title="Open in Google Maps">' + 'Maps</a><br>';
+
+    return '<h3>' + pokedex[pokemon.pokemon_object -1].name_german + ' (' + pokemon.pokemon_object + ')' + '</h3>' +
+        '<b>Despawn Time</b> ' + date.toLocaleTimeString('de-DE') + '<br>' +
+         iv_str + cp_str + maps_str;
+};
+
 var getData = function () {
     $.getJSON("/api/pokemon/spawns", function(data) {
+
+
         if (layerGroup !== undefined) {
             layerGroup.clearLayers();
         }
@@ -48,8 +79,8 @@ var getData = function () {
         }
         for (var i in data) {
             var pokemon = data[i];
-            var popup = "" + pokemon.disappear_time + "<br>" +
-                "" + pokemon.pokemon_object;
+
+            var popup = get_popup_data(pokemon);
             var marker = L.marker([pokemon.latitude, pokemon.longitude],
                 {title: "test",
                     icon: L.icon({
@@ -135,7 +166,28 @@ var togglePOI = function() {
      poiHidden = !poiHidden;
 };
 
+var update_time = function() {
+    var date = new Date();
+    return date.getTime();
+};
+
+var last_update = 0;
+var waiting = false;
+
 function reloadData() {
+    // if pokestop not yet loaded or another pokemon update is not long ago, wait a sec
+    if (pokedex === undefined || update_time() < last_update + 200) {
+        var timeout = (pokedex === undefined) ? 100 : 1000;
+        if (!waiting) {
+            setTimeout(function () {
+                reloadData();
+            }, timeout);
+        }
+        return;
+    }
+    else {
+        last_update = update_time();
+    }
     if (!poiHidden) {
         getPOI();
     }
