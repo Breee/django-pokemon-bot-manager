@@ -2,6 +2,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'db.slite3',
+    },
+    'monocle-db': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'monocle',
+        'USER': 'user',
+        'PASSWORD': 'replace secret',
+        'HOST': 'example.org',
+        'PORT': '3306',
     }
 }
 
