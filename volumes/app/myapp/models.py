@@ -180,6 +180,6 @@ class GymMemberRelation(Model):
 
 
 class SpawnPoint(Model):
-    id = BigIntegerField(max_length=15, primary_key=True)
     longitude = FloatField()
     latitude = FloatField()
+    spawn_point_id = IntegerField(default=None, null=True, blank=True)
