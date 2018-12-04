@@ -47,44 +47,49 @@ class Command(BaseCommand):
         super().__init__(*args, **kwargs)
         self.helperFunctions = UpdatePokemonDataHelpers(self.stdout)
 
-#    def add_arguments(self, parser):
-#        parser.add_argument('poll_id', nargs='+', type=int)
+    def add_arguments(self, parser):
+        parser.add_argument('--pokemon-only', dest='pokemon', action='store_true')
+        parser.add_argument('--pokestop-only', dest='pokestop', action='store_true')
+        parser.add_argument('--gym-only', dest='gym', action='store_true')
 
     def handle(self, *args, **options):
 
-        pokemon_file = "jsonData/pokemon.json"
-        with open(pokemon_file) as pokemon_json:
-            pokemon = json.load(pokemon_json)
-            for json_data in pokemon:
-                try:
-                    Pokemon.objects.get(number=json_data['number'])
-                except ObjectDoesNotExist:
-                    self.helperFunctions.create_pokemon(json_data)
-
-        pokestop_file = 'jsonData/pokestop.json'
-        with open(pokestop_file) as poi_json:
-            pokestops = json.load(poi_json)
-            for json_data in pokestops:
-                try:
-                    PointOfInterest.objects.get(poi_id=json_data['poi_id'])
-                except KeyError:
+        if not options['pokestop'] and not options['gym']:
+            pokemon_file = "jsonData/pokemon.json"
+            with open(pokemon_file) as pokemon_json:
+                pokemon = json.load(pokemon_json)
+                for json_data in pokemon:
                     try:
-                        PointOfInterest.objects.get(longitude=json_data['longitude'],
-                                                    latitude=json_data['latitude'])
+                        Pokemon.objects.get(number=json_data['number'])
+                    except ObjectDoesNotExist:
+                        self.helperFunctions.create_pokemon(json_data)
+
+        if not options['pokemon'] and not options['gym']:
+            pokestop_file = 'jsonData/pokestop.json'
+            with open(pokestop_file) as poi_json:
+                pokestops = json.load(poi_json)
+                for json_data in pokestops:
+                    try:
+                        PointOfInterest.objects.get(poi_id=json_data['poi_id'])
+                    except KeyError:
+                        try:
+                            PointOfInterest.objects.get(longitude=json_data['longitude'],
+                                                        latitude=json_data['latitude'])
+                        except ObjectDoesNotExist:
+                            self.helperFunctions.create_point_of_interest(json_data)
+                    except ObjectDoesNotExist:
+                        try:
+                            PointOfInterest.objects.get(longitude=json_data['longitude'],
+                                                        latitude=json_data['latitude'])
+                        except ObjectDoesNotExist:
+                            self.helperFunctions.create_point_of_interest(json_data)
+
+        if not options['pokemon'] and not options['pokestop']:
+            gym_file = 'jsonData/gym.json'
+            with open(gym_file) as poi_json:
+                gyms = json.load(poi_json)
+                for json_data in gyms:
+                    try:
+                        PointOfInterest.objects.get(poi_id=json_data['poi_id'])
                     except ObjectDoesNotExist:
                         self.helperFunctions.create_point_of_interest(json_data)
-                except ObjectDoesNotExist:
-                    try:
-                        PointOfInterest.objects.get(longitude=json_data['longitude'],
-                                                    latitude=json_data['latitude'])
-                    except ObjectDoesNotExist:
-                        self.helperFunctions.create_point_of_interest(json_data)
-
-        gym_file = 'jsonData/gym.json'
-        with open(gym_file) as poi_json:
-            gyms = json.load(poi_json)
-            for json_data in gyms:
-                try:
-                    PointOfInterest.objects.get(poi_id=json_data['poi_id'])
-                except ObjectDoesNotExist:
-                    self.helperFunctions.create_point_of_interest(json_data)
