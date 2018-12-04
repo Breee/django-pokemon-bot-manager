@@ -2,12 +2,12 @@ from typing import Union
 
 from django.utils import timezone
 
-from myapp.models import PointOfInterest, PokemonSpawn, Pokemon
+from myapp.models import PointOfInterest, PokemonSpawn, Pokemon, SpawnPoint
 from pogoprotos.map.fort.fort_data_pb2 import FortData
 from pogoprotos.map.map_cell_pb2 import MapCell
 from pogoprotos.map.pokemon.map_pokemon_pb2 import MapPokemon
-from pogoprotos.map.pokemon.nearby_pokemon_pb2 import NearbyPokemon
 from pogoprotos.map.pokemon.wild_pokemon_pb2 import WildPokemon
+from pogoprotos.map.spawn_point_pb2 import SpawnPoint as SpawnPoint_pb2
 from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResponse
 
 
@@ -40,7 +40,7 @@ def update_poi(fort: FortData, virtual: bool = False):
         print(fort_type, ' created')
 
 
-def add_pokemon_spawn(pokemon: Union[MapPokemon, WildPokemon]):
+def add_map_pokemon_spawn(pokemon: MapPokemon):
     # check if encounter was processed before
     queryset = PokemonSpawn.objects.filter(encounter_id=pokemon.encounter_id)
     if queryset.exists():
@@ -71,6 +71,38 @@ def add_pokemon_spawn(pokemon: Union[MapPokemon, WildPokemon]):
     update_pokemon_spawn(pokemon)
 
 
+def add_wild_pokemon_spawn(pokemon: WildPokemon):
+    # check if encounter was processed before
+    queryset = PokemonSpawn.objects.filter(encounter_id=pokemon.encounter_id)
+    if queryset.exists():
+        return
+
+    pokemon_object = Pokemon.objects.filter(number=pokemon.pokemon_data.pokemon_id)
+
+    # check if pokemon with number exists
+    if pokemon_object.exists():
+        pokemon_object = pokemon_object.first()
+    else:
+        raise NotImplementedError('Pokemon ' + pokemon.pokemon_data.pokemon_id)
+
+    # compute disappear time
+    disappear_time = timezone.now() + timezone.timedelta(minutes=30)
+    print(pokemon)
+    if hasattr(pokemon, 'time_till_hidden_ms'):
+        if pokemon.time_till_hidden_ms != -1:
+            disappear_time = timezone.now() + timezone.timedelta(
+                milliseconds=pokemon.expiration_timestamp_ms)
+
+    # create pokemon
+    PokemonSpawn.objects.create(encounter_id=pokemon.encounter_id,
+                                pokemon_object=pokemon_object,
+                                latitude=pokemon.latitude,
+                                longitude=pokemon.longitude,
+                                disappear_time=disappear_time)
+    # update pokemon with optional additional data
+    update_pokemon_spawn(pokemon)
+
+
 def update_pokemon_spawn(pokemon: Union[MapPokemon, WildPokemon]):
     pokemon_object = PokemonSpawn.objects.get(encounter_id=pokemon.encounter_id)
     if hasattr(pokemon, 'pokemon_display'):
@@ -80,12 +112,15 @@ def update_pokemon_spawn(pokemon: Union[MapPokemon, WildPokemon]):
             pokemon_object.gender = pokemon.pokemon_display.gender
         if hasattr(pokemon.pokemon_display, 'form'):
             pokemon_object.gender = pokemon.pokemon_display.form
-        if hasattr(pokemon.pokemon_display, 'form'):
+        if hasattr(pokemon.pokemon_display, 'costume'):
             pokemon_object.costume = pokemon.pokemon_display.costume
     if hasattr(pokemon, 'pokemon_data'):
-        pokemon_object.individual_stamina = pokemon.pokemon_data.individual_stamina
-        pokemon_object.individual_attack = pokemon.pokemon_data.individual_attack
-        pokemon_object.individual_defense = pokemon.pokemon_data.individual_defense
+        if hasattr(pokemon.pokemon_data, 'individual_stamina'):
+            pokemon_object.individual_stamina = pokemon.pokemon_data.individual_stamina
+        if hasattr(pokemon.pokemon_data, 'individual_attack'):
+            pokemon_object.individual_attack = pokemon.pokemon_data.individual_attack
+        if hasattr(pokemon.pokemon_data, 'individual_defense'):
+            pokemon_object.individual_defense = pokemon.pokemon_data.individual_defense
         pokemon_object.cp = pokemon.pokemon_data.cp
         pokemon_object.cp_multiplier = pokemon.pokemon_data.cp_multiplier
 
@@ -93,13 +128,24 @@ def update_pokemon_spawn(pokemon: Union[MapPokemon, WildPokemon]):
     print('pokemonspawn saved')
 
 
+def add_spawn_point(map_cell: MapCell, spawn_point: SpawnPoint_pb2):
+    SpawnPoint.objects.create(id=map_cell.s2_cell_id,
+                              longitude=spawn_point.longitude,
+                              latitude=spawn_point.latitude)
+    print('spawn point created')
+
+
 def parse_map_cell(map_cell: MapCell):
     for fort in map_cell.forts:
         update_poi(fort)
     for pokemon in map_cell.catchable_pokemons:
-        add_pokemon_spawn(pokemon)
+        add_map_pokemon_spawn(pokemon)
     for pokemon in map_cell.wild_pokemons:
-        add_pokemon_spawn(pokemon)
+        add_wild_pokemon_spawn(pokemon)
+    for spawn_point in map_cell.spawn_points:
+        queryset = SpawnPoint.objects.filter(id=map_cell.s2_cell_id)
+        if not queryset.exists():
+            add_spawn_point(map_cell, spawn_point)
 
 
 def parse_encounter_response(encounter: EncounterResponse):
@@ -107,8 +153,10 @@ def parse_encounter_response(encounter: EncounterResponse):
     pokemon = encounter.wild_pokemon
     queryset = PokemonSpawn.objects.filter(encounter_id=pokemon.encounter_id)
     if queryset.exists():
+        print('trying update')
         update_pokemon_spawn(pokemon)
     else:
+        print('trying add')
         add_pokemon_spawn(pokemon)
 
 
