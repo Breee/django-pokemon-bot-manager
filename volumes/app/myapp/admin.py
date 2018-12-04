@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PointOfInterest, Pokemon, PokemonSpawn, PokemonType
+from .models import PointOfInterest, Pokemon, PokemonSpawn, PokemonType, SpawnPoint
 
 from rest_framework.authtoken.admin import TokenAdmin
 
@@ -11,6 +11,7 @@ class PointOfInterestAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Pokemon)
 admin.site.register(PokemonSpawn)
+admin.site.register(SpawnPoint)
 admin.site.register(PokemonType)
 admin.site.register(PointOfInterest, PointOfInterestAdmin)
 

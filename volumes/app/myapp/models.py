@@ -177,3 +177,9 @@ class GymMemberRelation(Model):
     gym_pokemon = ForeignKey(GymPokemon, on_delete=CASCADE)
     current_cp = IntegerField(default=None, null=True)
     current_stamina = IntegerField(default=None, null=True)
+
+
+class SpawnPoint(Model):
+    id = BigIntegerField(max_length=15, primary_key=True)
+    longitude = FloatField()
+    latitude = FloatField()
