@@ -129,9 +129,12 @@ def update_pokemon_spawn(pokemon: Union[MapPokemon, WildPokemon]):
 
 
 def add_spawn_point(map_cell: MapCell, spawn_point: SpawnPoint_pb2):
-    SpawnPoint.objects.create(longitude=spawn_point.longitude,
-                              latitude=spawn_point.latitude)
-    print('spawn point created')
+    queryset = SpawnPoint.objects.filter(longitude=spawn_point.longitude,
+                                         latitude=spawn_point.latitude)
+    if not queryset.exists:
+        SpawnPoint.objects.create(longitude=spawn_point.longitude,
+                                  latitude=spawn_point.latitude)
+        print('spawn point created')
 
 
 def parse_map_cell(map_cell: MapCell):
@@ -156,7 +159,7 @@ def parse_encounter_response(encounter: EncounterResponse):
         update_pokemon_spawn(pokemon)
     else:
         print('trying add')
-        add_pokemon_spawn(pokemon)
+        add_wild_pokemon_spawn(pokemon)
 
 
 
