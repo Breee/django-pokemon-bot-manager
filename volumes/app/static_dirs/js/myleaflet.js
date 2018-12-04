@@ -1,7 +1,8 @@
 "use strict"
 
 var pokedex = undefined;
-var poiHidden = true;
+var pokestopsHidden = true;
+var gymsHidden = false;
 var regularPokemonHidden = false;
 var ivPokemonHidden = false;
 
@@ -168,15 +169,21 @@ var getPOI = function() {
             }
 
         }
-        if (!poiHidden) {
-            pokestopLayer.addTo(mymap);
+        if (!gymsHidden) {
             gymLayer.addLayer(marker);
+        }
+        if (!pokestopsHidden) {
+            pokestopLayer.addTo(mymap);
         }
     });
 };
 
-var togglePOI = function() {
-    poiHidden = toggleMapLayer(pokestopLayer, poiHidden);
+var togglePokestops = function() {
+    pokestopsHidden = toggleMapLayer(pokestopLayer, pokestopsHidden);
+};
+
+var toggleGyms = function() {
+    pokestopsHidden = toggleMapLayer(gymLayer, gymsHidden);
 };
 
 var toggleIVPokemon = function() {
