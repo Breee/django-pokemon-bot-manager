@@ -11,33 +11,25 @@ from pogoprotos.map.spawn_point_pb2 import SpawnPoint as SpawnPoint_pb2
 from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResponse
 
 
-def update_poi(fort: FortData, virtual: bool = False):
+def update_poi(fort: FortData):
     if fort.type == 1:
         fort_type = 'pokestop'
     elif fort.type == 0:
-        fort_type = 'arena'
+        fort_type = 'gym'
     else:
         return
-    queryset = PointOfInterest.objects.filter(longitude__gte=fort.longitude - 0.0002,
-                                              longitude__lte=fort.longitude + 0.0002,
-                                              latitude__gte=fort.latitude - 0.0002,
-                                              latitude__lte=fort.latitude + 0.0002)
+    queryset = PointOfInterest.objects.filter(poi_id=fort.fort_id)
     if queryset.exists():
-        if queryset.count() > 1:
-            print(fort_type, ' is not unique! ' + str(fort.latitude) + ', ' + str(fort.longitude))
-        else:
-            poi_object: PointOfInterest = queryset.first()
-            poi_object.poi_id = fort.id
-            poi_object.enabled = fort.enabled
-            poi_object.type = fort_type
-            poi_object.save()
-            # print(fort_type, ' updated')
+        poi_object: PointOfInterest = queryset.first()
+        poi_object.poi_id = fort.id
+        poi_object.enabled = fort.enabled
+        poi_object.type = fort_type
+        poi_object.save()
     else:
         PointOfInterest.objects.create(poi_id=fort.id,
                                        longitude=fort.longitude,
                                        latitude=fort.latitude,
                                        type=fort_type)
-        print(fort_type, ' created')
 
 
 def add_map_pokemon_spawn(pokemon: MapPokemon):
