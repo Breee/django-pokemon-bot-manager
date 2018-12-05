@@ -3,9 +3,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from myapp.api.serializers import *
 from myapp.pogoprotos import ModelBridge
-from myapp.pogoprotos.ModelBridge import parse_encounter_response
+from myapp.pogoprotos.ModelBridge import parse_encounter_response, parse_fort_details_response
 from myapp.pogoprotos.Pogoprotos import Pogoprotos
 from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResponse
+from pogoprotos.networking.responses.fort_details_response_pb2 import FortDetailsResponse
 from pogoprotos.networking.responses.get_map_objects_response_pb2 import GetMapObjectsResponse
 
 
@@ -144,6 +145,8 @@ class RealDeviceMapBlackHole(APIView):
                             ModelBridge.parse_map_cell(map_cell)
                     elif isinstance(message, EncounterResponse):
                         parse_encounter_response(message)
+                    elif isinstance(message, FortDetailsResponse):
+                        parse_fort_details_response(message)
 
             for key, value in data.items():
                 if key == 'quests':
