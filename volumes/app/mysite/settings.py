@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '4@xcm*=819x9^%ej&95!!%l15fb+6%5o^9$w$*#guzc=40&uvb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -93,6 +93,10 @@ DATABASES = {
         'HOST': os.environ.get('DB_PORT_5432_TCP_ADDR', 'db'),
         'PORT': os.environ.get('DB_PORT_5432_TCP_PORT', ''),
     },
+    'monocle': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'monocle.sqlite'
+    }
 }
 
 
