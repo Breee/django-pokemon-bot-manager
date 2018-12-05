@@ -41,7 +41,7 @@ services:
   # Celery worker
   worker:
     build:
-      context: ./build/
+      context: ./build/django/
     command: /run_celery.sh
     volumes_from:
       - web
