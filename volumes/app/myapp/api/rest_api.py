@@ -8,6 +8,7 @@ from myapp.pogoprotos.Pogoprotos import Pogoprotos
 from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResponse
 from pogoprotos.networking.responses.fort_details_response_pb2 import FortDetailsResponse
 from pogoprotos.networking.responses.get_map_objects_response_pb2 import GetMapObjectsResponse
+from pogoprotos.networking.responses.gym_get_info_response_pb2 import GymGetInfoResponse
 
 
 class PokedexSet(APIView):
@@ -147,6 +148,10 @@ class RealDeviceMapBlackHole(APIView):
                         parse_encounter_response(message)
                     elif isinstance(message, FortDetailsResponse):
                         parse_fort_details_response(message)
+                    elif isinstance(message, GymGetInfoResponse):
+                        parse_fort_details_response(message)
+                    else:
+                        print(key)
 
             for key, value in data.items():
                 if key == 'quests':
