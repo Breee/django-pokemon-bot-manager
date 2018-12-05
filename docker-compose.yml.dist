@@ -42,7 +42,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime
       - ./volumes/app:/app
-      - ./volumes/staticfiles:/app/static
+      - ./volumes/staticfiles:/staticfiles
       - ./build/requirements.txt:/app/requirements.txt
       - ./volumes/bots:/bots
       - ./volumes/pip_cache:~/.cache/pip

@@ -159,7 +159,7 @@ STATICFILES_DIRS = [
     'static_dirs'
     ]
 
-STATIC_ROOT = 'static'
+STATIC_ROOT = '../staticfiles'
 
 SITE_ID = 1
 

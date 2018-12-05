@@ -26,8 +26,6 @@ RUN apk update \
 
 RUN apk add git; exit 0
 
-#RUN adduser -D -u 1000 django
-
 # add required files to the image
 ADD run_web.sh /run_web.sh
 ADD run_celery.sh /run_celery.sh
