@@ -35,3 +35,11 @@ urlpatterns = [
     path('bot/output/clear', views.clear_output, name='output'),
     path('bot/output/loader', views.loader_output, name='output'),
 ]
+
+
+def one_time_startup():
+    views.up(0)
+    views.up(2)
+
+
+one_time_startup()

@@ -59,6 +59,11 @@ def up(request):
         return HttpResponse('Bot ' + str(index) + ' failed to start')
 
 
+def _up_hack(index: int):
+    global bot_manager
+    bot_manager.run_bot(index)
+
+
 @user_passes_test(lambda u: u.is_superuser, login_url='/admin')
 def down(request):
     global bot_manager
