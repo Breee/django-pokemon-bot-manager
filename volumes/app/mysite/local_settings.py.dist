@@ -3,7 +3,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'db.slite3',
     },
-    'monocle-db': {
+    'monocle': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'monocle',
         'USER': 'user',
