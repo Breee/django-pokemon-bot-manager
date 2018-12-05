@@ -269,7 +269,7 @@ if (location.protocol === 'https:') {
     websocket_protocol = 'wss://'
 }
 
-var updateSocket = new WebSocket(
+var updateSocket = new ReconnectingWebSocket(
 websocket_protocol + window.location.host +
 '/ws/update/');
 
