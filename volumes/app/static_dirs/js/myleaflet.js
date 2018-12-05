@@ -26,6 +26,25 @@ function getCookie(name) {
     return cookieValue;
 }
 
+function clusterIcon(cluster) {
+		var childCount = cluster.getChildCount();
+
+		var c = ' marker-cluster-';
+		if (childCount < 10) {
+			c += 'small';
+		} else if (childCount < 100) {
+			c += 'medium';
+		} else {
+			c += 'large';
+		}
+
+		return new L.DivIcon({
+            html: '<div style="opacity: 0.5;" ><span>' + childCount + '</span></div>',
+            className: 'marker-cluster' + c,
+            iconSize: new L.Point(40, 40),
+		});
+}
+
 var csrftoken = getCookie('csrftoken');
 $.ajaxSetup({
     beforeSend: function(xhr, settings) {
@@ -123,10 +142,15 @@ var getPOI = function() {
             gymLayer.clearLayers();
             pokestopLayer.clearLayers();
         } else {
-            gymLayer = L.layerGroup();
+            gymLayer = L.markerClusterGroup({
+                maxClusterRadius: 120,
+                disableClusteringAtZoom: 15,
+                iconCreateFunction: clusterIcon
+            });
             pokestopLayer = L.markerClusterGroup({
                 maxClusterRadius: 120,
-                disableClusteringAtZoom: 17
+                disableClusteringAtZoom: 17,
+                iconCreateFunction: clusterIcon
             });
         }
         for (var i in data) {
@@ -137,7 +161,7 @@ var getPOI = function() {
                     {
                         title: poi.name,
                         icon: L.icon({
-                            iconUrl: "https://png.icons8.com/color/1600/pokestop-blue.png",
+                            iconUrl: "/static/img/map/pstop.png",
                             iconSize: [32, 32],
                             popupAnchor: [-3, -76]
                         })
@@ -145,14 +169,19 @@ var getPOI = function() {
                 marker.bindPopup(popup);
                 pokestopLayer.addLayer(marker);
             } else if (poi.type === "gym") {
+                var iconUrl = "/static/img/map/gym.png";
+                if (poi.park === 'true') {
+                    iconUrl = "/static/img/map/ex_gym.png"
+                }
                 var marker = L.marker([poi.latitude, poi.longitude],
                     {
                         title: poi.name,
                         icon: L.icon({
-                            iconUrl: "https://vignette.wikia.nocookie.net/pokemon/images/2/29/Gym_Leader_file.png",
+                            iconUrl: iconUrl,
                             iconSize: [32, 32],
                             popupAnchor: [-3, -76]
-                        })
+                        }),
+                        opacity: 0.8
                     });
                 marker.bindPopup(popup);
                 gymLayer.addLayer(marker);
@@ -161,7 +190,7 @@ var getPOI = function() {
                     {
                         title: poi.name,
                         icon: L.icon({
-                            iconUrl: "https://png.icons8.com/color/1600/pokestop-blue.png",
+                            iconUrl: "/static/img/map/pstop.png",
                             iconSize: [32, 32],
                             popupAnchor: [-3, -76]
                         })
