@@ -71,6 +71,12 @@ var sidebar = L.control.sidebar('sidebar').addTo(mymap);
 
 var get_popup_data = function(pokemon) {
     var date = new Date(pokemon.disappear_time);
+
+    var today = new Date();
+    var date_str = '';
+    if (date.getDate() > today.getDate()) {
+        date_str = date.toLocaleDateString('de-DE') + ' ';
+    }
     if (pokemon.individual_stamina != null) {
         var iv_sta = pokemon.individual_stamina;
         var iv_att = pokemon.individual_attack;
@@ -88,7 +94,7 @@ var get_popup_data = function(pokemon) {
         pokemon.longitude + '" target="_blank" title="Open in Google Maps">' + 'Maps</a><br>';
 
     return '<h3>' + pokedex[pokemon.pokemon_object -1].name_german + ' (' + pokemon.pokemon_object + ')' + '</h3>' +
-        '<b>Despawn Time</b> ' + date.toLocaleTimeString('de-DE') + '<br>' +
+        '<b>Despawn Time</b> ' + date_str + date.toLocaleTimeString('de-DE') + '<br>' +
          iv_str + cp_str + maps_str;
 };
 
@@ -109,7 +115,7 @@ var getData = function () {
 
             var popup = get_popup_data(pokemon);
             var marker = L.marker([pokemon.latitude, pokemon.longitude],
-                {title: "test",
+                {title: pokedex[pokemon.pokemon_object -1].name_german,
                     icon: L.icon({
                         iconUrl: "/static/img/pokemons/" + pokemon.pokemon_object + '.png',
                         iconSize: [32, 32],
@@ -244,24 +250,26 @@ var update_time = function() {
 };
 
 var last_update = 0;
-var waiting = false;
+var loading_data = false;
 
 function reloadData() {
     // if pokestop not yet loaded or another pokemon update is not long ago, wait a sec
-    if (pokedex === undefined || update_time() < last_update + 200) {
-        var timeout = (pokedex === undefined) ? 100 : 1000;
-        if (!waiting) {
+
+        if (!loading_data) {
+            if (pokedex === undefined) {
+                setTimeout(function () {
+                    reloadData()
+                }, 200)
+                return
+            }
+            loading_data = true;
+            last_update = update_time();
+            getPOI();
+            getData();
             setTimeout(function () {
-                reloadData();
-            }, timeout);
+                loading_data = false;
+            }, 2000);
         }
-        return;
-    }
-    else {
-        last_update = update_time();
-    }
-    getPOI();
-    getData();
 }
 
 var websocket_protocol = 'ws://';

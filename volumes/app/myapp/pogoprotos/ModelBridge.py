@@ -50,11 +50,15 @@ def add_map_pokemon_spawn(pokemon: MapPokemon):
         raise NotImplementedError('Pokemon ' + pokemon['pokemon_id'])
 
     # compute disappear time
-    disappear_time = timezone.now() + timezone.timedelta(minutes=30)
+    disappear_time = timezone.now() + timezone.timedelta(minutes=10)
     print(pokemon)
     if hasattr(pokemon, 'expiration_timestamp_ms'):
         if pokemon.expiration_timestamp_ms != -1:
             disappear_time = timezone.now() + timezone.timedelta(milliseconds=pokemon.expiration_timestamp_ms)
+
+        # sometimes the 'expiration_timestamp_ms' is too damn high. Then ignore it.
+        if disappear_time > timezone.now() + timezone.timedelta(hours=2):
+            disappear_time = timezone.now() + timezone.timedelta(minutes=10)
 
     # create pokemon
     PokemonSpawn.objects.create(encounter_id=pokemon.encounter_id,
@@ -81,12 +85,16 @@ def add_wild_pokemon_spawn(pokemon: WildPokemon):
         raise NotImplementedError('Pokemon ' + pokemon.pokemon_data.pokemon_id)
 
     # compute disappear time
-    disappear_time = timezone.now() + timezone.timedelta(minutes=30)
+    disappear_time = timezone.now() + timezone.timedelta(minutes=10)
     print(pokemon)
     if hasattr(pokemon, 'time_till_hidden_ms'):
         if pokemon.time_till_hidden_ms != -1:
             disappear_time = timezone.now() + timezone.timedelta(
-                milliseconds=pokemon.expiration_timestamp_ms)
+                milliseconds=pokemon.time_till_hidden_ms)
+
+    # sometimes the 'time_till_hidden_ms' is too damn high. Then ignore it.
+    if disappear_time > timezone.now() + timezone.timedelta(hours=2):
+        disappear_time = timezone.now() + timezone.timedelta(minutes=10)
 
     # create pokemon
     PokemonSpawn.objects.create(encounter_id=pokemon.encounter_id,
