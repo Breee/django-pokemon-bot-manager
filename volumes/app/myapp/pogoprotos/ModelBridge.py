@@ -9,9 +9,10 @@ from pogoprotos.map.pokemon.map_pokemon_pb2 import MapPokemon
 from pogoprotos.map.pokemon.wild_pokemon_pb2 import WildPokemon
 from pogoprotos.map.spawn_point_pb2 import SpawnPoint as SpawnPoint_pb2
 from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResponse
+from pogoprotos.networking.responses.fort_details_response_pb2 import FortDetailsResponse
 
 
-def update_poi(fort: FortData):
+def update_map_poi(fort: FortData):
     if fort.type == 1:
         fort_type = 'pokestop'
     elif fort.type == 0:
@@ -131,7 +132,7 @@ def add_spawn_point(map_cell: MapCell, spawn_point: SpawnPoint_pb2):
 
 def parse_map_cell(map_cell: MapCell):
     for fort in map_cell.forts:
-        update_poi(fort)
+        update_map_poi(fort)
     for pokemon in map_cell.catchable_pokemons:
         add_map_pokemon_spawn(pokemon)
     for pokemon in map_cell.wild_pokemons:
@@ -152,6 +153,25 @@ def parse_encounter_response(encounter: EncounterResponse):
     else:
         print('trying add')
         add_wild_pokemon_spawn(pokemon)
+
+
+def parse_fort_details_response(fort_details: FortDetailsResponse):
+    queryset = PointOfInterest.objects.filter(poi_id=fort_details.fort_id)
+
+    if queryset.exists():
+        fort_object = queryset.first()
+        fort_object.name = fort_details.name
+        fort_object.image_url = fort_details.image_urls
+        fort_object.longitude = fort_details.longitude
+        fort_object.latitude = fort_details.latitude
+        fort_object.save()
+    else:
+        PointOfInterest.objects.create(
+            name=fort_details.name,
+            image_url=fort_details.image_urls,
+            longitude=fort_details.longitude,
+            latitude=fort_details.latitude
+        )
 
 
 
