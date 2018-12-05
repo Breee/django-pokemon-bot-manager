@@ -9,7 +9,7 @@
   "author": "Lukas Veneziano",
   "license": "Apache-2.0",
   "dependencies": {
-    "sidebar-v2":"~0.4",
+    "sidebar-v2": "~0.4",
     "leaflet": "~1.3"
   }
 }

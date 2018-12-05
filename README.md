@@ -31,6 +31,9 @@
 * install reqquirements with pip3: `pip3 install volumes/app/requirements.txt`
   please consider using a venv.
   
+* navigate to `volumes/app/static/js` and  install javascript libraries with:
+  `npm install` 
+  
 * navigate to `volumes/app/` and start the django server with 
   `DJANGO_SETTINGS_MODULE=mysite.settings python3 manage.py runserver 0.0.0.0:8000`
 
