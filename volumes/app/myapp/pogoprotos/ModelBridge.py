@@ -187,11 +187,15 @@ def parse_fort_details_response(fort_details: FortDetailsResponse):
 
 
 def parse_gym_get_info_response(gym_info: GymGetInfoResponse):
+    print(gym_info)
     fort_data = gym_info.gym_status_and_defenders.pokemon_fort_proto
-    queryset = PointOfInterest.objects.filter(poi_id=fort_data.fort_id)
+    queryset = PointOfInterest.objects.filter(poi_id=fort_data.id)
 
     if queryset.exists():
         fort_object = queryset.first()
         fort_object.name = gym_info.name
-        fort_object.image_url = gym_info.urls
+        fort_object.image_url = gym_info.url
+        if fort_data.is_ex_raid_eligible:
+            fort_object.park = True
+        fort_object.description = gym_info.description
         fort_object.save()

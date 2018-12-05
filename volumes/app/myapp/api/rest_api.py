@@ -3,7 +3,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from myapp.api.serializers import *
 from myapp.pogoprotos import ModelBridge
-from myapp.pogoprotos.ModelBridge import parse_encounter_response, parse_fort_details_response
+from myapp.pogoprotos.ModelBridge import parse_encounter_response, parse_fort_details_response, \
+    parse_gym_get_info_response
 from myapp.pogoprotos.Pogoprotos import Pogoprotos
 from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResponse
 from pogoprotos.networking.responses.fort_details_response_pb2 import FortDetailsResponse
@@ -149,7 +150,7 @@ class RealDeviceMapBlackHole(APIView):
                     elif isinstance(message, FortDetailsResponse):
                         parse_fort_details_response(message)
                     elif isinstance(message, GymGetInfoResponse):
-                        parse_fort_details_response(message)
+                        parse_gym_get_info_response(message)
                     else:
                         print(key)
 
