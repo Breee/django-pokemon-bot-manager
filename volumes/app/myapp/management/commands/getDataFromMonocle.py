@@ -22,7 +22,7 @@ def updatePointOfInterests(poi_dict: list, poi_type: str):
             poi_object.image_url = point_of_interest['url']
             poi_object.type = poi_type
             if 'park' in point_of_interest:
-                poi_object.park = point_of_interest['park'] is not None
+                poi_object.park = point_of_interest['park'] == 'park'
                 poi_object.save()
         else:
             PointOfInterest.objects.create(poi_id=point_of_interest['external_id'],

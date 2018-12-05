@@ -173,7 +173,7 @@ var getPOI = function() {
                 pokestopLayer.addLayer(marker);
             } else if (poi.type === "gym") {
                 var iconUrl = "/static/img/map/gym.png";
-                if (poi.park === 'true') {
+                if (poi.park == true) {
                     iconUrl = "/static/img/map/ex_gym.png"
                 }
                 var marker = L.marker([poi.latitude, poi.longitude],
