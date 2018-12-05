@@ -15,7 +15,7 @@ do
 done
 
 
-cd /app/static_dirs/js/
+cd /app/static/js/
 npm install
 cd /app 
 # check if this is the first start
