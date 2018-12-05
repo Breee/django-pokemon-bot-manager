@@ -187,10 +187,8 @@ def parse_fort_details_response(fort_details: FortDetailsResponse):
 
 
 def parse_gym_get_info_response(gym_info: GymGetInfoResponse):
-    queryset = PointOfInterest.objects.filter(poi_id=gym_info.fort_id)
-
-    GymStatusAndDefenders
-    FortData
+    fort_data = gym_info.gym_status_and_defenders.pokemon_fort_proto
+    queryset = PointOfInterest.objects.filter(poi_id=fort_data.fort_id)
 
     if queryset.exists():
         fort_object = queryset.first()
