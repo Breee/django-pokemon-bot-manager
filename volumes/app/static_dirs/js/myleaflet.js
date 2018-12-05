@@ -173,6 +173,10 @@ var getPOI = function() {
                 if (poi.park === 'true') {
                     iconUrl = "/static/img/map/ex_gym.png"
                 }
+                if (poi.image_url !== null) {
+                    popup += '<img src="' + poi.image_url + '" />'
+                }
+
                 var marker = L.marker([poi.latitude, poi.longitude],
                     {
                         title: poi.name,
