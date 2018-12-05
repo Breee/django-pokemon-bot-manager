@@ -152,7 +152,7 @@ class RealDeviceMapBlackHole(APIView):
                     elif isinstance(message, GymGetInfoResponse):
                         parse_gym_get_info_response(message)
                     else:
-                        print(key)
+                        NotImplementedError('proto_message: ' + str(key))
 
             for key, value in data.items():
                 if key == 'quests':
