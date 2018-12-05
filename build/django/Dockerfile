@@ -22,7 +22,7 @@ RUN apk update \
   && apk add postgresql-dev\
   && apk add nodejs \
   && apk add --no-cache npm \
-  && apk add py-mysqldb
+  && apk add python3-dev mariadb-dev build-base
 
 RUN apk add git; exit 0
 
