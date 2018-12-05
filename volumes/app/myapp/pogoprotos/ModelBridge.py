@@ -19,7 +19,7 @@ def update_map_poi(fort: FortData):
         fort_type = 'gym'
     else:
         return
-    queryset = PointOfInterest.objects.filter(poi_id=fort.fort_id)
+    queryset = PointOfInterest.objects.filter(poi_id=fort.id)
     if queryset.exists():
         poi_object: PointOfInterest = queryset.first()
         poi_object.poi_id = fort.id
