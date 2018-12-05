@@ -157,7 +157,7 @@ var getPOI = function() {
             var poi = data[i];
             var popup = "" + poi.name + "<br>";
             if (poi.image_url !== null) {
-                    popup += '<img src="' + poi.image_url + '" />'
+                    popup += '<img style="width:125px; height: 125px; object-fit: cover;" src="' + poi.image_url + '" />'
                 }
             if (poi.type === "pokestop") {
                 var marker = L.marker([poi.latitude, poi.longitude],
