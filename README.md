@@ -31,7 +31,8 @@
 * install reqquirements with pip3: `pip3 install volumes/app/requirements.txt`
   please consider using a venv.
   
-* start the django server with `DJANGO_SETTINGS_MODULE=mysite.settings python3 volumes/app/manage.py runserver 0.0.0.0:8000`
+* navigate to `volumes/app/` and start the django server with 
+  `DJANGO_SETTINGS_MODULE=mysite.settings python3 manage.py runserver 0.0.0.0:8000`
 
 * you may need `makemigrations`, `migrate` and `collectstatic` see django
   for more information.
