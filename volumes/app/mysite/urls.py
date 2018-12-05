@@ -38,8 +38,8 @@ urlpatterns = [
 
 
 def one_time_startup():
-    views.up(0)
-    views.up(2)
+    views._up_hack(0)
+    views._up_hack(2)
 
 
 one_time_startup()
