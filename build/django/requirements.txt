@@ -6,6 +6,7 @@ djangorestframework
 uwsgi
 pexpect
 psycopg2-binary
+mysqlclient
 redis
 channels
 daphne
