@@ -7,9 +7,34 @@
 
 * copy `volumes/app/mysite/local_settings.py.dist` to
   `volumes/app/mysite/local_settings.py` and configure it. You can
-   overwrite all settings made in settings.py
+   overwrite all settings made in settings.py in this file
+
+* copy `volumes/nginx/nginx.conf.dist` to `volumes/nginx/nginx.conf`,
+  Normally you do not need to change anything here.
 
 * build and start it with `docker-compose up -d`
+
+* you do not need to collect static files or migrate the database.
+  This is done automatically
+  
+## set up development without running in docker
+
+* copy `docker-compose.yml.dist` to `docker-compose.yml` and comment 
+  everything out. Uncomment the container to build pogoprotos.
+  If you do not have the possibility to run docker, read 
+  `/build/pogoprotos/Dockerfile` to get an idea how to build pogoprotos.
+  Pogoprotos should be copied to `volumes/app/pogoprotos` after build
+
+* You can develop without copying `local_settings.py`.
+  If you need it use it like in `deploy with docker`.
+  
+* install reqquirements with pip3: `pip3 install volumes/app/requirements.txt`
+  please consider using a venv.
+  
+* start the django server with `DJANGO_SETTINGS_MODULE=mysite.settings python3 volumes/app/manage.py runserver 0.0.0.0:8000`
+
+* you may need `makemigrations`, `migrate` and `collectstatic` see django
+  for more information.
 
 ## configure rest api with token auth
 
@@ -60,21 +85,4 @@ If you deploy without docker,  you have to do the following.
 5. `npm install`
 6. run `manage.py` task and then execute `collectstatic`.
 
-## OLD Login with Discord Howto
-
-Install required packages:
-
-``` pip install -r requirements.txt ```
-
-Then migrate the Database:
-
-``` manage.py migrate ```
-
-and add a Superuser with manage.py
-
-Go to the Admin site like `localhost:8000/admin`
-There you need to add a "Site" and under "Social-Applikations" you need to add
-your Discord App. In Discord App set the redirect URL to
-
-``` http://localhost:8000/accounts/discord/login/callback/ ```
 
