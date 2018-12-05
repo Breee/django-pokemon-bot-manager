@@ -23,7 +23,7 @@ services:
   # Django web server
   web:
     build:
-      context: ./build/
+      context: ./build/django/
     command: /run_web.sh
     volumes:
       - ./volumes/app:/app
