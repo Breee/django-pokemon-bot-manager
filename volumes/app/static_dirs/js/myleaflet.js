@@ -156,6 +156,9 @@ var getPOI = function() {
         for (var i in data) {
             var poi = data[i];
             var popup = "" + poi.name + "<br>";
+            if (poi.image_url !== null) {
+                    popup += '<img src="' + poi.image_url + '" />'
+                }
             if (poi.type === "pokestop") {
                 var marker = L.marker([poi.latitude, poi.longitude],
                     {
@@ -173,10 +176,6 @@ var getPOI = function() {
                 if (poi.park === 'true') {
                     iconUrl = "/static/img/map/ex_gym.png"
                 }
-                if (poi.image_url !== null) {
-                    popup += '<img src="' + poi.image_url + '" />'
-                }
-
                 var marker = L.marker([poi.latitude, poi.longitude],
                     {
                         title: poi.name,
