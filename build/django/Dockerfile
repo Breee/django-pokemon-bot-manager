@@ -21,7 +21,8 @@ RUN apk update \
   && apk add --virtual build-deps gcc python3-dev musl-dev linux-headers\
   && apk add postgresql-dev\
   && apk add nodejs \
-  && apk add --no-cache npm
+  && apk add --no-cache npm \
+  && apk add py-mysqldb
 
 RUN apk add git; exit 0
 
