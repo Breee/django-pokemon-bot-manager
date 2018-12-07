@@ -1,3 +1,5 @@
+import json
+
 from django.db.models import *
 from django.core.exceptions import ValidationError
 from django.utils import timezone
@@ -183,3 +185,36 @@ class SpawnPoint(Model):
     longitude = FloatField()
     latitude = FloatField()
     spawn_point_id = IntegerField(default=None, null=True, blank=True)
+
+
+class Quest(Model):
+    quest_id = CharField(max_length=128, primary_key=True)
+    quest_type = BigIntegerField()
+    pokestop_id = CharField(max_length=128)
+    quest_timestamp = IntegerField()
+    quest_conditions = TextField()
+    quest_rewards = TextField()
+    quest_template = CharField(max_length=128)
+    quest_pokemon_id = SmallIntegerField(default=None, null=True)
+    quest_reward_type = SmallIntegerField(default=None, null=True)
+    quest_item_id = SmallIntegerField(default=None, null=True)
+    quest_item_amount = SmallIntegerField(default=None, null=True)
+    target = SmallIntegerField(default=None, null=True)
+    cell_id = BigIntegerField()
+
+    def save(self, *args, **kwargs):
+        if self.quest_reward_type is None:
+            data = json.loads(self.quest_rewards)
+            if hasattr(data, 'pokemon_encounter'):
+                self.quest_reward_type = 'pokemon_encounter'
+                self.quest_pokemon_id = data.pokemon_encounter.pokemon_id
+            elif hasattr(data, 'item'):
+                self.quest_reward_type = 'item'
+                self.quest_item_id = data.item.item
+                self.quest_item_amount = data.item.amount
+            data = json.loads(self.quest_conditions)
+            if hasattr(data, 'goal'):
+                if hasattr(data.goal, 'condition'):
+                    self.quest_target = data.goal.condition
+        super().save(*args, **kwargs)
+
