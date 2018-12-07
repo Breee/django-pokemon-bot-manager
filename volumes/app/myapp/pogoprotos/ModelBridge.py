@@ -3,6 +3,7 @@ from typing import Union
 from django.utils import timezone
 
 from myapp.models import PointOfInterest, PokemonSpawn, Pokemon, SpawnPoint, Quest
+from pogoprotos.data.quests import quest_pb2
 from pogoprotos.data.quests.client_quest_pb2 import ClientQuest
 from pogoprotos.map.fort.fort_data_pb2 import FortData
 from pogoprotos.map.map_cell_pb2 import MapCell
@@ -210,30 +211,34 @@ def parse_gym_get_info_response(gym_info: GymGetInfoResponse):
         fort_object.save()
 
 
+def get_quest_id(quest: quest_pb2.Quest):
+    return str(quest.quest_id)
+
+
 def add_quest(quest):
-    Quest.objects.create(quest_id=quest.quest.quest_id)
+    Quest.objects.create(quest_id=get_quest_id(quest.quest))
 
     update_quest(quest)
 
 
 def update_quest(quest):
-    quest_display = quest.quest_display
     quest = quest.quest
     print(quest)
-    quest_object = Quest.objects.get(quest_id=quest.quest_id)
+    quest_object = Quest.objects.get(quest_id=get_quest_id(quest.quest))
     quest_object.quest_type = quest.quest_type
     quest_object.pokestop_id = quest.fort_id
     quest_object.quest_timestamp = quest.creation_timestamp_ms
     quest_object.quest_conditions = str(quest.goal)
     quest_object.quest_rewards = str(quest.quest_rewards)
-    quest_object.quest_template = quest_display.title
+    quest_object.quest_template = quest.template_id
     quest_object.cell_id = quest.s2_cell_id
     quest_object.save()
 
 
 def parse_fort_search_response(fort_search: FortSearchResponse):
     quest: ClientQuest = fort_search.challenge_quest
-    if Quest.objects.filter(quest_id=quest.quest.quest_id).exists():
+    quest_id = get_quest_id(quest.quest)
+    if Quest.objects.filter(quest_id=quest_id).exists():
         add_quest(quest)
     else:
         update_quest(quest)
