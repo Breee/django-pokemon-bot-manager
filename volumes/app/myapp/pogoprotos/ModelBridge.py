@@ -223,8 +223,7 @@ def add_quest(quest):
 
 def update_quest(quest):
     quest = quest.quest
-    print(quest)
-    quest_object = Quest.objects.get(quest_id=get_quest_id(quest.quest))
+    quest_object = Quest.objects.get(quest_id=get_quest_id(quest))
     quest_object.quest_type = quest.quest_type
     quest_object.pokestop_id = quest.fort_id
     quest_object.quest_timestamp = quest.creation_timestamp_ms
