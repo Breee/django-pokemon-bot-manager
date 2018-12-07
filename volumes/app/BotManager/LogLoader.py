@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
                 if r is not None:
                     if r.status_code == 200:
-                        r = requests.get('http://nginx/bot/output/pull?bot=' + str(i))
+                        r = requests.get('http://web/bot/output/pull?bot=' + str(i))
             time.sleep(1)
     except KeyboardInterrupt:
         print('interrupted!')
