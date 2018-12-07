@@ -4,6 +4,7 @@ from django.utils import timezone
 
 from myapp.models import PointOfInterest, PokemonSpawn, Pokemon, SpawnPoint
 from pogoprotos.data.gym.gym_status_and_defenders_pb2 import GymStatusAndDefenders
+from pogoprotos.data.quests.client_quest_pb2 import ClientQuest
 from pogoprotos.map.fort.fort_data_pb2 import FortData
 from pogoprotos.map.map_cell_pb2 import MapCell
 from pogoprotos.map.pokemon.map_pokemon_pb2 import MapPokemon
@@ -11,6 +12,7 @@ from pogoprotos.map.pokemon.wild_pokemon_pb2 import WildPokemon
 from pogoprotos.map.spawn_point_pb2 import SpawnPoint as SpawnPoint_pb2
 from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResponse
 from pogoprotos.networking.responses.fort_details_response_pb2 import FortDetailsResponse
+from pogoprotos.networking.responses.fort_search_response_pb2 import FortSearchResponse
 from pogoprotos.networking.responses.gym_get_info_response_pb2 import GymGetInfoResponse
 
 
@@ -206,3 +208,8 @@ def parse_gym_get_info_response(gym_info: GymGetInfoResponse):
             fort_object.park = True
         fort_object.description = gym_info.description
         fort_object.save()
+
+
+def parse_fort_search_response(fort_search: FortSearchResponse):
+    quest: ClientQuest = fort_search.challenge_quest
+    print(quest)

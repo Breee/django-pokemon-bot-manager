@@ -3,7 +3,7 @@ import base64
 from google.protobuf import text_format
 from idna import unicode
 
-from pogoprotos.networking.responses import get_map_objects_response_pb2
+from pogoprotos.networking.responses import get_map_objects_response_pb2, fort_search_response_pb2
 from pogoprotos.networking.responses import encounter_response_pb2
 from pogoprotos.networking.responses import fort_details_response_pb2
 from pogoprotos.networking.responses import gym_get_info_response_pb2
@@ -29,6 +29,9 @@ class Pogoprotos:
                 message.ParseFromString(self._get_message_data(value, base64_encoded))
             elif key == 'DiskEncounterMessage':
                 message = disk_encounter_message_pb2.DiskEncounterMessage()
+                message.ParseFromString(self._get_message_data(value, base64_encoded))
+            elif key == 'FortSearchResponse':
+                message = fort_search_response_pb2.FortSearchResponse()
                 message.ParseFromString(self._get_message_data(value, base64_encoded))
             else:
                 raise NotImplementedError(' '.join(['progoprotos:', str(key), str(value)]))

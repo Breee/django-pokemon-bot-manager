@@ -3,11 +3,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from myapp.api.serializers import *
 from myapp.pogoprotos import ModelBridge
-from myapp.pogoprotos.ModelBridge import parse_encounter_response, parse_fort_details_response, \
-    parse_gym_get_info_response
 from myapp.pogoprotos.Pogoprotos import Pogoprotos
 from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResponse
 from pogoprotos.networking.responses.fort_details_response_pb2 import FortDetailsResponse
+from pogoprotos.networking.responses.fort_search_response_pb2 import FortSearchResponse
 from pogoprotos.networking.responses.get_map_objects_response_pb2 import GetMapObjectsResponse
 from pogoprotos.networking.responses.gym_get_info_response_pb2 import GymGetInfoResponse
 
@@ -146,11 +145,13 @@ class RealDeviceMapBlackHole(APIView):
                         for map_cell in message.map_cells:
                             ModelBridge.parse_map_cell(map_cell)
                     elif isinstance(message, EncounterResponse):
-                        parse_encounter_response(message)
+                        ModelBridge.parse_encounter_response(message)
                     elif isinstance(message, FortDetailsResponse):
-                        parse_fort_details_response(message)
+                        ModelBridge.parse_fort_details_response(message)
                     elif isinstance(message, GymGetInfoResponse):
-                        parse_gym_get_info_response(message)
+                        ModelBridge.parse_gym_get_info_response(message)
+                    elif isinstance(message, FortSearchResponse):
+                        ModelBridge.parse_fort_search_response(message)
                     else:
                         NotImplementedError('proto_message: ' + str(key))
 
