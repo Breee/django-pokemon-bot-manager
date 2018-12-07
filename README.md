@@ -39,6 +39,8 @@
 
 * you may need `makemigrations`, `migrate` and `collectstatic` see django
   for more information.
+  
+* Create superuser with `python3 manage.py createsuperuser`, be aware that this account is used to log into the admin section.
 
 ## configure rest api with token auth
 
