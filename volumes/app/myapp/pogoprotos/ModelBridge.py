@@ -211,14 +211,15 @@ def parse_gym_get_info_response(gym_info: GymGetInfoResponse):
 
 
 def add_quest(quest):
-    Quest.objects.create(quest.quest.quest_id)
+    Quest.objects.create(quest_id=quest.quest.quest_id)
 
     update_quest(quest)
+
 
 def update_quest(quest):
     quest_display = quest.quest_display
     quest = quest.quest
-    quest_object = Quest.objects.get(quest.quest_id)
+    quest_object = Quest.objects.get(quest_id=quest.quest_id)
     quest_object.quest_type = quest.quest_type
     quest_object.pokestop_id = quest.fort_id
     quest_object.quest_timestamp = quest.creation_timestamp_ms
