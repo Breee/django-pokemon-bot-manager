@@ -1,7 +1,6 @@
 import base64
 
 from google.protobuf import text_format
-from idna import unicode
 
 from pogoprotos.networking.responses import get_map_objects_response_pb2, fort_search_response_pb2
 from pogoprotos.networking.responses import encounter_response_pb2

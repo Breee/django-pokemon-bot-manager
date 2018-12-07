@@ -10,6 +10,7 @@ from pogoprotos.map.map_cell_pb2 import MapCell
 from pogoprotos.map.pokemon.map_pokemon_pb2 import MapPokemon
 from pogoprotos.map.pokemon.wild_pokemon_pb2 import WildPokemon
 from pogoprotos.map.spawn_point_pb2 import SpawnPoint as SpawnPoint_pb2
+from pogoprotos.networking.responses.disk_encounter_response_pb2 import DiskEncounterResponse
 from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResponse
 from pogoprotos.networking.responses.fort_details_response_pb2 import FortDetailsResponse
 from pogoprotos.networking.responses.fort_search_response_pb2 import FortSearchResponse
@@ -213,3 +214,7 @@ def parse_gym_get_info_response(gym_info: GymGetInfoResponse):
 def parse_fort_search_response(fort_search: FortSearchResponse):
     quest: ClientQuest = fort_search.challenge_quest
     print(quest)
+
+
+def parse_disk_encounter_response(disk_encounter: DiskEncounterResponse):
+    print(disk_encounter)
