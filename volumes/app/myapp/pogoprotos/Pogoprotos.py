@@ -7,7 +7,7 @@ from pogoprotos.networking.responses import get_map_objects_response_pb2, fort_s
 from pogoprotos.networking.responses import encounter_response_pb2
 from pogoprotos.networking.responses import fort_details_response_pb2
 from pogoprotos.networking.responses import gym_get_info_response_pb2
-from pogoprotos.networking.requests.messages import disk_encounter_message_pb2
+from pogoprotos.networking.responses import disk_encounter_response_pb2
 
 
 class Pogoprotos:
@@ -28,7 +28,7 @@ class Pogoprotos:
                 message = gym_get_info_response_pb2.GymGetInfoResponse()
                 message.ParseFromString(self._get_message_data(value, base64_encoded))
             elif key == 'DiskEncounterMessage':
-                message = disk_encounter_message_pb2.DiskEncounterMessage()
+                message = disk_encounter_response_pb2.DiskEncounterResponse()
                 message.ParseFromString(self._get_message_data(value, base64_encoded))
             elif key == 'FortSearchResponse':
                 message = fort_search_response_pb2.FortSearchResponse()
