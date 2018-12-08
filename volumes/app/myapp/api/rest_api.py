@@ -141,7 +141,8 @@ class RealDeviceMapBlackHole(APIView):
             if 'protos' in data:
                 protos = Pogoprotos()
                 protos.parse(data['protos'][0])
-                for key, message in protos.messages.items():
+                for key in list(protos.messages):
+                    message = protos.messages[key]
                     if isinstance(message, GetMapObjectsResponse):
                         for map_cell in message.map_cells:
                             ModelBridge.parse_map_cell(map_cell)

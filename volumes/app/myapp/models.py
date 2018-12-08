@@ -1,4 +1,5 @@
 import json
+import re
 
 from django.db.models import *
 from django.core.exceptions import ValidationError
@@ -203,6 +204,7 @@ class Quest(Model):
     cell_id = BigIntegerField()
 
     def save(self, *args, **kwargs):
+        print(self.quest_rewards)
         if self.quest_reward_type is None:
             data = json.loads(self.quest_rewards)
             if hasattr(data, 'pokemon_encounter'):
@@ -217,4 +219,3 @@ class Quest(Model):
                 if hasattr(data.goal, 'condition'):
                     self.quest_target = data.goal.condition
         super().save(*args, **kwargs)
-

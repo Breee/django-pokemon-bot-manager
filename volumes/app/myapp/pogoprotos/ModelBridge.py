@@ -1,3 +1,4 @@
+import json
 from typing import Union
 
 from django.utils import timezone
@@ -5,6 +6,7 @@ from django.utils import timezone
 from myapp.models import PointOfInterest, PokemonSpawn, Pokemon, SpawnPoint, Quest
 from pogoprotos.data.quests import quest_pb2
 from pogoprotos.data.quests.client_quest_pb2 import ClientQuest
+from pogoprotos.data.quests.quest_goal_pb2 import QuestGoal
 from pogoprotos.map.fort.fort_data_pb2 import FortData
 from pogoprotos.map.map_cell_pb2 import MapCell
 from pogoprotos.map.pokemon.map_pokemon_pb2 import MapPokemon
@@ -15,6 +17,7 @@ from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResp
 from pogoprotos.networking.responses.fort_details_response_pb2 import FortDetailsResponse
 from pogoprotos.networking.responses.fort_search_response_pb2 import FortSearchResponse
 from pogoprotos.networking.responses.gym_get_info_response_pb2 import GymGetInfoResponse
+from google.protobuf.json_format import MessageToJson, MessageToDict
 
 
 def update_map_poi(fort: FortData):
@@ -215,10 +218,39 @@ def get_quest_id(quest: quest_pb2.Quest):
     return str(quest.quest_id)
 
 
-def add_quest(quest):
-    Quest.objects.create(quest_id=get_quest_id(quest.quest))
+def get_quest_conditions_dict(quest: quest_pb2.Quest):
+    print(quest)
+    quest_condition = {'goal': {}}
+    for field in quest.goal.condition:
+        quest_condition['goal']['condition'] = {'type': field.type}
+        print(field)
+    return quest_condition
 
-    update_quest(quest)
+
+def get_quest_rewards_dict(quest: quest_pb2.Quest):
+    quest_rewards = {}
+    for field in quest.quest_rewards:
+        quest_rewards = {'type': field.type}
+    if hasattr(quest_rewards, 'pokemon_encounter'):
+        quest_rewards['pokemon_encounter'] = {
+            'pokemon_id': quest.quest.pokemon_encounter.pokemon_id
+        }
+    elif hasattr(quest_rewards, 'item'):
+        quest_rewards['item'] = {'item': quest.quest_rewards.item.item,
+                                 'amount': quest.quest_rewards.item.amount}
+    return quest_rewards
+
+
+def add_quest(quest):
+    quest = quest.quest
+    Quest.objects.create(quest_id=get_quest_id(quest),
+                         quest_type=quest.quest_type,
+                         pokestop_id=quest.fort_id,
+                         quest_timestamp=quest.creation_timestamp_ms,
+                         quest_template=quest.template_id,
+                         quest_conditions=json.dumps(get_quest_conditions_dict(quest)),
+                         quest_rewards=json.dumps(get_quest_rewards_dict(quest)),
+                         cell_id=quest.s2_cell_id)
 
 
 def update_quest(quest):
@@ -227,10 +259,10 @@ def update_quest(quest):
     quest_object.quest_type = quest.quest_type
     quest_object.pokestop_id = quest.fort_id
     quest_object.quest_timestamp = quest.creation_timestamp_ms
-    quest_object.quest_conditions = str(quest.goal)
-    quest_object.quest_rewards = str(quest.quest_rewards)
     quest_object.quest_template = quest.template_id
     quest_object.cell_id = quest.s2_cell_id
+    quest_object.quest_conditions = json.dumps(get_quest_conditions_dict(quest))
+    quest_object.quest_rewards = json.dumps(get_quest_rewards_dict(quest))
     quest_object.save()
 
 

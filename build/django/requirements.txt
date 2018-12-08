@@ -12,3 +12,4 @@ channels
 daphne
 protobuf
 channels_redis
+demjson
