@@ -237,7 +237,7 @@ def update_quest(quest):
 def parse_fort_search_response(fort_search: FortSearchResponse):
     quest: ClientQuest = fort_search.challenge_quest
     quest_id = get_quest_id(quest.quest)
-    if Quest.objects.filter(quest_id=quest_id).exists():
+    if not Quest.objects.filter(quest_id=quest_id).exists():
         add_quest(quest)
     else:
         update_quest(quest)
