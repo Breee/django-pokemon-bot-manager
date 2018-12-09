@@ -204,9 +204,9 @@ class Quest(Model):
     cell_id = BigIntegerField()
 
     def save(self, *args, **kwargs):
-        print(self.__dict__)
         if self.quest_reward_type is None:
             data = json.loads(self.quest_rewards)
+            print(data)
             if hasattr(data, 'pokemon_encounter'):
                 self.quest_reward_type = 'pokemon_encounter'
                 self.quest_pokemon_id = data.pokemon_encounter.pokemon_id
@@ -217,5 +217,5 @@ class Quest(Model):
             data = json.loads(self.quest_conditions)
             if hasattr(data, 'goal'):
                 if hasattr(data.goal, 'condition'):
-                    self.quest_target = data.goal.condition
+                    self.target = data.goal.condition
         super().save(*args, **kwargs)
