@@ -219,11 +219,9 @@ def get_quest_id(quest: quest_pb2.Quest):
 
 
 def get_quest_conditions_dict(quest: quest_pb2.Quest):
-    print(quest)
     quest_condition = {'goal': {}}
     for field in quest.goal.condition:
         quest_condition['goal']['condition'] = {'type': field.type}
-        print(field)
     return quest_condition
 
 
@@ -231,13 +229,19 @@ def get_quest_rewards_dict(quest: quest_pb2.Quest):
     quest_rewards = {}
     for field in quest.quest_rewards:
         quest_rewards = {'type': field.type}
-    if hasattr(quest_rewards, 'pokemon_encounter'):
-        quest_rewards['pokemon_encounter'] = {
-            'pokemon_id': quest.quest.pokemon_encounter.pokemon_id
-        }
-    elif hasattr(quest_rewards, 'item'):
-        quest_rewards['item'] = {'item': quest.quest_rewards.item.item,
-                                 'amount': quest.quest_rewards.item.amount}
+        if field.type == 2:
+            quest_rewards['item'] = {'item': field.item.item,
+                                     'amount': field.item.amount}
+        elif field.type == 3:
+            print(get_quest_id(quest))
+            print(quest.quest_rewards)
+            quest_rewards['stardust'] = field.stardust
+        elif field.type == 7:
+            quest_rewards['pokemon_encounter'] = {
+                'pokemon_id': field.pokemon_encounter.pokemon_id
+            }
+        else:
+            NotImplementedError('Quest_Reqard_Type: ' + str(get_quest_id(quest)))
     return quest_rewards
 
 

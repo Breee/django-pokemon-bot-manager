@@ -142,7 +142,7 @@ class RealDeviceMapBlackHole(APIView):
                 self.update_mapper_info(data)
             if 'protos' in data:
                 protos = Pogoprotos()
-                if len(data) > 0:
+                if len(data['protos']) > 0:
                     protos.parse(data['protos'][0])
                 for key in list(protos.messages):
                     message = protos.messages[key]
@@ -163,46 +163,7 @@ class RealDeviceMapBlackHole(APIView):
                         NotImplementedError('proto_message: ' + str(key))
 
             for key, value in data.items():
-                if key == 'quests':
-                    pass
-                elif key == 'pokestops':
-                    if len(value) > 0:
-                        for pokestop in value:
-                            print(pokestop)
-                            queryset = PointOfInterest.objects.filter(longitude=pokestop['longitude'],
-                                                                      latitude=pokestop['latitude'])
-                            if queryset.exists():
-                                if queryset.count() > 1:
-                                    print('pokestop is not unique!')
-                                else:
-                                    pokestop_object: PointOfInterest = queryset.first()
-                                    pokestop_object.poi_id = pokestop['id']
-                                    pokestop_object.enabled = pokestop['enabled']
-                                    pokestop_object.save()
-                                    print('pokestop updated')
-                            else:
-                                PointOfInterest.objects.create(poi_id=pokestop['id'],
-                                                               longitude=pokestop['longitude'],
-                                                               latitude=pokestop['latitude'],
-                                                               type='pokestop')
-                                print('pokestop created')
-                elif key == 'spawnpoints':
-                    pass
-                elif key == 'pokemon':
-                    if len(value) > 0:
-                        for pokemon in value:
-                            despawn_time = timezone.now() + timezone.timedelta(microseconds=pokemon['despawn_time'])  # one nanosecond is 1000 microseconds
-                            poke_nr = Pokemon.objects.get(number=pokemon['pokemon_id'])
-                            pokemon_spawn = PokemonSpawn.objects.create(poke_nr=poke_nr,
-                                                                        latitude=pokemon['lat'],
-                                                                        longitude=pokemon['lon'],
-                                                                        disappear_time=despawn_time)
-                            pokemon_spawn.save()
-                elif key == 'nearby_pokemon':
-                    pass
-                elif key == 'validation1':
-                    pass
-                elif key == 'gyms':
+                if key == 'validation1':
                     pass
                 elif key == 'protos':
                     pass

@@ -214,18 +214,17 @@ class Quest(Model):
     def save(self, *args, **kwargs):
         if self.quest_reward_type is None:
             data = json.loads(self.quest_rewards)
-            print(data)
-            if hasattr(data, 'pokemon_encounter'):
+            if 'pokemon_encounter' in data:
                 self.quest_reward_type = 'pokemon_encounter'
-                self.quest_pokemon_id = data.pokemon_encounter.pokemon_id
-            elif hasattr(data, 'item'):
+                self.quest_pokemon_id = data['pokemon_encounter']['pokemon_id']
+            elif'item' in data:
                 self.quest_reward_type = 'item'
-                self.quest_item_id = data.item.item
-                self.quest_item_amount = data.item.amount
+                self.quest_item_id = data['item']['item']
+                self.quest_item_amount = data['item']['amount']
             data = json.loads(self.quest_conditions)
-            if hasattr(data, 'goal'):
-                if hasattr(data.goal, 'condition'):
-                    self.target = data.goal.condition
+            if 'goal' in 'data':
+                if 'condition' in data['goal']:
+                    self.target = data['goal']['condition']['type']
         super().save(*args, **kwargs)
 
 
