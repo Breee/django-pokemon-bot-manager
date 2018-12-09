@@ -138,6 +138,8 @@ class RealDeviceMapBlackHole(APIView):
         context = {}
 
         if isinstance(data, dict):
+            if 'uuid' in data:
+                self.update_mapper_info(data)
             if 'protos' in data:
                 protos = Pogoprotos()
                 if len(data) > 0:
@@ -202,10 +204,38 @@ class RealDeviceMapBlackHole(APIView):
                     pass
                 elif key == 'gyms':
                     pass
+                elif key == 'protos':
+                    pass
+                elif key == 'submit_version':
+                    pass
+                elif key == 'longitude':
+                    pass
+                elif key == 'latitude':
+                    pass
+                elif key == 'uuid':
+                    pass
+                elif key == 'trainerlvl':
+                    pass
+                elif key == 'timestamp':
+                    pass
                 else:
                     raise NotImplementedError('not in parse list: ' + key)
             if 'pokemon' in data:
                 print(data['pokemon'])
 
         return Response(context, status=status.HTTP_201_CREATED)
+
+    @staticmethod
+    def update_mapper_info(data):
+        if not Mapper.objects.filter(uuid=data['uuid']).exists():
+            Mapper.objects.create(uuid=data['uuid'],
+                                  longitude=data['longitude'],
+                                  latitude=data['latitude'],
+                                  trainerlevel=data['trainerlvl'])
+        else:
+            mapper = Mapper.objects.get(uuid=data['uuid'])
+            mapper.longitude = data['longitude']
+            mapper.latitude = data['latitude']
+            mapper.trainerlevel= data['trainerlvl']
+
 
