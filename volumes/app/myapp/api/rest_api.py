@@ -140,7 +140,8 @@ class RealDeviceMapBlackHole(APIView):
         if isinstance(data, dict):
             if 'protos' in data:
                 protos = Pogoprotos()
-                protos.parse(data['protos'][0])
+                if len(data) > 0:
+                    protos.parse(data['protos'][0])
                 for key in list(protos.messages):
                     message = protos.messages[key]
                     if isinstance(message, GetMapObjectsResponse):
