@@ -74,6 +74,8 @@ class PokemonSpawn(Model):
     last_modified = DateTimeField(default=timezone.now, null=True, db_index=True)
     level = IntegerField(default=None, null=True)
     _individual_percentage = FloatField(default=None, null=True)
+    created = DateTimeField(auto_now_add=True)
+    updated = DateTimeField(auto_now=True)
 
     @property
     def individual_percentage(self):
@@ -108,6 +110,8 @@ class PointOfInterest(Model):
     type = TextField()
     active_fort_modifier = SmallIntegerField(default=None, null=True)  # Don't know what dis does
     park = BooleanField(default=False)
+    created = DateTimeField(auto_now_add=True)
+    updated = DateTimeField(auto_now=True)
 
     def __repr__(self):
         return self.name
@@ -186,6 +190,8 @@ class SpawnPoint(Model):
     longitude = FloatField()
     latitude = FloatField()
     spawn_point_id = IntegerField(default=None, null=True, blank=True)
+    created = DateTimeField(auto_now_add=True)
+    updated = DateTimeField(auto_now=True)
 
 
 class Quest(Model):
@@ -202,6 +208,8 @@ class Quest(Model):
     quest_item_amount = SmallIntegerField(default=None, null=True)
     target = SmallIntegerField(default=None, null=True)
     cell_id = BigIntegerField()
+    created = DateTimeField(auto_now_add=True)
+    updated = DateTimeField(auto_now=True)
 
     def save(self, *args, **kwargs):
         if self.quest_reward_type is None:
@@ -219,3 +227,13 @@ class Quest(Model):
                 if hasattr(data.goal, 'condition'):
                     self.target = data.goal.condition
         super().save(*args, **kwargs)
+
+
+class Mapper(Model):
+    uuid = UUIDField(db_index=True)
+    created = DateTimeField(auto_now_add=True)
+    updated = DateTimeField(auto_now=True)
+    name = CharField(max_length=128, default=None, null=True)
+    longitude = FloatField(default=None, null=True)
+    latitude = FloatField(default=None, null=True)
+    trainerlevel = SmallIntegerField(default=None, null=True)
