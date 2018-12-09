@@ -203,7 +203,7 @@ class RealDeviceMapBlackHole(APIView):
                 elif key == 'gyms':
                     pass
                 else:
-                    print('not in parse list')
+                    raise NotImplementedError('not in parse list: ' + key)
             if 'pokemon' in data:
                 print(data['pokemon'])
 
