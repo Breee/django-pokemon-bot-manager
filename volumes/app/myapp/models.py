@@ -197,7 +197,7 @@ class Quest(Model):
     quest_rewards = TextField()
     quest_template = CharField(max_length=128)
     quest_pokemon_id = SmallIntegerField(default=None, null=True)
-    quest_reward_type = SmallIntegerField(default=None, null=True)
+    quest_reward_type = CharField(max_length=128, default=None, null=True)
     quest_item_id = IntegerField(default=None, null=True)
     quest_item_amount = SmallIntegerField(default=None, null=True)
     target = SmallIntegerField(default=None, null=True)
