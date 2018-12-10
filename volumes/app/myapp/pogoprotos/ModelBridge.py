@@ -194,14 +194,14 @@ def parse_fort_details_response(fort_details: FortDetailsResponse):
         if queryset.exists():
             fort_object = queryset.first()
             fort_object.name = fort_details.name
-            fort_object.image_url = fort_details.image_urls
+            fort_object.image_url = img_url
             fort_object.longitude = fort_details.longitude
             fort_object.latitude = fort_details.latitude
             fort_object.save()
         else:
             PointOfInterest.objects.create(
                 name=fort_details.name,
-                image_url=fort_details.image_urls,
+                image_url=img_url,
                 longitude=fort_details.longitude,
                 latitude=fort_details.latitude
             )
