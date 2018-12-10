@@ -9,7 +9,10 @@
   "author": "Lukas Veneziano",
   "license": "Apache-2.0",
   "dependencies": {
-    "sidebar-v2": "~0.4",
-    "leaflet": "~1.3"
+    "jquery": "^3.3.1",
+    "jquery-ui-dist": "^1.12.1",
+    "leaflet": "~1.3",
+    "leaflet.markercluster": "^1.4.1",
+    "sidebar-v2": "~0.4"
   }
 }
