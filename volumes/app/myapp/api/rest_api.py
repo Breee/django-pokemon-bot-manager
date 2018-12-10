@@ -200,3 +200,29 @@ class RealDeviceMapBlackHole(APIView):
             mapper.trainerlevel= data['trainerlvl']
 
 
+class QuestSet(APIView):
+    """
+    Quests
+    """
+    permission_classes = (permissions.IsAuthenticated,)
+    serializer_class = PointOfInterestSerializer
+
+    def get(self, request, format=None):
+        queryset = Quest.objects.filter(created__date=timezone.now().date())
+        # parse query string stuff
+        if 'pokestop' in request.GET:
+            queryset = queryset.filter(pokestop_id=request.GET['pokestop'])
+        serializer = QuestSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        context = []
+        for item in request.data:
+            serializer = QuestSerializer(data=item)
+            if serializer.is_valid():
+                serializer.save()
+                context.append(serializer.data)
+            else:
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response(context, status=status.HTTP_201_CREATED)

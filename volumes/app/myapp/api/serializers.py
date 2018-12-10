@@ -41,6 +41,17 @@ class PointOfInterestSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class QuestSerializer(serializers.ModelSerializer):
+
+    def __init__(self, *args, **kwargs):
+        many = kwargs.pop('many', True)
+        super(QuestSerializer, self).__init__(many=many, *args, **kwargs)
+
+    class Meta:
+        model = Quest
+        fields = '__all__'
+
+
 class PokeStopLureSerializer(serializers.ModelSerializer):
 
     class Meta:
