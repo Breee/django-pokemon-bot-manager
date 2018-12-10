@@ -19,7 +19,6 @@ MapCookie.prototype.toggleCookieSetting = function (name) {
 };
 
 function setCheckboxes () {
-    console.log(mapCookie)
     var checkboxes = $( "input:checkbox" );
     for (var checkbox in checkboxes) {
         if (checkboxes.hasOwnProperty(checkbox)) {

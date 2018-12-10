@@ -187,8 +187,6 @@ function addPointOfInterestToMap(data) {
 
 
 var toggleMapLayer = function(layer, bool) {
-    console.log(layer);
-    console.log(bool);
      if (!bool) {
         layer.addTo(mymap);
     }
