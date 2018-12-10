@@ -180,6 +180,7 @@ def parse_fort_details_response(fort_details: FortDetailsResponse):
         img_url.replace('[', '')
         img_url.replace(']', '')
         img_url.replace('\'', '')
+    print(img_url)
 
     if queryset.exists():
         fort_object = queryset.first()
