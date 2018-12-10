@@ -198,7 +198,7 @@ class Quest(Model):
     quest_id = CharField(max_length=128, primary_key=True)
     quest_type = BigIntegerField()
     pokestop_id = CharField(max_length=128)
-    quest_timestamp = IntegerField()
+    quest_timestamp = BigIntegerField()
     quest_conditions = TextField()
     quest_rewards = TextField()
     quest_template = CharField(max_length=128)
