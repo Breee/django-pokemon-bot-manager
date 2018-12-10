@@ -173,6 +173,13 @@ def parse_encounter_response(encounter: EncounterResponse):
 
 def parse_fort_details_response(fort_details: FortDetailsResponse):
     queryset = PointOfInterest.objects.filter(poi_id=fort_details.fort_id)
+    img_url = fort_details.image_urls
+    if isinstance(img_url, list):
+        img_url = img_url[0]
+    elif isinstance(img_url, str):
+        img_url.replace('[', '')
+        img_url.replace(']', '')
+        img_url.replace('\'', '')
 
     if queryset.exists():
         fort_object = queryset.first()
@@ -194,7 +201,7 @@ def parse_fort_details_response(fort_details: FortDetailsResponse):
         else:
             PointOfInterest.objects.create(
                 name=fort_details.name,
-                image_url=fort_details.image_urls[0],
+                image_url=fort_details.image_urls,
                 longitude=fort_details.longitude,
                 latitude=fort_details.latitude
             )
