@@ -194,7 +194,7 @@ def parse_fort_details_response(fort_details: FortDetailsResponse):
         else:
             PointOfInterest.objects.create(
                 name=fort_details.name,
-                image_url=fort_details.image_urls,
+                image_url=fort_details.image_urls[0],
                 longitude=fort_details.longitude,
                 latitude=fort_details.latitude
             )
