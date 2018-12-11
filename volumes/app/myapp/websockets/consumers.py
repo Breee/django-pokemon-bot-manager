@@ -35,7 +35,7 @@ class PokemonConsumer(AsyncWebsocketConsumer):
         last_updated_dict = self.scope["session"]["last_updated"]
         model_str = event['model_str']
         iso_ts = event['updated']
-        updated =  timezone.datetime.strptime(''.join(iso_ts.rsplit(':', 1)), '%Y-%m-%dT%H:%M:%S%z')
+        updated =  timezone.datetime.strptime(''.join(iso_ts.rsplit(':', 1)), '%Y-%m-%dT%H:%M:%S.%f%z')
         message = {"type": "change", "model": model_str}
         if model_str in last_updated_dict:
             last_updated = last_updated_dict[model_str]
