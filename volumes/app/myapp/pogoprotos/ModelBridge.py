@@ -202,13 +202,15 @@ def parse_fort_details_response(fort_details: FortDetailsResponse):
             fort_object.image_url = img_url
             fort_object.longitude = fort_details.longitude
             fort_object.latitude = fort_details.latitude
+            fort_object.description = fort_details.description
             fort_object.save()
         else:
             PointOfInterest.objects.create(
                 name=fort_details.name,
                 image_url=img_url,
                 longitude=fort_details.longitude,
-                latitude=fort_details.latitude
+                latitude=fort_details.latitude,
+                description=fort_details.description
             )
 
 
