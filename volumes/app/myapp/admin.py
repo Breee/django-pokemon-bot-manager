@@ -5,7 +5,7 @@ from rest_framework.authtoken.admin import TokenAdmin
 
 
 class PointOfInterestAdmin(admin.ModelAdmin):
-    search_fields = ['type', 'name']
+    search_fields = ['type', 'name', 'poi_id']
 
 
 # Register your models here.

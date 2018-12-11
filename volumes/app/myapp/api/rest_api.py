@@ -104,7 +104,6 @@ class PointOfInterestSet(APIView):
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = PointOfInterestSerializer
 
-
     def get(self, request, format=None):
         queryset = PointOfInterest.objects.all()
         serializer = PointOfInterestSerializer(queryset, many=True)

@@ -25,10 +25,18 @@ function clusterIcon(cluster) {
 
 var mymap = L.map('map').setView([47.9960526,7.8464833], 13);
 var ivpokemonGroup = undefined;
+var ivpokemonDict= {};
 var pokemonGroup = undefined;
+var pokemonDict= {};
 var pokestopLayer = undefined;
+var pokestopDict= {};
 var gymLayer = undefined;
+var gymDict= {};
 var mapperLayer = undefined;
+var mapperDict = {};
+var questInfo = undefined;
+var questDict = {};
+
 var url = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png';
 
 L.tileLayer(url, {
@@ -69,33 +77,18 @@ var get_popup_data = function(pokemon) {
 };
 
 function addPokemonToMap(data) {
-        if (pokemonGroup !== undefined && ivpokemonGroup !== undefined) {
-            pokemonGroup.clearLayers();
-            ivpokemonGroup.clearLayers();
-        }
-        else {
+        if (pokemonGroup === undefined && ivpokemonGroup === undefined) {
             pokemonGroup = L.layerGroup();
             ivpokemonGroup = L.layerGroup();
         }
         for (var i in data) {
             if (data.hasOwnProperty(i)) {
                 var pokemon = data[i];
-
-                var popup = get_popup_data(pokemon);
-                var marker = L.marker([pokemon.latitude, pokemon.longitude],
-                    {
-                        title: pokedex[pokemon.pokemon_object - 1].name_german,
-                        icon: L.icon({
-                            iconUrl: "/static/img/pokemons/" + pokemon.pokemon_object + '.png',
-                            iconSize: [32, 32],
-                            popupAnchor: [-3, -76]
-                        })
-                    });
-                marker.bindPopup(popup);
+                var marker = get_pokemon_marker(pokemon);
                 if (pokemon.individual_stamina !== null || pokemon.individual_attack !== null || pokemon.individual_defense !== null) {
-                    ivpokemonGroup.addLayer(marker);
+                    updateLayer(ivpokemonGroup, ivpokemonDict, marker, pokemon.encounter_id)
                 } else {
-                    pokemonGroup.addLayer(marker);
+                    updateLayer(pokemonGroup, pokemonDict, marker, pokemon.encounter_id)
                 }
             }
         }
@@ -107,45 +100,78 @@ function addPokemonToMap(data) {
         }
 }
 
-function getQuestInfo(successFn) {
-    $.getJSON('/api/quest/', function(data) {
-        var quests = {}
+function get_pokemon_marker(pokemon) {
+    var popup = get_popup_data(pokemon);
+    var marker = L.marker([pokemon.latitude, pokemon.longitude],
+        {
+            title: pokedex[pokemon.pokemon_object - 1].name_german,
+            icon: L.icon({
+                iconUrl: "/static/img/pokemons/" + pokemon.pokemon_object + '.png',
+                iconSize: [32, 32],
+                popupAnchor: [-3, -76]
+            })
+        });
+    marker.bindPopup(popup);
+    return marker
+}
+
+function updateLayer(layer, dict, marker, id) {
+    if (dict.hasOwnProperty(id)) {
+        var old_marker = dict[id];
+        layer.removeLayer(old_marker);
+        dict[id] = marker;
+        layer.addLayer(marker);
+    }
+    else {
+       dict[id] = marker;
+        layer.addLayer(marker);
+    }
+
+
+}
+
+function getQuestInfo() {
+    $.getJSON('/api/quest/', parseQuestData);
+}
+
+function parseQuestData(data) {
+    if (pokestopLayer !== undefined) {
         for (var key in data) {
-            quests[data[key].pokestop_id] = data[key];
+            if (data.hasOwnProperty(key)) {
+                var quest = data[key];
+                var poi_id = quest.pokestop_id;
+                var marker = pokestopDict[poi_id];
+                if (questDict.hasOwnProperty(poi_id)) {
+                    popup = questDict[poi_id][1];
+                    marker._popup.setContent(popup + 'Quest: ' + quest.quest_template + '<br>')
+                } else {
+                    var popup = marker._popup._content;
+
+                    questDict[poi_id] = [marker, popup];
+                    marker._popup.setContent(popup + 'Quest: ' + quest.quest_template + '<br>')
+                }
+                updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
+            }
         }
-        successFn(quests);
-    })
+    }
+    else {
+        setTimeout(function () {
+            parseQuestData(data);
+        }, 2000)
+    }
 }
 
 
 function addMapperToMap(data) {
-    if (mapperLayer !== undefined) {
-            mapperLayer.clearLayers();
-        } else {
-            mapperLayer = L.layerGroup();
+    if (mapperLayer === undefined) {
+        mapperLayer = L.layerGroup();
     }
     for (var i in data) {
             if (data.hasOwnProperty(i)) {
                 var mapper = data[i];
-                console.log('test')
-                var popup = mapper.name + '<br>';
-                popup += mapper.uuid + '<br>';
-                popup += mapper.longitude + '<br>';
-                popup += mapper.latitude + '<br>';
-                var updated = new Date(mapper.updated);
-                popup += 'updated: ' + updated.toLocaleTimeString('de-DE') + '<br>';
-                var marker = L.marker([mapper.latitude, mapper.longitude],
-                    {
-                        title: data.name,
-                        icon: L.icon({
-                            iconUrl: '/static/img/map/iphone.png',
-                            iconSize: [20, 20],
-                            popupAnchor: [-3, -76]
-                        })
-                    });
-                marker.bindPopup(popup);
+                var marker = get_mapper_marker(mapper);
 
-                mapperLayer.addLayer(marker);
+                updateLayer(mapperLayer, mapperDict, marker, mapper.uuid)
             }
         }
         if (!mapCookie.mapperHidden) {
@@ -153,12 +179,29 @@ function addMapperToMap(data) {
         }
 }
 
+function get_mapper_marker(mapper) {
+    var popup = mapper.name + '<br>';
+    popup += mapper.uuid + '<br>';
+    popup += mapper.longitude + '<br>';
+    popup += mapper.latitude + '<br>';
+    var updated = new Date(mapper.updated);
+    popup += 'updated: ' + updated.toLocaleTimeString('de-DE') + '<br>';
+    var marker = L.marker([mapper.latitude, mapper.longitude],
+        {
+            title: mapper.name,
+            icon: L.icon({
+                iconUrl: '/static/img/map/iphone.png',
+                iconSize: [20, 20],
+                popupAnchor: [-3, -76]
+            })
+        });
+    marker.bindPopup(popup);
+    return marker;
+}
+
 
 function addPointOfInterestToMap(data) {
-        if (pokestopLayer !== undefined) {
-            gymLayer.clearLayers();
-            pokestopLayer.clearLayers();
-        } else {
+        if (pokestopLayer === undefined) {
             gymLayer = L.markerClusterGroup({
                 maxClusterRadius: 120,
                 disableClusteringAtZoom: 15,
@@ -170,73 +213,60 @@ function addPointOfInterestToMap(data) {
                 iconCreateFunction: clusterIcon
             });
         }
-        getQuestInfo(function (quests) {
-            for (var i in data) {
-                if (data.hasOwnProperty(i)) {
+        for (var i in data) {
+            if (data.hasOwnProperty(i)) {
 
-                    var poi = data[i];
-                    var popup = "" + poi.name + "<br>";
-                    var marker;
-                    if (poi.image_url !== null) {
-                        popup += '<img style="width:125px; height: 125px; object-fit: cover;" src="' + poi.image_url + '" /><br>'
-                    }
-                    if (poi.type === "pokestop") {
-                        marker = L.marker([poi.latitude, poi.longitude],
-                                {
-                                    title: poi.name,
-                                    icon: L.icon({
-                                        iconUrl: "/static/img/map/pstop.png",
-                                        iconSize: [32, 32],
-                                        popupAnchor: [-3, -76]
-                                    })
-                                });
-                        if (poi.poi_id in quests) {
-                            popup += 'Quest: ' + quests[poi.poi_id].quest_template + '<br>';
-                        }
-                        marker.bindPopup(popup);
-                        pokestopLayer.addLayer(marker);
-                    }
-                    else if (poi.type === "gym") {
-                        var iconUrl = "/static/img/map/gym.png";
-                        if (poi.park === true) {
-                            iconUrl = "/static/img/map/ex_gym.png"
-                        }
-                        marker = L.marker([poi.latitude, poi.longitude],
-                            {
-                                title: poi.name,
-                                icon: L.icon({
-                                    iconUrl: iconUrl,
-                                    iconSize: [32, 32],
-                                    popupAnchor: [-3, -76]
-                                }),
-                                opacity: 0.8
-                            });
-                        marker.bindPopup(popup);
-                        gymLayer.addLayer(marker);
-                    } else {
-                        marker = L.marker([poi.latitude, poi.longitude],
-                            {
-                                title: poi.name,
-                                icon: L.icon({
-                                    iconUrl: "/static/img/map/pstop.png",
-                                    iconSize: [32, 32],
-                                    popupAnchor: [-3, -76]
-                                })
-                            });
-                        marker.bindPopup(popup);
-                        pokestopLayer.addLayer(marker);
-                    }
+                var poi = data[i];
+                var marker = get_poi_marker(poi);
+                var type = poi.type;
+                if (type === 'pokestop') {
+                    updateLayer(pokestopLayer, pokestopDict, marker, poi.poi_id)
+                }
+                else if (type === 'gym') {
+                    updateLayer(gymLayer, gymDict, marker, poi.poi_id)
                 }
             }
-            if (!mapCookie.gymsHidden) {
-                gymLayer.addTo(mymap);
-            }
-            if (!mapCookie.pokestopsHidden) {
-                pokestopLayer.addTo(mymap);
-            }
-        });
+        }
+        if (!mapCookie.gymsHidden) {
+            gymLayer.addTo(mymap);
+        }
+        if (!mapCookie.pokestopsHidden) {
+            pokestopLayer.addTo(mymap);
+        }
 }
 
+
+function get_poi_marker(poi) {
+    var type = poi.type;
+    var popup = "" + poi.name + "<br>";
+    if (poi.image_url !== null) {
+        popup += '<img style="width:125px; height: 125px; object-fit: cover;" src="' + poi.image_url + '" /><br>'
+    }
+
+
+    var icon_url = '';
+    if (type === 'gym') {
+        icon_url = "/static/img/map/gym.png";
+        if (poi.park === true) {
+            icon_url = "/static/img/map/ex_gym.png";
+        }
+    }
+    else {
+        icon_url = "/static/img/map/pstop.png";
+    }
+
+    var marker = L.marker([poi.latitude, poi.longitude],
+            {
+                title: poi.name,
+                icon: L.icon({
+                    iconUrl: icon_url,
+                    iconSize: [32, 32],
+                    popupAnchor: [-3, -76]
+                })
+            });
+    marker.bindPopup(popup);
+    return marker;
+}
 
 
 var toggleMapLayer = function(layer, bool) {

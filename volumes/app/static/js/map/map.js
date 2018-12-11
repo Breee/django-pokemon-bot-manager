@@ -122,11 +122,14 @@ function reloadData(model) {
             else if (model === "Mapper") {
                 getMapperData();
             }
+            else if (model === "Quest") {
+                getQuestInfo();
+            }
             else {
                 getPointOfInterestData();
                 getPokemonData();
                 getMapperData();
-
+                getQuestInfo()
             }
             setTimeout(function () {
                 loading_data = false;
