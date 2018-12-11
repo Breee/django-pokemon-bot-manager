@@ -89,9 +89,8 @@ var update_time = function() {
 var last_update = 0;
 var loading_data = false;
 
-function reloadData() {
-    // if pokestop not yet loaded or another pokemon update is not long ago, wait a sec
-
+function reloadData(model) {
+        // if pokestop not yet loaded or another pokemon update is not long ago, wait a sec
         if (!loading_data) {
             if (pokedex === undefined) {
                 setTimeout(function () {
@@ -101,8 +100,16 @@ function reloadData() {
             }
             loading_data = true;
             last_update = update_time();
-            getPointOfInterestData();
-            getPokemonData();
+            if (model === "PokemonSpawn") {
+                getPokemonData();
+            }
+            else if (model === "PointOfInterest") {
+                getPointOfInterestData();
+            }
+            else {
+                getPointOfInterestData();
+                getPokemonData();
+            }
             setTimeout(function () {
                 loading_data = false;
             }, 2000);
@@ -122,7 +129,7 @@ updateSocket.onmessage = function(e) {
     var data = JSON.parse(e.data);
     console.log(data);
     if (data.type === 'change') {
-        reloadData()
+        reloadData(data.model)
     }
 };
 
