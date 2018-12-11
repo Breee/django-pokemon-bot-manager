@@ -164,6 +164,7 @@ STATIC_ROOT = '../staticfiles'
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_ON_GET = True
 
 ASGI_APPLICATION = 'mysite.routing.application'
 CHANNEL_LAYERS = {
