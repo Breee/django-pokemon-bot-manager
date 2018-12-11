@@ -1,10 +1,11 @@
 "use strict";
 
 function MapCookie() {
-    this.pokestopsHidden = getBooleanCookieValue('pokestopsHidden', true);
-    this.gymsHidden = getBooleanCookieValue('gymsHidden', false);
-    this.regularPokemonHidden = getBooleanCookieValue('regularPokemonHidden', false);
-    this.ivPokemonHidden = getBooleanCookieValue('ivPokemonHidden', false);
+    this.pokestopsHidden = getBooleanCookieValue('pokestopsHidden', "true");
+    this.gymsHidden = getBooleanCookieValue('gymsHidden', "false");
+    this.regularPokemonHidden = getBooleanCookieValue('regularPokemonHidden', "false");
+    this.ivPokemonHidden = getBooleanCookieValue('ivPokemonHidden', "false");
+    this.mapperHidden = getBooleanCookieValue('ivPokemonHidden', "true");
     for (var key in this) {
             if (getBooleanCookieValue(key) === undefined) {
                 setCookie(key, this[key]);
@@ -60,6 +61,13 @@ var getPointOfInterestData = function() {
     });
 };
 
+var getMapperData = function() {
+    $.getJSON("/api/mapper", function (data) {
+        addMapperToMap(data);
+    });
+};
+
+
 var togglePokestops = function() {
     var pokestopsHidden = mapCookie.toggleCookieSetting('pokestopsHidden');
     toggleMapLayer(pokestopLayer, pokestopsHidden);
@@ -78,6 +86,11 @@ var toggleIVPokemon = function() {
 var toggleRegularPokemon = function() {
     var regularPokemonHidden = mapCookie.toggleCookieSetting('regularPokemonHidden');
     toggleMapLayer(pokemonGroup, regularPokemonHidden);
+};
+
+var toggleMapper = function() {
+    var mapperHidden = mapCookie.toggleCookieSetting('mapperHidden');
+    toggleMapLayer(mapperLayer, mapperHidden);
 };
 
 
@@ -106,9 +119,14 @@ function reloadData(model) {
             else if (model === "PointOfInterest") {
                 getPointOfInterestData();
             }
+            else if (model === "Mapper") {
+                getMapperData();
+            }
             else {
                 getPointOfInterestData();
                 getPokemonData();
+                getMapperData();
+
             }
             setTimeout(function () {
                 loading_data = false;

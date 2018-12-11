@@ -28,6 +28,7 @@ var ivpokemonGroup = undefined;
 var pokemonGroup = undefined;
 var pokestopLayer = undefined;
 var gymLayer = undefined;
+var mapperLayer = undefined;
 var url = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png';
 
 L.tileLayer(url, {
@@ -114,6 +115,41 @@ function getQuestInfo(successFn) {
         }
         successFn(quests);
     })
+}
+
+
+function addMapperToMap(data) {
+    if (mapperLayer !== undefined) {
+            mapperLayer.clearLayers();
+        } else {
+            mapperLayer = L.layerGroup();
+    }
+    for (var i in data) {
+            if (data.hasOwnProperty(i)) {
+                var mapper = data[i];
+                console.log('test')
+                var popup = mapper.name + '<br>';
+                popup += mapper.uuid + '<br>';
+                popup += mapper.longitude + '<br>';
+                popup += mapper.latitude + '<br>';
+                popup += 'updated: ' + mapper.updated + '<br>';
+                var marker = L.marker([mapper.latitude, mapper.longitude],
+                    {
+                        title: data.name,
+                        icon: L.icon({
+                            iconUrl: '/static/img/map/iphone.png',
+                            iconSize: [20, 20],
+                            popupAnchor: [-3, -76]
+                        })
+                    });
+                marker.bindPopup(popup);
+
+                mapperLayer.addLayer(marker);
+            }
+        }
+        if (!mapCookie.mapperHidden) {
+            mapperLayer.addTo(mymap);
+        }
 }
 
 
