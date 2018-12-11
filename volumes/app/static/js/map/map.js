@@ -95,7 +95,7 @@ var update_time = function() {
 };
 
 var last_update = 0;
-var loading_initial = true;
+var loading_initial = false;
 
 function reloadData(data) {
     var model = data.model;
@@ -124,6 +124,7 @@ function reloadData(data) {
                 parseQuestData(instance);
             }
             else {
+                loading_initial = true;
                 getPointOfInterestData();
                 getPokemonData();
                 getMapperData();
