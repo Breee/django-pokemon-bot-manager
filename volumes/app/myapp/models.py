@@ -102,7 +102,7 @@ class PointOfInterest(Model):
     enabled = BooleanField(default=True)
     longitude = FloatField()
     latitude = FloatField()
-    last_modified = DateTimeField(default=None, null=True)
+    last_modified = BigIntegerField(default=None, null=True)
     last_updated = DateTimeField(default=timezone.now, null=True)
     name = TextField(default=None, null=True)
     description = TextField(default=None, null=True)
