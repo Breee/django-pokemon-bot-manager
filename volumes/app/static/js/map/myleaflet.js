@@ -75,7 +75,7 @@ var get_popup_data = function(pokemon) {
          iv_str + cp_str + maps_str;
 };
 
-function addPokemonToMap(data) {
+function addPokemonsToMap(data) {
         if (regularPokemonLayer === undefined && ivPokemonLayer === undefined) {
             regularPokemonLayer = L.layerGroup();
             ivPokemonLayer = L.layerGroup();
@@ -83,12 +83,8 @@ function addPokemonToMap(data) {
         for (var i in data) {
             if (data.hasOwnProperty(i)) {
                 var pokemon = data[i];
-                var marker = get_pokemon_marker(pokemon);
-                if (pokemon.individual_stamina !== null || pokemon.individual_attack !== null || pokemon.individual_defense !== null) {
-                    updateLayer(ivPokemonLayer, ivPokemonDict, marker, pokemon.encounter_id)
-                } else {
-                    updateLayer(regularPokemonLayer, regularPokemonDict, marker, pokemon.encounter_id)
-                }
+                addPokemonToMap(pokemon)
+
             }
         }
         if (!mapCookie.ivPokemonHidden) {
@@ -97,6 +93,15 @@ function addPokemonToMap(data) {
         if (!mapCookie.regularPokemonHidden) {
             regularPokemonLayer.addTo(mymap);
         }
+}
+
+function addPokemonToMap(pokemon) {
+    var marker = get_pokemon_marker(pokemon);
+    if (pokemon.individual_stamina !== null || pokemon.individual_attack !== null || pokemon.individual_defense !== null) {
+        updateLayer(ivPokemonLayer, ivPokemonDict, marker, pokemon.encounter_id)
+    } else {
+        updateLayer(regularPokemonLayer, regularPokemonDict, marker, pokemon.encounter_id)
+    }
 }
 
 function get_pokemon_marker(pokemon) {
@@ -170,7 +175,7 @@ function addMapperToMap(data) {
                 var mapper = data[i];
                 var marker = get_mapper_marker(mapper);
 
-                updateLayer(mapperLayer, mapperDict, marker, mapper.uuid)
+                updateLayer(mapperLayer, mapperDict, marker, mapper.id)
             }
         }
         if (!mapCookie.mapperHidden) {
@@ -199,7 +204,7 @@ function get_mapper_marker(mapper) {
 }
 
 
-function addPointOfInterestToMap(data) {
+function addPointsOfInterestToMap(data) {
         if (pokestopLayer === undefined) {
             gymLayer = L.markerClusterGroup({
                 maxClusterRadius: 120,
@@ -216,14 +221,7 @@ function addPointOfInterestToMap(data) {
             if (data.hasOwnProperty(i)) {
 
                 var poi = data[i];
-                var marker = get_poi_marker(poi);
-                var type = poi.type;
-                if (type === 'pokestop') {
-                    updateLayer(pokestopLayer, pokestopDict, marker, poi.poi_id)
-                }
-                else if (type === 'gym') {
-                    updateLayer(gymLayer, gymDict, marker, poi.poi_id)
-                }
+                addPointOfInterestToMap(poi);
             }
         }
         if (!mapCookie.gymsHidden) {
@@ -232,6 +230,17 @@ function addPointOfInterestToMap(data) {
         if (!mapCookie.pokestopsHidden) {
             pokestopLayer.addTo(mymap);
         }
+}
+
+function addPointOfInterestToMap(poi) {
+    var marker = get_poi_marker(poi);
+    var type = poi.type;
+    if (type === 'pokestop') {
+        updateLayer(pokestopLayer, pokestopDict, marker, poi.poi_id)
+    }
+    else if (type === 'gym') {
+        updateLayer(gymLayer, gymDict, marker, poi.poi_id)
+    }
 }
 
 

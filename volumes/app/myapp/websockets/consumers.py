@@ -44,8 +44,11 @@ class PokemonConsumer(AsyncWebsocketConsumer):
 
     async def update_message(self, event):
         model_str = event['model_str']
+        instance = event['instance']
 
-        message = {"type": "change", "model": model_str}
+        message = {"type": "change",
+                   "model": model_str,
+                   "instance": instance}
 
         # only update if not updated in last 5s to spare traffic
         can_be_updated = await self.is_updated(event['updated'], model_str, 5)

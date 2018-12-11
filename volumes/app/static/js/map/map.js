@@ -46,13 +46,13 @@ $.getJSON('/api/pokedex/', function (data) {
 
 var getPokemonData = function () {
     $.getJSON("/api/pokemon/spawns", function(data) {
-        addPokemonToMap(data)
+        addPokemonsToMap(data)
     });
 };
 
 var getPointOfInterestData = function() {
     $.getJSON("/api/poi/all", function (data) {
-        addPointOfInterestToMap(data);
+        addPointsOfInterestToMap(data);
     });
 };
 
@@ -97,12 +97,14 @@ var update_time = function() {
 var last_update = 0;
 var loading_data = false;
 
-function reloadData(model) {
+function reloadData(data) {
+    var model = data.model;
+    var instance = data.instance;
         // if pokestop not yet loaded or another pokemon update is not long ago, wait a sec
         if (!loading_data) {
             if (pokedex === undefined) {
                 setTimeout(function () {
-                    reloadData()
+                    reloadData(data)
                 }, 200);
                 return
             }
@@ -112,13 +114,14 @@ function reloadData(model) {
                 getPokemonData();
             }
             else if (model === "PointOfInterest") {
-                getPointOfInterestData();
+               addPointOfInterestToMap(instance)
             }
             else if (model === "Mapper") {
-                getMapperData();
+                var marker = get_mapper_marker(instance);
+                updateLayer(mapperLayer, mapperDict, marker, instance.id)
             }
             else if (model === "Quest") {
-                getQuestInfo();
+                parseQuestData(instance);
             }
             else {
                 getPointOfInterestData();
@@ -145,11 +148,11 @@ updateSocket.onmessage = function(e) {
     var data = JSON.parse(e.data);
     console.log(data);
     if (data.type === 'change') {
-        reloadData(data.model)
+        reloadData(data)
     }
 };
 
-reloadData();
+reloadData({});
 
 $( function() {
     $( "#datepicker" ).datepicker();
