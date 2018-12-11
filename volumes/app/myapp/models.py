@@ -62,7 +62,7 @@ class PokemonSpawn(Model):
     individual_attack = SmallIntegerField(default=None, null=True, blank=True)
     individual_defense = SmallIntegerField(default=None, null=True, blank=True)
     individual_stamina = SmallIntegerField(default=None, null=True, blank=True)
-    moves = ManyToManyField(PokemonMove, default=None, null=True, blank=True)
+    moves = ManyToManyField(PokemonMove, default=None, blank=True)
     cp = SmallIntegerField(default=None, null=True, blank=True)
     cp_multiplier = FloatField(default=None, null=True, blank=True)
     weight = FloatField(default=None, null=True, blank=True)

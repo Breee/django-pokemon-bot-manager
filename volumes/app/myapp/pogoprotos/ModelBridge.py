@@ -6,7 +6,6 @@ from django.utils import timezone
 from myapp.models import PointOfInterest, PokemonSpawn, Pokemon, SpawnPoint, Quest
 from pogoprotos.data.quests import quest_pb2
 from pogoprotos.data.quests.client_quest_pb2 import ClientQuest
-from pogoprotos.data.quests.quest_goal_pb2 import QuestGoal
 from pogoprotos.map.fort.fort_data_pb2 import FortData
 from pogoprotos.map.map_cell_pb2 import MapCell
 from pogoprotos.map.pokemon.map_pokemon_pb2 import MapPokemon
@@ -17,7 +16,6 @@ from pogoprotos.networking.responses.encounter_response_pb2 import EncounterResp
 from pogoprotos.networking.responses.fort_details_response_pb2 import FortDetailsResponse
 from pogoprotos.networking.responses.fort_search_response_pb2 import FortSearchResponse
 from pogoprotos.networking.responses.gym_get_info_response_pb2 import GymGetInfoResponse
-from google.protobuf.json_format import MessageToJson, MessageToDict
 
 
 def update_map_poi(fort: FortData):
@@ -30,15 +28,18 @@ def update_map_poi(fort: FortData):
     queryset = PointOfInterest.objects.filter(poi_id=fort.id)
     if queryset.exists():
         poi_object: PointOfInterest = queryset.first()
-        poi_object.poi_id = fort.id
-        poi_object.enabled = fort.enabled
-        poi_object.type = fort_type
-        poi_object.save()
+        if poi_object.last_modified != fort.last_modified_timestamp_ms:
+            poi_object.poi_id = fort.id
+            poi_object.enabled = fort.enabled
+            poi_object.type = fort_type
+            poi_object.last_modified = fort.last_modified_timestamp_ms
+            poi_object.save()
     else:
         PointOfInterest.objects.create(poi_id=fort.id,
                                        longitude=fort.longitude,
                                        latitude=fort.latitude,
-                                       type=fort_type)
+                                       type=fort_type,
+                                       last_modified=fort.last_modified_timestamp_ms)
 
 
 def add_map_pokemon_spawn(pokemon: MapPokemon):
