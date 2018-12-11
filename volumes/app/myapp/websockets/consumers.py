@@ -31,16 +31,16 @@ class PokemonConsumer(AsyncWebsocketConsumer):
         await self.send(text_data=event["message"])
 
     async def update_message(self, event):
-        updated = event['updated']
         last_updated_dict = self.scope["session"]["last_updated"]
         model_str = event['model_str']
         iso_ts = event['updated']
-        updated =  timezone.datetime.strptime(''.join(iso_ts.rsplit(':', 1)), '%Y-%m-%d %H:%M:%S.%f%z')
+        updated = timezone.datetime.strptime(''.join(iso_ts.rsplit(':', 1)), '%Y-%m-%d %H:%M:%S.%f%z')
         message = {"type": "change", "model": model_str}
         if model_str in last_updated_dict:
             last_updated = last_updated_dict[model_str]
         else:
             last_updated = self.scope["session"]['last_updated_default']
+        print(updated, last_updated)
         if updated > last_updated + timedelta(seconds=5):
             self.scope["session"]["last_updated"][model_str] = timezone.now()
             await self.send(text_data=json.dumps(message))
