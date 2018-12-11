@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -235,7 +237,7 @@ class MapperSet(APIView):
     serializer_class = MapperSerializer
 
     def get(self, request, format=None):
-        queryset = Mapper.objects.all()
+        queryset = Mapper.objects.filter(updated__gte=timezone.now() - timedelta(minutes=5))
         # parse query string stuff
         serializer = MapperSerializer(queryset, many=True)
         return Response(serializer.data)
