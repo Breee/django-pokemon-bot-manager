@@ -236,7 +236,7 @@ class MapperSet(APIView):
     serializer_class = MapperSerializer
 
     def get(self, request, format=None):
-        queryset = Mapper.objects.filter(created__date=timezone.now().date())
+        queryset = Mapper.objects.all()
         # parse query string stuff
         serializer = MapperSerializer(queryset, many=True)
         return Response(serializer.data)
