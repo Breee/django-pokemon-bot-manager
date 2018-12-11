@@ -95,20 +95,20 @@ var update_time = function() {
 };
 
 var last_update = 0;
-var loading_data = false;
+var loading_initial = true;
 
 function reloadData(data) {
     var model = data.model;
     var instance = data.instance;
         // if pokestop not yet loaded or another pokemon update is not long ago, wait a sec
-        if (!loading_data) {
+        if (!loading_initial) {
             if (pokedex === undefined) {
                 setTimeout(function () {
                     reloadData(data)
                 }, 200);
                 return
             }
-            loading_data = true;
+            loading_initial = true;
             last_update = update_time();
             if (model === "PokemonSpawn") {
                 getPokemonData();
@@ -127,12 +127,24 @@ function reloadData(data) {
                 getPointOfInterestData();
                 getPokemonData();
                 getMapperData();
-                getQuestInfo()
+                getQuestInfo();
+                waitForInitials();
             }
-            setTimeout(function () {
-                loading_data = false;
-            }, 2000);
         }
+}
+
+function waitForInitials() {
+    setTimeout(function () {
+                    if (pokestopLayer !== undefined && gymLayer !== undefined &&
+                        regularPokemonLayer !== undefined && ivPokemonLayer !== undefined &&
+                        mapperLayer !== undefined) {
+                        waitForInitials()
+                    }
+                    else {
+                        loading_initial = false;
+                    }
+                },200)
+
 }
 
 var websocket_protocol = 'ws://';
