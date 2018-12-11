@@ -52,6 +52,17 @@ class QuestSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class MapperSerializer(serializers.ModelSerializer):
+
+    def __init__(self, *args, **kwargs):
+        many = kwargs.pop('many', True)
+        super(MapperSerializer, self).__init__(many=many, *args, **kwargs)
+
+    class Meta:
+        model = Mapper
+        fields = '__all__'
+
+
 class PokeStopLureSerializer(serializers.ModelSerializer):
 
     class Meta:

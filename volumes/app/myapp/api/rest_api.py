@@ -226,3 +226,29 @@ class QuestSet(APIView):
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         return Response(context, status=status.HTTP_201_CREATED)
+
+
+class MapperSet(APIView):
+    """
+    Quests
+    """
+    permission_classes = (permissions.IsAuthenticated,)
+    serializer_class = MapperSerializer
+
+    def get(self, request, format=None):
+        queryset = Mapper.objects.filter(created__date=timezone.now().date())
+        # parse query string stuff
+        serializer = MapperSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        context = []
+        for item in request.data:
+            serializer = MapperSerializer(data=item)
+            if serializer.is_valid():
+                serializer.save()
+                context.append(serializer.data)
+            else:
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response(context, status=status.HTTP_201_CREATED)
