@@ -23,18 +23,17 @@ function clusterIcon(cluster) {
 
 
 
-var mymap = L.map('map').setView([47.9960526,7.8464833], 13);
-var ivpokemonGroup = undefined;
-var ivpokemonDict= {};
-var pokemonGroup = undefined;
-var pokemonDict= {};
+var mymap = L.map('map').setView([47.9960526,7.8464833], 15);
+var ivPokemonLayer = undefined;
+var ivPokemonDict= {};
+var regularPokemonLayer = undefined;
+var regularPokemonDict= {};
 var pokestopLayer = undefined;
 var pokestopDict= {};
 var gymLayer = undefined;
 var gymDict= {};
 var mapperLayer = undefined;
 var mapperDict = {};
-var questInfo = undefined;
 var questDict = {};
 
 var url = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png';
@@ -77,26 +76,26 @@ var get_popup_data = function(pokemon) {
 };
 
 function addPokemonToMap(data) {
-        if (pokemonGroup === undefined && ivpokemonGroup === undefined) {
-            pokemonGroup = L.layerGroup();
-            ivpokemonGroup = L.layerGroup();
+        if (regularPokemonLayer === undefined && ivPokemonLayer === undefined) {
+            regularPokemonLayer = L.layerGroup();
+            ivPokemonLayer = L.layerGroup();
         }
         for (var i in data) {
             if (data.hasOwnProperty(i)) {
                 var pokemon = data[i];
                 var marker = get_pokemon_marker(pokemon);
                 if (pokemon.individual_stamina !== null || pokemon.individual_attack !== null || pokemon.individual_defense !== null) {
-                    updateLayer(ivpokemonGroup, ivpokemonDict, marker, pokemon.encounter_id)
+                    updateLayer(ivPokemonLayer, ivPokemonDict, marker, pokemon.encounter_id)
                 } else {
-                    updateLayer(pokemonGroup, pokemonDict, marker, pokemon.encounter_id)
+                    updateLayer(regularPokemonLayer, regularPokemonDict, marker, pokemon.encounter_id)
                 }
             }
         }
         if (!mapCookie.ivPokemonHidden) {
-            ivpokemonGroup.addTo(mymap);
+            ivPokemonLayer.addTo(mymap);
         }
         if (!mapCookie.regularPokemonHidden) {
-            pokemonGroup.addTo(mymap);
+            regularPokemonLayer.addTo(mymap);
         }
 }
 

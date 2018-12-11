@@ -1,16 +1,11 @@
 "use strict";
 
 function MapCookie() {
-    this.pokestopsHidden = getBooleanCookieValue('pokestopsHidden', "true");
-    this.gymsHidden = getBooleanCookieValue('gymsHidden', "false");
-    this.regularPokemonHidden = getBooleanCookieValue('regularPokemonHidden', "false");
-    this.ivPokemonHidden = getBooleanCookieValue('ivPokemonHidden', "false");
-    this.mapperHidden = getBooleanCookieValue('ivPokemonHidden', "true");
-    for (var key in this) {
-            if (getBooleanCookieValue(key) === undefined) {
-                setCookie(key, this[key]);
-            }
-    }
+    this.pokestopsHidden = getBooleanCookieValue('pokestopsHidden', true);
+    this.gymsHidden = getBooleanCookieValue('gymsHidden', false);
+    this.regularPokemonHidden = getBooleanCookieValue('regularPokemonHidden', false);
+    this.ivPokemonHidden = getBooleanCookieValue('ivPokemonHidden', false);
+    this.mapperHidden = getBooleanCookieValue('mapperHidden', true);
 }
 
 MapCookie.prototype.toggleCookieSetting = function (name) {
@@ -35,6 +30,7 @@ function setCheckboxes () {
 }
 
 var mapCookie = new MapCookie();
+console.log(mapCookie)
 setCheckboxes();
 
 var csrftoken = getCookie('csrftoken');
@@ -80,12 +76,12 @@ var toggleGyms = function() {
 
 var toggleIVPokemon = function() {
     var ivPokemonHidden = mapCookie.toggleCookieSetting('ivPokemonHidden');
-    toggleMapLayer(ivpokemonGroup, ivPokemonHidden);
+    toggleMapLayer(ivPokemonLayer, ivPokemonHidden);
 };
 
 var toggleRegularPokemon = function() {
     var regularPokemonHidden = mapCookie.toggleCookieSetting('regularPokemonHidden');
-    toggleMapLayer(pokemonGroup, regularPokemonHidden);
+    toggleMapLayer(regularPokemonLayer, regularPokemonHidden);
 };
 
 var toggleMapper = function() {

@@ -23,9 +23,13 @@ function setCookie(cname, cvalue, exdays) {
 
 function getCookieValue(cname, defaultValue) {
     var cookie = getCookie(cname);
-    return (cookie === null) ? defaultValue : cookie ;
+    if (cookie === null || cookie === undefined) {
+        cookie = defaultValue;
+        setCookie(cname, cookie)
+    }
+    return cookie
 }
 
 function getBooleanCookieValue(cname, defaultValue) {
-    return getCookieValue(cname) === 'true';
+    return getCookieValue(cname, String(defaultValue)) === 'true';
 }
