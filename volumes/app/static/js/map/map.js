@@ -100,15 +100,18 @@ var update_time = function() {
 };
 
 var last_update = 0;
+var loading_data = false;
 
 function reloadData(model) {
         // if pokestop not yet loaded or another pokemon update is not long ago, wait a sec
+        if (!loading_data) {
             if (pokedex === undefined) {
                 setTimeout(function () {
                     reloadData()
                 }, 200);
                 return
             }
+            loading_data = true;
             last_update = update_time();
             if (model === "PokemonSpawn") {
                 getPokemonData();
@@ -125,6 +128,10 @@ function reloadData(model) {
                 getMapperData();
 
             }
+            setTimeout(function () {
+                loading_data = false;
+            }, 2000);
+        }
 }
 
 var websocket_protocol = 'ws://';
