@@ -52,7 +52,7 @@ class PokemonConsumer(AsyncWebsocketConsumer):
 
         # only update if not updated in last 5s to spare traffic
         can_be_updated = await self.is_updated(event['updated'], model_str, 5)
-        if can_be_updated:
-            self.scope["session"]["last_updated"][model_str] = timezone.now()
-            await self.send(text_data=json.dumps(message))
+        # if can_be_updated:
+        self.scope["session"]["last_updated"][model_str] = timezone.now()
+        await self.send(text_data=json.dumps(message))
 
