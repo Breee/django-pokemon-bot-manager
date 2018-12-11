@@ -139,10 +139,10 @@ function waitForInitials() {
                     if (pokestopLayer !== undefined && gymLayer !== undefined &&
                         regularPokemonLayer !== undefined && ivPokemonLayer !== undefined &&
                         mapperLayer !== undefined) {
-                        waitForInitials()
+                        loading_initial = false;
                     }
                     else {
-                        loading_initial = false;
+                        waitForInitials();
                     }
                 },200)
 
