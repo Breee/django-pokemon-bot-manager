@@ -48,3 +48,48 @@ body.login_body {
     vertical-align: middle;
     line-height: normal;
 }
+
+.local_login {
+    background: #f8fff8;
+    border-radius: 15px;
+    border: 2px solid #c0c2c4;
+    width: 320px;
+    height: 220px;
+    position:fixed; /*it can be fixed too*/
+    padding: 15px;
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+
+    /*this to solve "the content will not be cut when the window is smaller than the content": */
+    max-width:100%;
+    max-height:100%;
+    overflow:auto;
+    display: none;
+}
+
+.local_login_button button {
+    color: #009688;
+    background-color: transparent;
+    border: 1px solid #009688;
+    flex: fit-content;
+    border-radius: 5px;
+    line-height: 30px;
+    right: 0; left: 0;
+    top: 120px; bottom:0;
+    width: 100px;
+    height: 30px;
+    position: fixed;
+    margin: auto;
+}
+
+#x {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #c0c2c4;
+    color: #c0c2c4;
+    text-align: center;
+}
