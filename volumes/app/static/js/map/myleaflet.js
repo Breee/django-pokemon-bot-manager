@@ -132,7 +132,8 @@ function addMapperToMap(data) {
                 popup += mapper.uuid + '<br>';
                 popup += mapper.longitude + '<br>';
                 popup += mapper.latitude + '<br>';
-                popup += 'updated: ' + mapper.updated + '<br>';
+                var updated = new Date(mapper.updated);
+                popup += 'updated: ' + updated.toLocaleTimeString('de-DE') + '<br>';
                 var marker = L.marker([mapper.latitude, mapper.longitude],
                     {
                         title: data.name,
