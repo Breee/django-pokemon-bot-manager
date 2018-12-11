@@ -138,6 +138,7 @@ function getQuestInfo() {
     $.getJSON('/api/quest/', parseQuestData);
 }
 
+
 function parseQuestData(data) {
     if (pokestopLayer !== undefined) {
         for (var key in data) {
@@ -145,15 +146,11 @@ function parseQuestData(data) {
                 var quest = data[key];
                 var poi_id = quest.pokestop_id;
                 var marker = pokestopDict[poi_id];
-                if (questDict.hasOwnProperty(poi_id)) {
-                    popup = questDict[poi_id][1];
-                    marker._popup.setContent(popup + 'Quest: ' + quest.quest_template + '<br>')
-                } else {
+                if (!questDict.hasOwnProperty(poi_id)) {
                     var popup = marker._popup._content;
-
-                    questDict[poi_id] = [marker, popup];
-                    marker._popup.setContent(popup + 'Quest: ' + quest.quest_template + '<br>')
+                    questDict[poi_id] = [marker, popup, quest];
                 }
+                setQuestPopup(quest, marker, poi_id);
                 updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
             }
         }
@@ -163,6 +160,22 @@ function parseQuestData(data) {
             parseQuestData(data);
         }, 2000)
     }
+}
+
+function setQuestPopup(quest, marker, poi_id) {
+    if (!questDict.hasOwnProperty(poi_id)) {
+        return
+    }
+
+    var popup = questDict[poi_id][1];
+    popup += 'Quest: ' + quest.quest_template + '<br>';
+    if (quest.quest_pokemon_id === null || quest.quest_pokemon_id === undefined) {
+        var reward = quest.quest_item_amount + 'x ' + quest.item_id;
+    } else {
+        var reward = pokedex[quest.quest_pokemon_id].name_german;
+    }
+    popup += 'Reward: ' + reward + '<br>';
+    marker._popup.setContent(popup)
 }
 
 
@@ -236,7 +249,11 @@ function addPointOfInterestToMap(poi) {
     var marker = get_poi_marker(poi);
     var type = poi.type;
     if (type === 'pokestop') {
-        updateLayer(pokestopLayer, pokestopDict, marker, poi.poi_id)
+        updateLayer(pokestopLayer, pokestopDict, marker, poi.poi_id);
+        if (questDict.hasOwnProperty(poi.poi_id)) {
+            var questInfo = questDict[poi.poi_id];
+            setQuestPopup(questInfo[3], questInfo[0], poi.poi_id)
+        }
     }
     else if (type === 'gym') {
         updateLayer(gymLayer, gymDict, marker, poi.poi_id)
@@ -247,6 +264,7 @@ function addPointOfInterestToMap(poi) {
 function get_poi_marker(poi) {
     var type = poi.type;
     var popup = "" + poi.name + "<br>";
+    popup += (poi.description !== '') ? '' : poi.description + '<br>';
     if (poi.image_url !== null) {
         popup += '<img style="width:125px; height: 125px; object-fit: cover;" src="' + poi.image_url + '" /><br>'
     }

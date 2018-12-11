@@ -108,6 +108,7 @@ class PointOfInterestSet(APIView):
 
     def get(self, request, format=None):
         queryset = PointOfInterest.objects.all()
+        print(queryset)
         serializer = PointOfInterestSerializer(queryset, many=True)
         return Response(serializer.data)
 
