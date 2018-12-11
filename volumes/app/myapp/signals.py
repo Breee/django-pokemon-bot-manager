@@ -27,7 +27,7 @@ def send_message(model_str):
     channel_layer = channels.layers.get_channel_layer()
     async_to_sync(channel_layer.group_send)("update", {
         'type': 'update.message',
-        'updated':  timezone.now(),
+        'updated':  str(timezone.now()),
         'model_str': model_str
     })
 
