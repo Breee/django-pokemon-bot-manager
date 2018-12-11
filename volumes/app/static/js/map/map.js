@@ -30,7 +30,6 @@ function setCheckboxes () {
 }
 
 var mapCookie = new MapCookie();
-console.log(mapCookie)
 setCheckboxes();
 
 var csrftoken = getCookie('csrftoken');
@@ -155,3 +154,13 @@ reloadData();
 $( function() {
     $( "#datepicker" ).datepicker();
 } );
+
+mymap.on('moveend', function() {
+    /*
+     * TODO: Get only objects inside map bounds
+     * bounds are stored in mymap.getBounds();
+     * The api has to be changed to support this.
+     * you can use a simple "is point in rectangle" function
+     * shouldn't be too hard
+     */
+});
