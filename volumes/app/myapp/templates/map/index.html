@@ -21,6 +21,9 @@
             </ul>
 
             <ul role="tablist">
+                {% if request.user.is_superuser %}
+                <li><a href="https://rdm.pogo-fr.de" role="tab" target="_blank"><i class="fas fa-mobile-alt"></i></a></li>
+                {% endif %}
                 <li><a href="https://github.com/breee/django-pokemon-bot-manager" role="tab" target="_blank"><i class="fab fa-github"></i></a></li>
                 <li><a href="/accounts/logout" role="tab"><i class="fas fa-sign-out-alt"></i></a></li>
             </ul>
