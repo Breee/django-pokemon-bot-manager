@@ -171,19 +171,19 @@ function setQuestPopup(poi_id) {
     var quest = questDict[poi_id][2];
     popup += 'Quest: ' + quest.quest_template + '<br>';
     if (quest.quest_pokemon_id === null || quest.quest_pokemon_id === undefined) {
-        var quest_item_id_name = ("000" + quest.quest_item_id).slice(-4);
-        var reward = quest.quest_item_amount + 'x ' +
-            '<img src="/static/img/Texture2D/Item_' + quest_item_id_name + '.png"' +
-            ' height="64px" width="64px" alt="item_' + quest.quest_item_id  + '">';
-    } else {
         if (quest.quest_item_id !== null || quest.quest_item_id !== undefined) {
-            var reward = '<img src="/static/img/pokemons/' + quest.quest_pokemon_id + '.png"' +
-                ' height="64px" width="64px" alt="item_' +
-                pokedex[quest.quest_pokemon_id].name_german + '">';
+            var quest_item_id_name = ("000" + quest.quest_item_id).slice(-4);
+            var reward = quest.quest_item_amount + 'x ' +
+                '<img src="/static/img/Texture2D/Item_' + quest_item_id_name + '.png"' +
+                ' height="64px" width="64px" alt="item_' + quest.quest_item_id + '">';
         }
         else {
             reward = ''
         }
+    } else {
+            var reward = '<img src="/static/img/pokemons/' + quest.quest_pokemon_id + '.png"' +
+                ' height="64px" width="64px" alt="item_' +
+                pokedex[quest.quest_pokemon_id].name_german + '">';
     }
     popup += 'Reward: ' + reward + '<br>';
     marker._popup.setContent(popup)
