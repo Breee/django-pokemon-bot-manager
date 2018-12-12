@@ -242,7 +242,7 @@ class MapperSet(APIView):
     serializer_class = MapperSerializer
 
     def get(self, request, format=None):
-        queryset = Mapper.objects.filter(updated__gte=timezone.now() - timedelta(minutes=5))
+        queryset = Mapper.objects.filter(updated__gte=timezone.localtime() - timedelta(minutes=5))
         # parse query string stuff
         serializer = MapperSerializer(queryset, many=True)
         return Response(serializer.data)
