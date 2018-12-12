@@ -97,6 +97,15 @@ var update_time = function() {
 var last_update = 0;
 var loading_initial = false;
 
+var websocket_protocol = 'ws://';
+if (location.protocol === 'https:') {
+    websocket_protocol = 'wss://'
+}
+
+var updateSocket = new ReconnectingWebSocket(
+websocket_protocol + window.location.host +
+'/ws/update/');
+
 function reloadData(data) {
     var model = data.model;
     var instance = data.instance;
@@ -140,6 +149,13 @@ function waitForInitials() {
                         regularPokemonLayer !== undefined && ivPokemonLayer !== undefined &&
                         mapperLayer !== undefined) {
                         loading_initial = false;
+                        updateSocket.onmessage = function(e) {
+                        var data = JSON.parse(e.data);
+                        console.log(data);
+                        if (data.type === 'change') {
+                            reloadData(data)
+                        }
+                    };
                     }
                     else {
                         waitForInitials();
@@ -148,22 +164,6 @@ function waitForInitials() {
 
 }
 
-var websocket_protocol = 'ws://';
-if (location.protocol === 'https:') {
-    websocket_protocol = 'wss://'
-}
-
-var updateSocket = new ReconnectingWebSocket(
-websocket_protocol + window.location.host +
-'/ws/update/');
-
-updateSocket.onmessage = function(e) {
-    var data = JSON.parse(e.data);
-    console.log(data);
-    if (data.type === 'change') {
-        reloadData(data)
-    }
-};
 
 reloadData({});
 
