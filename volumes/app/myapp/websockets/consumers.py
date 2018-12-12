@@ -11,6 +11,11 @@ class PokemonConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         self.scope["session"]["last_updated"] = {}
         self.scope["session"]['last_updated_default'] = timezone.now() - timedelta(minutes=20)
+        await self.channel_layer.group_add(
+            "update",
+            self.channel_name
+        )
+
         await self.accept()
 
         # is this needed?
