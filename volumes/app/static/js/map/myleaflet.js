@@ -178,7 +178,7 @@ function setQuestPopup(poi_id) {
                 ' height="64px" width="64px" alt="item_' + quest.quest_item_id + '">';
         }
         else {
-            reward = ''
+            var reward = ''
         }
     } else {
             var reward = '<img src="/static/img/pokemons/' + quest.quest_pokemon_id + '.png"' +
