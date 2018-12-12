@@ -172,7 +172,7 @@ function setQuestPopup(poi_id) {
     popup += 'Quest: ' + quest.quest_template + '<br>';
 
     var reward;
-    var quest_rewards = JSON.parse(quest.quest_rewards)
+    var quest_rewards = JSON.parse(quest.quest_rewards);
     switch (quest_rewards.type) {
         case 2:
             var quest_item_id_name = ("000" + quest_rewards.item.item).slice(-4);

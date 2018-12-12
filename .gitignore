@@ -12,7 +12,6 @@ venv/
 
 # production data
 *db.sqlite3
-volumes/app/myapp/migrations
 volumes/app/mysite/bot_settings.py
 volumes/app/mysite/local_settings.py
 volumes/app/static/js/node_modules
