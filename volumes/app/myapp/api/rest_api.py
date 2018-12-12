@@ -200,6 +200,7 @@ class RealDeviceMapBlackHole(APIView):
             mapper.longitude = data['longitude']
             mapper.latitude = data['latitude']
             mapper.trainerlevel= data['trainerlvl']
+            mapper.save()
 
 
 class QuestSet(APIView):
