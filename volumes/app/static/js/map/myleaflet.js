@@ -150,7 +150,7 @@ function parseQuestData(data) {
                     var popup = marker._popup._content;
                     questDict[poi_id] = [marker, popup, quest];
                 }
-                setQuestPopup(quest, marker, poi_id);
+                setQuestPopup(poi_id);
                 updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
             }
         }
@@ -162,12 +162,13 @@ function parseQuestData(data) {
     }
 }
 
-function setQuestPopup(quest, marker, poi_id) {
+function setQuestPopup(poi_id) {
     if (!questDict.hasOwnProperty(poi_id)) {
         return
     }
-
+    var marker = questDict[poi_id][0];
     var popup = questDict[poi_id][1];
+    var quest = questDict[poi_id][2];
     popup += 'Quest: ' + quest.quest_template + '<br>';
     if (quest.quest_pokemon_id === null || quest.quest_pokemon_id === undefined) {
         var reward = quest.quest_item_amount + 'x ' +
@@ -256,7 +257,7 @@ function addPointOfInterestToMap(poi) {
         updateLayer(pokestopLayer, pokestopDict, marker, poi.poi_id);
         if (questDict.hasOwnProperty(poi.poi_id)) {
             var questInfo = questDict[poi.poi_id];
-            setQuestPopup(questInfo[3], questInfo[0], poi.poi_id)
+            setQuestPopup(poi.poi_id)
         }
     }
     else if (type === 'gym') {
