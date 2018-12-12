@@ -19,6 +19,10 @@ from pogoprotos.networking.responses.gym_get_info_response_pb2 import GymGetInfo
 
 
 def update_map_poi(fort: FortData):
+
+    def get_if_not_empty(new_value, old_value):
+        return new_value if new_value is not None and new_value != '' else old_value
+
     if fort.type == 1:
         fort_type = 'pokestop'
     elif fort.type == 0:
@@ -29,10 +33,11 @@ def update_map_poi(fort: FortData):
     if queryset.exists():
         poi_object: PointOfInterest = queryset.first()
         if poi_object.last_modified != fort.last_modified_timestamp_ms:
-            poi_object.poi_id = fort.id
-            poi_object.enabled = fort.enabled
-            poi_object.type = fort_type
-            poi_object.last_modified = fort.last_modified_timestamp_ms
+            poi_object.poi_id = get_if_not_empty(fort.id, poi_object.poi)
+            poi_object.enabled = get_if_not_empty(fort.enabled, poi_object.enabled)
+            poi_object.type = get_if_not_empty(fort_type, poi_object.type)
+            poi_object.last_modified = get_if_not_empty(fort.last_modified_timestamp_ms,
+                                                        poi_object.last_modified)
             poi_object.save()
     else:
         PointOfInterest.objects.create(poi_id=fort.id,
@@ -173,6 +178,10 @@ def parse_encounter_response(encounter: EncounterResponse):
 
 
 def parse_fort_details_response(fort_details: FortDetailsResponse):
+
+    def get_if_not_empty(new_value, old_value):
+        return new_value if new_value is not None and new_value != '' else old_value
+
     queryset = PointOfInterest.objects.filter(poi_id=fort_details.fort_id)
     img_url = fort_details.image_urls
     if isinstance(img_url, list):
@@ -188,21 +197,26 @@ def parse_fort_details_response(fort_details: FortDetailsResponse):
 
     if queryset.exists():
         fort_object = queryset.first()
-        fort_object.name = fort_details.name
-        fort_object.image_url = img_url
-        fort_object.longitude = fort_details.longitude
-        fort_object.latitude = fort_details.latitude
+        fort_object.name = get_if_not_empty(fort_details.name, fort_object.name)
+        fort_object.image_url = get_if_not_empty(img_url, fort_object.image_url)
+        fort_object.longitude = get_if_not_empty(fort_details.longitude, fort_object.longitude)
+        fort_object.latitude = get_if_not_empty(fort_details.latitude, fort_object.latitude)
+        fort_object.description = get_if_not_empty(fort_details.description,
+                                                   fort_object.description)
+
         fort_object.save()
     else:
         queryset = PointOfInterest.objects.filter(longitude=fort_details.longitude,
                                                   latitude=fort_details.latitude)
         if queryset.exists():
             fort_object = queryset.first()
-            fort_object.name = fort_details.name
-            fort_object.image_url = img_url
-            fort_object.longitude = fort_details.longitude
-            fort_object.latitude = fort_details.latitude
-            fort_object.description = fort_details.description
+            fort_object.name = get_if_not_empty(fort_details.name, fort_object.name)
+            fort_object.image_url = get_if_not_empty(img_url, fort_object.image_url)
+            fort_object.longitude = get_if_not_empty(fort_details.longitude, fort_object.longitude)
+            fort_object.latitude = get_if_not_empty(fort_details.latitude, fort_object.latitude)
+            fort_object.description = get_if_not_empty(fort_details.description,
+                                                       fort_object.description)
+
             fort_object.save()
         else:
             PointOfInterest.objects.create(
@@ -215,16 +229,19 @@ def parse_fort_details_response(fort_details: FortDetailsResponse):
 
 
 def parse_gym_get_info_response(gym_info: GymGetInfoResponse):
+    def get_if_not_empty(new_value, old_value):
+        return new_value if new_value is not None and new_value != '' else old_value
+
     fort_data = gym_info.gym_status_and_defenders.pokemon_fort_proto
     queryset = PointOfInterest.objects.filter(poi_id=fort_data.id)
 
     if queryset.exists():
         fort_object = queryset.first()
-        fort_object.name = gym_info.name
-        fort_object.image_url = gym_info.url
+        fort_object.name = get_if_not_empty(gym_info.name, fort_object.name)
+        fort_object.image_url = get_if_not_empty(gym_info.url, fort_object.image_url)
         if fort_data.is_ex_raid_eligible:
             fort_object.park = True
-        fort_object.description = gym_info.description
+        fort_object.description = get_if_not_empty(gym_info.description, fort_object.description)
         fort_object.save()
 
 
