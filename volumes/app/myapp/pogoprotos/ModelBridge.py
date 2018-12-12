@@ -33,7 +33,7 @@ def update_map_poi(fort: FortData):
     if queryset.exists():
         poi_object: PointOfInterest = queryset.first()
         if poi_object.last_modified != fort.last_modified_timestamp_ms:
-            poi_object.poi_id = get_if_not_empty(fort.id, poi_object.poi)
+            poi_object.poi_id = get_if_not_empty(fort.id, poi_object.poi_id)
             poi_object.enabled = get_if_not_empty(fort.enabled, poi_object.enabled)
             poi_object.type = get_if_not_empty(fort_type, poi_object.type)
             poi_object.last_modified = get_if_not_empty(fort.last_modified_timestamp_ms,
