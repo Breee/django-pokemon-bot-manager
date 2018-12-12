@@ -178,7 +178,7 @@ function setQuestPopup(poi_id) {
         if (quest.quest_item_id !== null || quest.quest_item_id !== undefined) {
             var reward = '<img src="/static/img/pokemons/' + quest.quest_pokemon_id + '.png"' +
                 ' height="64px" width="64px" alt="item_' +
-                pokedex[quest.quest_pokemon_id].name_german + '">'a;
+                pokedex[quest.quest_pokemon_id].name_german + '">';
         }
         else {
             reward = ''
