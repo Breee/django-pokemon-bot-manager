@@ -23,7 +23,7 @@ function clusterIcon(cluster) {
 
 
 
-var mymap = L.map('map').setView([47.9960526,7.8464833], 15);
+var mymap = L.map('map').setView([47.9960526,7.8464833], 17);
 var ivPokemonLayer = undefined;
 var ivPokemonDict= {};
 var regularPokemonLayer = undefined;
