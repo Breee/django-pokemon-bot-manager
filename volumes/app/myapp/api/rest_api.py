@@ -210,7 +210,11 @@ class QuestSet(APIView):
     serializer_class = PointOfInterestSerializer
 
     def get(self, request, format=None):
-        queryset = Quest.objects.filter(created__gte=timezone.localtime().time().replace(hour=00, minute=00, second=00))
+        queryset = Quest.objects.filter(created__gte=timezone.datetime.combine(
+            timezone.localtime().date(),
+            timezone.localtime().time().replace(hour=00, minute=00, second=00)
+        ))
+
         # parse query string stuff
         if 'pokestop' in request.GET:
             queryset = queryset.filter(pokestop_id=request.GET['pokestop'])
