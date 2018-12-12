@@ -11,21 +11,15 @@ class PokemonConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         self.scope["session"]["last_updated"] = {}
         self.scope["session"]['last_updated_default'] = timezone.now() - timedelta(minutes=20)
-        await self.channel_layer.group_add(
-            "update",
-            self.channel_name
-        )
-
         await self.accept()
+
+        # is this needed?
         await self.send(text_data=json.dumps({
             'message': 'message'
         }))
 
     async def disconnect(self, close_code):
-        await self.channel_layer.group_discard(
-            "update",
-            self.channel_name
-        )
+        pass
 
     async def pokemon_message(self, event):
         await self.send(text_data=event["message"])
@@ -56,3 +50,13 @@ class PokemonConsumer(AsyncWebsocketConsumer):
         self.scope["session"]["last_updated"][model_str] = timezone.now()
         await self.send(text_data=json.dumps(message))
 
+    async def receive(self, text_data):
+        '''
+        Get Information from the Frontend to the Backend
+        :param data:
+        :return:
+        '''
+        data = json.loads(text_data)
+        print("received: " + text_data)
+        # send a OK for received
+        await self.send(text_data=json.dumps({"type": "OK"}))
