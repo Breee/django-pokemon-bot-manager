@@ -20,9 +20,6 @@ function clusterIcon(cluster) {
 }
 
 
-
-
-
 var mymap = L.map('map').setView([47.9960526,7.8464833], 17);
 var ivPokemonLayer = undefined;
 var ivPokemonDict= {};
@@ -286,7 +283,6 @@ function get_poi_marker(poi) {
         popup += '<img style="width:125px; height: 125px; object-fit: cover;" src="' + poi.image_url + '" /><br>'
     }
 
-
     var icon_url = '';
     if (type === 'gym') {
         icon_url = "/static/img/map/gym.png";
@@ -308,8 +304,16 @@ function get_poi_marker(poi) {
                 })
             });
     marker.bindPopup(popup);
+
+    // send clicks on POI's to the server
+    // this is in preparation for Quests!
+    L.DomEvent.addListener(marker, 'click', function (event) {
+        updateSocket.send(JSON.stringify({"type": "click",
+                                                "poi": poi.name}));
+    });
     return marker;
 }
+
 
 
 var toggleMapLayer = function(layer, bool) {
