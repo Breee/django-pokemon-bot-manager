@@ -8,12 +8,16 @@ class PointOfInterestAdmin(admin.ModelAdmin):
     search_fields = ['type', 'name', 'poi_id']
 
 
+class QuestAdmin(admin.ModelAdmin):
+    search_fields = ['quest_id', 'pokestop_id', 'pokemon_id', 'quest_item_id', 'quest_reward_type']
+
+
 # Register your models here.
 admin.site.register(Pokemon)
 admin.site.register(PokemonSpawn)
 admin.site.register(SpawnPoint)
 admin.site.register(PokemonType)
-admin.site.register(Quest)
+admin.site.register(Quest, QuestAdmin)
 admin.site.register(Mapper)
 admin.site.register(PointOfInterest, PointOfInterestAdmin)
 
