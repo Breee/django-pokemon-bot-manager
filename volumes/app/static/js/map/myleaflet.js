@@ -170,7 +170,9 @@ function setQuestPopup(quest, marker, poi_id) {
     var popup = questDict[poi_id][1];
     popup += 'Quest: ' + quest.quest_template + '<br>';
     if (quest.quest_pokemon_id === null || quest.quest_pokemon_id === undefined) {
-        var reward = quest.quest_item_amount + 'x ' + quest.quest_item_id;
+        var reward = quest.quest_item_amount + 'x ' +
+            '<img src="/static/img/quest_rewards/reward_' + quest.quest_item_id + '.png"' +
+            ' height="64px" width="64px" alt="item_' + quest.quest_item_id  + '">';
     } else {
         var reward = pokedex[quest.quest_pokemon_id].name_german;
     }
