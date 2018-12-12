@@ -110,36 +110,34 @@ function reloadData(data) {
     var model = data.model;
     var instance = data.instance;
         // if pokestop not yet loaded or another pokemon update is not long ago, wait a sec
-        if (!loading_initial) {
-            if (pokedex === undefined) {
-                setTimeout(function () {
-                    reloadData(data)
-                }, 200);
-                return
-            }
+        if (pokedex === undefined) {
+            setTimeout(function () {
+                reloadData(data)
+            }, 200);
+            return
+        }
+        loading_initial = true;
+        last_update = update_time();
+        if (model === "PokemonSpawn") {
+            getPokemonData();
+        }
+        else if (model === "PointOfInterest") {
+           addPointOfInterestToMap(instance)
+        }
+        else if (model === "Mapper") {
+            var marker = get_mapper_marker(instance);
+            updateLayer(mapperLayer, mapperDict, marker, instance.id)
+        }
+        else if (model === "Quest") {
+            parseQuestData(instance);
+        }
+        else {
             loading_initial = true;
-            last_update = update_time();
-            if (model === "PokemonSpawn") {
-                getPokemonData();
-            }
-            else if (model === "PointOfInterest") {
-               addPointOfInterestToMap(instance)
-            }
-            else if (model === "Mapper") {
-                var marker = get_mapper_marker(instance);
-                updateLayer(mapperLayer, mapperDict, marker, instance.id)
-            }
-            else if (model === "Quest") {
-                parseQuestData(instance);
-            }
-            else {
-                loading_initial = true;
-                getPointOfInterestData();
-                getPokemonData();
-                getMapperData();
-                getQuestInfo();
-                waitForInitials();
-            }
+            getPointOfInterestData();
+            getPokemonData();
+            getMapperData();
+            getQuestInfo();
+            waitForInitials();
         }
 }
 
@@ -150,12 +148,17 @@ function waitForInitials() {
                         mapperLayer !== undefined) {
                         loading_initial = false;
                         updateSocket.onmessage = function(e) {
-                        var data = JSON.parse(e.data);
-                        console.log(data);
-                        if (data.type === 'change') {
-                            reloadData(data)
-                        }
-                    };
+                            var data = JSON.parse(e.data);
+                            if (data.type === 'change') {
+                                if (!loading_initial) {
+                                    console.log(data);
+                                    reloadData(data)
+                                }
+                                else {
+                                    console.log(data)
+                                }
+                            }
+                        };
                     }
                     else {
                         waitForInitials();
