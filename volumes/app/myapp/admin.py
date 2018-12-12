@@ -9,7 +9,7 @@ class PointOfInterestAdmin(admin.ModelAdmin):
 
 
 class QuestAdmin(admin.ModelAdmin):
-    search_fields = ['quest_id', 'pokestop_id', 'pokemon_id', 'quest_item_id', 'quest_reward_type']
+    search_fields = ['quest_id', 'pokestop_id', 'quest_pokemon_id', 'quest_item_id', 'quest_reward_type']
 
 
 # Register your models here.

@@ -174,16 +174,16 @@ function setQuestPopup(poi_id) {
     var reward;
     var quest_rewards = JSON.parse(quest.quest_rewards)
     switch (quest_rewards.type) {
-        case 3:
-            reward = quest_rewards.stardust +
-                ' <img src="/static/img/Texture2D/stardust_painted.png" alt="stardust" ' +
-                'class="quest_reward" align="middle">';
-            break;
-        case 4:
+        case 2:
             var quest_item_id_name = ("000" + quest_rewards.item.item).slice(-4);
             reward = quest_rewards.item.amount + 'x ' +
                 '<img src="/static/img/Texture2D/Item_' + quest_item_id_name + '.png"' +
                 ' class="quest_reward" alt="item_' + quest_item_id_name + '" align="middle">';
+            break;
+        case 3:
+            reward = quest_rewards.stardust +
+                ' <img src="/static/img/Texture2D/stardust_painted.png" alt="stardust" ' +
+                'class="quest_reward" align="middle">';
             break;
         case 7:
             reward = '<img src="/static/img/pokemons/' + quest.quest_pokemon_id + '.png"' +
