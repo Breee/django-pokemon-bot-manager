@@ -236,3 +236,8 @@ class Mapper(Model):
     longitude = FloatField(default=None, null=True)
     latitude = FloatField(default=None, null=True)
     trainerlevel = SmallIntegerField(default=None, null=True)
+
+
+class AllowedDiscordServer(Model):
+    server_id = CharField(db_index=True, max_length=128)
+    name = CharField(max_length=128, default=None, blank=True, null=True)

@@ -136,6 +136,11 @@ REST_FRAMEWORK = {
 
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
+SOCIALACCOUNT_PROVIDERS = {
+    'discord': {
+        'SCOPE': ['identify', 'email', 'guilds'],
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
