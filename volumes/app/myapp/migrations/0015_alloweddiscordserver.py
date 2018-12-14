@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='AllowedDiscordServer',
             fields=[
-                ('id', models.UUIDField(db_index=True, primary_key=True, serialize=False)),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(blank=True, default=None, max_length=128, null=True)),
             ],
         ),

@@ -16,9 +16,4 @@ class Migration(migrations.Migration):
             field=models.CharField(db_index=True, default=None, max_length=128),
             preserve_default=False,
         ),
-        migrations.AlterField(
-            model_name='alloweddiscordserver',
-            name='id',
-            field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
-        ),
     ]
