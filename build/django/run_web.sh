@@ -21,7 +21,7 @@ cd /app
 # check if this is the first start
 # python manage.py updatePokemonData
 # prepare init migration
-python manage.py makemigrations myapp
+# python manage.py makemigrations myapp
 # migrate db, so we have the latest db schema
 python manage.py migrate
 # collect static files
