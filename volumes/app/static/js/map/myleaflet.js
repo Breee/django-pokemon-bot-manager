@@ -142,14 +142,16 @@ function parseQuestData(data) {
             if (data.hasOwnProperty(key)) {
                 var quest = data[key];
                 var poi_id = quest.pokestop_id;
-                var marker = pokestopDict[poi_id];
-                if (!questDict.hasOwnProperty(poi_id)) {
-                    var popup = marker._popup._content;
-                    questDict[poi_id] = [marker, popup, quest];
+                if (pokestopDict.hasOwnProperty(poi_id)) {
+                    var marker = pokestopDict[poi_id];
+                    if (!questDict.hasOwnProperty(poi_id)) {
+                        var popup = marker._popup._content;
+                        questDict[poi_id] = [marker, popup, quest];
+                    }
+                    setQuestPopup(poi_id);
+
+                    updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
                 }
-                setQuestPopup(poi_id);
-                console.log(marker);
-                updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
             }
         }
     }
@@ -191,6 +193,11 @@ function setQuestPopup(poi_id) {
     }
     popup += 'Reward: ' + reward + '<br>';
     marker._popup.setContent(popup)
+    marker.setIcon(L.icon({
+                        iconUrl: '/static/img/Texture2D/pokestop_near.png',
+                        iconSize: [32, 32],
+                        popupAnchor: [-3, -76]}
+                        ));
 }
 
 
@@ -266,7 +273,6 @@ function addPointOfInterestToMap(poi) {
     if (type === 'pokestop') {
         updateLayer(pokestopLayer, pokestopDict, marker, poi.poi_id);
         if (questDict.hasOwnProperty(poi.poi_id)) {
-            var questInfo = questDict[poi.poi_id];
             setQuestPopup(poi.poi_id)
         }
     }
@@ -308,7 +314,7 @@ function get_poi_marker(poi) {
 
     // send clicks on POI's to the server
     // this is in preparation for Quests!
-    L.DomEvent.addListener(marker, 'click', function (event) {
+        L.DomEvent.addListener(marker, 'click', function (event) {
         updateSocket.send(JSON.stringify({"type": "click",
                                                 "poi": poi.name}));
     });

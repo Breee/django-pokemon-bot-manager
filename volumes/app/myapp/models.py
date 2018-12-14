@@ -98,17 +98,17 @@ class PokemonSpawn(Model):
 class PointOfInterest(Model):
     """Model for storing pokestops, gyms and stuff in the future"""
     report_time = DateTimeField(default=timezone.now)
-    poi_id = TextField(default=None, null=True)
+    poi_id = TextField(default=None, null=True, blank=True)
     enabled = BooleanField(default=True)
     longitude = FloatField()
     latitude = FloatField()
-    last_modified = BigIntegerField(default=None, null=True)
+    last_modified = BigIntegerField(default=None, null=True, blank=True)
     last_updated = DateTimeField(default=timezone.now, null=True)
     name = TextField(default=None, null=True)
-    description = TextField(default=None, null=True)
-    image_url = URLField(default=None, null=True)
+    description = TextField(default=None, null=True, blank=True)
+    image_url = URLField(default=None, null=True, blank=True)
     type = TextField()
-    active_fort_modifier = SmallIntegerField(default=None, null=True)  # Don't know what dis does
+    active_fort_modifier = SmallIntegerField(default=None, null=True, blank=True)  # Don't know what dis does
     park = BooleanField(default=False)
     created = DateTimeField(auto_now_add=True)
     updated = DateTimeField(auto_now=True)
