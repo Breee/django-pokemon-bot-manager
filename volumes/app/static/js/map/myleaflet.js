@@ -148,6 +148,7 @@ function parseQuestData(data) {
                     questDict[poi_id] = [marker, popup, quest];
                 }
                 setQuestPopup(poi_id);
+                console.log(marker);
                 updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
             }
         }

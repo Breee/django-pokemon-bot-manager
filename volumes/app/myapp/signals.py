@@ -49,25 +49,28 @@ def send_update_message(model_str, serializer, instance):
 
 
 def get_discord_guild_information(request, user, *args, **kwargs):
-    user = User.objects.get(username=user)
-    social_account = SocialAccount.objects.get(user=user)
-    social_token = SocialToken.objects.get(account=social_account)
+    if '/accounts/discord/' in request.path:
+        user = User.objects.get(username=user)
+        social_account = SocialAccount.objects.get(user=user)
+        social_token = SocialToken.objects.get(account=social_account)
 
-    discord_group = Group.objects.filter(name='map')
-    if not discord_group.exists():
-        logger.warning('the default group "map" does not exist, please add this group')
-    discord_group = discord_group.first()
+        discord_group = Group.objects.filter(name='map')
+        if not discord_group.exists():
+            logger.warning('the default group "map" does not exist, please add this group')
+        discord_group = discord_group.first()
 
-    headers = {
-        'Authorization': 'Bearer {0}'.format(social_token.token),
-        'Content-Type': 'application/json',
-    }
+        headers = {
+            'Authorization': 'Bearer {0}'.format(social_token.token),
+            'Content-Type': 'application/json',
+        }
 
-    extra_data = requests.get('https://discordapp.com/api/users/@me/guilds', headers=headers)
-    for server in extra_data.json():
-        for allowed_server in AllowedDiscordServer.objects.all():
-            if allowed_server.server_id == server['id']:
-                discord_group.user_set.add(user)
+        extra_data = requests.get('https://discordapp.com/api/users/@me/guilds', headers=headers)
+        for server in extra_data.json():
+            for allowed_server in AllowedDiscordServer.objects.all():
+                if allowed_server.server_id == server['id']:
+                    discord_group.user_set.add(user)
+                    return
+        discord_group.user_set.remove(user)
 
 
 post_save.connect(send_pokemon_update_to_websocket, sender=PokemonSpawn)
