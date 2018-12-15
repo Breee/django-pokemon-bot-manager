@@ -141,7 +141,6 @@ function parseQuestData(data) {
         for (var key in data) {
             if (data.hasOwnProperty(key)) {
                 parseSingleQuestData(data[key])
-                }
             }
         }
     }
@@ -163,6 +162,7 @@ function parseSingleQuestData(quest) {
         setQuestPopup(poi_id);
 
         updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
+    }
 }
 
 function setQuestPopup(poi_id) {
