@@ -129,7 +129,7 @@ function reloadData(data) {
             updateLayer(mapperLayer, mapperDict, marker, instance.id)
         }
         else if (model === "Quest") {
-            parseQuestData(instance);
+            parseSingleQuestData(instance);
         }
         else {
             loading_initial = true;
