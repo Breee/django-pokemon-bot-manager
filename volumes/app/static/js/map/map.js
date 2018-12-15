@@ -150,13 +150,8 @@ function waitForInitials() {
                         updateSocket.onmessage = function(e) {
                             var data = JSON.parse(e.data);
                             if (data.type === 'change') {
-                                if (!loading_initial) {
                                     console.log(data);
                                     reloadData(data)
-                                }
-                                else {
-                                    console.log(data)
-                                }
                             }
                         };
                     }
