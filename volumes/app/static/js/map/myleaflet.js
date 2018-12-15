@@ -140,17 +140,7 @@ function parseQuestData(data) {
     if (pokestopLayer !== undefined) {
         for (var key in data) {
             if (data.hasOwnProperty(key)) {
-                var quest = data[key];
-                var poi_id = quest.pokestop_id;
-                if (pokestopDict.hasOwnProperty(poi_id)) {
-                    var marker = pokestopDict[poi_id];
-                    if (!questDict.hasOwnProperty(poi_id)) {
-                        var popup = marker._popup._content;
-                        questDict[poi_id] = [marker, popup, quest];
-                    }
-                    setQuestPopup(poi_id);
-
-                    updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
+                parseSingleQuestData(data[key])
                 }
             }
         }
@@ -160,6 +150,19 @@ function parseQuestData(data) {
             parseQuestData(data);
         }, 2000)
     }
+}
+
+function parseSingleQuestData(quest) {
+    var poi_id = quest.pokestop_id;
+    if (pokestopDict.hasOwnProperty(poi_id)) {
+        var marker = pokestopDict[poi_id];
+        if (!questDict.hasOwnProperty(poi_id)) {
+            var popup = marker._popup._content;
+            questDict[poi_id] = [marker, popup, quest];
+        }
+        setQuestPopup(poi_id);
+
+        updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
 }
 
 function setQuestPopup(poi_id) {
@@ -192,12 +195,12 @@ function setQuestPopup(poi_id) {
             break;
     }
     popup += 'Reward: ' + reward + '<br>';
-    marker._popup.setContent(popup)
+    marker._popup.setContent(popup);
     marker.setIcon(L.icon({
-                        iconUrl: '/static/img/Texture2D/pokestop_near.png',
-                        iconSize: [32, 32],
-                        popupAnchor: [-3, -76]}
-                        ));
+        iconUrl: '/static/img/Texture2D/pokestop_near.png',
+        iconSize: [32, 32],
+        popupAnchor: [-3, -76]}
+        ));
 }
 
 
