@@ -274,11 +274,10 @@ function addPointOfInterestToMap(poi) {
     var marker = get_poi_marker(poi);
     var type = poi.type;
     if (type === 'pokestop') {
-        updateLayer(pokestopLayer, pokestopDict, marker, poi.poi_id);
         if (questDict.hasOwnProperty(poi.poi_id)) {
             setQuestPopup(poi.poi_id);
-            updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
         }
+        updateLayer(pokestopLayer, pokestopDict, marker, poi.poi_id);
     }
     else if (type === 'gym') {
         updateLayer(gymLayer, gymDict, marker, poi.poi_id)
