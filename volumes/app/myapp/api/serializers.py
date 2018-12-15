@@ -67,21 +67,21 @@ class PokeStopLureSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PokeStopLure
-        fields = '__meta__'
+        fields = '__all__'
 
 
 class RaidSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Raid
-        fields = '__meta__'
+        fields = '__all__'
 
 
 class GymPokemonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = GymPokemon
-        fields = '__meta__'
+        fields = '__all__'
 
 
 class GymStatusSerializer(serializers.ModelSerializer):

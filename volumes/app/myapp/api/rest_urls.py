@@ -14,6 +14,7 @@ urlpatterns = [
     path('quest/', QuestSet.as_view()),
     path('mapper/', MapperSet.as_view()),
     path('rdm/', RealDeviceMapBlackHole.as_view()),
+    path('raid/', RaidSet.as_view()),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
