@@ -1,5 +1,4 @@
 import json
-import re
 
 from django.db.models import *
 from django.core.exceptions import ValidationError
@@ -124,6 +123,28 @@ class PointOfInterest(Model):
         return ' '.join([self.type, name])
 
 
+class GymManager(Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(type='gym')
+
+
+class GymPointOfInterest(PointOfInterest):
+    objects = GymManager()
+
+    class Meta:
+        proxy = True
+        ordering = ['name']
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        if update_fields is not None:
+            if 'type' not in update_fields:
+                update_fields['type'] = 'gym'
+
+        super().save(force_insert=force_insert, force_update=force_update, using=using,
+                     update_fields=update_fields)
+
+
 class PokeStopLure(Model):
     report_time = DateTimeField(default=timezone.now)
     point_of_interest = ForeignKey(PointOfInterest, on_delete=CASCADE)
@@ -131,15 +152,24 @@ class PokeStopLure(Model):
 
 
 class Raid(Model):
-    gym = ForeignKey(PointOfInterest, on_delete=CASCADE)
+    poi_id = TextField(default=None, null=True, blank=True)
+    gym = ForeignKey(GymPointOfInterest, on_delete=CASCADE)
     level = IntegerField(db_index=True)
-    spawn = DateTimeField(db_index=True)
-    start = DateTimeField(db_index=True)
-    end = DateTimeField(db_index=True)
-    pokemon = ForeignKey(Pokemon, default=None, null=True, on_delete=CASCADE)
-    cp = IntegerField(default=None, null=True)
-    moves = ManyToManyField(PokemonMove, default=None)
+    time_start = DateTimeField(db_index=True, default=None, null=True, blank=True)
+    time_battle = DateTimeField(db_index=True, default=None, null=True, blank=True)
+    time_end = DateTimeField(db_index=True, default=None, null=True, blank=True)
+    pokemon_id = ForeignKey(Pokemon, default=None, null=True, on_delete=CASCADE)
+    pokemon_form = SmallIntegerField(default=None, null=True, blank=True)
+    cp = IntegerField(default=None, null=True, blank=True)
+    moves = ManyToManyField(PokemonMove, default=None, blank=True)
+    move_1 = SmallIntegerField(default=None, null=True, blank=True)
+    move_2 = SmallIntegerField(default=None, null=True, blank=True)
     last_scanned = DateTimeField(default=timezone.now, db_index=True)
+
+    def save(self, *args, **kwargs):
+        if self.poi_id is None:
+           self.poi_id = self.gym.poi_id
+        super().save(*args, **kwargs)
 
 
 class GymPokemon(Model):
