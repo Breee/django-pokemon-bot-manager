@@ -276,7 +276,8 @@ function addPointOfInterestToMap(poi) {
     if (type === 'pokestop') {
         updateLayer(pokestopLayer, pokestopDict, marker, poi.poi_id);
         if (questDict.hasOwnProperty(poi.poi_id)) {
-            setQuestPopup(poi.poi_id)
+            setQuestPopup(poi.poi_id);
+            updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
         }
     }
     else if (type === 'gym') {
