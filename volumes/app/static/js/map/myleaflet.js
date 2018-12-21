@@ -90,7 +90,7 @@ function MyLeaflet() {
         if (model === 'PointOfInterest') {
 
         }
-        if (model === 'PokemonSpawn') {
+        else if (model === 'PokemonSpawn') {
             var ivPokemonObjectInstance = this.mapObjects['ivPokemon'];
             var regularPokemonObjectInstance = this.mapObjects['regularPokemon'];
             if (regularPokemonObjectInstance.layer === undefined && ivPokemonObjectInstance.layer === undefined) {
