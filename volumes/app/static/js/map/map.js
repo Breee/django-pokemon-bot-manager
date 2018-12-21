@@ -127,7 +127,7 @@ function waitForInitials() {
         updateSocket.onmessage = function(e) {
             var data = JSON.parse(e.data);
             if (data.type === 'change') {
-                    console.log(data);
+                    console.log(data.type , data.model);
                     reloadData(data)
             }
         };
