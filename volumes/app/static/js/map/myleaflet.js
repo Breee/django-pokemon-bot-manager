@@ -136,7 +136,7 @@ function MyLeaflet() {
             var type = instance.type;
             if (type === 'pokestop') {
                 if (questDict.hasOwnProperty(instance.poi_id)) {
-                    setQuestPopup(instance.poi_id);
+                    setQuestPopup(instance.poi_id, this);
                 }
                 updateLayer(pokestopLayer, pokestopDict, marker, instance.poi_id);
             } else if (type === 'gym') {
@@ -154,7 +154,7 @@ function MyLeaflet() {
                     var popup = marker._popup._content;
                     questDict[poi_id] = [marker, popup, instance];
                 }
-                setQuestPopup(poi_id);
+                setQuestPopup(poi_id, this);
 
                 updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
             }
@@ -205,8 +205,8 @@ function MyLeaflet() {
     }
 
 
-    function setQuestPopup(poi_id) {
-        if (!this.mapObjects['quest'].markers.hasOwnProperty(poi_id)) {
+    function setQuestPopup(poi_id, _this) {
+        if (!_this.mapObjects['quest'].markers.hasOwnProperty(poi_id)) {
             return
         }
         var marker = questDict[poi_id][0];
