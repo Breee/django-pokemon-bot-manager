@@ -259,6 +259,7 @@ class MapperSet(APIView):
 
         return Response(context, status=status.HTTP_201_CREATED)
 
+
 class RaidSet(APIView):
     """
     Raids

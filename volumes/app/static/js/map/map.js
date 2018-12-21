@@ -1,8 +1,8 @@
 "use strict";
 
 function MapCookie() {
-    this.pokestopsHidden = getBooleanCookieValue('pokestopsHidden', true);
-    this.gymsHidden = getBooleanCookieValue('gymsHidden', false);
+    this.pokestopHidden = getBooleanCookieValue('pokestopHidden', true);
+    this.gymHidden = getBooleanCookieValue('gymHidden', false);
     this.regularPokemonHidden = getBooleanCookieValue('regularPokemonHidden', false);
     this.ivPokemonHidden = getBooleanCookieValue('ivPokemonHidden', false);
     this.mapperHidden = getBooleanCookieValue('mapperHidden', true);
@@ -32,6 +32,8 @@ function setCheckboxes () {
 var mapCookie = new MapCookie();
 setCheckboxes();
 
+var myLeaflet = new MyLeaflet();
+
 var csrftoken = getCookie('csrftoken');
 $.ajaxSetup({
     beforeSend: function(xhr, settings) {
@@ -44,33 +46,44 @@ $.getJSON('/api/pokedex/', function (data) {
     pokedex = data;
 });
 
-var getPokemonData = function () {
-    $.getJSON("/api/pokemon/spawns", function(data) {
-        addPokemonsToMap(data)
-    });
-};
+function getData(type) {
+    function parseData(data) {
+        myLeaflet.addMapObjectsToMap(data, type);
+    }
+    if (type === 'PokemonSpawn') {
+        $.getJSON("/api/pokemon/spawns", parseData);
+    }
+    else if (type === 'PointOfInterest') {
+        $.getJSON("/api/poi/all", parseData);
+    }
+    else if (type === 'Mapper') {
+        $.getJSON("/api/mapper", parseData);
+    }
+    else if (type === 'Quest') {
+        $.getJSON('/api/quest/', parseData);
+    }
+    else if (type === 'Raid') {
+        $.getJSON('/api/raid/', function (data) {
+            console.log(data)
+        });
+    }
+    else {
+        console.log('NotImplementedError: ' + type)
+    }
+}
 
-var getPointOfInterestData = function() {
-    $.getJSON("/api/poi/all", function (data) {
-        addPointsOfInterestToMap(data);
-    });
+var toggleMapObjects = function(type) {
+    myLeaflet.toggleMapObjectsHidden(type);
 };
-
-var getMapperData = function() {
-    $.getJSON("/api/mapper", function (data) {
-        addMapperToMap(data);
-    });
-};
-
 
 var togglePokestops = function() {
-    var pokestopsHidden = mapCookie.toggleCookieSetting('pokestopsHidden');
-    toggleMapLayer(pokestopLayer, pokestopsHidden);
+    var pokestopHidden = mapCookie.toggleCookieSetting('pokestopHidden');
+    toggleMapLayer(pokestopLayer, pokestopHidden);
 };
 
 var toggleGyms = function() {
-    var gymsHidden = mapCookie.toggleCookieSetting('gymsHidden');
-    toggleMapLayer(gymLayer, gymsHidden);
+    var gymHidden = mapCookie.toggleCookieSetting('gymHidden');
+    toggleMapLayer(gymLayer, gymHidden);
 };
 
 var toggleIVPokemon = function() {
@@ -87,15 +100,6 @@ var toggleMapper = function() {
     var mapperHidden = mapCookie.toggleCookieSetting('mapperHidden');
     toggleMapLayer(mapperLayer, mapperHidden);
 };
-
-
-var update_time = function() {
-    var date = new Date();
-    return date.getTime();
-};
-
-var last_update = 0;
-var loading_initial = false;
 
 var websocket_protocol = 'ws://';
 if (location.protocol === 'https:') {
@@ -116,49 +120,47 @@ function reloadData(data) {
             }, 200);
             return
         }
-        loading_initial = true;
-        last_update = update_time();
         if (model === "PokemonSpawn") {
-            getPokemonData();
+            myLeaflet.addSingleMapObjectToMap(instance, model);
         }
         else if (model === "PointOfInterest") {
-           addPointOfInterestToMap(instance)
+            myLeaflet.addSingleMapObjectToMap(instance, model);
         }
         else if (model === "Mapper") {
-            var marker = get_mapper_marker(instance);
-            updateLayer(mapperLayer, mapperDict, marker, instance.id)
+            myLeaflet.addSingleMapObjectToMap(instance, model);
         }
         else if (model === "Quest") {
-            parseSingleQuestData(instance);
+            myLeaflet.addSingleMapObjectToMap(instance, model);
         }
+        /*
+            this condition should only fit in initial state
+         */
         else {
-            loading_initial = true;
-            getPointOfInterestData();
-            getPokemonData();
-            getMapperData();
-            getQuestInfo();
+            getData('PointOfInterest');
+            getData('PokemonSpawn');
+            getData('Mapper');
+            getData('Quest');
             waitForInitials();
         }
 }
 
 function waitForInitials() {
     setTimeout(function () {
-                    if (pokestopLayer !== undefined && gymLayer !== undefined &&
-                        regularPokemonLayer !== undefined && ivPokemonLayer !== undefined &&
-                        mapperLayer !== undefined) {
-                        loading_initial = false;
-                        updateSocket.onmessage = function(e) {
-                            var data = JSON.parse(e.data);
-                            if (data.type === 'change') {
-                                    console.log(data);
-                                    reloadData(data)
-                            }
-                        };
-                    }
-                    else {
-                        waitForInitials();
-                    }
-                },200)
+    if (myLeaflet.allLayersSet) {
+
+        // add this function after initials are loaded to avoid errors
+        updateSocket.onmessage = function(e) {
+            var data = JSON.parse(e.data);
+            if (data.type === 'change') {
+                    console.log(data);
+                    reloadData(data)
+            }
+        };
+    }
+    else {
+        waitForInitials();
+    }
+},200)
 
 }
 
@@ -169,7 +171,7 @@ $( function() {
     $( "#datepicker" ).datepicker();
 } );
 
-mymap.on('moveend', function() {
+/*mymap.on('moveend', function() {
     /*
      * TODO: Get only objects inside map bounds
      * bounds are stored in mymap.getBounds();
@@ -177,4 +179,4 @@ mymap.on('moveend', function() {
      * you can use a simple "is point in rectangle" function
      * shouldn't be too hard
      */
-});
+/*});*/
