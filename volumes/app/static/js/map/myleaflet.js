@@ -71,24 +71,23 @@ function MyLeaflet() {
     };
 
     this.addMapObjectsToMap = function(data, model) {
-        if (model === 'PointOfInterest') {
-            var pokestopObjectInstance = this.mapObjects['pokestop'];
-            if (pokestopObjectInstance.layer === undefined) {
-                pokestopObjectInstance.layer = L.markerClusterGroup({
-                    maxClusterRadius: 120,
-                    disableClusteringAtZoom: 17,
-                    iconCreateFunction: clusterIcon
-                });
-            }
-            var gymObjectInstance = this.mapObjects['gym'];
-            if (gymObjectInstance.layer === undefined) {
-                gymObjectInstance.layer = L.markerClusterGroup({
-                    maxClusterRadius: 120,
-                    disableClusteringAtZoom: 15,
-                    iconCreateFunction: clusterIcon
-                });
-            }
-        } else if (model === 'PokemonSpawn') {
+        var pokestopObjectInstance = this.mapObjects['pokestop'];
+        if (pokestopObjectInstance.layer === undefined) {
+            pokestopObjectInstance.layer = L.markerClusterGroup({
+                maxClusterRadius: 120,
+                disableClusteringAtZoom: 17,
+                iconCreateFunction: clusterIcon
+            });
+        }
+        var gymObjectInstance = this.mapObjects['gym'];
+        if (gymObjectInstance.layer === undefined) {
+            gymObjectInstance.layer = L.markerClusterGroup({
+                maxClusterRadius: 120,
+                disableClusteringAtZoom: 15,
+                iconCreateFunction: clusterIcon
+            });
+        }
+        if (model === 'PokemonSpawn') {
             var ivPokemonObjectInstance = this.mapObjects['ivPokemon'];
             var regularPokemonObjectInstance = this.mapObjects['regularPokemon'];
             if (regularPokemonObjectInstance.layer === undefined && ivPokemonObjectInstance.layer === undefined) {
