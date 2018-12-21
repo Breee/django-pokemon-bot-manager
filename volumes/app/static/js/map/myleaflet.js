@@ -115,6 +115,8 @@ function MyLeaflet() {
         var gymDict = this.mapObjects['gym'].markers;
         var questDict = this.mapObjects['quest'].markers;
         var mapperDict = this.mapObjects['mapper'].markers;
+        var ivPokemonDict = this.mapObjects['ivPokemon'].markers;
+        var regularPokemonDict = this.mapObjects['regularPokemon'].markers;
 
         var pokestopLayer = this.mapObjects['pokestop'].layer;
         var gymLayer = this.mapObjects['gym'].layer;
@@ -141,17 +143,16 @@ function MyLeaflet() {
                 updateLayer(gymLayer, gymDict, marker, instance.poi_id);
             }
         } else if (model === 'Mapper') {
-            marker = get_mapper_marker(mapper);
-            updateLayer(mapperLayer, mapperDict, marker, mapper.id);
+            marker = get_mapper_marker(instance);
+            updateLayer(mapperLayer, mapperDict, marker, instance.id);
         } else if (model === 'Quest') {
-            console.log(instance);
             var poi_id = instance.pokestop_id;
 
             if (pokestopDict.hasOwnProperty(poi_id)) {
                 marker = pokestopDict[poi_id];
                 if (!this.mapObjects['quest'].markers.hasOwnProperty(poi_id)) {
                     var popup = marker._popup._content;
-                    questDict[poi_id] = [marker, popup, quest];
+                    questDict[poi_id] = [marker, popup, instance];
                 }
                 setQuestPopup(poi_id);
 
