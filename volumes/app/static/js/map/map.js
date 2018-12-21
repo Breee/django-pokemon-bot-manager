@@ -76,31 +76,6 @@ var toggleMapObjects = function(type) {
     myLeaflet.toggleMapObjectsHidden(type);
 };
 
-var togglePokestops = function() {
-    var pokestopHidden = mapCookie.toggleCookieSetting('pokestopHidden');
-    toggleMapLayer(pokestopLayer, pokestopHidden);
-};
-
-var toggleGyms = function() {
-    var gymHidden = mapCookie.toggleCookieSetting('gymHidden');
-    toggleMapLayer(gymLayer, gymHidden);
-};
-
-var toggleIVPokemon = function() {
-    var ivPokemonHidden = mapCookie.toggleCookieSetting('ivPokemonHidden');
-    toggleMapLayer(ivPokemonLayer, ivPokemonHidden);
-};
-
-var toggleRegularPokemon = function() {
-    var regularPokemonHidden = mapCookie.toggleCookieSetting('regularPokemonHidden');
-    toggleMapLayer(regularPokemonLayer, regularPokemonHidden);
-};
-
-var toggleMapper = function() {
-    var mapperHidden = mapCookie.toggleCookieSetting('mapperHidden');
-    toggleMapLayer(mapperLayer, mapperHidden);
-};
-
 var websocket_protocol = 'ws://';
 if (location.protocol === 'https:') {
     websocket_protocol = 'wss://'
