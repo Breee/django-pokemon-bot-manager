@@ -206,7 +206,8 @@ function MyLeaflet() {
 
 
     function setQuestPopup(poi_id, _this) {
-        if (!_this.mapObjects['quest'].markers.hasOwnProperty(poi_id)) {
+        var questDict = _this.mapObjects['quest'].markers;
+        if (!questDict.hasOwnProperty(poi_id)) {
             return
         }
         var marker = questDict[poi_id][0];
