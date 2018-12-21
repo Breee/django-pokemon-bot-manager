@@ -87,6 +87,9 @@ function MyLeaflet() {
                 iconCreateFunction: clusterIcon
             });
         }
+        if (model === 'PointOfInterest') {
+
+        }
         if (model === 'PokemonSpawn') {
             var ivPokemonObjectInstance = this.mapObjects['ivPokemon'];
             var regularPokemonObjectInstance = this.mapObjects['regularPokemon'];
