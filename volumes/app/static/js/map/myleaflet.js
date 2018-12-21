@@ -99,6 +99,7 @@ function MyLeaflet() {
             }
         } else {
             var mapObjectInstance = this.mapObjects[model.toLowerCase()];
+            console.log(model.toLowerCase())
             mapObjectInstance.layer = new L.LayerGroup();
         }
         for (var i in data) {
