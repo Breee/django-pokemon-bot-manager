@@ -35,6 +35,10 @@ class RaidSerializer(serializers.ModelSerializer):
         many = kwargs.pop('many', True)
         super(RaidSerializer, self).__init__(many=many, *args, **kwargs)
 
+    time_start = serializers.DateTimeField(format="%H:%M:%S")
+    time_battle = serializers.DateTimeField(format="%H:%M:%S")
+    time_end = serializers.DateTimeField(format="%H:%M:%S")
+
     class Meta:
         model = Raid
         fields = '__all__'
