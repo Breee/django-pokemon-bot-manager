@@ -63,9 +63,7 @@ function getData(type) {
         $.getJSON('/api/quest/', parseData);
     }
     else if (type === 'Raid') {
-        $.getJSON('/api/raid/', function (data) {
-            console.log(data)
-        });
+        $.getJSON('/api/raid/', parseData);
     }
     else {
         console.log('NotImplementedError: ' + type)
@@ -115,6 +113,7 @@ function reloadData(data) {
             getData('PokemonSpawn');
             getData('Mapper');
             getData('Quest');
+            getData('Raid');
             waitForInitials();
         }
 }
