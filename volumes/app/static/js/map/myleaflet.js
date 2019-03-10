@@ -22,14 +22,18 @@ function MyLeaflet() {
     }
 
 
-    var mymap = L.map('map').setView([47.9960526, 7.8464833], 17);
+    var mymap = L.map('map', {
+        center: [47.9960526, 7.8464833],
+        zoom: 17
+    });
 
-    var mapObjectTypes = ['ivPokemon', 'regularPokemon', 'pokestop', 'gym', 'mapper', 'quest', 'raid'];
+    var mapObjectTypes = [['ivPokemon', 1000], ['regularPokemon', 1000], ['pokestop',900], ['gym', 900], ['mapper', 900], ['quest', 1000], ['raid', 1000]];
     this.mapObjects = {};
 
     for (var object_type in mapObjectTypes) {
-        var type = mapObjectTypes[object_type];
-        this.mapObjects[type] = new MapObject(mapCookie, type + 'Hidden', mymap);
+        var type = mapObjectTypes[object_type][0];
+        var zIndex = mapObjectTypes[object_type][1];
+        this.mapObjects[type] = new MapObject(mapCookie, type + 'Hidden', mymap, zIndex);
     }
 
     var url = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png';
@@ -69,6 +73,21 @@ function MyLeaflet() {
             '<b>Despawn Time</b> ' + date_str + date.toLocaleTimeString('de-DE') + '<br>' +
             iv_str + cp_str + maps_str;
     };
+    var getRaidPopupData = function (raid) {
+        var date = new Date(raid.time_end);
+
+        var today = new Date();
+        var date_str = '';
+        if (date.getDate() > today.getDate()) {
+            date_str = date.toLocaleDateString('de-DE') + ' ';
+        }
+
+        var maps_str = '<a href="https://www.google.com/maps/place/' + raid.gym.latitude + ',' +
+            raid.gym.longitude + '" target="_blank" title="Open in Google Maps">' + 'Maps</a><br>';
+
+        return '<h3>level '+ raid.level +' raid' + pokedex[raid.pokemon_id - 1].name_german + ' (' + raid.pokemon_id + ')' + '</h3>' +
+            '<b>Despawn Time</b> ' + date_str + date.toLocaleTimeString('de-DE') + '<br>' + maps_str;
+    };
 
     this.addMapObjectsToMap = function(data, model) {
         var pokestopObjectInstance = this.mapObjects['pokestop'];
@@ -87,7 +106,16 @@ function MyLeaflet() {
                 iconCreateFunction: clusterIcon
             });
         }
-        if (model === 'PointOfInterest') {
+        var raidObjectInstance = this.mapObjects['raid'];
+        if (raidObjectInstance.layer === undefined) {
+            raidObjectInstance.layer = L.markerClusterGroup({
+                maxClusterRadius: 120,
+                disableClusteringAtZoom: 15,
+                iconCreateFunction: clusterIcon
+
+            });
+        }
+        if (model === 'PointOfInterest' || model === 'Raid') {
 
         }
         else if (model === 'PokemonSpawn') {
@@ -108,13 +136,13 @@ function MyLeaflet() {
             }
         }
         addLayersToMap(this);
-
     };
 
     this.addSingleMapObjectToMap = function(instance, model) {
         var marker = undefined;
         var pokestopDict = this.mapObjects['pokestop'].markers;
         var gymDict = this.mapObjects['gym'].markers;
+        var raidDict = this.mapObjects['raid'].markers;
         var questDict = this.mapObjects['quest'].markers;
         var mapperDict = this.mapObjects['mapper'].markers;
         var ivPokemonDict = this.mapObjects['ivPokemon'].markers;
@@ -122,6 +150,7 @@ function MyLeaflet() {
 
         var pokestopLayer = this.mapObjects['pokestop'].layer;
         var gymLayer = this.mapObjects['gym'].layer;
+        var raidLayer = this.mapObjects['raid'].layer;
         var ivPokemonLayer = this.mapObjects['ivPokemon'].layer;
         var regularPokemonLayer = this.mapObjects['regularPokemon'].layer;
         var mapperLayer = this.mapObjects['mapper'].layer;
@@ -157,9 +186,13 @@ function MyLeaflet() {
                     questDict[poi_id] = [marker, popup, instance];
                 }
                 setQuestPopup(poi_id, this);
-
                 updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
             }
+        } else if (model === 'Raid') {
+            console.log(instance);
+            console.log(instance.gym);
+            marker = get_raid_marker(instance, instance.gym.latitude, instance.gym.longitude);
+            updateLayer(raidLayer, raidDict, marker, instance.gym.id);
         } else {
             console.log('NotImplementedError: ' + instance)
         }
@@ -185,11 +218,23 @@ function MyLeaflet() {
                 icon: L.icon({
                     iconUrl: "/static/img/pokemons/" + pokemon.pokemon_object + '.png',
                     iconSize: [32, 32],
-                    popupAnchor: [-3, -76]
+                    popupAnchor: [0, -15]
                 })
             });
         marker.bindPopup(popup);
         return marker
+    }
+
+    function get_raid_marker(raid, lat, lon) {
+        return L.marker([lat, lon],
+            {
+                title: pokedex[raid.pokemon_id - 1].name_german,
+                icon: L.icon({
+                    iconUrl: "/static/img/pokemons/" + raid.pokemon_id + '.png',
+                    iconSize: [32, 32],
+                    popupAnchor: [0, -15]
+                })
+            });
     }
 
     function updateLayer(layer, dict, marker, id) {
@@ -242,7 +287,7 @@ function MyLeaflet() {
         marker.setIcon(L.icon({
                 iconUrl: '/static/img/Texture2D/pokestop_near.png',
                 iconSize: [32, 32],
-                popupAnchor: [-3, -76]
+                popupAnchor: [0, -15]
             }
         ));
     }
@@ -261,7 +306,7 @@ function MyLeaflet() {
                 icon: L.icon({
                     iconUrl: '/static/img/map/iphone.png',
                     iconSize: [20, 20],
-                    popupAnchor: [-3, -76]
+                    popupAnchor: [0, -15]
                 })
             });
         marker.bindPopup(popup);
@@ -274,7 +319,14 @@ function MyLeaflet() {
         var popup = "" + poi.name + "<br>";
         popup += (poi.description !== '') ? '' : poi.description + '<br>';
         if (poi.image_url !== null) {
-            popup += '<img style="width:125px; height: 125px; object-fit: cover;" src="' + poi.image_url + '" /><br>'
+            popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="' + poi.image_url + '" />'
+        }
+        if (poi.raid !== null){
+            var raid = poi.raid;
+            popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="/static/img/pokemons/' + raid.pokemon_id + '.png ' + '"/><br>';
+            popup += 'Level '+ raid.level +' Raid<br>';
+            popup += 'Hatch: ' + raid.time_start +'<br>';
+            popup += 'Until: ' + raid.time_end + '<br>';
         }
 
         var icon_url = '';
@@ -293,7 +345,7 @@ function MyLeaflet() {
                 icon: L.icon({
                     iconUrl: icon_url,
                     iconSize: [32, 32],
-                    popupAnchor: [-3, -76]
+                    popupAnchor: [0, -15]
                 })
             });
         marker.bindPopup(popup);
@@ -335,7 +387,7 @@ MyLeaflet.prototype.toggleMapObjectsHidden = function(type) {
     }
 };
 
-function MapObject(cookie, cookieName, map) {
+function MapObject(cookie, cookieName, map, zIndex) {
     this.objects = {};
     this.markers = {};
     this.layer = undefined;
@@ -343,6 +395,7 @@ function MapObject(cookie, cookieName, map) {
     this.cookieName = cookieName;
     this.onMap = false;
     this.map = map;
+    this.zIndex = zIndex
 }
 
 MapObject.prototype.addToMap = function () {

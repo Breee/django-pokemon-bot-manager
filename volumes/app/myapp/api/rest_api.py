@@ -268,8 +268,7 @@ class RaidSet(APIView):
     serializer_class = RaidSerializer
 
     def get(self, request, format=None):
-        queryset = Raid.objects.filter(time_start__lte=timezone.localtime(),
-                                       time_end__gte=timezone.localtime())
+        queryset = Raid.objects.filter()
         # parse query string stuff
         serializer = RaidSerializer(queryset, many=True)
         return Response(serializer.data)
