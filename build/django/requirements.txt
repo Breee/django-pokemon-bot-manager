@@ -13,3 +13,9 @@ daphne
 protobuf
 channels_redis
 demjson
+
+git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py
+numpy
+mysql-connector-python
+shapely
+sqlalchemy

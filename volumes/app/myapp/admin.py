@@ -1,33 +1,28 @@
 from django.contrib import admin
-from myapp.models import PointOfInterest, Pokemon, PokemonSpawn, PokemonType, SpawnPoint, Quest, \
-    Mapper, \
-    AllowedDiscordServer, Raid
+from myapp.models import GymDefenders, FortSightings, Forts, AllowedDiscordServer, IngressPortals, MysterySightings, Nests, Payments, Pokestops, Raids, Sightings, Spawnpoints, Trshash, TrsQuest, TrsSpawn, TrsSpawnsightings, TrsStatus, TrsUsage, Weather
 
 from rest_framework.authtoken.admin import TokenAdmin
 
 
-class PointOfInterestAdmin(admin.ModelAdmin):
-    search_fields = ['type', 'name', 'poi_id', 'last_modified']
-
-
-class QuestAdmin(admin.ModelAdmin):
-    search_fields = ['quest_id', 'pokestop_id', 'quest_pokemon_id', 'quest_item_id', 'quest_reward_type']
-
-
-class RaidAdmin(admin.ModelAdmin):
-    search_fields = ['poi_id', 'gym__name', 'pokemon_id__name_german', 'pokemon_id', 'level']
-
 
 # Register your models here.
-admin.site.register(Pokemon)
-admin.site.register(PokemonSpawn)
-admin.site.register(SpawnPoint)
-admin.site.register(PokemonType)
-admin.site.register(Quest, QuestAdmin)
+admin.site.register(GymDefenders)
+admin.site.register(FortSightings)
+admin.site.register(Forts)
 admin.site.register(AllowedDiscordServer)
-admin.site.register(Mapper)
-admin.site.register(PointOfInterest, PointOfInterestAdmin)
-admin.site.register(Raid, RaidAdmin)
+admin.site.register(IngressPortals)
+admin.site.register(Pokestops)
+admin.site.register(Raids)
+admin.site.register(MysterySightings)
+admin.site.register(Nests)
+admin.site.register(Payments)
+admin.site.register(Sightings)
+admin.site.register(Spawnpoints)
+admin.site.register(TrsQuest)
+admin.site.register(TrsSpawnsightings)
+admin.site.register(TrsSpawn)
+admin.site.register(TrsStatus)
+admin.site.register(Trshash)
 
 
 TokenAdmin.raw_id_fields = ('user',)

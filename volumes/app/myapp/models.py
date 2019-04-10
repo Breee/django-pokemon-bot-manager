@@ -1,273 +1,387 @@
-import json
-
-from django.db.models import *
-from django.core.exceptions import ValidationError
-from django.utils import timezone
-from rest_framework.authtoken.models import Token
-
-
-class PokemonType(Model):
-    name = TextField()
-    name_german = TextField(null=True)
-    color = CharField(max_length=6)
-    damage = ManyToManyField('self')
-
-    def clean(self):
-        if len(self.color) < 6:
-            raise ValidationError('color is no valid rgb hex')
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#   * Rearrange models' order
+#   * Make sure each model has one field with primary_key=True
+#   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
+#   * Remove `` lines if you wish to allow Django to create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or field names.
+from django.db import models
 
 
-class PokemonMove(Model):
-    name = TextField()
-    type = ForeignKey(PokemonType, on_delete=CASCADE)
-    damage = SmallIntegerField()
-    energy = SmallIntegerField()
-    dps = SmallIntegerField()
-    legacy = BooleanField(default=False)
-
-
-class Pokemon(Model):
-    number = IntegerField(primary_key=True)
-    name_german = TextField(db_index=True, null=True)
-    name_english = TextField(db_index=True, null=True)
-    name_french = TextField(null=True)
-    flee_rate = FloatField(null=True)
-    capture_rate = FloatField(null=True)
-    max_cp = IntegerField(null=True)
-    rarity = TextField(default="normal", null=True)
-    egg_distance = IntegerField(null=True)
-    types = ManyToManyField(PokemonType)
-    moves = ManyToManyField(PokemonMove)
+class Common(models.Model):
+    key = models.CharField(max_length=32)
+    val = models.CharField(max_length=64, blank=True, null=True)
 
     class Meta:
-        # Sort the Data by this:
-        ordering = ('number',)
-
-    def __str__(self):
-        if self.name_german is not None:
-            name = self.name_german
-        else:
-            name = str(self.number)
-        return str(self.number) + ' - ' + name
+        
+        db_table = 'common'
 
 
-class PokemonSpawn(Model):
-    encounter_id = CharField(max_length=200, default=None, null=True, blank=True)
-    report_time = DateTimeField(default=timezone.now)
-    pokemon_object = ForeignKey(Pokemon, on_delete=CASCADE)
-    latitude = FloatField()
-    longitude = FloatField()
-    disappear_time = DateTimeField(db_index=True)
-    individual_attack = SmallIntegerField(default=None, null=True, blank=True)
-    individual_defense = SmallIntegerField(default=None, null=True, blank=True)
-    individual_stamina = SmallIntegerField(default=None, null=True, blank=True)
-    moves = ManyToManyField(PokemonMove, default=None, blank=True)
-    cp = SmallIntegerField(default=None, null=True, blank=True)
-    cp_multiplier = FloatField(default=None, null=True, blank=True)
-    weight = FloatField(default=None, null=True, blank=True)
-    height = FloatField(default=None, null=True, blank=True)
-    gender = SmallIntegerField(default=None, null=True, blank=True)
-    costume = SmallIntegerField(default=None, null=True, blank=True)
-    form = SmallIntegerField(default=None, null=True, blank=True)
-    weather_boosted_condition = SmallIntegerField(default=None, null=True, blank=True)
-    last_modified = DateTimeField(default=timezone.now, null=True, db_index=True, blank=True)
-    level = IntegerField(default=None, null=True, blank=True)
-    _individual_percentage = FloatField(default=None, null=True, blank=True)
-    created = DateTimeField(auto_now_add=True)
-    updated = DateTimeField(auto_now=True)
-
-    @property
-    def individual_percentage(self):
-        if self._individual_percentage:
-            return self._individual_percentage
-        elif self.individual_attack or self.individual_defense or self.individual_stamina:
-            iv_att = self.individual_attack if self.individual_attack else 0
-            iv_stam = self.individual_stamina if self.individual_stamina else 0
-            iv_def = self.individual_defense if self.individual_defense else 0
-            self._individual_percentage = (iv_att + iv_stam + iv_def)/3
-            return self._individual_percentage
-        else:
-            return None
-
-    @individual_percentage.setter
-    def individual_percentage(self, value):
-        self._individual_percentage = value
-
-
-class PointOfInterest(Model):
-    """Model for storing pokestops, gyms and stuff in the future"""
-    report_time = DateTimeField(default=timezone.now)
-    poi_id = TextField(default=None, null=True, blank=True)
-    enabled = BooleanField(default=True)
-    longitude = FloatField()
-    latitude = FloatField()
-    last_modified = BigIntegerField(default=None, null=True, blank=True)
-    last_updated = DateTimeField(default=timezone.now, null=True)
-    name = TextField(default=None, null=True)
-    description = TextField(default=None, null=True, blank=True)
-    image_url = URLField(default=None, null=True, blank=True)
-    type = TextField()
-    active_fort_modifier = SmallIntegerField(default=None, null=True, blank=True)  # Don't know what dis does
-    park = BooleanField(default=False)
-    created = DateTimeField(auto_now_add=True)
-    updated = DateTimeField(auto_now=True)
-
-    def __repr__(self):
-        return self.name
-
-    def __str__(self):
-        if self.name is not None:
-            name = self.name
-        else:
-            name = str(self.id)
-        return ' '.join([self.type, name])
-
-
-class GymManager(Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(type='gym')
-
-
-class GymPointOfInterest(PointOfInterest):
-    objects = GymManager()
+class FortSightings(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    fort = models.ForeignKey('Forts', models.DO_NOTHING, unique=True, blank=True, null=True)
+    last_modified = models.IntegerField(blank=True, null=True)
+    team = models.PositiveIntegerField(blank=True, null=True)
+    guard_pokemon_id = models.SmallIntegerField(blank=True, null=True)
+    guard_pokemon_form = models.SmallIntegerField(blank=True, null=True)
+    slots_available = models.SmallIntegerField(blank=True, null=True)
+    is_in_battle = models.IntegerField(blank=True, null=True)
+    updated = models.IntegerField(blank=True, null=True)
+    is_ex_raid_eligible = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        proxy = True
-        ordering = ['name']
-
-    def save(self, force_insert=False, force_update=False, using=None,
-             update_fields=None):
-        if update_fields is not None:
-            if 'type' not in update_fields:
-                update_fields['type'] = 'gym'
-
-        super().save(force_insert=force_insert, force_update=force_update, using=using,
-                     update_fields=update_fields)
+        
+        db_table = 'fort_sightings'
+        unique_together = (('fort', 'last_modified'),)
 
 
-class PokeStopLure(Model):
-    report_time = DateTimeField(default=timezone.now)
-    point_of_interest = ForeignKey(PointOfInterest, on_delete=CASCADE)
-    expiration_time = DateTimeField()
+class Forts(models.Model):
+    external_id = models.CharField(unique=True, max_length=35, blank=True, null=True)
+    lat = models.FloatField(blank=True, null=True)
+    lon = models.FloatField(blank=True, null=True)
+    name = models.CharField(max_length=128, blank=True, null=True)
+    url = models.CharField(max_length=200, blank=True, null=True)
+    sponsor = models.SmallIntegerField(blank=True, null=True)
+    weather_cell_id = models.BigIntegerField(blank=True, null=True)
+    park = models.CharField(max_length=128, blank=True, null=True)
+    parkid = models.BigIntegerField(blank=True, null=True)
+    edited_by = models.CharField(max_length=200, blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'forts'
 
 
-class Raid(Model):
-    poi_id = TextField(default=None, null=True, blank=True)
-    gym = ForeignKey(GymPointOfInterest, on_delete=CASCADE)
-    level = IntegerField(db_index=True)
-    time_start = DateTimeField(db_index=True, default=None, null=True, blank=True)
-    time_battle = DateTimeField(db_index=True, default=None, null=True, blank=True)
-    time_end = DateTimeField(db_index=True, default=None, null=True, blank=True)
-    pokemon_id = ForeignKey(Pokemon, default=None, null=True, on_delete=CASCADE)
-    pokemon_form = SmallIntegerField(default=None, null=True, blank=True)
-    cp = IntegerField(default=None, null=True, blank=True)
-    moves = ManyToManyField(PokemonMove, default=None, blank=True)
-    move_1 = SmallIntegerField(default=None, null=True, blank=True)
-    move_2 = SmallIntegerField(default=None, null=True, blank=True)
-    last_scanned = DateTimeField(default=timezone.now, db_index=True)
+class GymDefenders(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    fort = models.ForeignKey(Forts, models.DO_NOTHING, null=True)
+    external_id = models.BigIntegerField()
+    pokemon_id = models.SmallIntegerField(blank=True, null=True)
+    form = models.SmallIntegerField(blank=True, null=True)
+    team = models.PositiveIntegerField(blank=True, null=True)
+    owner_name = models.CharField(max_length=128, blank=True, null=True)
+    nickname = models.CharField(max_length=128, blank=True, null=True)
+    cp = models.IntegerField(blank=True, null=True)
+    stamina = models.IntegerField(blank=True, null=True)
+    stamina_max = models.IntegerField(blank=True, null=True)
+    atk_iv = models.SmallIntegerField(blank=True, null=True)
+    def_iv = models.SmallIntegerField(blank=True, null=True)
+    sta_iv = models.SmallIntegerField(blank=True, null=True)
+    move_1 = models.SmallIntegerField(blank=True, null=True)
+    move_2 = models.SmallIntegerField(blank=True, null=True)
+    last_modified = models.IntegerField(blank=True, null=True)
+    battles_attacked = models.IntegerField(blank=True, null=True)
+    battles_defended = models.IntegerField(blank=True, null=True)
+    num_upgrades = models.SmallIntegerField(blank=True, null=True)
+    created = models.IntegerField(blank=True, null=True)
 
-    def save(self, *args, **kwargs):
-        if self.poi_id is None:
-           self.poi_id = self.gym.poi_id
-        super().save(*args, **kwargs)
-
-
-class GymPokemon(Model):
-    report_time = DateTimeField(default=timezone.now)
-    pokemon_nr = ForeignKey(Pokemon, on_delete=CASCADE)
-    pokemon_uid = BigIntegerField(default=None, null=True)
-    base_cp = SmallIntegerField(default=None, null=True)
-    num_upgrades = SmallIntegerField(default=None, null=True)
-    moves = ManyToManyField(PokemonMove, default=None)
-    height = FloatField(default=None, null=True)
-    weight = FloatField(default=None, null=True)
-    stamina = SmallIntegerField(default=None, null=True)
-    stamina_max = SmallIntegerField(default=None, null=True)
-    cp_multiplier = FloatField(default=None, null=True)
-    additional_cp_multiplier = FloatField(default=None, null=True)
-    iv_defense = SmallIntegerField(default=None, null=True)
-    iv_stamina = SmallIntegerField(default=None, null=True)
-    iv_attack = SmallIntegerField(default=None, null=True)
-    costume = SmallIntegerField(default=None, null=True)
-    form = SmallIntegerField(default=None, null=True)
-    shiny = SmallIntegerField(default=None, null=True)
-    last_seen = DateTimeField(default=timezone.now)
+    class Meta:
+        
+        db_table = 'gym_defenders'
 
 
-class GymStatus(Model):
-    report_time = DateTimeField(default=timezone.now)
-    current_team_id = IntegerField(default=0)
-    interactable = BooleanField(default=True)
-    occupied_since = DateTimeField(default=timezone.now)
-    last_modified = DateTimeField(default=timezone.now)
-    guard_pokemon_id = ForeignKey(Pokemon, on_delete=CASCADE)
-    total_cp = IntegerField(default=None, null=True)
-    slots_available = IntegerField(default=None)
-    slots_available.null = True
-    lowest_pokemon_motivation = FloatField(default=None)
-    lowest_pokemon_motivation.null = True
-    gym_pokemon = ManyToManyField(GymPokemon, through='GymMemberRelation')
+class IngressPortals(models.Model):
+    external_id = models.CharField(unique=True, max_length=35, blank=True, null=True)
+    lat = models.FloatField(blank=True, null=True)
+    lon = models.FloatField(blank=True, null=True)
+    name = models.CharField(max_length=128, blank=True, null=True)
+    url = models.CharField(max_length=200, blank=True, null=True)
+    updated = models.BigIntegerField()
+    imported = models.BigIntegerField(blank=True, null=True)
+    checked = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'ingress_portals'
 
 
-class GymMemberRelation(Model):
-    gym_status = ForeignKey(GymStatus, on_delete=CASCADE)
-    gym_pokemon = ForeignKey(GymPokemon, on_delete=CASCADE)
-    current_cp = IntegerField(default=None, null=True)
-    current_stamina = IntegerField(default=None, null=True)
+class MysterySightings(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    pokemon_id = models.SmallIntegerField(blank=True, null=True)
+    spawn_id = models.BigIntegerField(blank=True, null=True)
+    encounter_id = models.BigIntegerField(blank=True, null=True)
+    lat = models.FloatField(blank=True, null=True)
+    lon = models.FloatField(blank=True, null=True)
+    first_seen = models.IntegerField(blank=True, null=True)
+    first_seconds = models.SmallIntegerField(blank=True, null=True)
+    last_seconds = models.SmallIntegerField(blank=True, null=True)
+    seen_range = models.SmallIntegerField(blank=True, null=True)
+    atk_iv = models.PositiveIntegerField(blank=True, null=True)
+    def_iv = models.PositiveIntegerField(blank=True, null=True)
+    sta_iv = models.PositiveIntegerField(blank=True, null=True)
+    move_1 = models.SmallIntegerField(blank=True, null=True)
+    move_2 = models.SmallIntegerField(blank=True, null=True)
+    gender = models.SmallIntegerField(blank=True, null=True)
+    form = models.SmallIntegerField(blank=True, null=True)
+    cp = models.SmallIntegerField(blank=True, null=True)
+    level = models.SmallIntegerField(blank=True, null=True)
+    weather_boosted_condition = models.SmallIntegerField(blank=True, null=True)
+    weather_cell_id = models.BigIntegerField(blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'mystery_sightings'
+        unique_together = (('encounter_id', 'spawn_id'),)
 
 
-class SpawnPoint(Model):
-    longitude = FloatField()
-    latitude = FloatField()
-    spawn_point_id = IntegerField(default=None, null=True, blank=True)
-    created = DateTimeField(auto_now_add=True)
-    updated = DateTimeField(auto_now=True)
+class Nests(models.Model):
+    nest_id = models.BigAutoField(primary_key=True)
+    lat = models.FloatField(blank=True, null=True)
+    lon = models.FloatField(blank=True, null=True)
+    pokemon_id = models.IntegerField(blank=True, null=True)
+    updated = models.BigIntegerField(blank=True, null=True)
+    type = models.IntegerField()
+    nest_submitted_by = models.CharField(max_length=200, blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'nests'
 
 
-class Quest(Model):
-    quest_id = CharField(max_length=128, primary_key=True)
-    quest_type = BigIntegerField()
-    pokestop_id = CharField(max_length=128)
-    quest_timestamp = BigIntegerField()
-    quest_conditions = TextField()
-    quest_rewards = TextField()
-    quest_template = CharField(max_length=128)
-    quest_pokemon_id = SmallIntegerField(default=None, null=True, blank=True)
-    quest_reward_type = CharField(max_length=128, default=None, null=True, blank=True)
-    quest_item_id = IntegerField(default=None, null=True, blank=True)
-    quest_item_amount = SmallIntegerField(default=None, null=True, blank=True)
-    target = SmallIntegerField(default=None, null=True, blank=True)
-    cell_id = BigIntegerField()
-    created = DateTimeField(auto_now_add=True)
-    updated = DateTimeField(auto_now=True)
+class Payments(models.Model):
+    selly_id = models.CharField(max_length=100)
+    product_id = models.IntegerField()
+    email = models.CharField(max_length=250)
+    value = models.IntegerField()
+    quantity = models.IntegerField()
+    timestamp = models.IntegerField()
 
-    def save(self, *args, **kwargs):
-        if self.quest_reward_type is None:
-            data = json.loads(self.quest_rewards)
-            if 'pokemon_encounter' in data:
-                self.quest_reward_type = 'pokemon_encounter'
-                self.quest_pokemon_id = data['pokemon_encounter']['pokemon_id']
-            elif'item' in data:
-                self.quest_reward_type = 'item'
-                self.quest_item_id = data['item']['item']
-                self.quest_item_amount = data['item']['amount']
-            data = json.loads(self.quest_conditions)
-            if 'goal' in 'data':
-                if 'condition' in data['goal']:
-                    self.target = data['goal']['condition']['type']
-        super().save(*args, **kwargs)
+    class Meta:
+        
+        db_table = 'payments'
 
 
-class Mapper(Model):
-    uuid = UUIDField(db_index=True)
-    created = DateTimeField(auto_now_add=True)
-    updated = DateTimeField(auto_now=True)
-    name = CharField(max_length=128, default=None, null=True)
-    longitude = FloatField(default=None, null=True)
-    latitude = FloatField(default=None, null=True)
-    trainerlevel = SmallIntegerField(default=None, null=True)
+class Pokestops(models.Model):
+    external_id = models.CharField(unique=True, max_length=35, blank=True, null=True)
+    lat = models.FloatField(blank=True, null=True)
+    lon = models.FloatField(blank=True, null=True)
+    name = models.CharField(max_length=128, blank=True, null=True)
+    url = models.CharField(max_length=200, blank=True, null=True)
+    updated = models.IntegerField(blank=True, null=True)
+    quest_id = models.SmallIntegerField(blank=True, null=True)
+    reward_id = models.SmallIntegerField(blank=True, null=True)
+    deployer = models.CharField(max_length=40, blank=True, null=True)
+    lure_start = models.CharField(max_length=40, blank=True, null=True)
+    expires = models.IntegerField(blank=True, null=True)
+    quest_submitted_by = models.CharField(max_length=200, blank=True, null=True)
+    edited_by = models.CharField(max_length=200, blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'pokestops'
 
 
-class AllowedDiscordServer(Model):
-    server_id = CharField(db_index=True, max_length=128)
-    name = CharField(max_length=128, default=None, blank=True, null=True)
+class Raids(models.Model):
+    external_id = models.BigIntegerField(unique=True, blank=True, null=True)
+    fort = models.ForeignKey(Forts, models.DO_NOTHING, blank=True, null=True)
+    level = models.PositiveIntegerField(blank=True, null=True)
+    pokemon_id = models.SmallIntegerField(blank=True, null=True)
+    move_1 = models.SmallIntegerField(blank=True, null=True)
+    move_2 = models.SmallIntegerField(blank=True, null=True)
+    time_spawn = models.IntegerField(blank=True, null=True)
+    time_battle = models.IntegerField(blank=True, null=True)
+    time_end = models.IntegerField(blank=True, null=True)
+    last_updated = models.IntegerField(blank=True, null=True)
+    cp = models.IntegerField(blank=True, null=True)
+    submitted_by = models.CharField(max_length=200, blank=True, null=True)
+    form = models.SmallIntegerField(blank=True, null=True)
+    is_exclusive = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'raids'
+
+
+class Sightings(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    pokemon_id = models.SmallIntegerField(blank=True, null=True)
+    spawn_id = models.BigIntegerField(blank=True, null=True)
+    expire_timestamp = models.IntegerField(blank=True, null=True)
+    encounter_id = models.BigIntegerField(unique=True, blank=True, null=True)
+    lat = models.FloatField(blank=True, null=True)
+    lon = models.FloatField(blank=True, null=True)
+    atk_iv = models.PositiveIntegerField(blank=True, null=True)
+    def_iv = models.PositiveIntegerField(blank=True, null=True)
+    sta_iv = models.PositiveIntegerField(blank=True, null=True)
+    move_1 = models.SmallIntegerField(blank=True, null=True)
+    move_2 = models.SmallIntegerField(blank=True, null=True)
+    gender = models.SmallIntegerField(blank=True, null=True)
+    form = models.SmallIntegerField(blank=True, null=True)
+    cp = models.SmallIntegerField(blank=True, null=True)
+    level = models.SmallIntegerField(blank=True, null=True)
+    updated = models.IntegerField(blank=True, null=True)
+    weather_boosted_condition = models.SmallIntegerField(blank=True, null=True)
+    weather_cell_id = models.BigIntegerField(blank=True, null=True)
+    weight = models.FloatField(blank=True, null=True)
+    costume = models.SmallIntegerField(blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'sightings'
+
+
+class SightingsTemp(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    pokemon_id = models.SmallIntegerField(blank=True, null=True)
+    spawn_id = models.BigIntegerField(blank=True, null=True)
+    expire_timestamp = models.IntegerField(blank=True, null=True)
+    encounter_id = models.BigIntegerField(unique=True, blank=True, null=True)
+    lat = models.FloatField(blank=True, null=True)
+    lon = models.FloatField(blank=True, null=True)
+    atk_iv = models.PositiveIntegerField(blank=True, null=True)
+    def_iv = models.PositiveIntegerField(blank=True, null=True)
+    sta_iv = models.PositiveIntegerField(blank=True, null=True)
+    move_1 = models.SmallIntegerField(blank=True, null=True)
+    move_2 = models.SmallIntegerField(blank=True, null=True)
+    gender = models.SmallIntegerField(blank=True, null=True)
+    form = models.SmallIntegerField(blank=True, null=True)
+    cp = models.SmallIntegerField(blank=True, null=True)
+    level = models.SmallIntegerField(blank=True, null=True)
+    updated = models.IntegerField(blank=True, null=True)
+    weather_boosted_condition = models.SmallIntegerField(blank=True, null=True)
+    weather_cell_id = models.BigIntegerField(blank=True, null=True)
+    weight = models.FloatField(blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'sightings_temp'
+
+
+class Spawnpoints(models.Model):
+    spawn_id = models.BigIntegerField(unique=True, blank=True, null=True)
+    despawn_time = models.SmallIntegerField(blank=True, null=True)
+    lat = models.FloatField(blank=True, null=True)
+    lon = models.FloatField(blank=True, null=True)
+    updated = models.IntegerField(blank=True, null=True)
+    duration = models.PositiveIntegerField(blank=True, null=True)
+    failures = models.PositiveIntegerField(blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'spawnpoints'
+
+
+class TrsQuest(models.Model):
+    guid = models.CharField(db_column='GUID', primary_key=True, max_length=50)  # Field name made lowercase.
+    quest_type = models.IntegerField()
+    quest_timestamp = models.IntegerField()
+    quest_stardust = models.SmallIntegerField()
+    quest_pokemon_id = models.SmallIntegerField()
+    quest_reward_type = models.SmallIntegerField()
+    quest_item_id = models.SmallIntegerField()
+    quest_item_amount = models.IntegerField()
+    quest_target = models.IntegerField()
+    quest_condition = models.CharField(max_length=500, blank=True, null=True)
+    quest_reward = models.CharField(max_length=1000, blank=True, null=True)
+    quest_task = models.CharField(max_length=150, blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'trs_quest'
+
+
+class TrsSpawn(models.Model):
+    spawnpoint = models.CharField(unique=True, max_length=16)
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+    spawndef = models.IntegerField()
+    earliest_unseen = models.IntegerField()
+    last_scanned = models.DateTimeField(blank=True, null=True)
+    first_detection = models.DateTimeField()
+    last_non_scanned = models.DateTimeField(blank=True, null=True)
+    calc_endminsec = models.CharField(max_length=5, blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'trs_spawn'
+
+
+class TrsSpawnsightings(models.Model):
+    encounter_id = models.BigIntegerField()
+    spawnpoint_id = models.BigIntegerField()
+    scan_time = models.DateTimeField()
+    tth_secs = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'trs_spawnsightings'
+
+
+class TrsStatus(models.Model):
+    origin = models.CharField(primary_key=True, max_length=50)
+    currentpos = models.CharField(db_column='currentPos', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    lastpos = models.CharField(db_column='lastPos', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    routepos = models.IntegerField(db_column='routePos', blank=True, null=True)  # Field name made lowercase.
+    routemax = models.IntegerField(db_column='routeMax', blank=True, null=True)  # Field name made lowercase.
+    routemanager = models.CharField(max_length=255, blank=True, null=True)
+    rebootcounter = models.IntegerField(db_column='rebootCounter', blank=True, null=True)  # Field name made lowercase.
+    lastprotodatetime = models.CharField(db_column='lastProtoDateTime', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    lastpogorestart = models.CharField(db_column='lastPogoRestart', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    init = models.TextField(blank=True, null=True)
+    rebootingoption = models.TextField(db_column='rebootingOption', blank=True, null=True)  # Field name made lowercase.
+    restartcounter = models.TextField(db_column='restartCounter', blank=True, null=True)  # Field name made lowercase.
+    lastpogoreboot = models.CharField(db_column='lastPogoReboot', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    globalrebootcount = models.IntegerField(blank=True, null=True)
+    globalrestartcount = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'trs_status'
+
+
+class TrsUsage(models.Model):
+    usage_id = models.AutoField(primary_key=True)
+    instance = models.CharField(max_length=100, blank=True, null=True)
+    cpu = models.FloatField(blank=True, null=True)
+    memory = models.FloatField(blank=True, null=True)
+    garbage = models.IntegerField(blank=True, null=True)
+    timestamp = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'trs_usage'
+
+
+class Trshash(models.Model):
+    hashid = models.AutoField(primary_key=True)
+    hash = models.CharField(max_length=255)
+    type = models.CharField(max_length=10)
+    id = models.CharField(max_length=255)
+    count = models.IntegerField()
+    modify = models.DateTimeField()
+
+    class Meta:
+        
+        db_table = 'trshash'
+
+
+class Users(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    user = models.CharField(max_length=250)
+    password = models.CharField(max_length=250, blank=True, null=True)
+    temp_password = models.CharField(max_length=250, blank=True, null=True)
+    expire_timestamp = models.IntegerField()
+    session_id = models.CharField(max_length=100, blank=True, null=True)
+    login_system = models.CharField(max_length=40)
+    access_level = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'users'
+
+
+class Weather(models.Model):
+    s2_cell_id = models.BigIntegerField(unique=True, blank=True, null=True)
+    condition = models.PositiveIntegerField(blank=True, null=True)
+    alert_severity = models.PositiveIntegerField(blank=True, null=True)
+    warn = models.IntegerField(blank=True, null=True)
+    day = models.PositiveIntegerField(blank=True, null=True)
+    updated = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        
+        db_table = 'weather'
+
+class AllowedDiscordServer(models.Model):
+    server_id = models.CharField(db_index=True, max_length=128)
+    name = models.CharField(max_length=128, default=None, blank=True, null=True)
