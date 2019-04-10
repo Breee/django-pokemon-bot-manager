@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from BotManager import BotManager
+from botmanager import BotManager
 import time
 
 bm = BotManager()

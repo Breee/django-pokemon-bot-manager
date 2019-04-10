@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from myapp import urls
-
+from botmanager import urls as botmanager_urls
 
 urlpatterns = [
     path('', include(urls)),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('api/', include('myapp.api.rest_urls')),
-
+    path('bot/', include(botmanager_urls)),
 ]
