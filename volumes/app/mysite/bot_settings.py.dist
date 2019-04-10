@@ -1,6 +1,9 @@
-from mysite.bot_basesettings import *
+from botmanager.structs import BotStruct
 
 BOTS = [
-        BotStruct(path="/bots/pokemon-raid-bot/", main_file='start_bot.py', name='raidquaza'),
-        BotStruct(path="/bots/selfbot/", main_file='client.py', name='pokemon push bot')
+        BotStruct(path="/home/some/path/to/bot/",
+                  command='python3',
+                  main_file='start_bot.py',
+                  logfile="/home/some/path/to/bot/searchbot.log",
+                  name='botto!'),
        ]
