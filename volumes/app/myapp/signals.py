@@ -8,33 +8,32 @@ from django.db.models.signals import post_save
 from django.utils import timezone
 import logging
 
-from myapp.api.serializers import PokemonSpawnSerializer, PointOfInterestSerializer, \
-    MapperSerializer, QuestSerializer
-from myapp.models import PokemonSpawn, PointOfInterest, Mapper, Quest, AllowedDiscordServer
+from myapp.api.serializers import PokestopSerializer
+from myapp.models import Pokestops, AllowedDiscordServer
 
 last_updated = timezone.now()
 
 logger = logging.getLogger('default')
 
-def send_pokemon_update_to_websocket(*args, **kwargs):
-    serializer = PokemonSpawnSerializer
-    send_update_message('PokemonSpawn', serializer=serializer, instance=kwargs.get('instance'))
+def send_pokestop_update_to_websocket(*args, **kwargs):
+    serializer = PokestopSerializer
+    send_update_message('Pokestop', serializer=serializer, instance=kwargs.get('instance'))
 
 
-def send_poi_update_to_websocket(*args, **kwargs):
-    serializer = PointOfInterestSerializer
-    send_update_message('PointOfInterest', serializer=serializer, instance=kwargs.get('instance'))
-
-
-def send_mapper_update_to_websocket(*args, **kwargs):
-    serializer = MapperSerializer
-    send_update_message('Mapper', serializer=serializer, instance=kwargs.get('instance'))
-
-
-def send_quest_update_to_websocket(*args, **kwargs):
-    serializer = QuestSerializer
-    send_update_message('Quest', serializer=serializer, instance=kwargs.get('instance'))
-
+#def send_poi_update_to_websocket(*args, **kwargs):
+#    serializer = PointOfInterestSerializer
+#    send_update_message('PointOfInterest', serializer=serializer, instance=kwargs.get('instance'))
+#
+#
+#def send_mapper_update_to_websocket(*args, **kwargs):
+#    serializer = MapperSerializer
+#    send_update_message('Mapper', serializer=serializer, instance=kwargs.get('instance'))
+#
+#
+#def send_quest_update_to_websocket(*args, **kwargs):
+#    serializer = QuestSerializer
+#    send_update_message('Quest', serializer=serializer, instance=kwargs.get('instance'))
+#
 
 def send_update_message(model_str, serializer, instance):
     instance = serializer(instance).data
@@ -73,8 +72,8 @@ def get_discord_guild_information(request, user, *args, **kwargs):
         discord_group.user_set.remove(user)
 
 
-post_save.connect(send_pokemon_update_to_websocket, sender=PokemonSpawn)
-post_save.connect(send_poi_update_to_websocket, sender=PointOfInterest)
-post_save.connect(send_mapper_update_to_websocket, sender=Mapper)
-post_save.connect(send_quest_update_to_websocket, sender=Quest)
+post_save.connect(send_pokestop_update_to_websocket(), sender=Pokestops)
+#post_save.connect(send_poi_update_to_websocket, sender=PointOfInterest)
+#post_save.connect(send_mapper_update_to_websocket, sender=Mapper)
+#post_save.connect(send_quest_update_to_websocket, sender=Quest)
 allauth.account.signals.user_logged_in.connect(get_discord_guild_information)
