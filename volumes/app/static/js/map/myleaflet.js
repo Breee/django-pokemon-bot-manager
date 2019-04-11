@@ -95,7 +95,6 @@ function MyLeaflet() {
         var mapperLayer = this.mapObjects['mapper'].layer;
 
         if (model === 'pokestop' || type === 'gym' ) {
-            console.log(instance);
             marker = get_poi_marker(instance, model);
             if (model === 'pokestop') {
                 updateLayer(pokestopLayer, pokestopDict, marker, instance.external_id);
@@ -156,6 +155,77 @@ function MyLeaflet() {
         }
 
 
+    }
+
+    function get_poi_marker(poi, type) {
+        //var popup = "" + poi.name + "<br>";
+        //popup += (poi.description !== '') ? '' : poi.description + '<br>';
+        //if (poi.image_url !== null) {
+        //    popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="' + poi.image_url + '" />'
+        //}
+        //if (poi.raid !== null){
+        //    var raid = poi.raid;
+        //    popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="/static/img/pokemons/' + raid.pokemon_id + '.png ' + '"/><br>';
+        //    popup += 'Level '+ raid.level +' Raid<br>';
+        //    popup += 'Hatch: ' + raid.time_start +'<br>';
+        //    popup += 'Until: ' + raid.time_end + '<br>';
+        //}
+
+        var icon_url = '';
+        var shadow_url = '';
+        if (type === 'gym') {
+            icon_url = "/static/img/map/gym.png";
+            if (poi.park === true) {
+                icon_url = "/static/img/map/ex_gym.png";
+            }
+        } else if (type === 'pokestop'){
+            if (poi.hasOwnProperty('quest')){
+                var quest = poi.quest
+                if (quest != null){
+                var quest_reward = JSON.parse(quest.quest_reward)[0];
+                switch (quest_reward.type) {
+                    case 2:
+                        icon_url = "https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/PMSF_icons_large/rewards/reward_"+ + quest_reward.item.item + '_' + quest_reward.item.amount +".png?raw=true";
+                        break;
+                    case 3:
+                        icon_url = "https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/PMSF_icons_large/rewards/reward_stardust_"+ quest_reward.stardust +".png?raw=true";
+                        break;
+                    case 7:
+                        var encounter_id = quest_reward.pokemon_encounter.pokemon_id;
+                        icon_url = "https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/PMSF_icons_large/pokemon_icon_"+("000" + encounter_id).slice(-3)+"_00.png?raw=true";
+                        break;
+                }
+                shadow_url = "/static/img/map/Pstop-quest-small.png";
+            } else{
+                icon_url = "/static/img/map/Pstop.png";
+            }
+        }
+        }
+
+        var marker = L.marker([poi.lat, poi.lon],
+            {
+                title: poi.name,
+                icon: L.icon({
+                    iconUrl: icon_url,
+                    shadowUrl: shadow_url,
+                    iconSize: [35, 35],
+                    shadowSize: [50, 50],
+                    popupAnchor: [0, -15],
+                    shadowAnchor: [0, 0],
+                    iconAnchor: [5, -5]
+                })
+            });
+        //marker.bindPopup(popup);
+
+        // send clicks on POI's to the server
+        // this is in preparation for Quests!
+        //L.DomEvent.addListener(marker, 'click', function (event) {
+        //    updateSocket.send(JSON.stringify({
+        //        "type": "click",
+        //        "poi": poi.name
+        //    }));
+        //});
+        return marker;
     }
 
 
@@ -242,53 +312,6 @@ function MyLeaflet() {
         return '<h3>level '+ raid.level +' raid' + pokedex[raid.pokemon_id - 1].name_german + ' (' + raid.pokemon_id + ')' + '</h3>' +
             '<b>Despawn Time</b> ' + date_str + date.toLocaleTimeString('de-DE') + '<br>' + maps_str;
     };
-
-
-    function get_poi_marker(poi, type) {
-        //var popup = "" + poi.name + "<br>";
-        //popup += (poi.description !== '') ? '' : poi.description + '<br>';
-        //if (poi.image_url !== null) {
-        //    popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="' + poi.image_url + '" />'
-        //}
-        //if (poi.raid !== null){
-        //    var raid = poi.raid;
-        //    popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="/static/img/pokemons/' + raid.pokemon_id + '.png ' + '"/><br>';
-        //    popup += 'Level '+ raid.level +' Raid<br>';
-        //    popup += 'Hatch: ' + raid.time_start +'<br>';
-        //    popup += 'Until: ' + raid.time_end + '<br>';
-        //}
-
-        var icon_url = '';
-        if (type === 'gym') {
-            icon_url = "/static/img/map/gym.png";
-            if (poi.park === true) {
-                icon_url = "/static/img/map/ex_gym.png";
-            }
-        } else if (type === 'pokestop'){
-            icon_url = "/static/img/map/pstop.png";
-        }
-
-        var marker = L.marker([poi.lat, poi.lon],
-            {
-                title: poi.name,
-                icon: L.icon({
-                    iconUrl: icon_url,
-                    iconSize: [32, 32],
-                    popupAnchor: [0, -15]
-                })
-            });
-        //marker.bindPopup(popup);
-
-        // send clicks on POI's to the server
-        // this is in preparation for Quests!
-        //L.DomEvent.addListener(marker, 'click', function (event) {
-        //    updateSocket.send(JSON.stringify({
-        //        "type": "click",
-        //        "poi": poi.name
-        //    }));
-        //});
-        return marker;
-    }
 
 
 }
