@@ -21,11 +21,11 @@ function MyLeaflet() {
         });
     }
 
-
-    var mymap = L.map('map', {
+    this.mymap = L.map('map', {
         center: [47.9960526, 7.8464833],
         zoom: 17
     });
+    this.lastZoom = this.mymap.getZoom();
 
     var mapObjectTypes = [['ivPokemon', 1000], ['regularPokemon', 1000], ['pokestop',900], ['gym', 900], ['mapper', 900], ['quest', 1000], ['raid', 1000]];
     this.mapObjects = {};
@@ -33,7 +33,7 @@ function MyLeaflet() {
     for (var object_type in mapObjectTypes) {
         var type = mapObjectTypes[object_type][0];
         var zIndex = mapObjectTypes[object_type][1];
-        this.mapObjects[type] = new MapObject(mapCookie, type + 'Hidden', mymap, zIndex);
+        this.mapObjects[type] = new MapObject(mapCookie, type + 'Hidden', this.mymap, zIndex);
     }
 
     var url = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png';
@@ -42,52 +42,9 @@ function MyLeaflet() {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 18,
         id: 'openstreetmap'
-    }).addTo(mymap);
+    }).addTo(this.mymap);
 
-    var sidebar = L.control.sidebar('sidebar').addTo(mymap);
-
-    var getPokemonPopupData = function (pokemon) {
-        var date = new Date(pokemon.disappear_time);
-
-        var today = new Date();
-        var date_str = '';
-        if (date.getDate() > today.getDate()) {
-            date_str = date.toLocaleDateString('de-DE') + ' ';
-        }
-        if (pokemon.individual_stamina != null) {
-            var iv_sta = pokemon.individual_stamina;
-            var iv_att = pokemon.individual_attack;
-            var iv_def = pokemon.individual_defense;
-            var iv_proc = Math.round(((iv_sta + iv_att + iv_def) / 45) * 10000) / 100;
-            var iv_str = '<b>IV:</b>' + iv_proc + '% ' + '(A' + iv_att + '|D' + iv_def + '|S' + iv_sta + ')<br>';
-            var cp_str = '<b>CP:</b>' + pokemon.cp + '<br>';
-        } else {
-            iv_str = '';
-            cp_str = '';
-        }
-
-        var maps_str = '<a href="https://www.google.com/maps/place/' + pokemon.latitude + ',' +
-            pokemon.longitude + '" target="_blank" title="Open in Google Maps">' + 'Maps</a><br>';
-
-        return '<h3>' + pokedex[pokemon.pokemon_object - 1].name_german + ' (' + pokemon.pokemon_object + ')' + '</h3>' +
-            '<b>Despawn Time</b> ' + date_str + date.toLocaleTimeString('de-DE') + '<br>' +
-            iv_str + cp_str + maps_str;
-    };
-    var getRaidPopupData = function (raid) {
-        var date = new Date(raid.time_end);
-
-        var today = new Date();
-        var date_str = '';
-        if (date.getDate() > today.getDate()) {
-            date_str = date.toLocaleDateString('de-DE') + ' ';
-        }
-
-        var maps_str = '<a href="https://www.google.com/maps/place/' + raid.gym.latitude + ',' +
-            raid.gym.longitude + '" target="_blank" title="Open in Google Maps">' + 'Maps</a><br>';
-
-        return '<h3>level '+ raid.level +' raid' + pokedex[raid.pokemon_id - 1].name_german + ' (' + raid.pokemon_id + ')' + '</h3>' +
-            '<b>Despawn Time</b> ' + date_str + date.toLocaleTimeString('de-DE') + '<br>' + maps_str;
-    };
+    var sidebar = L.control.sidebar('sidebar').addTo(this.mymap);
 
     this.addMapObjectsToMap = function(data, model) {
         var pokestopObjectInstance = this.mapObjects['pokestop'];
@@ -115,25 +72,8 @@ function MyLeaflet() {
 
             });
         }
-        if (model === 'PointOfInterest' || model === 'Raid') {
-
-        }
-        else if (model === 'PokemonSpawn') {
-            var ivPokemonObjectInstance = this.mapObjects['ivPokemon'];
-            var regularPokemonObjectInstance = this.mapObjects['regularPokemon'];
-            if (regularPokemonObjectInstance.layer === undefined && ivPokemonObjectInstance.layer === undefined) {
-                regularPokemonObjectInstance.layer = L.layerGroup();
-                ivPokemonObjectInstance.layer = L.layerGroup();
-            }
-        } else {
-            var mapObjectInstance = this.mapObjects[model.toLowerCase()];
-            mapObjectInstance.layer = new L.LayerGroup();
-        }
         for (var i in data) {
-            if (data.hasOwnProperty(i)) {
-                var instance = data[i];
-                this.addSingleMapObjectToMap(instance, model);
-            }
+            this.addSingleMapObjectToMap(data[i], model);
         }
         addLayersToMap(this);
     };
@@ -147,7 +87,6 @@ function MyLeaflet() {
         var mapperDict = this.mapObjects['mapper'].markers;
         var ivPokemonDict = this.mapObjects['ivPokemon'].markers;
         var regularPokemonDict = this.mapObjects['regularPokemon'].markers;
-
         var pokestopLayer = this.mapObjects['pokestop'].layer;
         var gymLayer = this.mapObjects['gym'].layer;
         var raidLayer = this.mapObjects['raid'].layer;
@@ -155,46 +94,14 @@ function MyLeaflet() {
         var regularPokemonLayer = this.mapObjects['regularPokemon'].layer;
         var mapperLayer = this.mapObjects['mapper'].layer;
 
-        if (model === 'PokemonSpawn') {
-            marker = get_pokemon_marker(instance);
-            if (instance.individual_stamina !== null || instance.individual_attack !== null || instance.individual_defense !== null) {
-                updateLayer(ivPokemonLayer, ivPokemonDict, marker, instance.encounter_id)
-            } else {
-                updateLayer(regularPokemonLayer, regularPokemonDict, marker, instance.encounter_id)
-            }
-        } else if (model === 'PointOfInterest') {
-            marker = get_poi_marker(instance);
-            var type = instance.type;
-            if (type === 'pokestop') {
-                if (questDict.hasOwnProperty(instance.poi_id)) {
-                    setQuestPopup(instance.poi_id, this);
-                }
-                updateLayer(pokestopLayer, pokestopDict, marker, instance.poi_id);
+        if (model === 'pokestop' || type === 'gym' ) {
+            console.log(instance);
+            marker = get_poi_marker(instance, model);
+            if (model === 'pokestop') {
+                updateLayer(pokestopLayer, pokestopDict, marker, instance.external_id);
             } else if (type === 'gym') {
                 updateLayer(gymLayer, gymDict, marker, instance.poi_id);
             }
-        } else if (model === 'Mapper') {
-            marker = get_mapper_marker(instance);
-            updateLayer(mapperLayer, mapperDict, marker, instance.id);
-        } else if (model === 'Quest') {
-            var poi_id = instance.pokestop_id;
-
-            if (pokestopDict.hasOwnProperty(poi_id)) {
-                marker = pokestopDict[poi_id];
-                if (!this.mapObjects['quest'].markers.hasOwnProperty(poi_id)) {
-                    var popup = marker._popup._content;
-                    questDict[poi_id] = [marker, popup, instance];
-                }
-                setQuestPopup(poi_id, this);
-                updateLayer(pokestopLayer, pokestopDict, marker, poi_id);
-            }
-        } else if (model === 'Raid') {
-            console.log(instance);
-            console.log(instance.gym);
-            marker = get_raid_marker(instance, instance.gym.latitude, instance.gym.longitude);
-            updateLayer(raidLayer, raidDict, marker, instance.gym.id);
-        } else {
-            console.log('NotImplementedError: ' + instance)
         }
     };
 
@@ -293,41 +200,63 @@ function MyLeaflet() {
     }
 
 
-    function get_mapper_marker(mapper) {
-        var popup = mapper.name + '<br>';
-        popup += mapper.uuid + '<br>';
-        popup += mapper.longitude + '<br>';
-        popup += mapper.latitude + '<br>';
-        var updated = new Date(mapper.updated);
-        popup += 'updated: ' + updated.toLocaleTimeString('de-DE') + '<br>';
-        var marker = L.marker([mapper.latitude, mapper.longitude],
-            {
-                title: mapper.name,
-                icon: L.icon({
-                    iconUrl: '/static/img/map/iphone.png',
-                    iconSize: [20, 20],
-                    popupAnchor: [0, -15]
-                })
-            });
-        marker.bindPopup(popup);
-        return marker;
-    }
+    var getPokemonPopupData = function (pokemon) {
+        var date = new Date(pokemon.disappear_time);
+
+        var today = new Date();
+        var date_str = '';
+        if (date.getDate() > today.getDate()) {
+            date_str = date.toLocaleDateString('de-DE') + ' ';
+        }
+        if (pokemon.individual_stamina != null) {
+            var iv_sta = pokemon.individual_stamina;
+            var iv_att = pokemon.individual_attack;
+            var iv_def = pokemon.individual_defense;
+            var iv_proc = Math.round(((iv_sta + iv_att + iv_def) / 45) * 10000) / 100;
+            var iv_str = '<b>IV:</b>' + iv_proc + '% ' + '(A' + iv_att + '|D' + iv_def + '|S' + iv_sta + ')<br>';
+            var cp_str = '<b>CP:</b>' + pokemon.cp + '<br>';
+        } else {
+            iv_str = '';
+            cp_str = '';
+        }
+
+        var maps_str = '<a href="https://www.google.com/maps/place/' + pokemon.latitude + ',' +
+            pokemon.longitude + '" target="_blank" title="Open in Google Maps">' + 'Maps</a><br>';
+
+        return '<h3>' + pokedex[pokemon.pokemon_object - 1].name_german + ' (' + pokemon.pokemon_object + ')' + '</h3>' +
+            '<b>Despawn Time</b> ' + date_str + date.toLocaleTimeString('de-DE') + '<br>' +
+            iv_str + cp_str + maps_str;
+    };
+    var getRaidPopupData = function (raid) {
+        var date = new Date(raid.time_end);
+
+        var today = new Date();
+        var date_str = '';
+        if (date.getDate() > today.getDate()) {
+            date_str = date.toLocaleDateString('de-DE') + ' ';
+        }
+
+        var maps_str = '<a href="https://www.google.com/maps/place/' + raid.gym.latitude + ',' +
+            raid.gym.longitude + '" target="_blank" title="Open in Google Maps">' + 'Maps</a><br>';
+
+        return '<h3>level '+ raid.level +' raid' + pokedex[raid.pokemon_id - 1].name_german + ' (' + raid.pokemon_id + ')' + '</h3>' +
+            '<b>Despawn Time</b> ' + date_str + date.toLocaleTimeString('de-DE') + '<br>' + maps_str;
+    };
 
 
-    function get_poi_marker(poi) {
-        var type = poi.type;
-        var popup = "" + poi.name + "<br>";
-        popup += (poi.description !== '') ? '' : poi.description + '<br>';
-        if (poi.image_url !== null) {
-            popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="' + poi.image_url + '" />'
-        }
-        if (poi.raid !== null){
-            var raid = poi.raid;
-            popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="/static/img/pokemons/' + raid.pokemon_id + '.png ' + '"/><br>';
-            popup += 'Level '+ raid.level +' Raid<br>';
-            popup += 'Hatch: ' + raid.time_start +'<br>';
-            popup += 'Until: ' + raid.time_end + '<br>';
-        }
+    function get_poi_marker(poi, type) {
+        //var popup = "" + poi.name + "<br>";
+        //popup += (poi.description !== '') ? '' : poi.description + '<br>';
+        //if (poi.image_url !== null) {
+        //    popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="' + poi.image_url + '" />'
+        //}
+        //if (poi.raid !== null){
+        //    var raid = poi.raid;
+        //    popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="/static/img/pokemons/' + raid.pokemon_id + '.png ' + '"/><br>';
+        //    popup += 'Level '+ raid.level +' Raid<br>';
+        //    popup += 'Hatch: ' + raid.time_start +'<br>';
+        //    popup += 'Until: ' + raid.time_end + '<br>';
+        //}
 
         var icon_url = '';
         if (type === 'gym') {
@@ -335,11 +264,11 @@ function MyLeaflet() {
             if (poi.park === true) {
                 icon_url = "/static/img/map/ex_gym.png";
             }
-        } else {
+        } else if (type === 'pokestop'){
             icon_url = "/static/img/map/pstop.png";
         }
 
-        var marker = L.marker([poi.latitude, poi.longitude],
+        var marker = L.marker([poi.lat, poi.lon],
             {
                 title: poi.name,
                 icon: L.icon({
@@ -348,16 +277,16 @@ function MyLeaflet() {
                     popupAnchor: [0, -15]
                 })
             });
-        marker.bindPopup(popup);
+        //marker.bindPopup(popup);
 
         // send clicks on POI's to the server
         // this is in preparation for Quests!
-        L.DomEvent.addListener(marker, 'click', function (event) {
-            updateSocket.send(JSON.stringify({
-                "type": "click",
-                "poi": poi.name
-            }));
-        });
+        //L.DomEvent.addListener(marker, 'click', function (event) {
+        //    updateSocket.send(JSON.stringify({
+        //        "type": "click",
+        //        "poi": poi.name
+        //    }));
+        //});
         return marker;
     }
 

@@ -33,6 +33,9 @@ var mapCookie = new MapCookie();
 setCheckboxes();
 
 var myLeaflet = new MyLeaflet();
+var myMap = myLeaflet.mymap;
+
+console.log(myMap.getBounds());
 
 var csrftoken = getCookie('csrftoken');
 $.ajaxSetup({
@@ -41,34 +44,6 @@ $.ajaxSetup({
     }
 });
 
-var pokedex = undefined;
-$.getJSON('/api/pokedex/', function (data) {
-    pokedex = data;
-});
-
-function getData(type) {
-    function parseData(data) {
-        myLeaflet.addMapObjectsToMap(data, type);
-    }
-    if (type === 'PokemonSpawn') {
-        $.getJSON("/api/pokemon/spawns", parseData);
-    }
-    else if (type === 'PointOfInterest') {
-        $.getJSON("/api/poi/all", parseData);
-    }
-    else if (type === 'Mapper') {
-        $.getJSON("/api/mapper", parseData);
-    }
-    else if (type === 'Quest') {
-        $.getJSON('/api/quest/', parseData);
-    }
-    else if (type === 'Raid') {
-        $.getJSON('/api/raid/', parseData);
-    }
-    else {
-        console.log('NotImplementedError: ' + type)
-    }
-}
 
 var toggleMapObjects = function(type) {
     myLeaflet.toggleMapObjectsHidden(type);
@@ -81,76 +56,54 @@ if (location.protocol === 'https:') {
 
 var updateSocket = new ReconnectingWebSocket(
 websocket_protocol + window.location.host +
-'/ws/update/');
+'/ws/update/pokestops');
 
-function reloadData(data) {
-    var model = data.model;
-    var instance = data.instance;
-        // if pokestop not yet loaded or another pokemon update is not long ago, wait a sec
-        if (pokedex === undefined) {
-            setTimeout(function () {
-                reloadData(data)
-            }, 200);
-            return
+if (myLeaflet.allLayersSet) {
+    updateSocket.onmessage = function(e) {
+        var data = JSON.parse(e.data);
+        if (data.type === 'viewport_information_request') {
+            console.log(data.type , data.text);
+            var msg_type = "viewport_information_answer";
+            var corners = {'top_left': myMap.getBounds().getNorthWest(),
+                'bottom_left': myMap.getBounds().getSouthWest(),
+                'top_right': myMap.getBounds().getNorthEast(),
+                'bottom_right': myMap.getBounds().getSouthEast()};
+            var msg = {"type" : msg_type, 'corners' : corners};
+            updateSocket.send(JSON.stringify(msg));
         }
-        if (model === "PokemonSpawn") {
-            myLeaflet.addSingleMapObjectToMap(instance, model);
+        else if (data.type === 'pokestops'){
+            var pokestops = data.pokestops;
+            console.log(pokestops);
+            myLeaflet.addMapObjectsToMap(pokestops,'pokestop');
+            //pokestops.forEach(el => {
+            //    el.type = 'pokestop';
+            //    myLeaflet.addSingleMapObjectToMap(el,'PointOfInterest')
+            //})
         }
-        else if (model === "PointOfInterest") {
-            myLeaflet.addSingleMapObjectToMap(instance, model);
+    };
+
+    myMap.on('moveend', function() {
+        var msg_type = "viewport_information_answer";
+        var currZoom = myMap.getZoom();
+        var diff = myMap.lastZoom - currZoom;
+        if(diff >= 0){
+  	       console.log('Moved or zoomed out');
+  	       // Center of the map
+  	       var center = myMap.getCenter();
+  	       // Corners of the map
+  	       var corners = {'top_left': myMap.getBounds().getNorthWest(),
+            'bottom_left': myMap.getBounds().getSouthWest(),
+            'top_right': myMap.getBounds().getNorthEast(),
+            'bottom_right': myMap.getBounds().getSouthEast()};
+           var msg = {"type" : msg_type, 'corners' : corners, 'center' : center};
+           updateSocket.send(JSON.stringify(msg));
+        } else if(diff < 0) {
+            // do nothing if zoomed in.
+  	       console.log('zoomed in');
+        } else {
+            // do nothing if nothing changed.
+  	       console.log('no change');
         }
-        else if (model === "Mapper") {
-            myLeaflet.addSingleMapObjectToMap(instance, model);
-        }
-        else if (model === "Quest") {
-            myLeaflet.addSingleMapObjectToMap(instance, model);
-        }
-        /*
-            this condition should only fit in initial state
-         */
-        else {
-            getData('PointOfInterest');
-            getData('PokemonSpawn');
-            getData('Mapper');
-            getData('Quest');
-            getData('Raid');
-            waitForInitials();
-        }
+        myMap.lastZoom = currZoom;
+    });
 }
-
-function waitForInitials() {
-    setTimeout(function () {
-    if (myLeaflet.allLayersSet) {
-
-        // add this function after initials are loaded to avoid errors
-        updateSocket.onmessage = function(e) {
-            var data = JSON.parse(e.data);
-            if (data.type === 'change') {
-                    console.log(data.type , data.model);
-                    reloadData(data)
-            }
-        };
-    }
-    else {
-        waitForInitials();
-    }
-},200)
-
-}
-
-
-reloadData({});
-
-$( function() {
-    $( "#datepicker" ).datepicker();
-} );
-
-/*mymap.on('moveend', function() {
-    /*
-     * TODO: Get only objects inside map bounds
-     * bounds are stored in mymap.getBounds();
-     * The api has to be changed to support this.
-     * you can use a simple "is point in rectangle" function
-     * shouldn't be too hard
-     */
-/*});*/
