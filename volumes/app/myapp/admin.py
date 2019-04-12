@@ -1,5 +1,5 @@
 from django.contrib import admin
-from myapp.models import GymDefenders, FortSightings, Forts, AllowedDiscordServer, IngressPortals, MysterySightings, Nests, Payments, Pokestops, Raids, Sightings, Spawnpoints, Trshash, TrsQuest, TrsSpawn, TrsSpawnsightings, TrsStatus, TrsUsage, Weather
+from myapp.models import GymDefenders, FortSightings, Forts, AllowedDiscordServer, IngressPortals, MysterySightings, Nests, Pokestops, Raids, Sightings, Spawnpoints, Trshash, TrsQuest, TrsSpawn, TrsSpawnsightings, TrsStatus, TrsUsage, Weather
 
 from rest_framework.authtoken.admin import TokenAdmin
 
@@ -15,7 +15,6 @@ admin.site.register(Pokestops)
 admin.site.register(Raids)
 admin.site.register(MysterySightings)
 admin.site.register(Nests)
-admin.site.register(Payments)
 admin.site.register(Sightings)
 admin.site.register(Spawnpoints)
 admin.site.register(TrsQuest)

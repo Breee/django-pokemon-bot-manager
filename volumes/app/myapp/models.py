@@ -140,19 +140,6 @@ class Nests(models.Model):
         db_table = 'nests'
 
 
-class Payments(models.Model):
-    selly_id = models.CharField(max_length=100)
-    product_id = models.IntegerField()
-    email = models.CharField(max_length=250)
-    value = models.IntegerField()
-    quantity = models.IntegerField()
-    timestamp = models.IntegerField()
-
-    class Meta:
-        
-        db_table = 'payments'
-
-
 class Pokestops(models.Model):
     external_id = models.CharField(unique=True, max_length=35, blank=True, null=True)
     lat = models.FloatField(blank=True, null=True)
@@ -224,34 +211,6 @@ class Sightings(models.Model):
         
         db_table = 'sightings'
 
-
-class SightingsTemp(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    pokemon_id = models.SmallIntegerField(blank=True, null=True)
-    spawn_id = models.BigIntegerField(blank=True, null=True)
-    expire_timestamp = models.IntegerField(blank=True, null=True)
-    encounter_id = models.BigIntegerField(unique=True, blank=True, null=True)
-    lat = models.FloatField(blank=True, null=True)
-    lon = models.FloatField(blank=True, null=True)
-    atk_iv = models.PositiveIntegerField(blank=True, null=True)
-    def_iv = models.PositiveIntegerField(blank=True, null=True)
-    sta_iv = models.PositiveIntegerField(blank=True, null=True)
-    move_1 = models.SmallIntegerField(blank=True, null=True)
-    move_2 = models.SmallIntegerField(blank=True, null=True)
-    gender = models.SmallIntegerField(blank=True, null=True)
-    form = models.SmallIntegerField(blank=True, null=True)
-    cp = models.SmallIntegerField(blank=True, null=True)
-    level = models.SmallIntegerField(blank=True, null=True)
-    updated = models.IntegerField(blank=True, null=True)
-    weather_boosted_condition = models.SmallIntegerField(blank=True, null=True)
-    weather_cell_id = models.BigIntegerField(blank=True, null=True)
-    weight = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        
-        db_table = 'sightings_temp'
-
-
 class Spawnpoints(models.Model):
     spawn_id = models.BigIntegerField(unique=True, blank=True, null=True)
     despawn_time = models.SmallIntegerField(blank=True, null=True)
@@ -281,7 +240,6 @@ class TrsQuest(models.Model):
     quest_task = models.CharField(max_length=150, blank=True, null=True)
 
     class Meta:
-        
         db_table = 'trs_quest'
 
 
