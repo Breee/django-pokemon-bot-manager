@@ -61,7 +61,10 @@ class PokestopConsumer(AsyncWebsocketConsumer):
         if data['type'] == 'viewport_information_answer':
             # Do stuff
             geofence_dict = {'name':        'viewport_information',
-                             'coordinates': [(float(x['lat']), float(x['lng'])) for x in data['corners'].values()]
+                             'coordinates': [(float(data['corners']['top_left']['lat']), float(data['corners']['top_left']['lng'])),
+                                             (float(data['corners']['top_right']['lat']), float(data['corners']['top_right']['lng'])),
+                                             (float(data['corners']['bottom_right']['lat']), float(data['corners']['bottom_right']['lng'])),
+                                             (float(data['corners']['bottom_left']['lat']), float(data['corners']['bottom_left']['lng']))]
                              }
             serialized_stops = await self.get_pokestops(geofence_dict)
             msg = {'type': 'pokestops', 'pokestops': serialized_stops.data}
@@ -82,5 +85,5 @@ class PokestopConsumer(AsyncWebsocketConsumer):
             if geofence_helper.is_in_any_geofence(latitude=stop.lat, longitude=stop.lon):
                 geofenced_stops.append(stop)
         print(geofenced_stops)
-        serialized_stops = PokestopSerializer(geofenced_stops, many=True, fields=('external_id', 'lat', 'lon', 'name'))
+        serialized_stops = PokestopSerializer(geofenced_stops, many=True, fields=('external_id', 'lat', 'lon', 'name', 'quest'))
         return serialized_stops

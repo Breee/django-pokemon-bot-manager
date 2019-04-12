@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from myapp.models import *
 import datetime
+import json
 
 
 class DynamicFieldsModelSerializer(serializers.ModelSerializer):
@@ -24,7 +25,30 @@ class DynamicFieldsModelSerializer(serializers.ModelSerializer):
                 self.fields.pop(field_name)
 
 
+class QuestSerializer(DynamicFieldsModelSerializer):
+    quest_reward = serializers.SerializerMethodField()
+
+    def get_quest_reward(self, quest: TrsQuest):
+        quest_reward = quest.quest_reward
+        quest_reward = quest_reward.replace('\'', '"').replace('False', 'false')
+        quest_reward = json.loads(quest_reward)
+        return json.dumps(quest_reward)
+
+    class Meta:
+        model = TrsQuest
+        fields = '__all__'
+
 class PokestopSerializer(DynamicFieldsModelSerializer):
+
+    #custom field to fetch quests
+    quest = serializers.SerializerMethodField()
+
+    def get_quest(self, poi : Pokestops):
+        quest = TrsQuest.objects.filter(guid=poi.external_id).first()
+        if quest:
+            return QuestSerializer(quest).data
+        return None
+
     class Meta:
         model = Pokestops
         fields = '__all__'
@@ -89,16 +113,6 @@ class PokestopSerializer(DynamicFieldsModelSerializer):
 #        model = PointOfInterest
 #        fields = '__all__'
 #
-#
-#class QuestSerializer(serializers.ModelSerializer):
-#
-#    def __init__(self, *args, **kwargs):
-#        many = kwargs.pop('many', True)
-#        super(QuestSerializer, self).__init__(many=many, *args, **kwargs)
-#
-#    class Meta:
-#        model = Quest
-#        fields = '__all__'
 #
 #
 #class MapperSerializer(serializers.ModelSerializer):
