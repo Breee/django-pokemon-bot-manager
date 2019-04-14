@@ -46,7 +46,7 @@ class PokestopSerializer(DynamicFieldsModelSerializer):
     def get_quest(self, poi : Pokestops):
         quest = TrsQuest.objects.filter(guid=poi.external_id).first()
         if quest:
-            return QuestSerializer(quest).data
+            return QuestSerializer(quest, fields=('quest_reward', 'quest_task')).data
         return None
 
     class Meta:
