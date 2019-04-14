@@ -21,6 +21,7 @@ function MyLeaflet() {
         });
     }
 
+
     this.mymap = L.map('map', {
         center: [47.9960526, 7.8464833],
         zoom: 17
@@ -45,6 +46,15 @@ function MyLeaflet() {
     }).addTo(this.mymap);
 
     var sidebar = L.control.sidebar('sidebar').addTo(this.mymap);
+
+    this.getMapCorners = function () {
+        var corners = {'top_left': this.mymap.getBounds().getNorthWest(),
+                          'bottom_left': this.mymap.getBounds().getSouthWest(),
+                          'top_right': this.mymap.getBounds().getNorthEast(),
+                          'bottom_right': this.mymap.getBounds().getSouthEast()};
+        return corners;
+    };
+
 
     this.addMapObjectsToMap = function(data, model) {
         var pokestopObjectInstance = this.mapObjects['pokestop'];
@@ -157,20 +167,32 @@ function MyLeaflet() {
 
     }
 
-    function get_poi_marker(poi, type) {
-        //var popup = "" + poi.name + "<br>";
-        //popup += (poi.description !== '') ? '' : poi.description + '<br>';
-        //if (poi.image_url !== null) {
-        //    popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="' + poi.image_url + '" />'
-        //}
-        //if (poi.raid !== null){
-        //    var raid = poi.raid;
-        //    popup += '<img style="width:75px; height: 75px; object-fit: cover;" src="/static/img/pokemons/' + raid.pokemon_id + '.png ' + '"/><br>';
-        //    popup += 'Level '+ raid.level +' Raid<br>';
-        //    popup += 'Hatch: ' + raid.time_start +'<br>';
-        //    popup += 'Until: ' + raid.time_end + '<br>';
-        //}
+    var id_to_item = {
+        701: {"ger": "Himmihberre", "en":"Razz Berry"},
+        705: {"ger": "Sananabeere", "en":"Pinap Berry"},
+        703: {"ger": "Nanabeere", "en":"Nana Berry"},
+        708: {"ger": "Silberne Sananabeere", "en":"Silver Pinap Berry"},
+        1301: {"ger": "Sonderbonbon", "en":"Rare Candy"},
+        201: {"ger": "Beleber", "en":"Revive"},
+        101: {"ger": "Trank", "en":"Potion"},
+        102: {"ger": "Supertrank", "en":"Great Potion"},
+        103: {"ger": "Hypertrank", "en":"Hyper Potion"},
+        1: {"ger": "Pokeball", "en":"Pokeball"},
+        2: {"ger": "Superball", "en":"Greatball"},
+        3: {"ger": "Hyperball", "en":"Ultraball"},
+    };
 
+    function getItemName(id, language) {
+        if (id_to_item[id] == undefined){
+            return id;
+        }
+        var item_name = id_to_item[id][language];
+        return item_name;
+    }
+
+
+    function get_poi_marker(poi, type) {
+        var popup = "";
         var icon_url = '';
         var shadow_url = '';
         if (type === 'gym') {
@@ -179,27 +201,46 @@ function MyLeaflet() {
                 icon_url = "/static/img/map/ex_gym.png";
             }
         } else if (type === 'pokestop'){
-            if (poi.hasOwnProperty('quest')){
-                var quest = poi.quest
-                if (quest != null){
-                var quest_reward = JSON.parse(quest.quest_reward)[0];
-                switch (quest_reward.type) {
-                    case 2:
-                        icon_url = "https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/PMSF_icons_large/rewards/reward_"+ + quest_reward.item.item + '_' + quest_reward.item.amount +".png?raw=true";
-                        break;
-                    case 3:
-                        icon_url = "https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/PMSF_icons_large/rewards/reward_stardust_"+ quest_reward.stardust +".png?raw=true";
-                        break;
-                    case 7:
-                        var encounter_id = quest_reward.pokemon_encounter.pokemon_id;
-                        icon_url = "https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/PMSF_icons_large/pokemon_icon_"+("000" + encounter_id).slice(-3)+"_00.png?raw=true";
-                        break;
+            popup += "<div class=\"pokestop-popup text-center card\">";
+            popup += "<div class=\"card-body\">";
+            popup += "<h5 class=\"card-title\">"+ poi.name + "</h5>";
+            var poi_img =  "<img src=\"" + poi.url + "\" class=\"rounded-circle\" alt=\"" + poi.name + "\"width=\"100\" height=\"100\">";
+
+            if (poi.hasOwnProperty('quest')) {
+                var quest = poi.quest;
+                if (quest != null) {
+                    var quest_reward = JSON.parse(quest.quest_reward)[0];
+                    var reward_human_readable = "";
+                    switch (quest_reward.type) {
+                        case 2:
+                            icon_url = "https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/PMSF_icons_large/rewards/reward_" + quest_reward.item.item + '_' + quest_reward.item.amount + ".png?raw=true";
+                            reward_human_readable = quest_reward.item.amount+ "x "+ getItemName(quest_reward.item.item, 'en') ;
+                            break;
+                        case 3:
+                            icon_url = "https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/PMSF_icons_large/rewards/reward_stardust_" + quest_reward.stardust + ".png?raw=true";
+                            reward_human_readable = quest_reward.stardust + " Stardust";
+                            break;
+                        case 7:
+                            var encounter_id = quest_reward.pokemon_encounter.pokemon_id;
+                            icon_url = "https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/PMSF_icons_large/pokemon_icon_" + ("000" + encounter_id).slice(-3) + "_00.png?raw=true";
+                            reward_human_readable = ("000" + encounter_id).slice(-3);
+                            break;
+                    }
+                    var quest_figure = "<figure><img src=\"" + icon_url + "\" width=\"70\" height=\"70\" class='figure-img'>" +
+                        "<figcaption class='figure-caption'>"
+                        + reward_human_readable + "</figcaption></figure>" ;
+                    var images = "<div class='row text-center justify-content-center'><div class='column'>" +
+                        poi_img+"</div><div class='column'>" +
+                        quest_figure+"</div></div>";
+                    popup += images;
+                    popup += "<p class='font-weight-bold'>Quest: "+ quest.quest_task + "</p>";
+                    shadow_url = "/static/img/map/Pstop-quest-small.png";
+                } else {
+                    icon_url = "/static/img/map/Pstop.png";
                 }
-                shadow_url = "/static/img/map/Pstop-quest-small.png";
-            } else{
-                icon_url = "/static/img/map/Pstop.png";
             }
-        }
+            popup += "</div>";
+            popup += "</div>";
         }
 
         var marker = L.marker([poi.lat, poi.lon],
@@ -210,63 +251,21 @@ function MyLeaflet() {
                     shadowUrl: shadow_url,
                     iconSize: [35, 35],
                     shadowSize: [50, 50],
-                    popupAnchor: [0, -15],
+                    popupAnchor: [25, 0],
                     shadowAnchor: [0, 0],
                     iconAnchor: [5, -5]
                 })
             });
-        //marker.bindPopup(popup);
+        marker.bindPopup(popup);
 
-        // send clicks on POI's to the server
-        // this is in preparation for Quests!
+         // send clicks on POI's to the server this is in preparation for Quests!
         //L.DomEvent.addListener(marker, 'click', function (event) {
         //    updateSocket.send(JSON.stringify({
-        //        "type": "click",
-        //        "poi": poi.name
+        //        "type": "open_pokestop_request",
+        //        "pokestop_id": poi.external_id
         //    }));
         //});
         return marker;
-    }
-
-
-    function setQuestPopup(poi_id, _this) {
-        var questDict = _this.mapObjects['quest'].markers;
-        if (!questDict.hasOwnProperty(poi_id)) {
-            return
-        }
-        var marker = questDict[poi_id][0];
-        var popup = questDict[poi_id][1];
-        var quest = questDict[poi_id][2];
-        popup += 'Quest: ' + quest.quest_template + '<br>';
-
-        var reward;
-        var quest_rewards = JSON.parse(quest.quest_rewards);
-        switch (quest_rewards.type) {
-            case 2:
-                var quest_item_id_name = ("000" + quest_rewards.item.item).slice(-4);
-                reward = quest_rewards.item.amount + 'x ' +
-                    '<img src="/static/img/Texture2D/Item_' + quest_item_id_name + '.png"' +
-                    ' class="quest_reward" alt="item_' + quest_item_id_name + '" align="middle">';
-                break;
-            case 3:
-                reward = quest_rewards.stardust +
-                    ' <img src="/static/img/Texture2D/stardust_painted.png" alt="stardust" ' +
-                    'class="quest_reward" align="middle">';
-                break;
-            case 7:
-                reward = '<img src="/static/img/pokemons/' + quest.quest_pokemon_id + '.png"' +
-                    ' class="quest_reward" alt="item_' +
-                    pokedex[quest.quest_pokemon_id].name_german + '" align="middle">';
-                break;
-        }
-        popup += 'Reward: ' + reward + '<br>';
-        marker._popup.setContent(popup);
-        marker.setIcon(L.icon({
-                iconUrl: '/static/img/Texture2D/pokestop_near.png',
-                iconSize: [32, 32],
-                popupAnchor: [0, -15]
-            }
-        ));
     }
 
 

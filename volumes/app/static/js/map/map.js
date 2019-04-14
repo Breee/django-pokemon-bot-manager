@@ -29,6 +29,7 @@ function setCheckboxes () {
 
 }
 
+
 var mapCookie = new MapCookie();
 setCheckboxes();
 
@@ -64,10 +65,7 @@ if (myLeaflet.allLayersSet) {
         if (data.type === 'viewport_information_request') {
             console.log(data.type , data.text);
             var msg_type = "viewport_information_answer";
-            var corners = {'top_left': myMap.getBounds().getNorthWest(),
-                'bottom_left': myMap.getBounds().getSouthWest(),
-                'top_right': myMap.getBounds().getNorthEast(),
-                'bottom_right': myMap.getBounds().getSouthEast()};
+            var corners = myLeaflet.getMapCorners();
             var msg = {"type" : msg_type, 'corners' : corners};
             updateSocket.send(JSON.stringify(msg));
         }
@@ -75,27 +73,24 @@ if (myLeaflet.allLayersSet) {
             var pokestops = data.pokestops;
             console.log(pokestops);
             myLeaflet.addMapObjectsToMap(pokestops,'pokestop');
-            //pokestops.forEach(el => {
-            //    el.type = 'pokestop';
-            //    myLeaflet.addSingleMapObjectToMap(el,'PointOfInterest')
-            //})
+        }
+        else if (data.type === 'change'){
+            console.log("change");
+            console.log(data.model);
+            console.log(data.instance);
+            myLeaflet.addMapObjectsToMap(data.instance,data.model);
+            //myMap.invalidateSize();
         }
     };
 
     myMap.on('moveend', function() {
-        var msg_type = "viewport_information_answer";
         var currZoom = myMap.getZoom();
         var diff = myMap.lastZoom - currZoom;
         if(diff >= 0){
   	       console.log('Moved or zoomed out');
-  	       // Center of the map
-  	       var center = myMap.getCenter();
   	       // Corners of the map
-  	       var corners = {'top_left': myMap.getBounds().getNorthWest(),
-            'bottom_left': myMap.getBounds().getSouthWest(),
-            'top_right': myMap.getBounds().getNorthEast(),
-            'bottom_right': myMap.getBounds().getSouthEast()};
-           var msg = {"type" : msg_type, 'corners' : corners, 'center' : center};
+  	       var corners = myLeaflet.getMapCorners();
+           var msg = {"type" : "viewport_information_answer", 'corners' : corners};
            updateSocket.send(JSON.stringify(msg));
         } else if(diff < 0) {
             // do nothing if zoomed in.
