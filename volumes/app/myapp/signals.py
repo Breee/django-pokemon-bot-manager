@@ -9,15 +9,25 @@ from django.utils import timezone
 import logging
 
 from myapp.api.serializers import PokestopSerializer
-from myapp.models import Pokestops, AllowedDiscordServer
+from myapp.models import Pokestops, AllowedDiscordServer, TrsQuest
 
 last_updated = timezone.now()
 
 logger = logging.getLogger('default')
+from django.dispatch import receiver
 
+@receiver(post_save, sender=Pokestops)
 def send_pokestop_update_to_websocket(*args, **kwargs):
     serializer = PokestopSerializer
-    send_update_message('Pokestop', serializer=serializer, instance=kwargs.get('instance'))
+    send_update_message('pokestop', serializer=serializer, instance=kwargs.get('instance'), fields=('external_id', 'lat', 'lon', 'url', 'name', 'quest'))
+
+@receiver(post_save, sender=TrsQuest)
+def send_quest_update_to_websocket(*args, **kwargs):
+    print("update")
+    serializer = PokestopSerializer
+    quest = kwargs.get('instance')
+    pokestop = Pokestops.objects.all().filter(external_id=quest.guid).first()
+    send_update_message('pokestop', serializer=serializer, instance=pokestop, fields=('external_id', 'lat', 'lon', 'url', 'name', 'quest'))
 
 
 #def send_poi_update_to_websocket(*args, **kwargs):
@@ -35,12 +45,14 @@ def send_pokestop_update_to_websocket(*args, **kwargs):
 #    send_update_message('Quest', serializer=serializer, instance=kwargs.get('instance'))
 #
 
-def send_update_message(model_str, serializer, instance):
-    instance = serializer(instance).data
-
+def send_update_message(model_str, serializer, instance, fields=None):
+    if fields:
+        instance = serializer(instance, fields=fields).data
+    else:
+        instance = serializer(instance).data
     channel_layer = channels.layers.get_channel_layer()
     async_to_sync(channel_layer.group_send)("update", {
-        'type': 'update.message',
+        'type': 'update_message',
         'updated':  str(timezone.now()),
         'model_str': model_str,
         'instance': instance
@@ -72,7 +84,7 @@ def get_discord_guild_information(request, user, *args, **kwargs):
         discord_group.user_set.remove(user)
 
 
-post_save.connect(send_pokestop_update_to_websocket(), sender=Pokestops)
+#post_save.connect(send_pokestop_update_to_websocket(), sender=Pokestops)
 #post_save.connect(send_poi_update_to_websocket, sender=PointOfInterest)
 #post_save.connect(send_mapper_update_to_websocket, sender=Mapper)
 #post_save.connect(send_quest_update_to_websocket, sender=Quest)
