@@ -10,8 +10,11 @@ from myapp.models import Pokestops
 from myapp.api.serializers import PokestopSerializer
 
 
-class PokestopConsumer(AsyncWebsocketConsumer):
+with open("jsonData/pokemon.json", 'r') as pokemon_file:
+    POKEDEX = {x['number']:x for x in json.load(pokemon_file)}
 
+
+class MapConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         self.scope["session"]["last_updated"] = {}
         self.scope["session"]['last_updated_default'] = timezone.now() - timedelta(minutes=20)
@@ -38,18 +41,23 @@ class PokestopConsumer(AsyncWebsocketConsumer):
         return updated > last_updated + timedelta(seconds=seconds_to_wait)
 
     async def update_message(self, event):
+        print(event)
         model_str = event['model_str']
         instance = event['instance']
 
         message = {"type": "change",
                    "model": model_str,
-                   "instance": instance}
+                   "instance": [instance]}
 
         # only update if not updated in last 5s to spare traffic
         can_be_updated = await self.is_updated(event['updated'], model_str, 5)
         if can_be_updated:
+            print("can_be_updated")
             self.scope["session"]["last_updated"][model_str] = timezone.now()
             await self.send(text_data=json.dumps(message))
+
+
+class PokestopConsumer(MapConsumer):
 
     async def receive(self, text_data):
         '''
@@ -70,9 +78,6 @@ class PokestopConsumer(AsyncWebsocketConsumer):
             msg = {'type': 'pokestops', 'pokestops': serialized_stops.data}
             await self.send(text_data=json.dumps(msg))
 
-        elif data['type'] == 'open_pokestop':
-            # do other stuff
-            print("received: " + text_data)
         # send a OK for received
         await self.send(text_data=json.dumps({"type": "OK"}))
 
@@ -84,6 +89,5 @@ class PokestopConsumer(AsyncWebsocketConsumer):
         for stop in pokestops:
             if geofence_helper.is_in_any_geofence(latitude=stop.lat, longitude=stop.lon):
                 geofenced_stops.append(stop)
-        print(geofenced_stops)
-        serialized_stops = PokestopSerializer(geofenced_stops, many=True, fields=('external_id', 'lat', 'lon', 'name', 'quest'))
+        serialized_stops = PokestopSerializer(geofenced_stops, many=True, fields=('external_id', 'lat', 'lon','url', 'name', 'quest'))
         return serialized_stops
