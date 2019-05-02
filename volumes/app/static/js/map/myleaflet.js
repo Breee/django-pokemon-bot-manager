@@ -104,12 +104,12 @@ function MyLeaflet() {
         var regularPokemonLayer = this.mapObjects['regularPokemon'].layer;
         var mapperLayer = this.mapObjects['mapper'].layer;
 
-        if (model === 'pokestop' || type === 'gym' ) {
+        if (model === 'pokestop' || model === 'gym' ) {
             marker = get_poi_marker(instance, model);
             if (model === 'pokestop') {
                 updateLayer(pokestopLayer, pokestopDict, marker, instance.external_id);
-            } else if (type === 'gym') {
-                updateLayer(gymLayer, gymDict, marker, instance.poi_id);
+            } else if (model === 'gym') {
+                updateLayer(gymLayer, gymDict, marker, instance.external_id);
             }
         }
     };
@@ -182,24 +182,38 @@ function MyLeaflet() {
         3: {"ger": "Hyperball", "en":"Ultraball"},
     };
 
+    var gymTypes = ['Uncontested', 'Mystic', 'Valor', 'Instinct'];
+
     function getItemName(id, language) {
         if (id_to_item[id] == undefined){
             return id;
         }
         var item_name = id_to_item[id][language];
         return item_name;
+
     }
 
+    var teams = ["Uncontested", "Mystic", "Valor", "Instinct"];
+    function get_gym_image(team, slots_available) {
+        var icon_url = "";
+        var img_name = teams[team];
+        if (slots_available > 0){
+            img_name += "_" + slots_available;
+        }
+        icon_url = "/static/img/map/gyms/" + img_name + ".png";
+        return icon_url;
+    }
 
     function get_poi_marker(poi, type) {
         var popup = "";
         var icon_url = '';
         var shadow_url = '';
+        var shadow_anchor = [0,0];
+        var icon_anchor = [5,-5];
+        var icon_size = [35,35];
         if (type === 'gym') {
-            icon_url = "/static/img/map/gym.png";
-            if (poi.park === true) {
-                icon_url = "/static/img/map/ex_gym.png";
-            }
+            icon_url = get_gym_image(poi.info.team,poi.info.slots_available);
+            icon_size = [50,50];
         } else if (type === 'pokestop'){
             popup += "<div class=\"pokestop-popup text-center card\">";
             popup += "<div class=\"card-body\">";
@@ -222,8 +236,9 @@ function MyLeaflet() {
                             break;
                         case 7:
                             var encounter_id = quest_reward.pokemon_encounter.pokemon_id;
+                            var pokemon_name_english = quest_reward.pokemon_encounter.en;
                             icon_url = "https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/PMSF_icons_large/pokemon_icon_" + ("000" + encounter_id).slice(-3) + "_00.png?raw=true";
-                            reward_human_readable = ("000" + encounter_id).slice(-3);
+                            reward_human_readable = pokemon_name_english;
                             break;
                     }
                     var quest_figure = "<figure><img src=\"" + icon_url + "\" width=\"70\" height=\"70\" class='figure-img'>" +
@@ -235,8 +250,12 @@ function MyLeaflet() {
                     popup += images;
                     popup += "<p class='font-weight-bold'>Quest: "+ quest.quest_task + "</p>";
                     shadow_url = "/static/img/map/Pstop-quest-small.png";
+                    shadow_anchor = [0,0];
+                    icon_anchor = [5,-5];
                 } else {
                     icon_url = "/static/img/map/Pstop.png";
+                    shadow_anchor = [0,0];
+                    icon_anchor = [0,0];
                 }
             }
             popup += "</div>";
@@ -249,11 +268,11 @@ function MyLeaflet() {
                 icon: L.icon({
                     iconUrl: icon_url,
                     shadowUrl: shadow_url,
-                    iconSize: [35, 35],
+                    iconSize: icon_size,
                     shadowSize: [50, 50],
                     popupAnchor: [25, 0],
-                    shadowAnchor: [0, 0],
-                    iconAnchor: [5, -5]
+                    shadowAnchor: shadow_anchor,
+                    iconAnchor: icon_anchor
                 })
             });
         marker.bindPopup(popup);

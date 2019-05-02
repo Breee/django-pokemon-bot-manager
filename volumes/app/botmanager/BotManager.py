@@ -1,6 +1,6 @@
 from typing import List
 from botmanager.structs import BotStruct
-from mysite.bot_settings import BOTS
+from core_site.bot_settings import BOTS
 import pexpect
 import subprocess
 

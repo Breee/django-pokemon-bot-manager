@@ -57,13 +57,13 @@ if (location.protocol === 'https:') {
 
 var updateSocket = new ReconnectingWebSocket(
 websocket_protocol + window.location.host +
-'/ws/update/pokestops');
+'/ws/update/map');
+
 
 if (myLeaflet.allLayersSet) {
     updateSocket.onmessage = function(e) {
         var data = JSON.parse(e.data);
         if (data.type === 'viewport_information_request') {
-            console.log(data.type , data.text);
             var msg_type = "viewport_information_answer";
             var corners = myLeaflet.getMapCorners();
             var msg = {"type" : msg_type, 'corners' : corners};
@@ -71,16 +71,17 @@ if (myLeaflet.allLayersSet) {
         }
         else if (data.type === 'pokestops'){
             var pokestops = data.pokestops;
-            console.log(pokestops);
             myLeaflet.addMapObjectsToMap(pokestops,'pokestop');
         }
+        else if (data.type === 'gyms') {
+            var gyms = data.gyms;
+            myLeaflet.addMapObjectsToMap(gyms, 'gym');
+        }
         else if (data.type === 'change'){
-            console.log("change");
-            console.log(data.model);
-            console.log(data.instance);
             myLeaflet.addMapObjectsToMap(data.instance,data.model);
             //myMap.invalidateSize();
         }
+
     };
 
     myMap.on('moveend', function() {
