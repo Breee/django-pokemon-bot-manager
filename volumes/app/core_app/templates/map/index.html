@@ -1,59 +1,90 @@
+<!DOCTYPE html>
 {% load static %}
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      xmlns="http://www.w3.org/1999/html">
 
 <link rel="stylesheet" href="{% static 'js/node_modules/jquery-ui-dist/jquery-ui.min.css' %}">
 <link rel="stylesheet" href="{% static 'js/node_modules/leaflet/dist/leaflet.css' %}"/>
-<link rel="stylesheet" href="{% static 'js/node_modules/leaflet.markercluster/dist/MarkerCluster.css'%}">
-<link rel="stylesheet" href="{% static 'js/node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css'%}">
+<link rel="stylesheet" href="{% static 'js/node_modules/leaflet.markercluster/dist/MarkerCluster.css' %}">
+<link rel="stylesheet" href="{% static 'js/node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css' %}">
 <link rel="stylesheet" href="{% static 'js/node_modules/@fortawesome/fontawesome-free/css/all.min.css' %}">
-<link rel="stylesheet" href="{% static 'js/node_modules/sidebar-v2/css/leaflet-sidebar.min.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'css/map.css' %}" />
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'js/node_modules/sidebar-v2/css/leaflet-sidebar.min.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/map.css' %}"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-<div id="sidebar"  class="sidebar collapsed">
-          <!-- Nav tabs -->
-        <div class="sidebar-tabs">
-            <ul role="tablist">
-                {% if request.user.is_superuser %}
+<div id="sidebar" class="sidebar collapsed">
+    <!-- Nav tabs -->
+    <div class="sidebar-tabs">
+        <ul role="tablist">
+            {% if request.user.is_superuser %}
                 <li><a href="#bots" role="tab"><i class="fab fa-discord"></i></a></li>
-                {% endif %}
-                <li><a href="#settings" role="tab"><i class="fas fa-cog"></i></a></li>
-            </ul>
+            {% endif %}
+            <li><a href="#settings" role="tab"><i class="fas fa-cog"></i></a></li>
+        </ul>
 
-            <ul role="tablist">
-                {% if request.user.is_superuser %}
-                <li><a href="https://rdm.pogo-fr.de" role="tab" target="_blank"><i class="fas fa-mobile-alt"></i></a></li>
-                {% endif %}
-                <li><a href="https://github.com/breee/django-pokemon-bot-manager" role="tab" target="_blank"><i class="fab fa-github"></i></a></li>
-                <li><a href="/accounts/logout" role="tab"><i class="fas fa-sign-out-alt"></i></a></li>
-            </ul>
+        <ul role="tablist">
+            {% if request.user.is_superuser %}
+                <li><a href="https://rdm.pogo-fr.de" role="tab" target="_blank"><i class="fas fa-mobile-alt"></i></a>
+                </li>
+            {% endif %}
+            <li><a href="https://github.com/breee/django-pokemon-bot-manager" role="tab" target="_blank"><i
+                    class="fab fa-github"></i></a></li>
+            <li><a href="/accounts/logout" role="tab"><i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+    </div>
+
+    <!-- Tab panes -->
+    <div class="sidebar-content">
+        <div class="sidebar-pane" id="bots">
+            <h1 class="sidebar-header">Discord Bots<span class="sidebar-close"><i class="fas fa-caret-left"></i></span>
+            </h1>
+            {% include "bot/index.html" %}
         </div>
 
-        <!-- Tab panes -->
-        <div class="sidebar-content">
-            <div class="sidebar-pane" id="bots">
-                <h1 class="sidebar-header">Discord Bots<span class="sidebar-close"><i class="fas fa-caret-left"></i></span></h1>
-                {% include "bot/index.html" %}
+        <div class="sidebar-pane" id="settings">
+            <h1 class="sidebar-header">Settings<span class="sidebar-close"><i class="fas fa-caret-left"></i></span></h1>
+            <div class="custom-control custom-switch">
+                <input id="sw1" class="custom-control-input" type="checkbox" name="pokestopsHidden"
+                       value="pokestopsHidden"
+                       onclick="toggleMapObjects('pokestop');">
+                <label class="custom-control-label" for="sw1">Pokestops</label>
+                <br>
             </div>
-
-            <div class="sidebar-pane" id="settings">
-                <h1 class="sidebar-header">Settings<span class="sidebar-close"><i class="fas fa-caret-left"></i></span></h1>
-                <input type="checkbox" name="pokestopsHidden" value="pokestopsHidden" onclick="toggleMapObjects('pokestop');">Pokestops<br>
-                <input type="checkbox" name="gymsHidden" value="gymsHidden" onclick="toggleMapObjects('gym');" checked>Gyms<br>
-                <input type="checkbox" name="regularPokemonHidden" value="regularPokemon" onclick="toggleMapObjects('regularPokemon');" checked>Pokemon without iv data<br>
-                <input type="checkbox" name="ivPokemonHidden" value="ivPokemon" onclick="toggleMapObjects('ivPokemon');" checked>Pokemon WITH iv data<br>
-                <input type="checkbox" name="mapperHidden" value="mapperHidden" onclick="toggleMapObjects('mapper');" checked>Show Mapper iPhones<br>
+            <div class="custom-control custom-switch">
+                <input id="sw2" class="custom-control-input" type="checkbox" name="gymsHidden" value="gymsHidden"
+                       onclick="toggleMapObjects('gym');" checked>
+                <label class="custom-control-label" for="sw2">Gyms</label>
+                <br>
             </div>
+            <div class="custom-control custom-switch">
+                <input id="sw3" class="custom-control-input" type="checkbox" name="regularPokemonHidden" value="regularPokemon"
+                       onclick="toggleMapObjects('regularPokemon');" checked>
+                <label class="custom-control-label" for="sw3">Pokemon without iv data</label>
+                    <br>
+            </div>
+            <div class="custom-control custom-switch">
+                <input id="sw4" class="custom-control-input" type="checkbox" name="ivPokemonHidden" value="ivPokemon" onclick="toggleMapObjects('ivPokemon');"
+                       checked>
+                <label class="custom-control-label" for="sw4">Pokemon WITH iv data</label>
+                <br>
+            </div>
+            <div class="custom-control custom-switch">
+                <input id="sw5" class="custom-control-input" type="checkbox" name="mapperHidden" value="mapperHidden" onclick="toggleMapObjects('mapper');"
+                       checked>
 
-</div>
+                <label class="custom-control-label" for="sw5">Show Mapper iPhones</label>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="map" class="sidebar-map"></div>
 
 <!-- JQuery -->
-<script src="{% static 'js/node_modules/jquery/dist/jquery.min.js'%}"></script>
-<script src="{% static 'js/node_modules/jquery-ui-dist/jquery-ui.min.js'%}"></script>
+<script src="{% static 'js/node_modules/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'js/node_modules/jquery-ui-dist/jquery-ui.min.js' %}"></script>
 
 <!-- leaflet -->
 <script src="{% static 'js/node_modules/leaflet/dist/leaflet.js' %}"></script>
@@ -64,8 +95,12 @@
 <script src="{% static 'js/reconnecting-websocket.min.js' %}"></script>
 
 <!-- bootstrap -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
 <!-- my code -->
 <script src="{% static 'js/map/cookie.js' %}"></script>

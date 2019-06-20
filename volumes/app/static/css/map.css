@@ -11,10 +11,6 @@ html, body, #map {
     color: #AAA;
 }
 
-.sidebar-tabs>ul>li {
-    padding-top: 15px;
-}
-
 .quest_reward {
     height: 64px;
     width: 64px;
