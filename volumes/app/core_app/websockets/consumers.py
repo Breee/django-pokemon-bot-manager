@@ -6,7 +6,7 @@ from django.utils import timezone
 from channels.generic.websocket import AsyncWebsocketConsumer
 from geofence.geofencehelper import GeofenceHelper
 from channels.db import database_sync_to_async
-from scannerdb.monocle import Pokestops, Forts
+from scannerdb.rocketdb import Gym, Pokestop
 from core_app.api.serializers import PokestopSerializer, GymSerializer
 
 
@@ -77,8 +77,8 @@ class MapConsumer(UpdateConsumer):
             serialized_stops = await self.get_pokestops(geofence_dict)
             msg = {'type': 'pokestops', 'pokestops': serialized_stops.data}
             await self.send(text_data=json.dumps(msg))
-            serialized_stops = await self.get_gyms(geofence_dict)
-            msg = {'type': 'gyms', 'gyms': serialized_stops.data}
+            serialized_gyms = await self.get_gyms(geofence_dict)
+            msg = {'type': 'gyms', 'gyms': serialized_gyms.data}
             await self.send(text_data=json.dumps(msg))
 
         # send a OK for received
@@ -87,21 +87,21 @@ class MapConsumer(UpdateConsumer):
     @database_sync_to_async
     def get_pokestops(self, geofence_dict):
         geofence_helper = GeofenceHelper(geofence_dict=geofence_dict)
-        pokestops: List[Pokestops] = Pokestops.objects.all()
+        pokestops: List[Pokestop] = Pokestop.objects.all()
         geofenced_stops = []
         for stop in pokestops:
-            if geofence_helper.is_in_any_geofence(latitude=stop.lat, longitude=stop.lon):
+            if geofence_helper.is_in_any_geofence(latitude=stop.latitude, longitude=stop.longitude):
                 geofenced_stops.append(stop)
-        serialized_stops = PokestopSerializer(geofenced_stops, many=True, fields=('external_id', 'lat', 'lon','url', 'name', 'quest'))
+        serialized_stops = PokestopSerializer(geofenced_stops, many=True, fields=('pokestop_id', 'latitude', 'longitude', 'image', 'name', 'quest'))
         return serialized_stops
 
     @database_sync_to_async
     def get_gyms(self, geofence_dict):
         geofence_helper = GeofenceHelper(geofence_dict=geofence_dict)
-        gyms: List[Forts] = Forts.objects.all()
+        gyms: List[Gym] = Gym.objects.all()
         geofenced_stops = []
         for gym in gyms:
-            if geofence_helper.is_in_any_geofence(latitude=gym.lat, longitude=gym.lon):
+            if geofence_helper.is_in_any_geofence(latitude=gym.latitude, longitude=gym.longitude):
                 geofenced_stops.append(gym)
-        serialized_stops = GymSerializer(geofenced_stops, many=True, fields=('external_id', 'lat', 'lon','url', 'name', 'raid', 'info'))
+        serialized_stops = GymSerializer(geofenced_stops, many=True, fields=('gym_id', 'latitude', 'longitude', 'raid', 'team_id', 'slots_available', 'info'))
         return serialized_stops

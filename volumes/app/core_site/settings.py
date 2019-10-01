@@ -168,7 +168,7 @@ STATICFILES_DIRS = [
     'static'
     ]
 
-STATIC_ROOT = '../staticfiles'
+STATIC_ROOT = '../static'
 
 SITE_ID = 1
 

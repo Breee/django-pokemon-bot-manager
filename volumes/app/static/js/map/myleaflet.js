@@ -107,9 +107,9 @@ function MyLeaflet() {
         if (model === 'pokestop' || model === 'gym' ) {
             marker = get_poi_marker(instance, model);
             if (model === 'pokestop') {
-                updateLayer(pokestopLayer, pokestopDict, marker, instance.external_id);
+                updateLayer(pokestopLayer, pokestopDict, marker, instance.pokestop_id);
             } else if (model === 'gym') {
-                updateLayer(gymLayer, gymDict, marker, instance.external_id);
+                updateLayer(gymLayer, gymDict, marker, instance.gym_id);
             }
         }
     };
@@ -196,6 +196,7 @@ function MyLeaflet() {
     var teams = ["Uncontested", "Mystic", "Valor", "Instinct"];
     function get_gym_image(team, slots_available) {
         var icon_url = "";
+        console.log(slots_available);
         var img_name = teams[team];
         if (slots_available > 0){
             img_name += "_" + slots_available;
@@ -212,13 +213,13 @@ function MyLeaflet() {
         var icon_anchor = [5,-5];
         var icon_size = [35,35];
         if (type === 'gym') {
-            icon_url = get_gym_image(poi.info.team,poi.info.slots_available);
+            icon_url = get_gym_image(poi.team_id,poi.slots_available);
             icon_size = [50,50];
         } else if (type === 'pokestop'){
             popup += "<div class=\"pokestop-popup text-center card\">";
             popup += "<div class=\"card-body\">";
             popup += "<h5 class=\"card-title\">"+ poi.name + "</h5>";
-            var poi_img =  "<img src=\"" + poi.url + "\" class=\"rounded-circle\" alt=\"" + poi.name + "\"width=\"100\" height=\"100\">";
+            var poi_img =  "<img src=\"" + poi.image + "\" class=\"rounded-circle\" alt=\"" + poi.name + "\"width=\"100\" height=\"100\">";
 
             if (poi.hasOwnProperty('quest')) {
                 var quest = poi.quest;
@@ -261,8 +262,7 @@ function MyLeaflet() {
             popup += "</div>";
             popup += "</div>";
         }
-
-        var marker = L.marker([poi.lat, poi.lon],
+        var marker = L.marker([poi.latitude, poi.longitude],
             {
                 title: poi.name,
                 icon: L.icon({

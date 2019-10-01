@@ -1,26 +1,26 @@
 DATABASES = {
-    'default':        {
-        'ENGINE':   'django.db.backends.mysql',
-        'NAME':     'noxdb',
-        'USER':     'noxdb_user',
-        'PASSWORD': 'test123',
-        'HOST':     '127.0.0.1',
-        'PORT':     '3310',
-        },
-    'monocle': {
-        'ENGINE':   'django.db.backends.mysql',
-        'NAME':     'monocledb',
-        'USER':     'monocleuser',
-        'PASSWORD': 'test123',
-        'HOST':     '127.0.0.1',
-        'PORT':     '3309',
-        },
+    'default': {
+        'ENGINE'  : 'django.db.backends.postgresql_psycopg2',
+        'NAME'    : 'postgres',
+        'USER'    : 'postgres',
+        'PASSWORD': 'changeme',
+        'HOST'    : '127.0.0.1',
+        'PORT'    : '5432',
+    },
+    'rocketdb': {
+        'ENGINE'  : 'django.db.backends.mysql',
+        'NAME'    : 'rocketdb',
+        'USER'    : 'rocketdb',
+        'PASSWORD': 'AnotherStrongPassword',
+        'HOST'    : '127.0.0.1',
+        'PORT'    : '3310',
+    },
 }
 
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
+        "CONFIG" : {
             "hosts": [("localhost", 6379)],
         },
     },

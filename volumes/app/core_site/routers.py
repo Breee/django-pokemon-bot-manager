@@ -30,10 +30,10 @@ class ModelDatabaseRouter(object):
     def allow_migrate(self, db, app_label, model_name=None, **hints):
         """Ensure that the monocle app's models get created on the right database."""
         if app_label == 'scannerdb':
-            # The scannerdb app should be migrated only on the monocle database.
-            return db == 'monocle'
-        elif db == 'monocle':
-            # Ensure that all other apps don't get migrated on the monocle database.
+            # The scannerdb app should be migrated only on the rocketmap database.
+            return db == 'rocketdb'
+        elif db == 'rocketdb':
+            # Ensure that all other apps don't get migrated on the rocketmap database.
             return False
 
         # No opinion for all other scenarios

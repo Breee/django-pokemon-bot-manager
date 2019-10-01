@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from scannerdb.monocle import *
+from scannerdb.rocketdb import *
 from core_app.models import Pokedex
 import json
 
@@ -49,14 +49,14 @@ class PokestopSerializer(DynamicFieldsModelSerializer):
     #custom field to fetch quests
     quest = serializers.SerializerMethodField()
 
-    def get_quest(self, poi : Pokestops):
-        quest = TrsQuest.objects.filter(guid=poi.external_id).first()
+    def get_quest(self, poi : Pokestop):
+        quest = TrsQuest.objects.filter(guid=poi.pokestop_id).first()
         if quest:
             return QuestSerializer(quest, fields=('quest_reward', 'quest_task')).data
         return None
 
     class Meta:
-        model = Pokestops
+        model = Pokestop
         fields = '__all__'
 
 
@@ -65,37 +65,43 @@ class RaidSerializer(DynamicFieldsModelSerializer):
     #time_battle = serializers.DateTimeField(format="%H:%M:%S")
     #time_end = serializers.DateTimeField(format="%H:%M:%S")
     class Meta:
-        model = Raids
+        model = Raid
         fields = '__all__'
 
-class FortSightingSerializer(DynamicFieldsModelSerializer):
+
+class GymDetailsSerializer(DynamicFieldsModelSerializer):
     class Meta:
-        model = FortSightings
+        model = Gymdetails
         fields = '__all__'
 
 
 class GymSerializer(DynamicFieldsModelSerializer):
 
     # custom field to fetch raids for our points of interest.
-    info = serializers.SerializerMethodField()
     raid = serializers.SerializerMethodField()
+    info = serializers.SerializerMethodField()
 
-    def get_raid(self, poi : Forts):
-        raid = Raids.objects.get(fort__external_id=poi.external_id)
+    def get_raid(self, poi : Gym):
+        try:
+            raid = Raid.objects.get(gym_id=poi.gym_id)
+        except Raid.DoesNotExist:
+            raid = None
         # Serializing is expensive, only do it if there is a raid.
         if raid:
             return RaidSerializer(raid).data
         return None
 
-    def get_info(self, poi: Forts):
-        fort_sighting = FortSightings.objects.get(fort__external_id=poi.external_id)
-        if fort_sighting:
-            return FortSightingSerializer(fort_sighting,fields=('team', 'slots_available')).data
+    def get_info(self, poi: Gym):
+        try:
+            gym_details = Gymdetails.objects.get(gym_id=poi.gym_id)
+        except Gymdetails.DoesNotExist:
+            gym_details = None
+        if gym_details:
+            return GymDetailsSerializer(gym_details, fields=('url', 'name', 'description')).data
         return None
 
-
     class Meta:
-        model = Forts
+        model = Gym
         fields = '__all__'
 
 

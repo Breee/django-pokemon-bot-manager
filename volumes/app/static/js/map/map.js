@@ -71,6 +71,7 @@ if (myLeaflet.allLayersSet) {
         }
         else if (data.type === 'pokestops'){
             var pokestops = data.pokestops;
+            console.log(pokestops);
             myLeaflet.addMapObjectsToMap(pokestops,'pokestop');
         }
         else if (data.type === 'gyms') {

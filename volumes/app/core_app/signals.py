@@ -9,7 +9,7 @@ from django.utils import timezone
 import logging
 
 from core_app.api.serializers import PokestopSerializer
-from scannerdb.monocle import Pokestops, TrsQuest
+from scannerdb.rocketdb import Pokestop, TrsQuest
 from core_app.models import  AllowedDiscordServer
 
 last_updated = timezone.now()
@@ -17,18 +17,18 @@ last_updated = timezone.now()
 logger = logging.getLogger('default')
 from django.dispatch import receiver
 
-@receiver(post_save, sender=Pokestops)
+@receiver(post_save, sender=Pokestop)
 def send_pokestop_update_to_websocket(*args, **kwargs):
     serializer = PokestopSerializer
-    send_update_message('pokestop', serializer=serializer, instance=kwargs.get('instance'), fields=('external_id', 'lat', 'lon', 'url', 'name', 'quest'))
+    #send_update_message('pokestop', serializer=serializer, instance=kwargs.get('instance'), fields=('external_id', 'lat', 'lon', 'url', 'name', 'quest'))
 
 @receiver(post_save, sender=TrsQuest)
 def send_quest_update_to_websocket(*args, **kwargs):
     print("update")
     serializer = PokestopSerializer
     quest = kwargs.get('instance')
-    pokestop = Pokestops.objects.all().filter(external_id=quest.guid).first()
-    send_update_message('pokestop', serializer=serializer, instance=pokestop, fields=('external_id', 'lat', 'lon', 'url', 'name', 'quest'))
+    #pokestop = Pokestop.objects.all().filter(external_id=quest.guid).first()
+    #send_update_message('pokestop', serializer=serializer, instance=pokestop, fields=('external_id', 'lat', 'lon', 'url', 'name', 'quest'))
 
 
 def send_update_message(model_str, serializer, instance, fields=None):
